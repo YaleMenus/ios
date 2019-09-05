@@ -2255,7 +2255,7 @@
     
     NSString *grayImageString;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    int currentPref = [defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
+    int currentPref = (int)[defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
     if (currentPref == 0) grayImageString = @"";
     if (currentPref == 1) grayImageString = @"Thumbs Down.png";
     if (currentPref == 2) grayImageString = @"Thumbs Up.png";
@@ -2734,7 +2734,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:1 forKey:@"Showed Swipe Reminder"];
-    int currentPref = [defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
+    int currentPref = (int)[defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
     
     //1 means dislike; 2 means like
     //If the user reexpresses the same preference, nothing happens wrt NSUserDefaults or analytics
@@ -2785,7 +2785,7 @@
     
     [defaults synchronize];
     
-    currentPref = [defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
+    currentPref = (int)[defaults integerForKey:[menuIDList objectAtIndex:indexPath.row]];
     
     NSString *grayImageString;
     if (currentPref == 0) grayImageString = @"";
