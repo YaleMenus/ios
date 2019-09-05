@@ -4,7 +4,7 @@
 
     IBOutlet UIImageView *bKCrowds;
     IBOutlet UIImageView *bRCrowds;
-    IBOutlet UIImageView *cCCrowds;
+    IBOutlet UIImageView *gHCrowds;
     IBOutlet UIImageView *dCCrowds;
     IBOutlet UIImageView *bFCrowds;
     IBOutlet UIImageView *mCCrowds;
@@ -21,7 +21,7 @@
     
     IBOutlet UIButton *bKButton;
     IBOutlet UIButton *bRButton;
-    IBOutlet UIButton *cCButton;
+    IBOutlet UIButton *gHButton;
     IBOutlet UIButton *dCButton;
     IBOutlet UIButton *bFButton;
     IBOutlet UIButton *mCButton;
@@ -209,7 +209,7 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *bKCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *bRCrowds;
-@property (nonatomic, retain) IBOutlet UIImageView *cCCrowds;
+@property (nonatomic, retain) IBOutlet UIImageView *gHCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *dCCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *bFCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *mCCrowds;

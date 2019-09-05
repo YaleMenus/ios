@@ -1,11 +1,3 @@
-//
-//  Yale_MenusUITests.m
-//  Yale MenusUITests
-//
-//  Created by Eric Foster on 1/27/17.
-//  Copyright © 2017 Eric Foster. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface Yale_MenusUITests : XCTestCase

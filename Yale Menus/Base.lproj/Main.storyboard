@@ -750,8 +750,8 @@
                         <outlet property="bRCrowds" destination="LXP-tQ-JZT" id="WDC-0I-PgA"/>
                         <outlet property="backToHomeButton" destination="pna-h6-zIr" id="2vj-Xi-dsC"/>
                         <outlet property="breakfastButton" destination="pYS-dz-8Vg" id="xx0-7A-KAN"/>
-                        <outlet property="cCButton" destination="Lvq-Ug-bt1" id="pZP-Kl-y74"/>
-                        <outlet property="cCCrowds" destination="GdL-oD-KXO" id="NOV-Ek-fwR"/>
+                        <outlet property="gHButton" destination="Lvq-Ug-bt1" id="pZP-Kl-y74"/>
+                        <outlet property="gHCrowds" destination="GdL-oD-KXO" id="NOV-Ek-fwR"/>
                         <outlet property="dCButton" destination="6Ov-HX-qPn" id="MkO-ch-fZo"/>
                         <outlet property="dCCrowds" destination="ck2-xD-W1w" id="KNn-sg-3Cc"/>
                         <outlet property="dairy" destination="lhe-v7-DrZ" id="0d7-GI-kcX"/>
@@ -839,7 +839,7 @@
         <image name="BF.png" width="594" height="735"/>
         <image name="BK.png" width="402" height="499"/>
         <image name="BR.png" width="402" height="500"/>
-        <image name="CC.png" width="700" height="869"/>
+        <image name="GH.png" width="700" height="869"/>
         <image name="DC.png" width="800" height="982"/>
         <image name="ES.png" width="402" height="498"/>
         <image name="Gear.png" width="1000" height="997"/>
