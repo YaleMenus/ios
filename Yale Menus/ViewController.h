@@ -1,11 +1,3 @@
-//
-//  ViewController.h
-//  Yale Menus
-//
-//  Created by Eric Foster on 1/27/17.
-//  Copyright © 2017 Eric Foster. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
@@ -93,8 +85,9 @@
     BOOL dinnerToday;
     BOOL dinnerTomorrow;
     
-    int switchpoint; //where in the array to switch from today's meals to tomorrow's meals
-    //array[switchpoint] returns today's, and array[switchpoint+1] returns tomorrow's
+    // Where in the array to switch from today's meals to tomorrow's meals, such that
+    // array[switchpoint] returns today's, and array[switchpoint+1] returns tomorrow's
+    int switchpoint;
     
     int continentalSwitchpoint;
     int hotSwitchpoint;
@@ -126,24 +119,28 @@
     
     NSString *actualDiningHall;
     
-    IBOutlet UILabel *noMeals; //appears in the middle of the interface when no meals either day
-    IBOutlet UILabel *partialNoMeals; //appears next to the day selector when there are only meals on one day
+    // Appears in the middle of the interface when no meals either day
+    IBOutlet UILabel *noMeals;
+    // Appears next to the day selector when there are only meals on one day
+    IBOutlet UILabel *partialNoMeals;
     
     IBOutlet UIButton *sample;
     BOOL askForSample;
     BOOL showSample;
     
-    BOOL killed; //only enabled after receiving the whiteout kill signal
+    // Only enabled after receiving the whiteout kill signal
+    BOOL killed;
     
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UISegmentedControl *daySegments;
     IBOutlet UISegmentedControl *mealSegments;
     
-    //mealOneTime, et al hold the same times as lbl1, et al from the legacy meal selector interface
+    // mealXTime hold the same times as lblX from legacy meal selector interface
     NSString *mealOneTime;
     NSString *mealTwoTime;
     NSString *mealThreeTime;
-    NSString *mealTime; //this is the time being shown at any given moment
+    // The time being shown at any given moment
+    NSString *mealTime;
     
     BOOL hasAnyMeals;
     
@@ -207,8 +204,6 @@
     BOOL showAllergies;
     
     IBOutlet UIButton *skipTutorial;
-
-    
 }
 
 
