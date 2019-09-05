@@ -384,7 +384,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pik-dN-c1t">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pik-dN-c1t">
                                 <rect key="frame" x="37" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BK.png"/>
@@ -392,7 +392,7 @@
                                     <action selector="bKGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZ5-T0-h6g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-xh-mBu">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-xh-mBu">
                                 <rect key="frame" x="160" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BR.png"/>
@@ -400,7 +400,7 @@
                                     <action selector="bRGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGf-vI-mdk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-HX-qPn">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-HX-qPn">
                                 <rect key="frame" x="284" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="DC.png"/>
@@ -408,7 +408,7 @@
                                     <action selector="dCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yD6-vu-pan"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0d-ED-scD">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0d-ED-scD">
                                 <rect key="frame" x="37" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BF.png"/>
@@ -416,15 +416,15 @@
                                     <action selector="bFGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p3x-3u-Q4J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvq-Ug-bt1">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvq-Ug-bt1">
                                 <rect key="frame" x="160" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="CC.png"/>
+                                <state key="normal" image="GH.png"/>
                                 <connections>
-                                    <action selector="cCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdc-yG-Aw1"/>
+                                    <action selector="gHGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdc-yG-Aw1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-9V-9xT">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-9V-9xT">
                                 <rect key="frame" x="37" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="MC.png"/>
@@ -432,7 +432,7 @@
                                     <action selector="mCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czt-M1-pSg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mS-55-e02">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mS-55-e02">
                                 <rect key="frame" x="284" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="JE.png"/>
@@ -440,7 +440,7 @@
                                     <action selector="jEGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CwF-Tu-65t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-zX-dkO">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-zX-dkO">
                                 <rect key="frame" x="160" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="PM.png"/>
@@ -448,7 +448,7 @@
                                     <action selector="pMGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lak-jw-rdj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8za-z0-SMo">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8za-z0-SMo">
                                 <rect key="frame" x="284" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="PC.png"/>
@@ -456,7 +456,7 @@
                                     <action selector="pCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oa6-t0-G04"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbq-1r-dSI">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbq-1r-dSI">
                                 <rect key="frame" x="37" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SY.png"/>
@@ -464,7 +464,7 @@
                                     <action selector="sYGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V1K-Ee-NmF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Qi-PhZ">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Qi-PhZ">
                                 <rect key="frame" x="160" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SM.png"/>
@@ -472,7 +472,7 @@
                                     <action selector="sMGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahZ-CN-O5U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R98-DP-Jis">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R98-DP-Jis">
                                 <rect key="frame" x="284" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ES.png"/>
@@ -480,7 +480,7 @@
                                     <action selector="eSGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIk-ji-Ob6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbU-xG-uDf">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbU-xG-uDf">
                                 <rect key="frame" x="37" y="548" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="TD.png"/>
@@ -488,7 +488,7 @@
                                     <action selector="tDGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="svY-qx-4rW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-TQ-ndJ">
+                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-TQ-ndJ">
                                 <rect key="frame" x="284" y="548" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="TC.png"/>
@@ -842,17 +842,17 @@
         <image name="GH.png" width="700" height="869"/>
         <image name="DC.png" width="800" height="982"/>
         <image name="ES.png" width="402" height="498"/>
-        <image name="Gear.png" width="1000" height="997"/>
-        <image name="Home.png" width="205" height="205"/>
         <image name="JE.png" width="402" height="498"/>
         <image name="MC.png" width="402" height="498"/>
         <image name="PC.png" width="284" height="351"/>
         <image name="PM.png" width="334" height="414"/>
-        <image name="Reload.png" width="512" height="512"/>
         <image name="SM.png" width="402" height="499"/>
         <image name="SY.png" width="402" height="499"/>
         <image name="TC.png" width="284" height="351"/>
         <image name="TD.png" width="402" height="498"/>
+        <image name="Gear.png" width="1000" height="997"/>
+        <image name="Home.png" width="205" height="205"/>
+        <image name="Reload.png" width="512" height="512"/>
         <image name="White.png" width="375" height="647"/>
     </resources>
 </document>
