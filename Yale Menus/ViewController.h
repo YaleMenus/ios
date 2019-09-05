@@ -9,7 +9,7 @@
     IBOutlet UIImageView *bFCrowds;
     IBOutlet UIImageView *mCCrowds;
     IBOutlet UIImageView *jECrowds;
-    IBOutlet UIImageView *pMCrowds;
+    IBOutlet UIImageView *mYCrowds;
     IBOutlet UIImageView *pCCrowds;
     IBOutlet UIImageView *sYCrowds;
     IBOutlet UIImageView *sMCrowds;
@@ -26,7 +26,7 @@
     IBOutlet UIButton *bFButton;
     IBOutlet UIButton *mCButton;
     IBOutlet UIButton *jEButton;
-    IBOutlet UIButton *pMButton;
+    IBOutlet UIButton *mYButton;
     IBOutlet UIButton *pCButton;
     IBOutlet UIButton *sYButton;
     IBOutlet UIButton *sMButton;
@@ -214,7 +214,7 @@
 @property (nonatomic, retain) IBOutlet UIImageView *bFCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *mCCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *jECrowds;
-@property (nonatomic, retain) IBOutlet UIImageView *pMCrowds;
+@property (nonatomic, retain) IBOutlet UIImageView *mYCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *pCCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *sYCrowds;
 @property (nonatomic, retain) IBOutlet UIImageView *sMCrowds;

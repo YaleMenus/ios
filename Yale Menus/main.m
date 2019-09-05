@@ -1,11 +1,4 @@
 //
-//  main.m
-//  Yale Menus
-//
-//  Created by Eric Foster on 1/27/17.
-//  Copyright © 2017 Eric Foster. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 

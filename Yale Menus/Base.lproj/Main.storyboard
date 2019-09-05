@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Optima.ttc">
-            <string>Optima-Italic</string>
-            <string>Optima-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -384,7 +378,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pik-dN-c1t">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pik-dN-c1t">
                                 <rect key="frame" x="37" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BK.png"/>
@@ -392,7 +386,7 @@
                                     <action selector="bKGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZ5-T0-h6g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-xh-mBu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kT9-xh-mBu">
                                 <rect key="frame" x="160" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BR.png"/>
@@ -400,7 +394,7 @@
                                     <action selector="bRGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uGf-vI-mdk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-HX-qPn">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ov-HX-qPn">
                                 <rect key="frame" x="284" y="64" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="DC.png"/>
@@ -408,7 +402,7 @@
                                     <action selector="dCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yD6-vu-pan"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0d-ED-scD">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0d-ED-scD">
                                 <rect key="frame" x="37" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="BF.png"/>
@@ -416,7 +410,7 @@
                                     <action selector="bFGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p3x-3u-Q4J"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvq-Ug-bt1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvq-Ug-bt1">
                                 <rect key="frame" x="160" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="GH.png"/>
@@ -424,7 +418,7 @@
                                     <action selector="gHGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qdc-yG-Aw1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-9V-9xT">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeG-9V-9xT">
                                 <rect key="frame" x="37" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="MC.png"/>
@@ -432,7 +426,7 @@
                                     <action selector="mCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czt-M1-pSg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mS-55-e02">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mS-55-e02">
                                 <rect key="frame" x="284" y="185" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="JE.png"/>
@@ -440,15 +434,15 @@
                                     <action selector="jEGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CwF-Tu-65t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-zX-dkO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-zX-dkO">
                                 <rect key="frame" x="160" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="PM.png"/>
+                                <state key="normal" image="MY.png"/>
                                 <connections>
-                                    <action selector="pMGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lak-jw-rdj"/>
+                                    <action selector="mYGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lak-jw-rdj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8za-z0-SMo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8za-z0-SMo">
                                 <rect key="frame" x="284" y="306" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="PC.png"/>
@@ -456,7 +450,7 @@
                                     <action selector="pCGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oa6-t0-G04"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbq-1r-dSI">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pbq-1r-dSI">
                                 <rect key="frame" x="37" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SY.png"/>
@@ -464,7 +458,7 @@
                                     <action selector="sYGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V1K-Ee-NmF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Qi-PhZ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Qi-PhZ">
                                 <rect key="frame" x="160" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="SM.png"/>
@@ -472,7 +466,7 @@
                                     <action selector="sMGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahZ-CN-O5U"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R98-DP-Jis">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R98-DP-Jis">
                                 <rect key="frame" x="284" y="427" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ES.png"/>
@@ -480,7 +474,7 @@
                                     <action selector="eSGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IIk-ji-Ob6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbU-xG-uDf">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbU-xG-uDf">
                                 <rect key="frame" x="37" y="548" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="TD.png"/>
@@ -488,7 +482,7 @@
                                     <action selector="tDGo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="svY-qx-4rW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-TQ-ndJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zk-TQ-ndJ">
                                 <rect key="frame" x="284" y="548" width="55" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="TC.png"/>
@@ -738,20 +732,35 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="XHU-oe-b5o" id="YiL-UA-0ln"/>
-                        <outlet property="alcohol" destination="pzr-oh-yI9" id="b5A-3a-uqw"/>
-                        <outlet property="alcoholView" destination="I8I-Hb-tEg" id="N13-G1-uAz"/>
-                        <outlet property="allergiesButton" destination="k7q-IQ-jpX" id="CSd-95-FPL"/>
                         <outlet property="bFButton" destination="N0d-ED-scD" id="XSP-Ls-a9C"/>
                         <outlet property="bFCrowds" destination="MhZ-Ty-sgW" id="EG0-sD-U7B"/>
                         <outlet property="bKButton" destination="Pik-dN-c1t" id="7Zj-IR-ULb"/>
                         <outlet property="bKCrowds" destination="bLr-xe-KEE" id="M6O-dM-uhx"/>
                         <outlet property="bRButton" destination="kT9-xh-mBu" id="iVg-Jf-j2X"/>
                         <outlet property="bRCrowds" destination="LXP-tQ-JZT" id="WDC-0I-PgA"/>
+                        <outlet property="eSButton" destination="R98-DP-Jis" id="fae-I2-kiN"/>
+                        <outlet property="eSCrowds" destination="fSr-4I-Zrf" id="jGs-xf-QNw"/>
+                        <outlet property="jEButton" destination="1mS-55-e02" id="cKt-ve-CCD"/>
+                        <outlet property="jECrowds" destination="nNz-rI-xPd" id="5Gm-BS-rCz"/>
+                        <outlet property="pCButton" destination="8za-z0-SMo" id="Jku-Uu-ZwE"/>
+                        <outlet property="pCCrowds" destination="6z3-do-ya1" id="y5I-mz-F9b"/>
+                        <outlet property="mYButton" destination="P5b-zX-dkO" id="vxE-xx-weC"/>
+                        <outlet property="mYCrowds" destination="LYy-FK-xsk" id="veX-S6-vKZ"/>
+                        <outlet property="sMButton" destination="hrl-Qi-PhZ" id="ZZA-fg-3Wm"/>
+                        <outlet property="sMCrowds" destination="bpI-Li-IuJ" id="gX1-qo-xuz"/>
+                        <outlet property="sYButton" destination="Pbq-1r-dSI" id="5fZ-6P-qXp"/>
+                        <outlet property="sYCrowds" destination="xVq-Er-jlP" id="pJs-gT-HxG"/>
+                        <outlet property="tCButton" destination="6Zk-TQ-ndJ" id="j54-Pb-qGj"/>
+                        <outlet property="tCCrowds" destination="U2Y-aE-Vo2" id="n9T-f9-tIY"/>
+                        <outlet property="tDButton" destination="hbU-xG-uDf" id="uS3-dV-tgb"/>
+                        <outlet property="tDCrowds" destination="KyB-ko-ef0" id="yYT-34-4yt"/>
+                        
+                        <outlet property="activityIndicator" destination="XHU-oe-b5o" id="YiL-UA-0ln"/>
+                        <outlet property="alcohol" destination="pzr-oh-yI9" id="b5A-3a-uqw"/>
+                        <outlet property="alcoholView" destination="I8I-Hb-tEg" id="N13-G1-uAz"/>
+                        <outlet property="allergiesButton" destination="k7q-IQ-jpX" id="CSd-95-FPL"/>
                         <outlet property="backToHomeButton" destination="pna-h6-zIr" id="2vj-Xi-dsC"/>
                         <outlet property="breakfastButton" destination="pYS-dz-8Vg" id="xx0-7A-KAN"/>
-                        <outlet property="gHButton" destination="Lvq-Ug-bt1" id="pZP-Kl-y74"/>
-                        <outlet property="gHCrowds" destination="GdL-oD-KXO" id="NOV-Ek-fwR"/>
                         <outlet property="dCButton" destination="6Ov-HX-qPn" id="MkO-ch-fZo"/>
                         <outlet property="dCCrowds" destination="ck2-xD-W1w" id="KNn-sg-3Cc"/>
                         <outlet property="dairy" destination="lhe-v7-DrZ" id="0d7-GI-kcX"/>
@@ -759,17 +768,15 @@
                         <outlet property="daySegments" destination="cw6-X8-v3m" id="GxO-BH-2xh"/>
                         <outlet property="dinnerButton" destination="eGr-Zm-aVv" id="obO-2m-VEP"/>
                         <outlet property="disclaimer" destination="Uuj-AZ-rI8" id="M8i-fQ-ma6"/>
-                        <outlet property="eSButton" destination="R98-DP-Jis" id="fae-I2-kiN"/>
-                        <outlet property="eSCrowds" destination="fSr-4I-Zrf" id="jGs-xf-QNw"/>
                         <outlet property="eggs" destination="oUW-rI-cxT" id="N9f-I5-iFN"/>
                         <outlet property="eggsView" destination="e3c-2I-jKG" id="ccl-Ai-bBz"/>
+                        <outlet property="gHButton" destination="Lvq-Ug-bt1" id="pZP-Kl-y74"/>
+                        <outlet property="gHCrowds" destination="GdL-oD-KXO" id="NOV-Ek-fwR"/>
                         <outlet property="gluten" destination="el5-o7-WoK" id="0Yh-07-D9W"/>
                         <outlet property="glutenView" destination="Xjh-ne-81X" id="OeW-gs-tFv"/>
                         <outlet property="homeFromAllergies" destination="ihC-74-gZl" id="FX3-w8-TsU"/>
                         <outlet property="iCantEat" destination="zsF-YN-MJw" id="KLu-Mc-SPt"/>
                         <outlet property="infoButton" destination="El7-qv-At8" id="6Rg-NH-apq"/>
-                        <outlet property="jEButton" destination="1mS-55-e02" id="cKt-ve-CCD"/>
-                        <outlet property="jECrowds" destination="nNz-rI-xPd" id="5Gm-BS-rCz"/>
                         <outlet property="lbl1" destination="OmG-IU-lts" id="Awc-SB-crv"/>
                         <outlet property="lbl2" destination="grS-MH-JFI" id="Wrf-fZ-g17"/>
                         <outlet property="lbl3" destination="gpt-uU-1gv" id="toF-h7-ols"/>
@@ -782,20 +789,12 @@
                         <outlet property="noMeals" destination="2Lg-Lk-r28" id="N2X-jj-23u"/>
                         <outlet property="nuts" destination="ETl-oi-JAM" id="eXX-NU-VNU"/>
                         <outlet property="nutsView" destination="jFD-bi-Mqa" id="l42-kH-P3O"/>
-                        <outlet property="pCButton" destination="8za-z0-SMo" id="Jku-Uu-ZwE"/>
-                        <outlet property="pCCrowds" destination="6z3-do-ya1" id="y5I-mz-F9b"/>
-                        <outlet property="pMButton" destination="P5b-zX-dkO" id="vxE-xx-weC"/>
-                        <outlet property="pMCrowds" destination="LYy-FK-xsk" id="veX-S6-vKZ"/>
                         <outlet property="partialNoMeals" destination="xiv-ZA-80D" id="NAD-iN-lAp"/>
                         <outlet property="peanutView" destination="IFV-hB-MSk" id="zf9-ei-p6P"/>
                         <outlet property="peanuts" destination="Jrf-eD-iro" id="TEE-KJ-PaX"/>
                         <outlet property="pork" destination="GTV-Xv-Mox" id="Cvi-ke-OjE"/>
                         <outlet property="porkView" destination="7PQ-gI-dwX" id="0af-4Q-BWh"/>
                         <outlet property="reloadButton" destination="abx-aD-3JS" id="gvQ-Cq-nEm"/>
-                        <outlet property="sMButton" destination="hrl-Qi-PhZ" id="ZZA-fg-3Wm"/>
-                        <outlet property="sMCrowds" destination="bpI-Li-IuJ" id="gX1-qo-xuz"/>
-                        <outlet property="sYButton" destination="Pbq-1r-dSI" id="5fZ-6P-qXp"/>
-                        <outlet property="sYCrowds" destination="xVq-Er-jlP" id="pJs-gT-HxG"/>
                         <outlet property="sample" destination="X8O-HW-Of0" id="WeW-FY-fCl"/>
                         <outlet property="seafood" destination="eIe-Ov-7oX" id="QQi-lK-BG1"/>
                         <outlet property="seafoodView" destination="uyw-Ce-Dqu" id="x1b-Kl-Rd6"/>
@@ -816,10 +815,6 @@
                         <outlet property="switchSoy" destination="kJN-Zp-0hp" id="H7w-bA-BcU"/>
                         <outlet property="switchVegan" destination="e9M-e3-leM" id="qea-7n-eA3"/>
                         <outlet property="switchVegetarian" destination="4DG-Yn-FPF" id="eMZ-pi-kmL"/>
-                        <outlet property="tCButton" destination="6Zk-TQ-ndJ" id="j54-Pb-qGj"/>
-                        <outlet property="tCCrowds" destination="U2Y-aE-Vo2" id="n9T-f9-tIY"/>
-                        <outlet property="tDButton" destination="hbU-xG-uDf" id="uS3-dV-tgb"/>
-                        <outlet property="tDCrowds" destination="KyB-ko-ef0" id="yYT-34-4yt"/>
                         <outlet property="tableView" destination="EnK-do-8AK" id="cxe-1n-eKX"/>
                         <outlet property="title1" destination="qf0-Cq-dK9" id="a1A-x8-ZEw"/>
                         <outlet property="title2" destination="ZAH-bC-l8k" id="ipt-Bi-Jae"/>
@@ -839,20 +834,20 @@
         <image name="BF.png" width="594" height="735"/>
         <image name="BK.png" width="402" height="499"/>
         <image name="BR.png" width="402" height="500"/>
-        <image name="GH.png" width="700" height="869"/>
-        <image name="DC.png" width="800" height="982"/>
+        <image name="DC.png" width="144" height="176.75999450683594"/>
         <image name="ES.png" width="402" height="498"/>
+        <image name="GH.png" width="700" height="869"/>
+        <image name="Gear.png" width="1000" height="997"/>
+        <image name="Home.png" width="205" height="205"/>
         <image name="JE.png" width="402" height="498"/>
         <image name="MC.png" width="402" height="498"/>
         <image name="PC.png" width="284" height="351"/>
-        <image name="PM.png" width="334" height="414"/>
+        <image name="MY.png" width="334" height="414"/>
+        <image name="Reload.png" width="512" height="512"/>
         <image name="SM.png" width="402" height="499"/>
         <image name="SY.png" width="402" height="499"/>
         <image name="TC.png" width="284" height="351"/>
         <image name="TD.png" width="402" height="498"/>
-        <image name="Gear.png" width="1000" height="997"/>
-        <image name="Home.png" width="205" height="205"/>
-        <image name="Reload.png" width="512" height="512"/>
-        <image name="White.png" width="375" height="647"/>
+        <image name="White.png" width="187.5" height="323.5"/>
     </resources>
 </document>

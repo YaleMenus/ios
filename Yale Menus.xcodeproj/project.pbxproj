@@ -29,7 +29,6 @@
 		712F58AA2016FA9F0063816E /* Thumbs Up Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 712F58A82016FA9F0063816E /* Thumbs Up Blue.png */; };
 		712F58AC2016FC6A0063816E /* Thumbs Down.png in Resources */ = {isa = PBXBuildFile; fileRef = 712F58AB2016FC6A0063816E /* Thumbs Down.png */; };
 		712F58AE2016FD0B0063816E /* Thumbs Down Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 712F58AD2016FD0A0063816E /* Thumbs Down Blue.png */; };
-		713358701FA91D7100AC0164 /* Simulated Morse Problem Data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7133586F1FA91D7000AC0164 /* Simulated Morse Problem Data.txt */; };
 		7143D4161F451878009B26CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4151F451878009B26CB /* GoogleService-Info.plist */; };
 		7143D4261F455797009B26CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4151F451878009B26CB /* GoogleService-Info.plist */; };
 		7143D4271F455797009B26CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4151F451878009B26CB /* GoogleService-Info.plist */; };
@@ -43,7 +42,6 @@
 		7143D4391F45A464009B26CB /* Burgers.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D42F1F45A464009B26CB /* Burgers.png */; };
 		7143D43A1F45A464009B26CB /* The Vegetables.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4301F45A464009B26CB /* The Vegetables.png */; };
 		7143D43B1F45A464009B26CB /* The Soup.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4311F45A464009B26CB /* The Soup.png */; };
-		7143D4AC1F46516E009B26CB /* Dining Data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4AB1F46516E009B26CB /* Dining Data.txt */; };
 		7143D4B41F469290009B26CB /* BreakfastMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4AF1F469290009B26CB /* BreakfastMenu.png */; };
 		7143D4B51F469290009B26CB /* BrunchMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4B01F469290009B26CB /* BrunchMenu.png */; };
 		7143D4B61F469290009B26CB /* DinnerMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7143D4B11F469290009B26CB /* DinnerMenu.png */; };
@@ -80,7 +78,6 @@
 		71961A271E3BFF160060766D /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71961A261E3BFF160060766D /* Menu.xib */; };
 		71961A381E3BFF2B0060766D /* BK.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A291E3BFF2B0060766D /* BK.png */; };
 		71961A391E3BFF2B0060766D /* BR.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A2A1E3BFF2B0060766D /* BR.png */; };
-		71961A3A1E3BFF2B0060766D /* CC.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A2B1E3BFF2B0060766D /* CC.png */; };
 		71961A3C1E3BFF2B0060766D /* ES.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A2D1E3BFF2B0060766D /* ES.png */; };
 		71961A3D1E3BFF2B0060766D /* HGS.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A2E1E3BFF2B0060766D /* HGS.png */; };
 		71961A3E1E3BFF2B0060766D /* JE.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A2F1E3BFF2B0060766D /* JE.png */; };
@@ -124,6 +121,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0393AEBF2321CD8100995213 /* GH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GH.png; path = "/Users/erik/src/YaleMenus/Yale Menus/GH.png"; sourceTree = "<absolute>"; };
 		1833A097405D3BCD8767EC5A /* Pods-Yale MenusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale MenusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yale MenusTests/Pods-Yale MenusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3313F0C025E0537F6639EB12 /* Pods-Yale Menus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale Menus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yale Menus/Pods-Yale Menus.release.xcconfig"; sourceTree = "<group>"; };
 		35E41EBC7DB5B12B17CCEB6F /* Pods-Yale Menus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale Menus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yale Menus/Pods-Yale Menus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 		712F58A82016FA9F0063816E /* Thumbs Up Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumbs Up Blue.png"; sourceTree = "<group>"; };
 		712F58AB2016FC6A0063816E /* Thumbs Down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumbs Down.png"; sourceTree = "<group>"; };
 		712F58AD2016FD0A0063816E /* Thumbs Down Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumbs Down Blue.png"; sourceTree = "<group>"; };
-		7133586F1FA91D7000AC0164 /* Simulated Morse Problem Data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Simulated Morse Problem Data.txt"; sourceTree = "<group>"; };
 		7143D4151F451878009B26CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7143D4281F45A463009B26CB /* Accompaniments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Accompaniments.png; sourceTree = "<group>"; };
 		7143D4291F45A463009B26CB /* Cereals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cereals.png; sourceTree = "<group>"; };
@@ -160,7 +157,6 @@
 		7143D42F1F45A464009B26CB /* Burgers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Burgers.png; sourceTree = "<group>"; };
 		7143D4301F45A464009B26CB /* The Vegetables.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Vegetables.png"; sourceTree = "<group>"; };
 		7143D4311F45A464009B26CB /* The Soup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Soup.png"; sourceTree = "<group>"; };
-		7143D4AB1F46516E009B26CB /* Dining Data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dining Data.txt"; sourceTree = "<group>"; };
 		7143D4AF1F469290009B26CB /* BreakfastMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BreakfastMenu.png; sourceTree = "<group>"; };
 		7143D4B01F469290009B26CB /* BrunchMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrunchMenu.png; sourceTree = "<group>"; };
 		7143D4B11F469290009B26CB /* DinnerMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DinnerMenu.png; sourceTree = "<group>"; };
@@ -205,7 +201,6 @@
 		71961A261E3BFF160060766D /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 		71961A291E3BFF2B0060766D /* BK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BK.png; sourceTree = "<group>"; };
 		71961A2A1E3BFF2B0060766D /* BR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BR.png; sourceTree = "<group>"; };
-		71961A2B1E3BFF2B0060766D /* CC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CC.png; sourceTree = "<group>"; };
 		71961A2D1E3BFF2B0060766D /* ES.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ES.png; sourceTree = "<group>"; };
 		71961A2E1E3BFF2B0060766D /* HGS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HGS.png; sourceTree = "<group>"; };
 		71961A2F1E3BFF2B0060766D /* JE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JE.png; sourceTree = "<group>"; };
@@ -322,7 +317,6 @@
 				712F58A82016FA9F0063816E /* Thumbs Up Blue.png */,
 				712F58A72016FA9E0063816E /* Thumbs Up.png */,
 				712F58AB2016FC6A0063816E /* Thumbs Down.png */,
-				7133586F1FA91D7000AC0164 /* Simulated Morse Problem Data.txt */,
 				712DC6581F5E11860003FAFB /* New Features.jpg */,
 				712DC6561F5DFFD40003FAFB /* Allergies.jpg */,
 				712DC6541F5CE3620003FAFB /* Greek Yogurt Bar with Housemade Granola.png */,
@@ -342,7 +336,6 @@
 				7143D4B11F469290009B26CB /* DinnerMenu.png */,
 				7143D4B21F469290009B26CB /* HotBreakfastMenu.png */,
 				7143D4B31F469290009B26CB /* LunchMenu.png */,
-				7143D4AB1F46516E009B26CB /* Dining Data.txt */,
 				7143D4281F45A463009B26CB /* Accompaniments.png */,
 				7143D4291F45A463009B26CB /* Cereals.png */,
 				7143D42A1F45A463009B26CB /* Desserts.png */,
@@ -385,7 +378,7 @@
 				71961A741E3C5D990060766D /* BF.png */,
 				71961A291E3BFF2B0060766D /* BK.png */,
 				71961A2A1E3BFF2B0060766D /* BR.png */,
-				71961A2B1E3BFF2B0060766D /* CC.png */,
+				0393AEBF2321CD8100995213 /* GH.png */,
 				71961A701E3C5D780060766D /* DC.png */,
 				71961A2D1E3BFF2B0060766D /* ES.png */,
 				71961A2E1E3BFF2B0060766D /* HGS.png */,
@@ -560,8 +553,6 @@
 				7143D4BA1F46B08D009B26CB /* Reload.png in Resources */,
 				712DC5C01F4F511B0003FAFB /* Refresh.jpg in Resources */,
 				71961AD61E3D7A260060766D /* Back.png in Resources */,
-				7143D4AC1F46516E009B26CB /* Dining Data.txt in Resources */,
-				713358701FA91D7100AC0164 /* Simulated Morse Problem Data.txt in Resources */,
 				71961A751E3C5D990060766D /* BF.png in Resources */,
 				714C8DF41E43B76000638BD3 /* 5.png in Resources */,
 				71961A3E1E3BFF2B0060766D /* JE.png in Resources */,
@@ -626,7 +617,6 @@
 				7143D4C81F46EA53009B26CB /* Icon-Small-40@3x.png in Resources */,
 				714C8DF61E43B76000638BD3 /* 7.png in Resources */,
 				71961A731E3C5D880060766D /* PM.png in Resources */,
-				71961A3A1E3BFF2B0060766D /* CC.png in Resources */,
 				7143D4C61F46EA53009B26CB /* Icon-Small-40.png in Resources */,
 				7143D4351F45A464009B26CB /* Entrees.png in Resources */,
 				71961A391E3BFF2B0060766D /* BR.png in Resources */,

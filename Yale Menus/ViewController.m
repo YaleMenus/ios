@@ -14,7 +14,7 @@
 @synthesize bFCrowds;
 @synthesize mCCrowds;
 @synthesize jECrowds;
-@synthesize pMCrowds;
+@synthesize mYCrowds;
 @synthesize pCCrowds;
 @synthesize sYCrowds;
 @synthesize sMCrowds;
@@ -501,7 +501,7 @@
     
     gHButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [gHButton setFrame:CGRectMake(160, 185, 55, 61)];
-    [gHButton setImage:[UIImage imageNamed:@"CC.png"] forState:UIControlStateNormal];
+    [gHButton setImage:[UIImage imageNamed:@"GH.png"] forState:UIControlStateNormal];
     [self.view addSubview:gHButton];
     
     dCButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -524,10 +524,10 @@
     [jEButton setImage:[UIImage imageNamed:@"JE.png"] forState:UIControlStateNormal];
     [self.view addSubview:jEButton];
     
-    pMButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [pMButton setFrame:CGRectMake(160, 306, 55, 61)];
-    [pMButton setImage:[UIImage imageNamed:@"PM.png"] forState:UIControlStateNormal];
-    [self.view addSubview:pMButton];
+    mYButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [mYButton setFrame:CGRectMake(160, 306, 55, 61)];
+    [mYButton setImage:[UIImage imageNamed:@"MY.png"] forState:UIControlStateNormal];
+    [self.view addSubview:mYButton];
     
     pCButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [pCButton setFrame:CGRectMake(284, 306, 55, 61)];
@@ -566,7 +566,7 @@
     [bFButton addTarget: self action:@selector(bFGo:) forControlEvents:UIControlEventTouchUpInside];
     [mCButton addTarget: self action:@selector(mCGo:) forControlEvents:UIControlEventTouchUpInside];
     [jEButton addTarget: self action:@selector(jEGo:) forControlEvents:UIControlEventTouchUpInside];
-    [pMButton addTarget: self action:@selector(pMGo:) forControlEvents:UIControlEventTouchUpInside];
+    [mYButton addTarget: self action:@selector(mYGo:) forControlEvents:UIControlEventTouchUpInside];
     [pCButton addTarget: self action:@selector(pCGo:) forControlEvents:UIControlEventTouchUpInside];
     [sYButton addTarget: self action:@selector(sYGo:) forControlEvents:UIControlEventTouchUpInside];
     [sMButton addTarget: self action:@selector(sMGo:) forControlEvents:UIControlEventTouchUpInside];
@@ -701,7 +701,7 @@
     bFButton.hidden = TRUE;
     mCButton.hidden = TRUE;
     jEButton.hidden = TRUE;
-    pMButton.hidden = TRUE;
+    mYButton.hidden = TRUE;
     pCButton.hidden = TRUE;
     sYButton.hidden = TRUE;
     sMButton.hidden = TRUE;
@@ -725,10 +725,10 @@
     if ([diningHall isEqualToString:@"BR"]) dhall = @"Branford";
     if ([diningHall isEqualToString:@"DC"]) dhall = @"Davenport";
     if ([diningHall isEqualToString:@"BF"]) dhall = @"Franklin";
-    if ([diningHall isEqualToString:@"CC"]) dhall = @"Hopper";
+    if ([diningHall isEqualToString:@"GH"]) dhall = @"Hopper";
     if ([diningHall isEqualToString:@"MC"]) dhall = @"Morse";
     if ([diningHall isEqualToString:@"JE"]) dhall = @"J.E.";
-    if ([diningHall isEqualToString:@"PM"]) dhall = @"Murray";
+    if ([diningHall isEqualToString:@"MY"]) dhall = @"Murray";
     if ([diningHall isEqualToString:@"PC"]) dhall = @"Pierson";
     if ([diningHall isEqualToString:@"SY"]) dhall = @"Saybrook";
     if ([diningHall isEqualToString:@"SM"]) dhall = @"Silliman";
@@ -1026,8 +1026,8 @@
 }
 
 - (IBAction)gHGo:(id)sender {
-    diningHall = @"CC";
-    [FIRAnalytics logEventWithName:@"TapCC" parameters:@{}];
+    diningHall = @"GH";
+    [FIRAnalytics logEventWithName:@"TapGH" parameters:@{}];
     
     [self getMealTimes];
     [self menuScreenSetup];
@@ -1066,9 +1066,9 @@
     [self menuScreenSetup];
 }
 
-- (IBAction)pMGo:(id)sender {
-    diningHall = @"PM";
-    [FIRAnalytics logEventWithName:@"TapPM" parameters:@{}];
+- (IBAction)mYGo:(id)sender {
+    diningHall = @"MY";
+    [FIRAnalytics logEventWithName:@"TapMY" parameters:@{}];
     
     [self getMealTimes];
     [self menuScreenSetup];
@@ -1158,7 +1158,7 @@
     bFButton.hidden = FALSE;
     mCButton.hidden = FALSE;
     jEButton.hidden = FALSE;
-    pMButton.hidden = FALSE;
+    mYButton.hidden = FALSE;
     pCButton.hidden = FALSE;
     sYButton.hidden = FALSE;
     sMButton.hidden = FALSE;
@@ -1244,7 +1244,7 @@
         NSArray* gHTwo = [gHCrowd componentsSeparatedByString:@","];
         NSString* gHNumber = [gHTwo objectAtIndex:1];
         analyticsCrowd = [formatCrowdNumbers numberFromString:gHNumber];
-        [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"CC", @"Crowdedness":analyticsCrowd}];
+        [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"GH", @"Crowdedness":analyticsCrowd}];
         if ([[gHTwo objectAtIndex:4] isEqualToString:@"1"]) gHNumber = @"0";
         
         NSArray* dCCrowding = [html2 componentsSeparatedByString: @"Davenport\",\"Residential"];
@@ -1327,13 +1327,13 @@
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"BF", @"Crowdedness":analyticsCrowd}];
         if ([[bFTwo objectAtIndex:4] isEqualToString:@"1"]) bFNumber = @"0";
         
-        NSArray* pMCrowding = [html2 componentsSeparatedByString: @"Murray\",\"Residential"];
-        NSString* pMCrowd = [pMCrowding objectAtIndex:1];
-        NSArray* pMTwo = [pMCrowd componentsSeparatedByString:@","];
-        NSString* pMNumber = [pMTwo objectAtIndex:1];
-        analyticsCrowd = [formatCrowdNumbers numberFromString:pMNumber];
-        [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"PM", @"Crowdedness":analyticsCrowd}];
-        if ([[pMTwo objectAtIndex:4] isEqualToString:@"1"]) pMNumber = @"0";
+        NSArray* mYCrowding = [html2 componentsSeparatedByString: @"Murray\",\"Residential"];
+        NSString* mYCrowd = [mYCrowding objectAtIndex:1];
+        NSArray* mYTwo = [mYCrowd componentsSeparatedByString:@","];
+        NSString* mYNumber = [mYTwo objectAtIndex:1];
+        analyticsCrowd = [formatCrowdNumbers numberFromString:mYNumber];
+        [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"MY", @"Crowdedness":analyticsCrowd}];
+        if ([[mYTwo objectAtIndex:4] isEqualToString:@"1"]) mYNumber = @"0";
         
         if (showSample) {
             // Test code simulates crowding
@@ -1350,7 +1350,7 @@
             tCNumber = @"7";
             eSNumber = @"9";
             bFNumber = @"5";
-            pMNumber = @"3";
+            mYNumber = @"3";
         }
         
         NSString* bKImageString = [NSString stringWithFormat:@"%@.png",bKNumber];
@@ -1366,7 +1366,7 @@
         NSString* sYImageString = [NSString stringWithFormat:@"%@.png",sYNumber];
         NSString* eSImageString = [NSString stringWithFormat:@"%@.png",eSNumber];
         NSString* bFImageString = [NSString stringWithFormat:@"%@.png",bFNumber];
-        NSString* pMImageString = [NSString stringWithFormat:@"%@.png",pMNumber];
+        NSString* mYImageString = [NSString stringWithFormat:@"%@.png",mYNumber];
         
         bKCrowds.image = [UIImage imageNamed: bKImageString];
         bRCrowds.image = [UIImage imageNamed: bRImageString];
@@ -1375,7 +1375,7 @@
         bFCrowds.image = [UIImage imageNamed: bFImageString];
         mCCrowds.image = [UIImage imageNamed: mCImageString];
         jECrowds.image = [UIImage imageNamed: jEImageString];
-        pMCrowds.image = [UIImage imageNamed: pMImageString];
+        mYCrowds.image = [UIImage imageNamed: mYImageString];
         pCCrowds.image = [UIImage imageNamed: pCImageString];
         sYCrowds.image = [UIImage imageNamed: sYImageString];
         sMCrowds.image = [UIImage imageNamed: sMImageString];
@@ -1538,7 +1538,7 @@
     brunchTomorrow = FALSE;
     dinnerTomorrow = FALSE;
     
-    NSArray *diningHalls = @[@"nil",@"BK",@"BR",@"CC",@"DC",@"MC",@"JE",@"PC",@"SM",@"TD",@"TC",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"BF",@"PM"];
+    NSArray *diningHalls = @[@"nil",@"BK",@"BR",@"GH",@"DC",@"MC",@"JE",@"PC",@"SM",@"TD",@"TC",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"nil",@"BF",@"MY"];
     
     int i = 1;
     // diningHall is a global variable that was set when a homepage button was tapped
@@ -1626,7 +1626,7 @@
         
         if ((isToday && mealToday) || ((!isToday) && mealTomorrow)) hasLunch = TRUE;
         if ((isToday && (!mealToday)) || ((!isToday) && (!mealTomorrow))) hasLunch = FALSE;
-        if (mealToday + mealTomorrow == 2) lunchSwitchpoint = switchpoint;
+        if (mealToday && mealTomorrow) lunchSwitchpoint = switchpoint;
     }
     
     if ([html containsString:@"Brunch"]) {
@@ -1639,7 +1639,7 @@
         
         if ((isToday && mealToday) || ((!isToday) && mealTomorrow)) hasBrunch = TRUE;
         if ((isToday && (!mealToday)) || ((!isToday) && (!mealTomorrow))) hasBrunch = FALSE;
-        if (mealToday + mealTomorrow == 2) brunchSwitchpoint = switchpoint;
+        if (mealToday && mealTomorrow) brunchSwitchpoint = switchpoint;
     }
     
     if ([html containsString:@"Dinner"]) {
@@ -1652,7 +1652,7 @@
         
         if ((isToday && mealToday) || ((!isToday) && mealTomorrow)) hasDinner = TRUE;
         if ((isToday && (!mealToday)) || ((!isToday) && (!mealTomorrow))) hasDinner = FALSE;
-        if (mealToday + mealTomorrow == 2) dinnerSwitchpoint = switchpoint;
+        if (mealToday && mealTomorrow) dinnerSwitchpoint = switchpoint;
     }
     
     // Whether there are any meals at all on the day you're checking
@@ -1699,7 +1699,7 @@
         }
     }
     
-    if (mealTod + mealTom == 2) {
+    if (mealTod && mealTom) {
         NSArray* mealObjects = [html componentsSeparatedByString:meal];
         int totalEntrees = (int) mealObjects.count - 1;
         
@@ -2193,37 +2193,15 @@
     
     // 1 means dislike; 2 means like
     // If the user reexpresses the same preference, nothing happens wrt NSUserDefaults or analytics
-    
-    if (currentPref == 1 && !left) { //before you disliked it; now you like it
-        [defaults setInteger:2 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@2, @"Rating_Type_0firsttime_1changed_2erased":@1, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-    }
-    
-    if (currentPref == 2 && left) { //before you liked it; now you dislike it
-        [defaults setInteger:1 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@1, @"Rating_Type_0firsttime_1changed_2erased":@1, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-    }
-    
-    if (currentPref == 0 && !left) { //new like
-        [defaults setInteger:2 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@2, @"Rating_Type_0firsttime_1changed_2erased":@0, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-    }
-    
-    if (currentPref == 0 && left) { //new dislike
-        [defaults setInteger:1 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@1, @"Rating_Type_0firsttime_1changed_2erased":@0, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-    }
-    
-    if (currentPref == 1 && left) { //erase your dislike
-        [defaults setInteger:0 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@1, @"Rating_Type_0firsttime_1changed_2erased":@2, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-        blueImageString = @"";
-    }
-    
-    if (currentPref == 2 && !left) { //erase your like
-        [defaults setInteger:0 forKey:[menuIDList objectAtIndex:indexPath.row]];
-        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":@2, @"Rating_Type_0firsttime_1changed_2erased":@2, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
-        blueImageString = @"";
+    int newPref = left ? 1 : 2;
+    NSNumber *newPrefType = left ? @1 : @2;
+    NSNumber *currentPrefType = [NSNumber numberWithInt:currentPref];
+    if (newPref != currentPref) { // this preference is different from what was previously set
+        [defaults setInteger:newPref forKey:[menuIDList objectAtIndex:indexPath.row]];
+        [FIRAnalytics logEventWithName:@"Swipe" parameters:@{@"Menu_Item":[entreeList objectAtIndex:indexPath.row], @"Item_ID":[menuIDList objectAtIndex:indexPath.row], @"Direction_1dislike_2like":newPrefType, @"Rating_Type_0firsttime_1changed_2erased":currentPrefType, @"Dining_Hall":diningHall, @"Meal_0breakfast_1lunch_2brunch_3dinner":analyticsMeal}];
+        if ((currentPref == 1 && left) || (currentPref == 2 && !left)) {
+            blueImageString = @"";
+        }
     }
     
     [defaults synchronize];
