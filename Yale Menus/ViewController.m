@@ -22,7 +22,7 @@
 @synthesize tDCrowds;
 @synthesize tCCrowds;
 
--(void) check {
+- (void) check {
     
     NSString *url = @"http://sites.google.com/view/yalemenus/";
     NSURL *urlRequest = [NSURL URLWithString:url];
@@ -36,7 +36,7 @@
     }
     
     if ([kill containsString:@"Yale Menus 1"]) {
-
+        
         [FIRAnalytics logEventWithName:@"Kill1" parameters:@{}];
         [self killMessage:@"\nThis app relies on data from Yale Dining to display up-to-date information, but the datasource from Yale Dining has changed, and this version of the app isn't able to read it. We're working on a fix, and will push it out to the App Store as soon as we can. In the meantime, you can try the official Yale Dining app. We apologize for the inconvenience." withTitle:@"Data Changed"];
         
@@ -114,13 +114,13 @@
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                                  
                              }];
-
+        
         
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
         [defaults setInteger:1 forKey:@"Showed Swipe Reminder"];
         
-
+        
     }
     
     if([kill containsString:@"Allergy"] && !showedAllergyReminder) {
@@ -170,7 +170,7 @@
     [alert addAction:ok];
     
     [self presentViewController:alert animated:YES completion:nil];
-
+    
 }
 
 -(void)whiteOut {
@@ -199,7 +199,7 @@
     [super viewDidAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnToApp) name:UIApplicationWillEnterForegroundNotification object:[UIApplication sharedApplication]];
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger tutorialDefaults = [defaults integerForKey:@"Tutorial"];
     NSInteger newTutorialDefaults = [defaults integerForKey:@"2.2FeaturesTutorialShown"];
@@ -212,7 +212,7 @@
     //this way, internet connectivity warnings don't interrupt the tutorial
     
     [self check];
-
+    
 }
 
 
@@ -238,7 +238,7 @@
     alcohol.hidden = !(showAllergies);
     shellfish.hidden = !(showAllergies);
     seafood.hidden = !(showAllergies);
-
+    
     peanutView.hidden = !(showAllergies);
     vegetarianView.hidden = !(showAllergies);
     veganView.hidden = !(showAllergies);
@@ -285,7 +285,7 @@
     [self.view addSubview:alcoholView];
     [self.view addSubview:shellfishView];
     [self.view addSubview:seafoodView];
-
+    
     [self.view addSubview:disclaimer];
     
     [self.view addSubview:homeFromAllergies];
@@ -302,11 +302,11 @@
     menuDiningHall.hidden = showAllergies;
     tableView.hidden = showAllergies;
     menuDate.hidden = showAllergies;
-
+    
 }
 
 - (void)viewDidLoad {
-        
+    
     [super viewDidLoad];
     
     // Do any additional setup after loading the view, typically from a nib.
@@ -367,7 +367,7 @@
     [daySegments addTarget:self action:@selector(changeDay) forControlEvents:UIControlEventValueChanged]; //listen for changes to segmented control and call changeDay when the segmented control changes selected segment
     [mealSegments setTitleTextAttributes:attributes forState:UIControlStateNormal];
     [mealSegments addTarget:self action:@selector(changeMeal) forControlEvents:UIControlEventValueChanged];
-
+    
     [switchPeanut addTarget:self action:@selector(changeAllergy:) forControlEvents:UIControlEventValueChanged];
     [switchVegetarian addTarget:self action:@selector(changeAllergy:) forControlEvents:UIControlEventValueChanged];
     [switchVegan addTarget:self action:@selector(changeAllergy:) forControlEvents:UIControlEventValueChanged];
@@ -447,13 +447,13 @@
                              
                          }];
     UIAlertAction* cancel = [UIAlertAction
-                               actionWithTitle:@"Cancel"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action)
-                               {
-                                   [self hideAllergiesScreen:nil];
-                                   
-                               }];
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [self hideAllergiesScreen:nil];
+                                 
+                             }];
     
     [alert addAction:ok];
     [alert addAction:cancel];
@@ -506,7 +506,7 @@
     [self downloadCrowds];
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(showRefresh) userInfo:nil repeats:NO];
     //downloading crowds happens very quickly, hence the need to show the indicator for at least 0.5 seconds
-
+    
     
 }
 
@@ -521,7 +521,7 @@
     //Recreated these buttons in IB, so this method is no longer necessary
     //Calls to this method have been removed, but it is being retained for archival purposes
     //(The only existing call was at the beginning of viewDidLoad)
-
+    
     bKButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [bKButton setFrame:CGRectMake(37, 64, 55, 61)];
     [bKButton setImage:[UIImage imageNamed:@"BK.png"] forState:UIControlStateNormal];
@@ -614,7 +614,7 @@
 - (IBAction)info:(id)sender {
     
     [FIRAnalytics logEventWithName:@"Info_Button" parameters:@{}];
-
+    
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Information and License"
                                   message:@"\nThanks for choosing Yale Menus! Yale Menus was created by Yalies who wanted a more user-friendly way to track menu items, allergens, and crowding in Yale’s dining halls.\n\nTo review the tutorial you saw when you first opened the app, tap \"View Tutorial.\"\n\n\"Yale\" and \"Yale University\" are registered trademarks of Yale University. This application is maintained, hosted, and operated independently of Yale University. The statements and information contained in this application are not reviewed, approved or endorsed by Yale.\n\nThis app was built by Eric Foster (Yale GH '20), with help from Jacob Malinowski (Yale GH '20) and David Foster (Yale GH '23)."
@@ -629,13 +629,13 @@
                              
                          }];
     UIAlertAction* tutorial = [UIAlertAction
-                         actionWithTitle:@"View Tutorial"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [self tutorialFromInfo];
-                             
-                         }];
+                               actionWithTitle:@"View Tutorial"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action)
+                               {
+                                   [self tutorialFromInfo];
+                                   
+                               }];
     
     [alert addAction:ok];
     [alert addAction:tutorial];
@@ -659,7 +659,7 @@
     breakfastButton.hidden = TRUE;
     [breakfastButton setFrame:CGRectMake(0, 79, 375, 150)];
     [self.view addSubview:breakfastButton];
-
+    
     
     lbl1 = [[UILabel alloc] init];
     lbl1.hidden = TRUE;
@@ -669,13 +669,13 @@
     lbl1.userInteractionEnabled=YES;
     lbl1.font = [UIFont fontWithName:@"Optima" size:24];
     [self.view addSubview:lbl1];
-
+    
     
     lunchButton = [UIButton buttonWithType:UIButtonTypeCustom];
     lunchButton.hidden = TRUE;
     [lunchButton setFrame:CGRectMake(0, 275, 375, 150)];
     [self.view addSubview:lunchButton];
-
+    
     lbl2 = [[UILabel alloc] init];
     lbl2.hidden = TRUE;
     [lbl2 setFrame:CGRectMake(115,385,146,29)];
@@ -693,7 +693,7 @@
     lbl2.userInteractionEnabled=YES;
     lbl2.font = [UIFont fontWithName:@"Optima" size:24];
     [self.view addSubview:lbl2];
-
+    
     dinnerButton = [UIButton buttonWithType:UIButtonTypeCustom];
     dinnerButton.hidden = TRUE;
     [dinnerButton setFrame:CGRectMake(0, 471, 375, 150)];
@@ -712,7 +712,7 @@
     [breakfastButton addTarget: self action:@selector(breakfast) forControlEvents:UIControlEventTouchUpInside];
     [lunchButton addTarget: self action:@selector(lunch) forControlEvents:UIControlEventTouchUpInside];
     [dinnerButton addTarget: self action:@selector(dinner) forControlEvents:UIControlEventTouchUpInside];
-
+    
     
 }
 
@@ -853,7 +853,7 @@
             
         }
     }
-
+    
     
     if (!hasAnyMeals) {
         
@@ -961,14 +961,14 @@
         int index = (int) [mealSegments numberOfSegments];
         
         [mealSegments insertSegmentWithTitle:@"Breakfast" atIndex:index animated:FALSE];
-    
-        /*breakfastButton.hidden = FALSE;
-        breakfastButton.enabled = YES;
-        breakfastButton.userInteractionEnabled = YES;
-        [breakfastButton setImage:[UIImage imageNamed:@"Breakfast.png"] forState:UIControlStateNormal];
-        [self.view addSubview:breakfastButton];
         
-        lbl1.hidden = FALSE;*/
+        /*breakfastButton.hidden = FALSE;
+         breakfastButton.enabled = YES;
+         breakfastButton.userInteractionEnabled = YES;
+         [breakfastButton setImage:[UIImage imageNamed:@"Breakfast.png"] forState:UIControlStateNormal];
+         [self.view addSubview:breakfastButton];
+         
+         lbl1.hidden = FALSE;*/
         
         if ((hotToday && isToday) || (hotTomorrow && !isToday)) {
             
@@ -982,21 +982,21 @@
         }
         
         //[self.view addSubview:lbl1];
-
+        
     }
     
-
-    if (hasLunch) {
     
+    if (hasLunch) {
+        
         /*lunchButton.hidden = FALSE;
-        lunchButton.enabled = YES;
-        lunchButton.userInteractionEnabled = YES;
-        [lunchButton setImage:[UIImage imageNamed:@"Lunch.png"] forState:UIControlStateNormal];
-        [self.view addSubview:lunchButton];
-
-        lbl2.hidden = FALSE;
-        lbl2.text = lunchTime;
-        [self.view addSubview:lbl2];*/
+         lunchButton.enabled = YES;
+         lunchButton.userInteractionEnabled = YES;
+         [lunchButton setImage:[UIImage imageNamed:@"Lunch.png"] forState:UIControlStateNormal];
+         [self.view addSubview:lunchButton];
+         
+         lbl2.hidden = FALSE;
+         lbl2.text = lunchTime;
+         [self.view addSubview:lbl2];*/
         
         int index = (int) [mealSegments numberOfSegments];
         [mealSegments insertSegmentWithTitle:@"Lunch" atIndex:index animated:FALSE];
@@ -1008,14 +1008,14 @@
     if (hasBrunch) {
         
         /*lunchButton.hidden = FALSE;
-        lunchButton.enabled = YES;
-        lunchButton.userInteractionEnabled = YES;
-        [lunchButton setImage:[UIImage imageNamed:@"Brunch.png"] forState:UIControlStateNormal];
-        [self.view addSubview:lunchButton];
-        
-        lbl2.hidden = FALSE;
-        lbl2.text = brunchTime;
-        [self.view addSubview:lbl2];*/
+         lunchButton.enabled = YES;
+         lunchButton.userInteractionEnabled = YES;
+         [lunchButton setImage:[UIImage imageNamed:@"Brunch.png"] forState:UIControlStateNormal];
+         [self.view addSubview:lunchButton];
+         
+         lbl2.hidden = FALSE;
+         lbl2.text = brunchTime;
+         [self.view addSubview:lbl2];*/
         
         int index = (int) [mealSegments numberOfSegments];
         [mealSegments insertSegmentWithTitle:@"Brunch" atIndex:index animated:FALSE];
@@ -1024,16 +1024,16 @@
     }
     
     if (hasDinner) {
-    
-        /*dinnerButton.hidden = FALSE;
-        dinnerButton.enabled = YES;
-        dinnerButton.userInteractionEnabled = YES;
-        [dinnerButton setImage:[UIImage imageNamed:@"Dinner"] forState:UIControlStateNormal];
-        [self.view addSubview:dinnerButton];
         
-        lbl3.hidden = FALSE;
-        lbl3.text= dinnerTime;
-        [self.view addSubview:lbl3];*/
+        /*dinnerButton.hidden = FALSE;
+         dinnerButton.enabled = YES;
+         dinnerButton.userInteractionEnabled = YES;
+         [dinnerButton setImage:[UIImage imageNamed:@"Dinner"] forState:UIControlStateNormal];
+         [self.view addSubview:dinnerButton];
+         
+         lbl3.hidden = FALSE;
+         lbl3.text= dinnerTime;
+         [self.view addSubview:lbl3];*/
         
         int index = (int) [mealSegments numberOfSegments];
         [mealSegments insertSegmentWithTitle:@"Dinner" atIndex:index animated:FALSE];
@@ -1049,11 +1049,11 @@
         [self changeMeal];
         
     }
-
-
-
     
-
+    
+    
+    
+    
 }
 
 - (void) changeMeal {
@@ -1108,7 +1108,7 @@
         if([[mealSegments titleForSegmentAtIndex:i] isEqualToString:@"Lunch"]) lunchIndex = i;
         if([[mealSegments titleForSegmentAtIndex:i] isEqualToString:@"Brunch"]) brunchIndex = i;
         if([[mealSegments titleForSegmentAtIndex:i] isEqualToString:@"Dinner"]) dinnerIndex = i;
-
+        
     }
     
     if (secs >= 0 && secs < breakfastEnd) { //it's breakfast time
@@ -1139,48 +1139,48 @@
     }
     
     //above methods will select the right segment on the picker, but now need to actually show that meal's menu
-        
+    
     if (mealSegments.selectedSegmentIndex == breakfastIndex) [self breakfast];
     if (mealSegments.selectedSegmentIndex == lunchIndex) [self lunch];
     if (mealSegments.selectedSegmentIndex == brunchIndex) [self lunch];
     if (mealSegments.selectedSegmentIndex == dinnerIndex) [self dinner];
     
-
+    
 }
 
 //got rid of these methods (makeToday, makeTomorrow, and swapDays) when we replaced the button with the segmented control
 //after confirming the segmented control works with real data (can't confirm with v1.0 since no data), delete these methods for v1.1
 
 /*- (void) makeToday {
-    
-    [FIRAnalytics logEventWithName:@"Make_Today" parameters:@{@"Dining_Hall":diningHall}];
-    
-    isToday = TRUE;
-    
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateNormal];
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateApplication];
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateHighlighted];
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateReserved];
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateSelected];
-    [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateDisabled];
-    
-    
-}
-
-- (void) makeTomorrow {
-    
-    [FIRAnalytics logEventWithName:@"Make_Tomorrow" parameters:@{@"Dining_Hall":diningHall}];
-
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateNormal];
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateApplication];
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateHighlighted];
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateReserved];
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateSelected];
-    [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateDisabled];
-    
-    isToday = FALSE;
-    
-}*/
+ 
+ [FIRAnalytics logEventWithName:@"Make_Today" parameters:@{@"Dining_Hall":diningHall}];
+ 
+ isToday = TRUE;
+ 
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateNormal];
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateApplication];
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateHighlighted];
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateReserved];
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateSelected];
+ [daySelector setTitle: @"Tap to show tomorrow's meals" forState: UIControlStateDisabled];
+ 
+ 
+ }
+ 
+ - (void) makeTomorrow {
+ 
+ [FIRAnalytics logEventWithName:@"Make_Tomorrow" parameters:@{@"Dining_Hall":diningHall}];
+ 
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateNormal];
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateApplication];
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateHighlighted];
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateReserved];
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateSelected];
+ [daySelector setTitle: @"Tap to show today's meals" forState: UIControlStateDisabled];
+ 
+ isToday = FALSE;
+ 
+ }*/
 
 - (void) changeDay {
     
@@ -1204,27 +1204,27 @@
 }
 
 /*- (IBAction)swapDays:(id)sender {
-    
-    [FIRAnalytics logEventWithName:@"Swap_Days" parameters:@{@"Dining_Hall":diningHall}];
-
-    
-    if (isToday) {
-
-        [self makeTomorrow];
-        [self getMealTimes];
-        [self makeMealButtons];
-        
-    }
-    
-    else {
-        
-        [self makeToday];
-        [self getMealTimes];
-        [self makeMealButtons];
-        
-    }
-        
-}*/
+ 
+ [FIRAnalytics logEventWithName:@"Swap_Days" parameters:@{@"Dining_Hall":diningHall}];
+ 
+ 
+ if (isToday) {
+ 
+ [self makeTomorrow];
+ [self getMealTimes];
+ [self makeMealButtons];
+ 
+ }
+ 
+ else {
+ 
+ [self makeToday];
+ [self getMealTimes];
+ [self makeMealButtons];
+ 
+ }
+ 
+ }*/
 
 - (void)hideButton {
     
@@ -1238,7 +1238,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)bRGo:(id)sender {
@@ -1249,7 +1249,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)cCGo:(id)sender {
@@ -1259,7 +1259,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)dCGo:(id)sender {
@@ -1269,7 +1269,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)bFGo:(id)sender {
@@ -1279,7 +1279,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)mCGo:(id)sender {
@@ -1290,7 +1290,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)jEGo:(id)sender {
@@ -1300,7 +1300,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)pMGo:(id)sender {
@@ -1310,7 +1310,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)pCGo:(id)sender {
@@ -1320,7 +1320,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)sYGo:(id)sender {
@@ -1331,7 +1331,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)sMGo:(id)sender {
@@ -1341,7 +1341,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)eSGo:(id)sender {
@@ -1352,7 +1352,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)tDGo:(id)sender {
@@ -1362,7 +1362,7 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 - (IBAction)tCGo:(id)sender {
@@ -1372,27 +1372,27 @@
     
     [self getMealTimes];
     [self menuScreenSetup];
-
+    
 }
 
 
 
 /* THIS WAS TO LET USERS GO BACK TO THE MEAL SELECTOR SCREEN, BUT WE'VE REMOVED THAT SCREEN
  - (IBAction)backToMeals:(id)sender {
-    
-    [FIRAnalytics logEventWithName:@"Back_To_Meals" parameters:@{@"Dining_Hall":diningHall}];
-    
-    backToMealsButton.hidden = TRUE;
-    white.hidden = FALSE;
-    menuDiningHall.hidden = TRUE;
-    menuDiningHall.enabled = NO;
-    menuDiningHall.userInteractionEnabled = NO;
-    menuMeal.hidden = TRUE;
-    tableView.hidden = TRUE;
-    menuDate.hidden = TRUE;
-    [self makeMealButtons];
-    
-}*/
+ 
+ [FIRAnalytics logEventWithName:@"Back_To_Meals" parameters:@{@"Dining_Hall":diningHall}];
+ 
+ backToMealsButton.hidden = TRUE;
+ white.hidden = FALSE;
+ menuDiningHall.hidden = TRUE;
+ menuDiningHall.enabled = NO;
+ menuDiningHall.userInteractionEnabled = NO;
+ menuMeal.hidden = TRUE;
+ tableView.hidden = TRUE;
+ menuDate.hidden = TRUE;
+ [self makeMealButtons];
+ 
+ }*/
 
 - (IBAction)backToHome:(id)sender {
     
@@ -1402,29 +1402,29 @@
     backToHomeButton.hidden = TRUE;
     
     /*breakfastButton.hidden = TRUE;
-    breakfastButton.enabled = NO;
-    breakfastButton.userInteractionEnabled = NO;
-    lunchButton.hidden = TRUE;
-    lunchButton.enabled = NO;
-    lunchButton.userInteractionEnabled = NO;
-    dinnerButton.hidden = TRUE;
-    dinnerButton.enabled = NO;
-    dinnerButton.userInteractionEnabled = NO;
-    lbl1.hidden = TRUE;
-    lbl2.hidden = TRUE;
-    lbl3.hidden = TRUE;*/
+     breakfastButton.enabled = NO;
+     breakfastButton.userInteractionEnabled = NO;
+     lunchButton.hidden = TRUE;
+     lunchButton.enabled = NO;
+     lunchButton.userInteractionEnabled = NO;
+     dinnerButton.hidden = TRUE;
+     dinnerButton.enabled = NO;
+     dinnerButton.userInteractionEnabled = NO;
+     lbl1.hidden = TRUE;
+     lbl2.hidden = TRUE;
+     lbl3.hidden = TRUE;*/
     
     white.hidden = TRUE;
     daySegments.hidden = TRUE;
     mealSegments.hidden = TRUE;
     
     if([daySegments numberOfSegments] == 1) {
-                
+        
         [daySegments removeAllSegments];
         [daySegments setFrame:CGRectMake(daySegments.frame.origin.x, daySegments.frame.origin.y, (daySegments.frame.size.width)*2,daySegments.frame.size.height)];
         [daySegments insertSegmentWithTitle:@"Today's Meals" atIndex:0 animated:FALSE];
         [daySegments insertSegmentWithTitle:@"Tomorrow's Meals" atIndex:1 animated:FALSE];
-
+        
         
     }
     
@@ -1501,7 +1501,7 @@
     {
         
         [FIRAnalytics logEventWithName:@"Network_Error" parameters:@{}];
-
+        
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Unable to download data"
                                       message:@"Please check your network connection and try again."
@@ -1541,7 +1541,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:bRNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"BR", @"Crowdedness":analyticsCrowd}];
         if ([[bRTwo objectAtIndex:4] isEqualToString:@"1"]) bRNumber = @"0";
-
+        
         NSArray* cCCrowding = [html2 componentsSeparatedByString: @"Hopper\",\"Residential"];
         NSString* cCCrowd = [cCCrowding objectAtIndex:1];
         NSArray* cCTwo = [cCCrowd componentsSeparatedByString:@","];
@@ -1549,7 +1549,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:cCNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"CC", @"Crowdedness":analyticsCrowd}];
         if ([[cCTwo objectAtIndex:4] isEqualToString:@"1"]) cCNumber = @"0";
-
+        
         NSArray* dCCrowding = [html2 componentsSeparatedByString: @"Davenport\",\"Residential"];
         NSString* dCCrowd = [dCCrowding objectAtIndex:1];
         NSArray* dCTwo = [dCCrowd componentsSeparatedByString:@","];
@@ -1557,7 +1557,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:dCNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"DC", @"Crowdedness":analyticsCrowd}];
         if ([[dCTwo objectAtIndex:4] isEqualToString:@"1"]) dCNumber = @"0";
-
+        
         NSArray* mCCrowding = [html2 componentsSeparatedByString: @"Morse\",\"Residential"];
         NSString* mCCrowd = [mCCrowding objectAtIndex:1];
         NSArray* mCTwo = [mCCrowd componentsSeparatedByString:@","];
@@ -1565,7 +1565,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:mCNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"MC", @"Crowdedness":analyticsCrowd}];
         if ([[mCTwo objectAtIndex:4] isEqualToString:@"1"]) mCNumber = @"0";
-
+        
         NSArray* jECrowding = [html2 componentsSeparatedByString: @"Jonathan Edwards\",\"Residential"];
         NSString* jECrowd = [jECrowding objectAtIndex:1];
         NSArray* jETwo = [jECrowd componentsSeparatedByString:@","];
@@ -1573,7 +1573,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:jENumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"JE", @"Crowdedness":analyticsCrowd}];
         if ([[jETwo objectAtIndex:4] isEqualToString:@"1"]) jENumber = @"0";
-
+        
         NSArray* pCCrowding = [html2 componentsSeparatedByString: @"Pierson\",\"Residential"];
         NSString* pCCrowd = [pCCrowding objectAtIndex:1];
         NSArray* pCTwo = [pCCrowd componentsSeparatedByString:@","];
@@ -1581,7 +1581,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:pCNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"PC", @"Crowdedness":analyticsCrowd}];
         if ([[pCTwo objectAtIndex:4] isEqualToString:@"1"]) pCNumber = @"0";
-
+        
         NSArray* sMCrowding = [html2 componentsSeparatedByString: @"Silliman\",\"Residential"];
         NSString* sMCrowd = [sMCrowding objectAtIndex:1];
         NSArray* sMTwo = [sMCrowd componentsSeparatedByString:@","];
@@ -1589,7 +1589,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:sMNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"SM", @"Crowdedness":analyticsCrowd}];
         if ([[sMTwo objectAtIndex:4] isEqualToString:@"1"]) sMNumber = @"0";
-
+        
         NSArray* tDCrowding = [html2 componentsSeparatedByString: @"Timothy Dwight\",\"Residential"];
         NSString* tDCrowd = [tDCrowding objectAtIndex:1];
         NSArray* tDTwo = [tDCrowd componentsSeparatedByString:@","];
@@ -1597,7 +1597,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:tDNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"TD", @"Crowdedness":analyticsCrowd}];
         if ([[tDTwo objectAtIndex:4] isEqualToString:@"1"]) tDNumber = @"0";
-
+        
         NSArray* sYCrowding = [html2 componentsSeparatedByString: @"Saybrook\",\"Residential"];
         NSString* sYCrowd = [sYCrowding objectAtIndex:1];
         NSArray* sYTwo = [sYCrowd componentsSeparatedByString:@","];
@@ -1605,7 +1605,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:sYNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"SY", @"Crowdedness":analyticsCrowd}];
         if ([[sYTwo objectAtIndex:4] isEqualToString:@"1"]) sYNumber = @"0";
-
+        
         NSArray* eSCrowding = [html2 componentsSeparatedByString: @"Stiles\",\"Residential"];
         NSString* eSCrowd = [eSCrowding objectAtIndex:1];
         NSArray* eSTwo = [eSCrowd componentsSeparatedByString:@","];
@@ -1613,7 +1613,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:eSNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"ES", @"Crowdedness":analyticsCrowd}];
         if ([[eSTwo objectAtIndex:4] isEqualToString:@"1"]) eSNumber = @"0";
-
+        
         NSArray* tCCrowding = [html2 componentsSeparatedByString: @"Trumbull\",\"Residential"];
         NSString* tCCrowd = [tCCrowding objectAtIndex:1];
         NSArray* tCTwo = [tCCrowd componentsSeparatedByString:@","];
@@ -1621,7 +1621,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:tCNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"TC", @"Crowdedness":analyticsCrowd}];
         if ([[tCTwo objectAtIndex:4] isEqualToString:@"1"]) tCNumber = @"0";
-
+        
         NSArray* bFCrowding = [html2 componentsSeparatedByString: @"Franklin\",\"Residential"];
         NSString* bFCrowd = [bFCrowding objectAtIndex:1];
         NSArray* bFTwo = [bFCrowd componentsSeparatedByString:@","];
@@ -1629,7 +1629,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:bFNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"BF", @"Crowdedness":analyticsCrowd}];
         if ([[bFTwo objectAtIndex:4] isEqualToString:@"1"]) bFNumber = @"0";
-
+        
         NSArray* pMCrowding = [html2 componentsSeparatedByString: @"Murray\",\"Residential"];
         NSString* pMCrowd = [pMCrowding objectAtIndex:1];
         NSArray* pMTwo = [pMCrowd componentsSeparatedByString:@","];
@@ -1637,7 +1637,7 @@
         analyticsCrowd = [formatCrowdNumbers numberFromString:pMNumber];
         [FIRAnalytics logEventWithName:@"Crowding" parameters:@{@"Dining_Hall":@"PM", @"Crowdedness":analyticsCrowd}];
         if ([[pMTwo objectAtIndex:4] isEqualToString:@"1"]) pMNumber = @"0";
-
+        
         if (showSample) {
             //Test code simulates crowding
             bKNumber = @"8";
@@ -1671,7 +1671,7 @@
         NSString* bFImageString = [NSString stringWithFormat:@"%@.png",bFNumber];
         NSString* pMImageString = [NSString stringWithFormat:@"%@.png",pMNumber];
         
-
+        
         bKCrowds.image = [UIImage imageNamed: bKImageString];
         bRCrowds.image = [UIImage imageNamed: bRImageString];
         cCCrowds.image = [UIImage imageNamed: cCImageString];
@@ -1686,11 +1686,11 @@
         eSCrowds.image = [UIImage imageNamed: eSImageString];
         tDCrowds.image = [UIImage imageNamed: tDImageString];
         tCCrowds.image = [UIImage imageNamed: tCImageString];
-    
+        
     }
-        
-        
-
+    
+    
+    
 }
 
 - (NSString*) processMeal : (NSString*) meal withDate : (NSString*) today {
@@ -1780,14 +1780,14 @@
     
     NSString *timePart1 = [opening1 stringByAppendingString:@" – "];
     NSString *time = [timePart1 stringByAppendingString:closing1];
-        
+    
     //This statement runs when you want today's times but there is only a meal tomorrow
     //Or when you want tomorrow's times but there is only a meal today
     //This if statement may not be necessary if the methods receiving the time won't
     //act on it when there is no meal — it might be possible to just leave the wrong time
     
     if (mealToday != isToday) {
-
+        
         time = @"";
         
     }
@@ -1803,7 +1803,7 @@
     
     NSString *time;
     NSString *firstMenuItemString;
-
+    
     
     if (isToday) {
         
@@ -1927,7 +1927,7 @@
     {
         
         [FIRAnalytics logEventWithName:@"Network_Error" parameters:@{}];
-
+        
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"Unable to download data"
                                       message:@"Please check your network connection and try again."
@@ -1949,19 +1949,19 @@
     }
     
     /*COURSES TEST CODE
-    
-    int n = 1;
-    
-    while (n < 37) {
-        
-        NSArray* mealTimes = [html componentsSeparatedByString:@"[5"];
-
-        NSString *veryFirstItem = [NSString stringWithFormat:@"%@",mealTimes[n]];
-        NSArray *firstArray = [veryFirstItem componentsSeparatedByString:@"\""];
-        NSLog(@"An example of %@ is %@", firstArray[7], firstArray[9]);
-        
-        n++;
-    }
+     
+     int n = 1;
+     
+     while (n < 37) {
+     
+     NSArray* mealTimes = [html componentsSeparatedByString:@"[5"];
+     
+     NSString *veryFirstItem = [NSString stringWithFormat:@"%@",mealTimes[n]];
+     NSArray *firstArray = [veryFirstItem componentsSeparatedByString:@"\""];
+     NSLog(@"An example of %@ is %@", firstArray[7], firstArray[9]);
+     
+     n++;
+     }
      
      */
     
@@ -1980,9 +1980,9 @@
         
         if ((isToday && (!mealToday)) || ((!isToday) && (!mealTomorrow))) hasBreakfast = FALSE;
         if (mealToday + mealTomorrow == 2) continentalSwitchpoint = switchpoint;
- 
+        
     }
-
+    
     
     if ([html containsString:@"Hot Breakfast"]) {
         
@@ -1999,7 +1999,7 @@
         
         if ((isToday && (!mealToday && !continentalBreakfastToday)) || ((!isToday) && (!mealTomorrow && !continentalBreakfastTomorrow))) hasBreakfast = FALSE;
         if (mealToday + mealTomorrow == 2) hotSwitchpoint = switchpoint;
-
+        
     }
     
     if ([html containsString:@"Lunch"]) {
@@ -2044,7 +2044,7 @@
         if ((isToday && mealToday) || ((!isToday) && mealTomorrow)) hasDinner = TRUE;
         if ((isToday && (!mealToday)) || ((!isToday) && (!mealTomorrow))) hasDinner = FALSE;
         if (mealToday + mealTomorrow == 2) dinnerSwitchpoint = switchpoint;
-
+        
         
     }
     
@@ -2056,7 +2056,7 @@
 
 
 -(void)mealProcessor : (NSString*)meal withToday : (BOOL)mealTod andTomorrow : (BOOL)mealTom withSwitchpoint : (int)switchpointForMeal {
-        
+    
     NSNumber *analyticsDay; //use this for firebase tracking below
     if (isToday) analyticsDay = @0;
     if (!isToday) analyticsDay = @1;
@@ -2107,7 +2107,7 @@
         entreeList = [NSMutableArray array];
         courseList = [NSMutableArray array];
         menuIDList = [NSMutableArray array];
-
+        
         int start = ((isToday && !datesInverted) || (!isToday && datesInverted)) ? 0 : switchpointForMeal;
         int end = ((isToday && !datesInverted) || (!isToday && datesInverted)) ? switchpointForMeal : totalEntrees;
         
@@ -2163,7 +2163,7 @@
 }
 
 - (void)breakfast {
-        
+    
     if ((isToday && hotToday) || ((!isToday) && hotTomorrow)) [self mealProcessor:@"Hot Breakfast" withToday:hotBreakfastToday andTomorrow:hotBreakfastTomorrow withSwitchpoint:hotSwitchpoint];
     if ((isToday && (!hotToday)) || ((!isToday) && (!hotTomorrow))) [self mealProcessor:@"Contl. Bkfst." withToday:continentalBreakfastToday andTomorrow:continentalBreakfastTomorrow withSwitchpoint:continentalSwitchpoint];
     
@@ -2180,28 +2180,28 @@
 - (void)dinner {
     
     [self mealProcessor:@"Dinner" withToday:dinnerToday andTomorrow:dinnerTomorrow withSwitchpoint:dinnerSwitchpoint];
-
+    
 }
 
 /* ONLY NEEDED WHEN COMING FROM LEGACY MEAL SELECTOR VIEW
  - (void) hideButtonsForMenus {
-    
-    backToHomeButton.hidden = TRUE;
-    breakfastButton.hidden = TRUE;
-    breakfastButton.enabled = NO;
-    breakfastButton.userInteractionEnabled = NO;
-    lunchButton.hidden = TRUE;
-    lunchButton.enabled = NO;
-    lunchButton.userInteractionEnabled = NO;
-    dinnerButton.hidden = TRUE;
-    dinnerButton.enabled = NO;
-    dinnerButton.userInteractionEnabled = NO;
-    lbl1.hidden = TRUE;
-    lbl2.hidden = TRUE;
-    lbl3.hidden = TRUE;
-    segmentedControl.hidden = TRUE;
-
-}*/
+ 
+ backToHomeButton.hidden = TRUE;
+ breakfastButton.hidden = TRUE;
+ breakfastButton.enabled = NO;
+ breakfastButton.userInteractionEnabled = NO;
+ lunchButton.hidden = TRUE;
+ lunchButton.enabled = NO;
+ lunchButton.userInteractionEnabled = NO;
+ dinnerButton.hidden = TRUE;
+ dinnerButton.enabled = NO;
+ dinnerButton.userInteractionEnabled = NO;
+ lbl1.hidden = TRUE;
+ lbl2.hidden = TRUE;
+ lbl3.hidden = TRUE;
+ segmentedControl.hidden = TRUE;
+ 
+ }*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -2288,7 +2288,7 @@
     
     //Checking for allergens makes scrolling choppy, so don't check if no allergens
     if (peanutYesNo == 1 || vegetarianYesNo == 1 || veganYesNo == 1 || dairyYesNo == 1 || glutenYesNo == 1 || eggsYesNo == 1 || soyYesNo == 1 || porkYesNo == 1 || nutsYesNo == 1 || alcoholYesNo == 1 || shellfishYesNo == 1 || seafoodYesNo == 1) {
-    
+        
         NSString *base = @"http://www.yaledining.org/fasttrack/menuitem-codes.cfm?version=3&MenuItemID=";
         NSString *menuID = [menuIDList objectAtIndex:indexPath.row];
         NSString *url = [base stringByAppendingString:menuID];
@@ -2303,7 +2303,7 @@
         NSString *firstEl = allergens[1];
         NSString *firstElTrimmed = [firstEl substringFromIndex:[firstEl length] - 1];
         
-
+        
         
         if ([firstElTrimmed isEqualToString:@"1"] && alcoholYesNo == 1) {
             
@@ -2480,7 +2480,7 @@
     if([firstElTrimmed isEqualToString: @"1"]) allergens = [allergens stringByAppendingString:@"Alcohol, "];
     if([allergensArray[3] isEqualToString: @"1"]) allergens = [allergens stringByAppendingString:@"Shellfish, "];
     if([allergensArray[9] isEqualToString: @"1"]) allergens = [allergens stringByAppendingString:@"Seafood, "];
-
+    
     if ([allergens length] > 14) {
         
         allergens = [allergens substringToIndex:[allergens length] - 2]; //get rid of the last comma and space
@@ -2498,13 +2498,13 @@
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* back = [UIAlertAction
-                         actionWithTitle:@"Back"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                             
-                         }];
+                           actionWithTitle:@"Back"
+                           style:UIAlertActionStyleDefault
+                           handler:^(UIAlertAction * action)
+                           {
+                               [alert dismissViewControllerAnimated:YES completion:nil];
+                               
+                           }];
     
     [alert addAction:back];
     
@@ -2534,7 +2534,7 @@
     skipTutorial.hidden = FALSE;
     [self.view addSubview:skipTutorial];
     [skipTutorial addTarget: self action:@selector(skipTutorial) forControlEvents:UIControlEventTouchUpInside];
-
+    
 }
 
 - (void) skipTutorial {
@@ -2612,7 +2612,7 @@
 - (void) tutorialPageFour {
     
     [FIRAnalytics logEventWithName:@"Tutorial_Pg4" parameters:@{}];
-
+    
     [refreshButton removeFromSuperview];
     mealsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [mealsButton setFrame:[[UIScreen mainScreen] bounds]];
@@ -2625,7 +2625,7 @@
 - (void) tutorialPageFive {
     
     [FIRAnalytics logEventWithName:@"Tutorial_Pg5" parameters:@{}];
-
+    
     [mealsButton removeFromSuperview];
     menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [menuButton setFrame:[[UIScreen mainScreen] bounds]];
@@ -2638,7 +2638,7 @@
 - (void) tutorialPageSix {
     
     [FIRAnalytics logEventWithName:@"Tutorial_Pg6" parameters:@{}];
-
+    
     [menuButton removeFromSuperview];
     gearButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [gearButton setFrame:[[UIScreen mainScreen] bounds]];
@@ -2684,7 +2684,7 @@
     [defaults setInteger:1 forKey:@"Tutorial"];
     [defaults setInteger:1 forKey:@"2.2FeaturesTutorialShown"]; //don't need users to see the update if they see the whole thing
     [defaults synchronize];
-
+    
 }
 
 - (void) animateSwipeIsLeft : (BOOL) left withRecognizer : (UISwipeGestureRecognizer *) gestureRecognizer {
@@ -2852,7 +2852,7 @@
 
 
 - (void)leftSwipe:(UISwipeGestureRecognizer *)gestureRecognizer {
-
+    
     [self animateSwipeIsLeft:TRUE withRecognizer:gestureRecognizer];
     
     
