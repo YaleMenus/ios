@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0393AEC32321DCA200995213 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC02321DCA200995213 /* Base.lproj */; };
+		0393AEC42321DCA200995213 /* GH.png in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC12321DCA200995213 /* GH.png */; };
+		0393AEC52321DCA200995213 /* Dining Data orig.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC22321DCA200995213 /* Dining Data orig.txt */; };
 		37234B973818BA84F0F1472F /* libPods-Yale MenusTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4CF4D89D8AEC9F43431BDD /* libPods-Yale MenusTests.a */; };
 		712DC5BD1F4F511B0003FAFB /* Icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 712DC5B81F4F511B0003FAFB /* Icon.jpg */; };
 		712DC5BE1F4F511B0003FAFB /* Meals.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 712DC5B91F4F511B0003FAFB /* Meals.jpg */; };
@@ -70,7 +73,6 @@
 		719619F61E3BFEE70060766D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 719619F51E3BFEE70060766D /* AppDelegate.m */; };
 		719619F91E3BFEE70060766D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719619F81E3BFEE70060766D /* ViewController.m */; };
 		719619FC1E3BFEE70060766D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719619FA1E3BFEE70060766D /* Main.storyboard */; };
-		719619FE1E3BFEE70060766D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719619FD1E3BFEE70060766D /* Assets.xcassets */; };
 		71961A011E3BFEE70060766D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719619FF1E3BFEE70060766D /* LaunchScreen.storyboard */; };
 		71961A0C1E3BFEE70060766D /* Yale_MenusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71961A0B1E3BFEE70060766D /* Yale_MenusTests.m */; };
 		71961A171E3BFEE70060766D /* Yale_MenusUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71961A161E3BFEE70060766D /* Yale_MenusUITests.m */; };
@@ -89,7 +91,7 @@
 		71961A451E3BFF2B0060766D /* TD.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A361E3BFF2B0060766D /* TD.png */; };
 		71961A6D1E3C54BE0060766D /* null.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A6C1E3C54BE0060766D /* null.png */; };
 		71961A711E3C5D780060766D /* DC.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A701E3C5D780060766D /* DC.png */; };
-		71961A731E3C5D880060766D /* PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A721E3C5D880060766D /* PM.png */; };
+		71961A731E3C5D880060766D /* MY.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A721E3C5D880060766D /* MY.png */; };
 		71961A751E3C5D990060766D /* BF.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961A741E3C5D990060766D /* BF.png */; };
 		71961AB61E3D63D90060766D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961AB51E3D63D90060766D /* Icon-60@2x.png */; };
 		71961AD61E3D7A260060766D /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 71961AD51E3D7A260060766D /* Back.png */; };
@@ -121,7 +123,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0393AEBF2321CD8100995213 /* GH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GH.png; path = "/Users/erik/src/YaleMenus/Yale Menus/GH.png"; sourceTree = "<absolute>"; };
+		0393AEC02321DCA200995213 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		0393AEC12321DCA200995213 /* GH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GH.png; sourceTree = "<group>"; };
+		0393AEC22321DCA200995213 /* Dining Data orig.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dining Data orig.txt"; sourceTree = "<group>"; };
 		1833A097405D3BCD8767EC5A /* Pods-Yale MenusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale MenusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yale MenusTests/Pods-Yale MenusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3313F0C025E0537F6639EB12 /* Pods-Yale Menus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale Menus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yale Menus/Pods-Yale Menus.release.xcconfig"; sourceTree = "<group>"; };
 		35E41EBC7DB5B12B17CCEB6F /* Pods-Yale Menus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yale Menus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yale Menus/Pods-Yale Menus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +192,6 @@
 		719619F71E3BFEE70060766D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		719619F81E3BFEE70060766D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		719619FB1E3BFEE70060766D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		719619FD1E3BFEE70060766D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71961A001E3BFEE70060766D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71961A021E3BFEE70060766D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71961A071E3BFEE70060766D /* Yale MenusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Yale MenusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,7 +215,7 @@
 		71961A361E3BFF2B0060766D /* TD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TD.png; sourceTree = "<group>"; };
 		71961A6C1E3C54BE0060766D /* null.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = null.png; sourceTree = "<group>"; };
 		71961A701E3C5D780060766D /* DC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DC.png; sourceTree = "<group>"; };
-		71961A721E3C5D880060766D /* PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PM.png; sourceTree = "<group>"; };
+		71961A721E3C5D880060766D /* MY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MY.png; sourceTree = "<group>"; };
 		71961A741E3C5D990060766D /* BF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BF.png; sourceTree = "<group>"; };
 		71961AB51E3D63D90060766D /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		71961AD51E3D7A260060766D /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
@@ -300,7 +303,6 @@
 				719619FA1E3BFEE70060766D /* Main.storyboard */,
 				71961A241E3BFF0B0060766D /* Meal.xib */,
 				71961A261E3BFF160060766D /* Menu.xib */,
-				719619FD1E3BFEE70060766D /* Assets.xcassets */,
 				719619FF1E3BFEE70060766D /* LaunchScreen.storyboard */,
 				71961A021E3BFEE70060766D /* Info.plist */,
 				7143D4151F451878009B26CB /* GoogleService-Info.plist */,
@@ -378,14 +380,16 @@
 				71961A741E3C5D990060766D /* BF.png */,
 				71961A291E3BFF2B0060766D /* BK.png */,
 				71961A2A1E3BFF2B0060766D /* BR.png */,
-				0393AEBF2321CD8100995213 /* GH.png */,
 				71961A701E3C5D780060766D /* DC.png */,
+				0393AEC02321DCA200995213 /* Base.lproj */,
+				0393AEC22321DCA200995213 /* Dining Data orig.txt */,
+				0393AEC12321DCA200995213 /* GH.png */,
 				71961A2D1E3BFF2B0060766D /* ES.png */,
 				71961A2E1E3BFF2B0060766D /* HGS.png */,
 				71961A2F1E3BFF2B0060766D /* JE.png */,
 				71961A301E3BFF2B0060766D /* MC.png */,
 				71961A311E3BFF2B0060766D /* PC.png */,
-				71961A721E3C5D880060766D /* PM.png */,
+				71961A721E3C5D880060766D /* MY.png */,
 				71961A331E3BFF2B0060766D /* SM.png */,
 				71961A341E3BFF2B0060766D /* SY.png */,
 				71961A351E3BFF2B0060766D /* TC.png */,
@@ -565,6 +569,7 @@
 				712DC6531F5CD3800003FAFB /* Fruits.png in Resources */,
 				7143D4B41F469290009B26CB /* BreakfastMenu.png in Resources */,
 				712DC6471F5B4D280003FAFB /* Gear.png in Resources */,
+				0393AEC32321DCA200995213 /* Base.lproj in Resources */,
 				7143D4D41F479B5B009B26CB /* Home.png in Resources */,
 				71961A441E3BFF2B0060766D /* TC.png in Resources */,
 				714C8DF11E43B76000638BD3 /* 2.png in Resources */,
@@ -594,9 +599,11 @@
 				71961A451E3BFF2B0060766D /* TD.png in Resources */,
 				712DC6491F5CAC5F0003FAFB /* The Salad.png in Resources */,
 				71961A251E3BFF0B0060766D /* Meal.xib in Resources */,
+				0393AEC52321DCA200995213 /* Dining Data orig.txt in Resources */,
 				7143D4B71F469290009B26CB /* HotBreakfastMenu.png in Resources */,
 				71961A381E3BFF2B0060766D /* BK.png in Resources */,
 				71961AD81E3D8AD50060766D /* White.png in Resources */,
+				0393AEC42321DCA200995213 /* GH.png in Resources */,
 				712F58AA2016FA9F0063816E /* Thumbs Up Blue.png in Resources */,
 				7143D4391F45A464009B26CB /* Burgers.png in Resources */,
 				712DC5BE1F4F511B0003FAFB /* Meals.jpg in Resources */,
@@ -616,14 +623,13 @@
 				7143D4381F45A464009B26CB /* Starches.png in Resources */,
 				7143D4C81F46EA53009B26CB /* Icon-Small-40@3x.png in Resources */,
 				714C8DF61E43B76000638BD3 /* 7.png in Resources */,
-				71961A731E3C5D880060766D /* PM.png in Resources */,
+				71961A731E3C5D880060766D /* MY.png in Resources */,
 				7143D4C61F46EA53009B26CB /* Icon-Small-40.png in Resources */,
 				7143D4351F45A464009B26CB /* Entrees.png in Resources */,
 				71961A391E3BFF2B0060766D /* BR.png in Resources */,
 				71961AE41E3DA24A0060766D /* Breakfast.png in Resources */,
 				714C8DF71E43B76000638BD3 /* 8.png in Resources */,
 				71961A6D1E3C54BE0060766D /* null.png in Resources */,
-				719619FE1E3BFEE70060766D /* Assets.xcassets in Resources */,
 				719619FC1E3BFEE70060766D /* Main.storyboard in Resources */,
 				7143D4C41F46EA53009B26CB /* Icon-76@2x.png in Resources */,
 				71961A3C1E3BFF2B0060766D /* ES.png in Resources */,
