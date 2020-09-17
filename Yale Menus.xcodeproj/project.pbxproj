@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031E87B025130AB900B73A81 /* Location.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031E87AE25130AB900B73A81 /* Location.storyboard */; };
+		031E87B325130B1700B73A81 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031E87B125130B1700B73A81 /* Settings.storyboard */; };
 		0393AEC32321DCA200995213 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC02321DCA200995213 /* Base.lproj */; };
 		0393AEC42321DCA200995213 /* GH.png in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC12321DCA200995213 /* GH.png */; };
 		0393AEC52321DCA200995213 /* Dining Data orig.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0393AEC22321DCA200995213 /* Dining Data orig.txt */; };
@@ -123,6 +125,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031E87AF25130AB900B73A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Yale Menus/Base.lproj/Location.storyboard"; sourceTree = "<group>"; };
+		031E87B225130B1700B73A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Yale Menus/Yale Menus/Base.lproj/Settings.storyboard"; sourceTree = "<group>"; };
 		0393AEC02321DCA200995213 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		0393AEC12321DCA200995213 /* GH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GH.png; sourceTree = "<group>"; };
 		0393AEC22321DCA200995213 /* Dining Data orig.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Dining Data orig.txt"; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 		719619F01E3BFEE70060766D /* Yale Menus */ = {
 			isa = PBXGroup;
 			children = (
+				031E87B125130B1700B73A81 /* Settings.storyboard */,
+				031E87AE25130AB900B73A81 /* Location.storyboard */,
 				719619F41E3BFEE70060766D /* AppDelegate.h */,
 				719619F51E3BFEE70060766D /* AppDelegate.m */,
 				719619F71E3BFEE70060766D /* ViewController.h */,
@@ -576,6 +582,7 @@
 				714C8DF51E43B76000638BD3 /* 6.png in Resources */,
 				7143D4B61F469290009B26CB /* DinnerMenu.png in Resources */,
 				714C8DF81E43B76000638BD3 /* 9.png in Resources */,
+				031E87B325130B1700B73A81 /* Settings.storyboard in Resources */,
 				71961AE61E3DA2970060766D /* Brunch.png in Resources */,
 				712DC64F1F5CAD700003FAFB /* The Grill.png in Resources */,
 				712DC5BD1F4F511B0003FAFB /* Icon.jpg in Resources */,
@@ -625,6 +632,7 @@
 				714C8DF71E43B76000638BD3 /* 8.png in Resources */,
 				71961A6D1E3C54BE0060766D /* null.png in Resources */,
 				719619FC1E3BFEE70060766D /* Main.storyboard in Resources */,
+				031E87B025130AB900B73A81 /* Location.storyboard in Resources */,
 				7143D4C41F46EA53009B26CB /* Icon-76@2x.png in Resources */,
 				71961A3C1E3BFF2B0060766D /* ES.png in Resources */,
 			);
@@ -748,6 +756,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		031E87AE25130AB900B73A81 /* Location.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				031E87AF25130AB900B73A81 /* Base */,
+			);
+			name = Location.storyboard;
+			sourceTree = "<group>";
+		};
+		031E87B125130B1700B73A81 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				031E87B225130B1700B73A81 /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
 		719619FA1E3BFEE70060766D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
