@@ -23,73 +23,6 @@
 @synthesize tCCrowds;
 
 - (void) check {
-    
-    NSString *url = @"http://sites.google.com/view/yalemenus/";
-    NSURL *urlRequest = [NSURL URLWithString:url];
-    NSError *err = nil;
-    
-    NSString *kill = [NSString stringWithContentsOfURL:urlRequest encoding:NSUTF8StringEncoding error:&err];
-
-    // No need to throw error if kill switch check fails, since in that case user will
-    // proceed as if the kill switch was off, and will get another error anyway.
-    if (err) {}
-    
-    if ([kill containsString:@"Yale Menus 1"]) {
-        
-        [FIRAnalytics logEventWithName:@"Kill1" parameters:@{}];
-        [self killMessage:@"\nThis app relies on data from Yale Dining to display up-to-date information, but the datasource from Yale Dining has changed, and this version of the app isn't able to read it. We're working on a fix, and will push it out to the App Store as soon as we can. In the meantime, you can try the official Yale Dining app. We apologize for the inconvenience." withTitle:@"Data Changed"];
-        
-    }
-    
-    if ([kill containsString:@"Yale Menus 2"]) {
-        
-        [FIRAnalytics logEventWithName:@"Kill2" parameters:@{}];
-        [self killMessage:@"\nThis app relies on data from Yale Dining to display up-to-date information, but the datasource from Yale Dining has changed, and this version of the app isn't able to read it. Luckily, we were able to rewrite the app to make it work again. Please download the newest version from the App Store to resume using our app. We apologize for the inconvenience." withTitle:@"Data Changed"];
-        
-    }
-    
-    if ([kill containsString:@"Yale Menus 3"]) {
-        
-        [FIRAnalytics logEventWithName:@"Kill3" parameters:@{}];
-        [self killMessage:@"\nThis app relies on data from Yale Dining to display up-to-date information, but the datasource from Yale Dining has changed, and this version of the app isn't able to read it. We don't plan to release a fix at this time. If you are interested in updating the app to accommodate this change, please email us at yalemenus@gmail.com. We would be glad to speak with you." withTitle:@"Data Changed"];
-        
-    }
-    
-    if ([kill containsString:@"Yale Menus 4"]) {
-        
-        [FIRAnalytics logEventWithName:@"Kill4" parameters:@{}];
-        [self killMessage:@"\nThe Yale Dining system is down today, so we aren't able to retrieve meal data. We apologize for the inconvenience and hope to have the app running again as soon as possible. Yale usually resolves these outages within 24 hours." withTitle:@"Yale Dining System Down"];
-        
-    }
-    
-    if ([kill containsString:@"YMkill"]) {
-        
-        [FIRAnalytics logEventWithName:@"YMkill" parameters:@{}];
-        
-        [self whiteOut];
-    }
-    
-    if ([kill containsString:@"Yale Menus v2.2"]) {
-        
-        askForSample = TRUE;
-        
-    }
-    
-    if ([kill containsString:@"Yale Menus Special Alert"]) {
-        [FIRAnalytics logEventWithName:@"YM_Special_Alert" parameters:@{}];
-        if ([kill containsString:@"White Out"]) {
-            [self whiteOut];
-        }
-        NSArray *specialAlertTitleArray = [kill componentsSeparatedByString:@"Alert Title"];
-        NSString *specialAlertTitle = specialAlertTitleArray[1];
-        NSArray *specialAlertArray = [kill componentsSeparatedByString:@"Yale Menus Special Alert"];
-        NSString *specialAlert = @"\n";
-        specialAlert = [specialAlert stringByAppendingString:specialAlertArray[1]];
-        specialAlert = [specialAlert stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"];
-        [self killMessage:specialAlert withTitle:specialAlertTitle];
-    }
-    
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL showedSwipeReminder = [defaults integerForKey:@"Showed Swipe Reminder"];
     BOOL showedAllergyReminder = [defaults integerForKey:@"Showed Allergy Reminder"] + [defaults integerForKey:@"Peanuts"] + [defaults integerForKey:@"Vegetarian"] + [defaults integerForKey:@"Vegan"] + [defaults integerForKey:@"Dairy"] + [defaults integerForKey:@"Gluten"] + [defaults integerForKey:@"Eggs"] + [defaults integerForKey:@"Soy"] + [defaults integerForKey:@"Pork"] + [defaults integerForKey:@"Nuts"] + [defaults integerForKey:@"Alcohol"] + [defaults integerForKey:@"Shellfish"] + [defaults integerForKey:@"Seafood"]; //if you've showed the allergy reminder, or if they've set any allergy prefs, don't show the alert
@@ -97,7 +30,7 @@
     if ([kill containsString:@"Swipe"] && !showedSwipeReminder) {
         [FIRAnalytics logEventWithName:@"Swipe_Reminder" parameters:@{}];
         
-        UIAlertController * alert=   [UIAlertController
+        UIAlertController * alert = [UIAlertController
                                       alertControllerWithTitle:@"Vote With a Swipe!"
                                       message:@"\nDid you know that you can swipe left to dislike or swipe right to like individual menu items?\n\nIf you do this, we'll anonymously share your responses with Yale to help them understand student food preferences.\n\nWe'll also put a small thumbs up or thumbs down next to that menu item when it comes up in the future so you know what to eat or avoid."
                                       preferredStyle:UIAlertControllerStyleAlert];
@@ -139,45 +72,6 @@
     }
 }
 
--(void) killMessage:(NSString*)message withTitle: (NSString*) title {
-    UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:title
-                                  message:message
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* ok = [UIAlertAction
-                         actionWithTitle:@"OK"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
-                         {
-                             [alert dismissViewControllerAnimated:YES completion:nil];
-                             
-                         }];
-    
-    [alert addAction:ok];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
--(void)whiteOut {
-    killed = TRUE;
-    
-    UIImageView *whiteView =[[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    whiteView.image=[UIImage imageNamed:@"White"];
-    whiteView.userInteractionEnabled = YES; //to prevent other background buttons from still working
-    [self.view addSubview:whiteView];
-    
-    UILabel *dead = [[UILabel alloc] init];
-    dead.numberOfLines = 0;
-    [dead setFrame:CGRectMake(12,190,350,200)];
-    dead.backgroundColor=[UIColor clearColor];
-    dead.textColor=[UIColor blackColor];
-    dead.userInteractionEnabled=YES;
-    dead.font = [UIFont fontWithName:@"Optima" size:24];
-    dead.text = @"This version of Yale Menus is no longer operational.";
-    [self.view addSubview:dead];
-}
-
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -204,136 +98,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void) switchAllergies {
-    iCantEat.hidden = !(showAllergies);
-    
-    peanuts.hidden = !(showAllergies);
-    vegetarian.hidden = !(showAllergies);
-    vegan.hidden = !(showAllergies);
-    dairy.hidden = !(showAllergies);
-    gluten.hidden = !(showAllergies);
-    eggs.hidden = !(showAllergies);
-    soy.hidden = !(showAllergies);
-    pork.hidden = !(showAllergies);
-    nuts.hidden = !(showAllergies);
-    alcohol.hidden = !(showAllergies);
-    shellfish.hidden = !(showAllergies);
-    seafood.hidden = !(showAllergies);
-    
-    peanutView.hidden = !(showAllergies);
-    vegetarianView.hidden = !(showAllergies);
-    veganView.hidden = !(showAllergies);
-    dairyView.hidden = !(showAllergies);
-    glutenView.hidden = !(showAllergies);
-    eggsView.hidden = !(showAllergies);
-    soyView.hidden = !(showAllergies);
-    porkView.hidden = !(showAllergies);
-    nutsView.hidden = !(showAllergies);
-    alcoholView.hidden = !(showAllergies);
-    shellfishView.hidden = !(showAllergies);
-    seafoodView.hidden = !(showAllergies);
-    
-    disclaimer.hidden = !(showAllergies);
-    homeFromAllergies.hidden = !(showAllergies);
-    
-    allergiesButton.hidden = showAllergies;
-    backToHomeButton.hidden = showAllergies;
-    
-    [self.view addSubview:iCantEat];
-    
-    [self.view addSubview:peanuts];
-    [self.view addSubview:vegetarian];
-    [self.view addSubview:vegan];
-    [self.view addSubview:dairy];
-    [self.view addSubview:gluten];
-    [self.view addSubview:eggs];
-    [self.view addSubview:soy];
-    [self.view addSubview:pork];
-    [self.view addSubview:nuts];
-    [self.view addSubview:alcohol];
-    [self.view addSubview:shellfish];
-    [self.view addSubview:seafood];
-    
-    [self.view addSubview:peanutView];
-    [self.view addSubview:vegetarianView];
-    [self.view addSubview:veganView];
-    [self.view addSubview:dairyView];
-    [self.view addSubview:glutenView];
-    [self.view addSubview:eggsView];
-    [self.view addSubview:soyView];
-    [self.view addSubview:porkView];
-    [self.view addSubview:nutsView];
-    [self.view addSubview:alcoholView];
-    [self.view addSubview:shellfishView];
-    [self.view addSubview:seafoodView];
-    
-    [self.view addSubview:disclaimer];
-    
-    [self.view addSubview:homeFromAllergies];
-    
-    daySegments.hidden = showAllergies;
-    mealSegments.hidden = showAllergies;
-    
-    noMeals.hidden = showAllergies;
-    partialNoMeals.hidden = showAllergies;
-    sample.hidden = showAllergies;
-    sample.enabled = (!showAllergies);
-    sample.userInteractionEnabled = (!showAllergies);
-    
-    menuDiningHall.hidden = showAllergies;
-    tableView.hidden = showAllergies;
-    menuDate.hidden = showAllergies;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //TO USE TEST DATA:
-    //askForSample = TRUE;
-    //END USE FOR TEST DATA
-    
-    showAllergies = FALSE;
-    [self switchAllergies];
-    
-    white.alpha = 1;
-    white.hidden = TRUE;
-    daySegments.hidden = TRUE;
-    mealSegments.hidden = TRUE;
-    lbl1.hidden = TRUE;
-    lbl2.hidden = TRUE;
-    lbl3.hidden = TRUE;
-    backToHomeButton.hidden = TRUE;
-    
-    skipTutorial.hidden = TRUE;
-    
-    breakfastButton.enabled = NO;
-    breakfastButton.userInteractionEnabled = NO;
-    lunchButton.enabled = NO;
-    lunchButton.userInteractionEnabled = NO;
-    dinnerButton.enabled = NO;
-    dinnerButton.userInteractionEnabled = NO;
-    
-    menuDiningHall.hidden = TRUE;
-    menuMeal.hidden = TRUE;
-    //backToMealsButton.hidden = TRUE;
-    tableView.hidden = TRUE;
-    menuDate.hidden = TRUE;
-    allergiesButton.hidden = TRUE;
-    
-    noMeals.hidden = TRUE;
-    partialNoMeals.hidden = TRUE;
-    sample.hidden = TRUE;
-    [sample.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    showSample = FALSE;
-    sample.enabled = NO;
-    sample.userInteractionEnabled = NO;
     
     isToday = TRUE;
     datesInverted = FALSE;
     
-    infoButton.titleLabel.adjustsFontSizeToFitWidth = YES; //ensures these buttons will be readable on small phones
+    // Ensure these buttons will be readable on small phones
+    infoButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     infoButton.titleLabel.lineBreakMode = NSLineBreakByClipping;
     
     homeFromAllergies.titleLabel.adjustsFontSizeToFitWidth = YES;
