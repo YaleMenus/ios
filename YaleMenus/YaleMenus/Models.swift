@@ -117,6 +117,76 @@ extension Course: Decodable {
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        mealId = try container.decode(Int.self, forKey: .date)
+        mealId = try container.decode(Int.self, forKey: .mealId)
+    }
+}
+
+struct Item {
+    let id: Int
+    let name: String
+    let ingredients: String
+    let vegetarian: Bool
+    let vegan: Bool
+    let alcohol: Bool
+    let nuts: Bool
+    let shellfish: Bool
+    let peanuts: Bool
+    let dairy: Bool
+    let egg: Bool
+    let pork: Bool
+    let fish: Bool
+    let soy: Bool
+    let wheat: Bool
+    let gluten: Bool
+    let coconut: Bool
+    let mealId: Int
+    let courseId: Int
+}
+
+extension Item: Decodable {
+    enum ItemCodingKeys: String, CodingKey {
+        case id
+        case name
+        case ingredients
+        case vegetarian
+        case vegan
+        case alcohol
+        case nuts
+        case shellfish
+        case peanuts
+        case dairy
+        case egg
+        case pork
+        case fish
+        case soy
+        case wheat
+        case gluten
+        case coconut
+        case mealId = "meal_id"
+        case courseId = "course_id"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ItemCodingKeys.self)
+
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        ingredients = try container.decode(String.self, forKey: .ingredients)
+        vegetarian = try container.decode(Bool.self, forKey: .vegetarian)
+        vegan = try container.decode(Bool.self, forKey: .vegan)
+        alcohol = try container.decode(Bool.self, forKey: .alcohol)
+        nuts = try container.decode(Bool.self, forKey: .nuts)
+        shellfish = try container.decode(Bool.self, forKey: .shellfish)
+        peanuts = try container.decode(Bool.self, forKey: .peanuts)
+        dairy = try container.decode(Bool.self, forKey: .dairy)
+        egg = try container.decode(Bool.self, forKey: .egg)
+        pork = try container.decode(Bool.self, forKey: .pork)
+        fish = try container.decode(Bool.self, forKey: .fish)
+        soy = try container.decode(Bool.self, forKey: .soy)
+        wheat = try container.decode(Bool.self, forKey: .wheat)
+        gluten = try container.decode(Bool.self, forKey: .gluten)
+        coconut = try container.decode(Bool.self, forKey: .coconut)
+        mealId = try container.decode(Int.self, forKey: .mealId)
+        courseId = try container.decode(Int.self, forKey: .courseId)
     }
 }
