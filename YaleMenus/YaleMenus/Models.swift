@@ -98,3 +98,25 @@ extension Meal: Decodable {
         locationId = try container.decode(Int.self, forKey: .locationId)
     }
 }
+
+struct Course {
+    let id: Int
+    let name: String
+    let mealId: Int
+}
+
+extension Course: Decodable {
+    enum CourseCodingKeys: String, CodingKey {
+        case id
+        case name
+        case mealId
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CourseCodingKeys.self)
+
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        mealId = try container.decode(Int.self, forKey: .date)
+    }
+}
