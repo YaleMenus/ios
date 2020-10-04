@@ -49,7 +49,7 @@ struct Manager {
 }
 
 extension Manager: Decodable {
-    enum LocationCodingKeys: String, CodingKey {
+    enum ManagerCodingKeys: String, CodingKey {
         case id
         case name
         case email
@@ -58,7 +58,7 @@ extension Manager: Decodable {
     }
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
+        let container = try decoder.container(keyedBy: ManagerCodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
@@ -78,7 +78,7 @@ struct Meal {
 }
 
 extension Meal: Decodable {
-    enum LocationCodingKeys: String, CodingKey {
+    enum MealCodingKeys: String, CodingKey {
         case id
         case name
         case date
@@ -88,7 +88,7 @@ extension Meal: Decodable {
     }
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
+        let container = try decoder.container(keyedBy: MealCodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
