@@ -45,6 +45,7 @@ struct Manager {
     let name: String
     let email: String
     let position: String
+    let locationId: Int
 }
 
 extension Manager: Decodable {
@@ -53,6 +54,7 @@ extension Manager: Decodable {
         case name
         case email
         case position
+        case locationId = "location_id"
     }
 
     init(from decoder: Decoder) throws {
@@ -62,5 +64,37 @@ extension Manager: Decodable {
         name = try container.decode(String.self, forKey: .name)
         email = try container.decode(String.self, forKey: .email)
         position = try container.decode(String.self, forKey: .position)
+        locationId = try container.decode(Int.self, forKey: .locationId)
+    }
+}
+
+struct Meal {
+    let id: Int
+    let name: String
+    let date: String
+    let startTime: String
+    let endTime: String
+    let locationId: Int
+}
+
+extension Meal: Decodable {
+    enum LocationCodingKeys: String, CodingKey {
+        case id
+        case name
+        case date
+        case startTime = "start_time"
+        case endTime = "end_time"
+        case locationId = "location_id"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
+
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        date = try container.decode(String.self, forKey: .date)
+        startTime = try container.decode(String.self, forKey: .startTime)
+        endTime = try container.decode(String.self, forKey: .endTime)
+        locationId = try container.decode(Int.self, forKey: .locationId)
     }
 }
