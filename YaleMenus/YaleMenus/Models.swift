@@ -40,3 +40,27 @@ extension Location: Decodable {
     }
 }
 
+struct Manager {
+    let id: Int
+    let name: String
+    let email: String
+    let position: String
+}
+
+extension Manager: Decodable {
+    enum LocationCodingKeys: String, CodingKey {
+        case id
+        case name
+        case email
+        case position
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
+
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        email = try container.decode(String.self, forKey: .email)
+        position = try container.decode(String.self, forKey: .position)
+    }
+}
