@@ -19,6 +19,9 @@
 		035DF41B252922F4004C95B0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41A252922F4004C95B0 /* Components.swift */; };
 		035DF41D25292338004C95B0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41C25292338004C95B0 /* API.swift */; };
 		035DF41F25293FA3004C95B0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41E25293FA3004C95B0 /* Models.swift */; };
+		16204226E060C8344C8D4541 /* Pods_YaleMenusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4606F837D9C494C28DE03A4 /* Pods_YaleMenusTests.framework */; };
+		57B8C153ECEBE5E4D7A1B932 /* Pods_YaleMenus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C24075877B1B8B21C71999B /* Pods_YaleMenus.framework */; };
+		CCE251042BA233CE6A7BEAB8 /* Pods_YaleMenus_YaleMenusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C907895DFEA1FBDF6213A3 /* Pods_YaleMenus_YaleMenusUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,15 @@
 		035DF41A252922F4004C95B0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		035DF41C25292338004C95B0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		035DF41E25293FA3004C95B0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		1C24075877B1B8B21C71999B /* Pods_YaleMenus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaleMenus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29F5D62F8996096995CBBAF4 /* Pods-YaleMenus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenus.debug.xcconfig"; path = "Target Support Files/Pods-YaleMenus/Pods-YaleMenus.debug.xcconfig"; sourceTree = "<group>"; };
+		33D04DFDBC18D883A7B4D314 /* Pods-YaleMenusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenusTests.release.xcconfig"; path = "Target Support Files/Pods-YaleMenusTests/Pods-YaleMenusTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A0F48841214899CF8FD2C33 /* Pods-YaleMenus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenus.release.xcconfig"; path = "Target Support Files/Pods-YaleMenus/Pods-YaleMenus.release.xcconfig"; sourceTree = "<group>"; };
+		3D83DD3E2E67B51D56446B2F /* Pods-YaleMenusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenusTests.debug.xcconfig"; path = "Target Support Files/Pods-YaleMenusTests/Pods-YaleMenusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		518A5BD18F9B36DC6E1A13D1 /* Pods-YaleMenus-YaleMenusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenus-YaleMenusUITests.release.xcconfig"; path = "Target Support Files/Pods-YaleMenus-YaleMenusUITests/Pods-YaleMenus-YaleMenusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A4606F837D9C494C28DE03A4 /* Pods_YaleMenusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaleMenusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C907895DFEA1FBDF6213A3 /* Pods_YaleMenus_YaleMenusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaleMenus_YaleMenusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC488A85EBAFD6A0614D4B3B /* Pods-YaleMenus-YaleMenusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenus-YaleMenusUITests.debug.xcconfig"; path = "Target Support Files/Pods-YaleMenus-YaleMenusUITests/Pods-YaleMenus-YaleMenusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B8C153ECEBE5E4D7A1B932 /* Pods_YaleMenus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16204226E060C8344C8D4541 /* Pods_YaleMenusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE251042BA233CE6A7BEAB8 /* Pods_YaleMenus_YaleMenusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,8 @@
 				035DF3FE25291BCE004C95B0 /* YaleMenusTests */,
 				035DF40925291BCE004C95B0 /* YaleMenusUITests */,
 				035DF3E625291BCC004C95B0 /* Products */,
+				7DA83F5204FFF0BBD56E0BE3 /* Pods */,
+				19D04278AF32BFF3D31B3BF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +165,30 @@
 			path = YaleMenusUITests;
 			sourceTree = "<group>";
 		};
+		19D04278AF32BFF3D31B3BF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C24075877B1B8B21C71999B /* Pods_YaleMenus.framework */,
+				B7C907895DFEA1FBDF6213A3 /* Pods_YaleMenus_YaleMenusUITests.framework */,
+				A4606F837D9C494C28DE03A4 /* Pods_YaleMenusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA83F5204FFF0BBD56E0BE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29F5D62F8996096995CBBAF4 /* Pods-YaleMenus.debug.xcconfig */,
+				3A0F48841214899CF8FD2C33 /* Pods-YaleMenus.release.xcconfig */,
+				CC488A85EBAFD6A0614D4B3B /* Pods-YaleMenus-YaleMenusUITests.debug.xcconfig */,
+				518A5BD18F9B36DC6E1A13D1 /* Pods-YaleMenus-YaleMenusUITests.release.xcconfig */,
+				3D83DD3E2E67B51D56446B2F /* Pods-YaleMenusTests.debug.xcconfig */,
+				33D04DFDBC18D883A7B4D314 /* Pods-YaleMenusTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 035DF40F25291BCE004C95B0 /* Build configuration list for PBXNativeTarget "YaleMenus" */;
 			buildPhases = (
+				D1F00B61113DC3C360EA7365 /* [CP] Check Pods Manifest.lock */,
 				035DF3E125291BCC004C95B0 /* Sources */,
 				035DF3E225291BCC004C95B0 /* Frameworks */,
 				035DF3E325291BCC004C95B0 /* Resources */,
+				872B4E7EEDBB98A89FCD9BB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 035DF41225291BCE004C95B0 /* Build configuration list for PBXNativeTarget "YaleMenusTests" */;
 			buildPhases = (
+				BB54D0CB4054922CC666F0AC /* [CP] Check Pods Manifest.lock */,
 				035DF3F725291BCE004C95B0 /* Sources */,
 				035DF3F825291BCE004C95B0 /* Frameworks */,
 				035DF3F925291BCE004C95B0 /* Resources */,
@@ -190,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 035DF41525291BCE004C95B0 /* Build configuration list for PBXNativeTarget "YaleMenusUITests" */;
 			buildPhases = (
+				33E9595187B36758B6D43ECD /* [CP] Check Pods Manifest.lock */,
 				035DF40225291BCE004C95B0 /* Sources */,
 				035DF40325291BCE004C95B0 /* Frameworks */,
 				035DF40425291BCE004C95B0 /* Resources */,
+				5BECF5405F48287C06163614 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +319,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33E9595187B36758B6D43ECD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YaleMenus-YaleMenusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BECF5405F48287C06163614 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YaleMenus-YaleMenusUITests/Pods-YaleMenus-YaleMenusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YaleMenus-YaleMenusUITests/Pods-YaleMenus-YaleMenusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YaleMenus-YaleMenusUITests/Pods-YaleMenus-YaleMenusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		872B4E7EEDBB98A89FCD9BB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YaleMenus/Pods-YaleMenus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YaleMenus/Pods-YaleMenus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YaleMenus/Pods-YaleMenus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB54D0CB4054922CC666F0AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YaleMenusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1F00B61113DC3C360EA7365 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YaleMenus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		035DF3E125291BCC004C95B0 /* Sources */ = {
@@ -448,6 +597,7 @@
 		};
 		035DF41025291BCE004C95B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29F5D62F8996096995CBBAF4 /* Pods-YaleMenus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +618,7 @@
 		};
 		035DF41125291BCE004C95B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A0F48841214899CF8FD2C33 /* Pods-YaleMenus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +639,7 @@
 		};
 		035DF41325291BCE004C95B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D83DD3E2E67B51D56446B2F /* Pods-YaleMenusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +662,7 @@
 		};
 		035DF41425291BCE004C95B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33D04DFDBC18D883A7B4D314 /* Pods-YaleMenusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +685,7 @@
 		};
 		035DF41625291BCE004C95B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC488A85EBAFD6A0614D4B3B /* Pods-YaleMenus-YaleMenusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +706,7 @@
 		};
 		035DF41725291BCE004C95B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 518A5BD18F9B36DC6E1A13D1 /* Pods-YaleMenus-YaleMenusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
