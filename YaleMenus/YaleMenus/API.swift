@@ -5,7 +5,7 @@ enum API {
     case locations
     case location(id: Int)
     case managers(locationId: Int)
-    case meals(locationId: Int)
+    case meals(locationId: Int, date: String)
     case meal(mealId: Int)
     case courses(mealId: Int)
     case course(courseId: Int)
@@ -25,7 +25,7 @@ extension API: TargetType {
             return "locations/\(id)"
         case .managers(let locationId):
             return "locations/\(locationId)/managers"
-        case .meals(let locationId):
+        case .meals(let locationId, _):
             return "locations/\(locationId)/meals"
         case .meal(let mealId):
             return "meals/\(mealId)"
@@ -60,7 +60,12 @@ extension API: TargetType {
         <#code#>
     }
 
-    var parameters: [String: AnyObject]? {
-        // TODO: support meals/items requests
+    var parameters: [String: String]? {
+        switch self {
+        case .meals(_, let date):
+            return ["date": date]
+        default:
+            return nil;
+        }
     }
 }
