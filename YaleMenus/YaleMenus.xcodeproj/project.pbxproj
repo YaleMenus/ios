@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030E653325322CB200B6032F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653225322CB200B6032F /* NetworkManager.swift */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
 		035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */; };
 		035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EC25291BCC004C95B0 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030E653225322CB200B6032F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		035DF3E825291BCC004C95B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */,
 				035DF3EC25291BCC004C95B0 /* ContentView.swift */,
 				035DF41C25292338004C95B0 /* API.swift */,
+				030E653225322CB200B6032F /* NetworkManager.swift */,
 				035DF41E25293FA3004C95B0 /* Models.swift */,
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				035DF418252920EE004C95B0 /* LocationsView.swift */,
@@ -185,7 +188,6 @@
 				3D83DD3E2E67B51D56446B2F /* Pods-YaleMenusTests.debug.xcconfig */,
 				33D04DFDBC18D883A7B4D314 /* Pods-YaleMenusTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -432,6 +434,7 @@
 				035DF419252920EE004C95B0 /* LocationsView.swift in Sources */,
 				035DF41B252922F4004C95B0 /* Components.swift in Sources */,
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,
+				030E653325322CB200B6032F /* NetworkManager.swift in Sources */,
 				035DF41D25292338004C95B0 /* API.swift in Sources */,
 				035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */,
 				035DF41F25293FA3004C95B0 /* Models.swift in Sources */,
