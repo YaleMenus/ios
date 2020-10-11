@@ -53,11 +53,11 @@ extension API: TargetType {
     }
     
     var task: Task {
-        <#code#>
+        return .requestParameters(parameters: [:], encoding: URLEncoding.queryString);
     }
     
     var headers: [String : String]? {
-        <#code#>
+        return nil;
     }
 
     var parameters: [String: String]? {
