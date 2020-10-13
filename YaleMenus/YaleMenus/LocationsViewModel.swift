@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class LocationsViewModel: Identifiable {
+    let id = UUID()
+    let nm = NetworkManager()
+    
+    public var locations: [Location]? = nil;
+    
+    init() {
+        nm.getLocations(completion: { locations in
+            self.locations = locations;
+        });
+    }
+    
+    func openLocation() {
+        
+    }
+}
