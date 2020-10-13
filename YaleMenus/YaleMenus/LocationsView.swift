@@ -1,14 +1,17 @@
 import SwiftUI
-import Foundation
 
 struct LocationsView : View {
     @State var model = LocationsViewModel();
     
     var body: some View {
-        List(model.locations, selection: model.openLocation) { location in
-            VStack(alignment: .leading) {
-                Text(location.name)
-                Text(location.address)
+        VStack {
+            if self.model.locations != nil {
+                List(self.model.locations!) { location in
+                    Text(location.name as String)
+                    Text(location.address as String)
+                }
+            } else {
+                LoaderView()
             }
         }
     }
