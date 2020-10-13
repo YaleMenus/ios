@@ -39,8 +39,6 @@ extension API: TargetType {
             return "items/\(itemId)"
         case .nutrition(let itemId):
             return "items/\(itemId)/nutrition"
-        default:
-            return ""
         }
     }
     
