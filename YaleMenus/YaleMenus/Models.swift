@@ -1,6 +1,7 @@
 import Foundation
 
-struct Location {
+struct Location: Identifiable {
+    var uid = UUID()
     let id: Int
     let name: String
     let type: String
