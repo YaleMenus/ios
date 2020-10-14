@@ -17,7 +17,6 @@ class LocationsViewModel: ObservableObject, Identifiable {
     init() {
         nm.getLocations(completion: { locations in
             self.locations = locations;
-            print(self.locations)
         });
     }
     
