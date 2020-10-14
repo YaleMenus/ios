@@ -4,6 +4,7 @@ struct Location: Identifiable {
     var uid = UUID()
     let id: Int
     let name: String
+    let code: String
     let type: String
     let isOpen: Bool
     let capacity: Int
@@ -17,6 +18,7 @@ extension Location: Decodable {
     enum LocationCodingKeys: String, CodingKey {
         case id
         case name
+        case code
         case type
         case isOpen = "is_open"
         case capacity
@@ -31,6 +33,7 @@ extension Location: Decodable {
         
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
+        code = try container.decode(String.self, forKey: .code)
         type = try container.decode(String.self, forKey: .type)
         isOpen = try container.decode(Bool.self, forKey: .isOpen)
         capacity = try container.decode(Int.self, forKey: .capacity)
