@@ -8,15 +8,16 @@
 
 import Foundation
 
-class LocationsViewModel: Identifiable {
+class LocationsViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
     
-    public var locations: [Location]? = nil;
+    @Published var locations: [Location]? = nil;
     
     init() {
         nm.getLocations(completion: { locations in
             self.locations = locations;
+            print(self.locations)
         });
     }
     
