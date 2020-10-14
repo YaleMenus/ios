@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LocationsView : View {
-    @State var model = LocationsViewModel();
+    @ObservedObject var model = LocationsViewModel();
     
     var body: some View {
         VStack {
