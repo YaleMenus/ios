@@ -43,12 +43,12 @@ struct GridStack<Content: View>: View {
 }
 
 struct LocationsView : View {
-    @ObservedObject var model = LocationsViewModel();
+    @ObservedObject var model = LocationsViewModel()
     
     var body: some View {
         VStack {
             if self.model.locations != nil {
-                GridStack(items: self.model.locations!, rows: 4, columns: 3) { location, row, col in
+                GridStack(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     GeometryReader { geometry in
                         if (location != nil) {
                             VStack {
