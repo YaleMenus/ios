@@ -15,6 +15,11 @@ struct GridStack<Content: View>: View {
     
     func item(n: Int) -> Location? {
         if n < self.items.count {
+//            if (n >= self.items.count - 1) {
+//                return self.items[n + 1];
+//            }
+            print(n)
+            print(self.items[n].name)
             return self.items[n];
         }
         return nil;
@@ -42,18 +47,25 @@ struct LocationsView : View {
         VStack {
             if self.model.locations != nil {
                 GridStack(items: self.model.locations!, rows: 4, columns: 3) { location, row, col in
-                    if (location != nil) {
-                        Image(String(location!.capacity))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .overlay(
-                                Image(location!.code)
+                    GeometryReader { geometry in
+                        if (location != nil) {
+                            VStack {
+                                //Image(String(location!.capacity))
+                                Image(String(10))
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                             )
-                        Text(location!.name)
-                    } else {
-                        Text("Location goes here")
+                                    .overlay(
+                                        Image(location!.code)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: geometry.size.height / 2.4)
+                                            .padding(.top)
+                                     )
+                                Text(location!.name)
+                            }
+                        } else {
+                            Text("Refresh goes here")
+                        }
                     }
                 }
             } else {
