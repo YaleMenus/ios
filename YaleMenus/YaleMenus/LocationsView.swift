@@ -60,7 +60,7 @@ struct LocationsView : View {
                                         Image(location!.code)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(height: geometry.size.height / 2.4)
+                                            .frame(height: geometry.size.width / 1.5)
                                             .padding(.top)
                                      )
                                 Text(location!.name)
