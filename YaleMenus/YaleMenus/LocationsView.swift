@@ -43,6 +43,11 @@ struct LocationGrid<Content: View>: View {
 }
 
 struct CapacityBar : View {
+    let INCREMENT = 8
+    let RED_LIMIT = 10
+    let ORANGE_LIMIT = 7
+    let YELLOW_LIMIT = 5
+    let GREEN_LIMIT = 3
     let capacity: Int
 
     init(capacity: Int) {
@@ -51,8 +56,32 @@ struct CapacityBar : View {
 
     var body: some View {
         Capsule()
-        .fill(Color.green)
-            .frame(width: 8 * CGFloat(self.capacity), height: 10)
+            .fill(Color.white)
+            .frame(width: CGFloat(INCREMENT * RED_LIMIT), height: 10)
+        .overlay(
+            Capsule()
+                .fill(Color.red)
+                .frame(width: CGFloat(INCREMENT * min(RED_LIMIT, self.capacity))),
+            alignment: .leading
+        )
+        .overlay(
+            Capsule()
+                .fill(Color.orange)
+                .frame(width: CGFloat(INCREMENT * min(ORANGE_LIMIT, self.capacity))),
+            alignment: .leading
+        )
+        .overlay(
+            Capsule()
+                .fill(Color.yellow)
+                .frame(width: CGFloat(INCREMENT * min(YELLOW_LIMIT, self.capacity))),
+            alignment: .leading
+        )
+        .overlay(
+            Capsule()
+                .fill(Color.green)
+                .frame(width: CGFloat(INCREMENT * min(GREEN_LIMIT, self.capacity))),
+            alignment: .leading
+        )
     }
 }
 
