@@ -17,7 +17,9 @@ struct Location: Identifiable {
 extension Location {
     func shortName() -> String {
         let custom = ["Jonathan Edwards": "JE",
-                      "Timothy Dwight": "TD"]
+                      "Timothy Dwight": "TD",
+                      "Pauli Murray": "Murray",
+                      "Grace Hopper": "Hopper"]
         return custom[self.name] ?? name
     }
 }
