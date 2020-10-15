@@ -67,7 +67,12 @@ struct LocationsView : View {
                                     .font(.system(.body, design: .rounded))
                             }
                         } else {
-                            Text("Refresh goes here")
+                            VStack {
+                                Image("icon")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding(.top)
+                            }
                         }
                     }
                 }
