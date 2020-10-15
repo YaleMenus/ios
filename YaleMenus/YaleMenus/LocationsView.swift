@@ -63,7 +63,7 @@ struct LocationsView : View {
                                             .frame(height: geometry.size.width / 1.5)
                                             .padding(.top)
                                      )
-                                Text(location!.name)
+                                Text(location!.shortName())
                             }
                         } else {
                             Text("Refresh goes here")
