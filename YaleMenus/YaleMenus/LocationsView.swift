@@ -94,21 +94,24 @@ struct LocationsView : View {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     GeometryReader { geometry in
                         if (location != nil) {
-                            VStack(alignment: .center) {
+                            
+                            VStack(alignment: .center, spacing: 0) {
+                                Text(location!.shortName())
+                                    .font(.system(.body, design: .rounded))
                                 CapacityBar(capacity: location!.capacity)
+                                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
                                 Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(height: geometry.size.width / 1.2)
-                                Text(location!.shortName())
-                                    .font(.system(.body, design: .rounded))
+                                    .frame(width: geometry.size.height / 1.7)
                             }.frame(width: geometry.size.width)
                         } else {
                             VStack {
                                 Image("icon")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .padding(.top)
+                                    .frame(maxWidth: .infinity)
+                                    .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
                             }
                         }
                     }
