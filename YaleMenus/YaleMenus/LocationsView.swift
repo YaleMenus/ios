@@ -20,10 +20,8 @@ struct GridStack<Content: View>: View {
 //            if (n >= self.items.count - 1) {
 //                return self.items[n + 1]
 //            }
-            print(self.items[n].name)
             return self.items[n]
         }
-        print("Out of range")
         return nil
     }
 
@@ -52,8 +50,7 @@ struct LocationsView : View {
                     GeometryReader { geometry in
                         if (location != nil) {
                             VStack {
-                                //Image(String(location!.capacity))
-                                Image(String(10))
+                                Image(String(location!.capacity))
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .overlay(
