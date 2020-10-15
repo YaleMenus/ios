@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GridStack<Content: View>: View {
+struct LocationGrid<Content: View>: View {
     let items: [Location]
     let rows: Int
     let columns: Int
@@ -15,7 +15,6 @@ struct GridStack<Content: View>: View {
     }
     
     func item(n: Int) -> Location? {
-        print(n)
         if n <= self.items.count {
             // Offset last element by one for logo
             if (n == self.items.count - 1) {
@@ -50,7 +49,7 @@ struct LocationsView : View {
     var body: some View {
         VStack {
             if self.model.locations != nil {
-                GridStack(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
+                LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     GeometryReader { geometry in
                         if (location != nil) {
                             VStack {
