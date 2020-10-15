@@ -8,21 +8,23 @@ struct GridStack<Content: View>: View {
     
     init(items: [Location], rows: Int, columns: Int, @ViewBuilder content: @escaping (Location?, Int, Int) -> Content) {
         self.items = items
+        print(self.items)
         self.rows = rows
         self.columns = columns
         self.content = content
     }
     
     func item(n: Int) -> Location? {
+        print(n)
         if n < self.items.count {
 //            if (n >= self.items.count - 1) {
-//                return self.items[n + 1];
+//                return self.items[n + 1]
 //            }
-            print(n)
             print(self.items[n].name)
-            return self.items[n];
+            return self.items[n]
         }
-        return nil;
+        print("Out of range")
+        return nil
     }
 
     var body: some View {
@@ -31,7 +33,7 @@ struct GridStack<Content: View>: View {
                 ForEach(0 ..< self.rows, id: \.self) { row in
                     HStack {
                         ForEach(0 ..< self.columns, id: \.self) { column in
-                            self.content(self.item(n: row * self.rows + column), row, column)
+                            self.content(self.item(n: row * self.columns + column), row, column)
                         }
                     }.frame(width: geometry.size.width)
                 }
