@@ -8,7 +8,6 @@ struct LocationGrid<Content: View>: View {
     
     init(items: [Location], rows: Int, columns: Int, @ViewBuilder content: @escaping (Location?, Int, Int) -> Content) {
         self.items = items
-        print(self.items)
         self.rows = rows
         self.columns = columns
         self.content = content
@@ -43,6 +42,20 @@ struct LocationGrid<Content: View>: View {
     }
 }
 
+struct CapacityBar : View {
+    let capacity: Int
+
+    init(capacity: Int) {
+        self.capacity = capacity
+    }
+
+    var body: some View {
+        Capsule()
+        .fill(Color.green)
+            .frame(width: 8 * CGFloat(self.capacity), height: 10)
+    }
+}
+
 struct LocationsView : View {
     @ObservedObject var model = LocationsViewModel()
     
@@ -53,9 +66,7 @@ struct LocationsView : View {
                     GeometryReader { geometry in
                         if (location != nil) {
                             VStack(alignment: .center) {
-                                Capsule()
-                                    .fill(Color.green)
-                                    .frame(width: 8 * CGFloat(location!.capacity), height: 10)
+                                CapacityBar(capacity: location!.capacity)
                                 Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
