@@ -52,20 +52,17 @@ struct LocationsView : View {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     GeometryReader { geometry in
                         if (location != nil) {
-                            VStack {
-                                Image(String(location!.capacity))
+                            VStack(alignment: .center) {
+                                Capsule()
+                                    .fill(Color.green)
+                                    .frame(width: 8 * CGFloat(location!.capacity), height: 10)
+                                Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .overlay(
-                                        Image(location!.code)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(height: geometry.size.width / 1.5)
-                                            .padding(.top)
-                                     )
+                                    .frame(height: geometry.size.width / 1.2)
                                 Text(location!.shortName())
                                     .font(.system(.body, design: .rounded))
-                            }
+                            }.frame(width: geometry.size.width)
                         } else {
                             VStack {
                                 Image("icon")
