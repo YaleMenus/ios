@@ -65,6 +65,7 @@ struct LocationsView : View {
                                             .padding(.top)
                                      )
                                 Text(location!.shortName())
+                                    .font(.system(.body, design: .rounded))
                             }
                         } else {
                             Text("Refresh goes here")
