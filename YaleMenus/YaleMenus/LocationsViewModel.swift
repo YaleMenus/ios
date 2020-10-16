@@ -12,7 +12,7 @@ class LocationsViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
     
-    @Published var locations: [Location]? = nil;
+    @Published var locations: [Location]? = nil
     
     init() {
         nm.getLocations(completion: { locations in
@@ -20,7 +20,7 @@ class LocationsViewModel: ObservableObject, Identifiable {
         });
     }
     
-    func openLocation() {
+    func openLocation(location: Location?) {
         
     }
 }

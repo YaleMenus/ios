@@ -92,9 +92,8 @@ struct LocationsView : View {
         VStack {
             if self.model.locations != nil {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
-                    GeometryReader { geometry in
-                        if (location != nil) {
-                            
+                    if (location != nil) {
+                        GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
                                 Text(location!.shortName())
                                     .font(.system(.body, design: .rounded))
@@ -105,14 +104,16 @@ struct LocationsView : View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: geometry.size.height / 1.7)
                             }.frame(width: geometry.size.width)
-                        } else {
-                            VStack {
-                                Image("icon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
-                            }
+                        }.onTapGesture {
+                            self.model.openLocation(location: location)
+                        }
+                    } else {
+                        VStack {
+                            Image("icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity)
+                                .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
                         }
                     }
                 }

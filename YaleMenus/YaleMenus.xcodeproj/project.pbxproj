@@ -10,6 +10,8 @@
 		030E653325322CB200B6032F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653225322CB200B6032F /* NetworkManager.swift */; };
 		030E653525351E1B00B6032F /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653425351E1B00B6032F /* LocationsViewModel.swift */; };
 		030E6537253659D600B6032F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E6536253659D600B6032F /* LoaderView.swift */; };
+		030E65392537FB5F00B6032F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E65382537FB5F00B6032F /* LocationView.swift */; };
+		030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653A2537FB6F00B6032F /* LocationViewModel.swift */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
 		035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */; };
 		035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EC25291BCC004C95B0 /* ContentView.swift */; };
@@ -48,6 +50,8 @@
 		030E653225322CB200B6032F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		030E653425351E1B00B6032F /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		030E6536253659D600B6032F /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		030E65382537FB5F00B6032F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		030E653A2537FB6F00B6032F /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		035DF3E825291BCC004C95B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				035DF418252920EE004C95B0 /* LocationsView.swift */,
 				030E653425351E1B00B6032F /* LocationsViewModel.swift */,
+				030E65382537FB5F00B6032F /* LocationView.swift */,
+				030E653A2537FB6F00B6032F /* LocationViewModel.swift */,
 				030E6536253659D600B6032F /* LoaderView.swift */,
 				035DF3EE25291BCE004C95B0 /* Assets.xcassets */,
 				035DF3F325291BCE004C95B0 /* LaunchScreen.storyboard */,
@@ -442,6 +448,8 @@
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,
 				030E653525351E1B00B6032F /* LocationsViewModel.swift in Sources */,
 				030E653325322CB200B6032F /* NetworkManager.swift in Sources */,
+				030E65392537FB5F00B6032F /* LocationView.swift in Sources */,
+				030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */,
 				035DF41D25292338004C95B0 /* API.swift in Sources */,
 				030E6537253659D600B6032F /* LoaderView.swift in Sources */,
 				035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */,
