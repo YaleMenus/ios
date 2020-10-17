@@ -93,19 +93,23 @@ struct LocationsView : View {
             if self.model.locations != nil {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     if (location != nil) {
-                        GeometryReader { geometry in
-                            VStack(alignment: .center, spacing: 0) {
-                                Text(location!.shortName())
-                                    .font(.system(.body, design: .rounded))
-                                CapacityBar(capacity: location!.capacity)
-                                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
-                                Image(location!.code)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: geometry.size.height / 1.7)
-                            }.frame(width: geometry.size.width)
-                        }.onTapGesture {
-                            self.model.openLocation(location: location)
+                        NavigationView {
+                            NavigationLink(destination: LocationView(location: location!)) {
+                                GeometryReader { geometry in
+                                    VStack(alignment: .center, spacing: 0) {
+                                        Text(location!.shortName())
+                                            .font(.system(.body, design: .rounded))
+                                        CapacityBar(capacity: location!.capacity)
+                                            .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
+                                        Image(location!.code)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: geometry.size.height / 1.7)
+                                    }.frame(width: geometry.size.width)
+                                }.onTapGesture {
+                                    self.model.openLocation(location: location!)
+                                }
+                            }.buttonStyle(PlainButtonStyle())
                         }
                     } else {
                         VStack {
