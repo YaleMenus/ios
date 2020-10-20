@@ -35,7 +35,19 @@ struct NetworkManager {
         }
     }
     func getLocation(id: Int, completion: @escaping (Location) -> ()) {
-        
+        provider.request(.location(id: id)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Location.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     func getManagers(locationId: Int, completion: @escaping ([Manager]) -> ()) {
         

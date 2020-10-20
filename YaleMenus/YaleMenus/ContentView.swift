@@ -3,7 +3,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            LocationsView()
+            //LocationsView()
+            LocationView(locationId: 1)
         }.padding()
     }
 }

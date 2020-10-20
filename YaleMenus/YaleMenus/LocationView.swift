@@ -4,11 +4,17 @@ import SwiftUI
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
 
-    init(location: Location) {
-        self.model = LocationViewModel(location: location)
+    init(locationId: Int) {
+        self.model = LocationViewModel(locationId: locationId)
     }
 
     var body: some View {
-        Text(self.model.location.name)
+        VStack {
+            if (self.model.location != nil) {
+                Text(self.model.location!.name)
+            } else {
+                LoaderView()
+            }
+        }
     }
 }
