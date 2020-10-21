@@ -50,27 +50,123 @@ struct NetworkManager {
         }
     }
     func getManagers(locationId: Int, completion: @escaping ([Manager]) -> ()) {
-        
+        provider.request(.managers(locationId: locationId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode([Manager].self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> ()) {
-        
+        provider.request(.meals(locationId: locationId, date: date)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode([Meal].self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
-    func getMeal(mealId: Int, completion: @escaping (Meal) -> ()) {
-        
+    func getMeal(id: Int, completion: @escaping (Meal) -> ()) {
+        provider.request(.meal(id: id)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Meal.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     func getCourses(mealId: Int, completion: @escaping ([Course]) -> ()) {
-        
+        provider.request(.courses(mealId: mealId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode([Course].self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
-    func getCourse(courseId: Int, completion: @escaping (Course) -> ()) {
-        
+    func getCourse(id: Int, completion: @escaping (Course) -> ()) {
+        provider.request(.course(id: id)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Course.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     func getItems(mealId: Int, completion: @escaping ([Item]) -> ()) {
-        
+        provider.request(.items(mealId: mealId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode([Item].self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
-    func getItem(itemId: Int, completion: @escaping (Item) -> ()) {
-        
+    func getItem(id: Int, completion: @escaping (Item) -> ()) {
+        provider.request(.item(id: id)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Item.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
     func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> ()) {
-        
+        provider.request(.nutrition(itemId: itemId)) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Nutrition.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
 }
