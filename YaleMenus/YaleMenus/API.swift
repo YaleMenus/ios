@@ -51,19 +51,15 @@ extension API: TargetType {
     }
     
     var task: Task {
-        return .requestParameters(parameters: [:], encoding: URLEncoding.queryString);
+        switch self {
+        case .meals(_, let date):
+            return .requestParameters(parameters: ["date": date], encoding: URLEncoding.queryString)
+        default:
+            return .requestParameters(parameters: [:], encoding: URLEncoding.queryString);
+        }
     }
     
     var headers: [String : String]? {
         return nil;
-    }
-
-    var parameters: [String: String]? {
-        switch self {
-        case .meals(_, let date):
-            return ["date": date]
-        default:
-            return nil;
-        }
     }
 }
