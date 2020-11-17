@@ -14,7 +14,7 @@ class LocationViewModel: ObservableObject, Identifiable {
     init(locationId: Int) {
         nm.getLocation(id: locationId, completion: { location in
             self.location = location
-        });
+        })
         // TODO: we shouldn't need to store this, it should be accessible through self.location.
         self.locationId = locationId
         self.formatter.dateFormat = "yyyy-MM-dd"
