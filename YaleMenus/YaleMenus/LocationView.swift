@@ -35,6 +35,15 @@ struct LocationView : View {
                     LoaderView()
                 }
             }
+            .navigationBarTitle(self.model.location?.name ?? "")
+            .navigationBarItems(leading:
+                HStack {
+                    Image(systemName: "chevron.left")
+                    Button("Back") {
+                        print("Back tapped!")
+                    }
+                }
+            )
         }
     }
     
