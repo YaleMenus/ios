@@ -38,7 +38,9 @@ class LocationViewModel: ObservableObject, Identifiable {
         // TODO: ensure this won't be called before nm.getMeals completes above
         if (self.meals != nil && self.items != nil && mealIndex < self.items!.count) {
             if (self.items![mealIndex] != nil) {
-                
+                nm.getItems(mealId: self.meals![mealIndex].id, completion: { items in
+                    self.items![mealIndex] = items
+                })
             }
         }
     }
