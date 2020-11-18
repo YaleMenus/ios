@@ -47,7 +47,8 @@ struct LocationView : View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "chevron.left")
-                Text(self.model.location?.name ?? "")
+                Spacer()
+                HeaderView(text: self.model.location?.name ?? "")
             }
             if (self.model.location != nil && self.model.meals != nil) {
                 if (self.model.items != nil && self.model.items![self.mealIndex] != nil) {
@@ -70,7 +71,7 @@ struct LocationView : View {
             } else {
                 LoaderView()
             }
-        }
+        }.padding()
     }
     
     func onChange(mealIndex: Int) {
