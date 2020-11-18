@@ -12,6 +12,32 @@ extension Binding {
     }
 }
 
+struct ItemPreviewView : View {
+    let item: Item
+
+    init(item: Item) {
+        self.item = item
+    }
+
+    var body: some View {
+        HStack {
+            Image("entree")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, alignment: .leading)
+            Spacer()
+            Text(self.item.name)
+            Spacer()
+        }
+        .padding()
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white, lineWidth: 1)
+        )
+        .background(Color.init(red: 241 / 255, green: 244 / 255, blue: 247 / 255))
+    }
+}
+
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
     @State private var mealIndex = 0
@@ -22,11 +48,15 @@ struct LocationView : View {
 
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
                 if (self.model.location != nil && self.model.meals != nil) {
                     if (self.model.items != nil && self.model.items![self.mealIndex] != nil) {
-                        ForEach(self.model.items![self.mealIndex]!, id: \.id) { item in
-                            Text(item.name)
+                        ScrollView {
+                            VStack {
+                                ForEach(self.model.items![self.mealIndex]!, id: \.id) { item in
+                                    ItemPreviewView(item: item)
+                                }
+                            }
                         }
                     } else {
                         LoaderView()
@@ -41,6 +71,7 @@ struct LocationView : View {
                     LoaderView()
                 }
             }
+            .padding()
             .navigationBarTitle(self.model.location?.name ?? "")
             .navigationBarItems(leading:
                 HStack {
