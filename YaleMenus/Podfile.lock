@@ -1,22 +1,27 @@
 PODS:
   - Alamofire (5.2.2)
+  - FontBlaster (5.1.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
 
 DEPENDENCIES:
+  - FontBlaster
   - Moya
 
 SPEC REPOS:
-  trunk:
+  https://cdn.cocoapods.org/:
     - Alamofire
+  https://github.com/cocoapods/specs.git:
+    - FontBlaster
     - Moya
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  FontBlaster: 67017432ef1d187e038c353fd48ed8744a54484a
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
 
-PODFILE CHECKSUM: 36068eac38b0c775d1be8ac8dbafd6bcb1eaf762
+PODFILE CHECKSUM: 355b9749e2f706dd74f848a3a6b7f98b777e6f92
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.7.5
