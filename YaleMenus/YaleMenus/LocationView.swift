@@ -72,14 +72,22 @@ struct LocationView : View {
                 LoaderView()
             }
             HStack {
-                Image(systemName: "chevron.left")
+                Button(action: {
+                    self.model.changeDay(by: -1)
+                }) {
+                    Image(systemName: "chevron.left")
+                }
                 Spacer()
                 HStack {
                     Image(systemName: "calendar")
-                    Text(self.model.formatter.string(from: self.model.date))
+                    Text(self.model.formatterExternal.string(from: self.model.date))
                 }
                 Spacer()
-                Image(systemName: "chevron.right")
+                Button(action: {
+                    self.model.changeDay(by: 1)
+                }) {
+                    Image(systemName: "chevron.right")
+                }
             }
         }.padding()
     }
