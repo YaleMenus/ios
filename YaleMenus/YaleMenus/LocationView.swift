@@ -68,14 +68,18 @@ struct LocationView : View {
                 } else {
                     LoaderView()
                 }
-                // TODO: .onChange is native in iOS 14+, switch once we can ensure that most users will be on 14
-                Picker(selection: $mealIndex.onChange(onChange), label: Text("Choose a meal?")) {
-                    ForEach(Array(zip(self.model.meals!.indices, self.model.meals!)), id: \.0) { index, meal in
-                        Text(meal.name).tag(index)
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
             } else {
                 LoaderView()
+            }
+            HStack {
+                Image(systemName: "chevron.left")
+                Spacer()
+                HStack {
+                    Image(systemName: "calendar")
+                    Text(self.model.formatter.string(from: self.model.date))
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
             }
         }.padding()
     }

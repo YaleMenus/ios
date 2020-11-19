@@ -7,7 +7,7 @@ class LocationViewModel: ObservableObject, Identifiable {
     var locationId: Int? = nil
     @Published var location: Location? = nil
     @Published var date: Date = Date()
-    let formatter = DateFormatter()
+    public let formatter = DateFormatter()
     @Published var meals: [Meal]? = nil
     @Published var items: [[Item]?]? = nil
 
