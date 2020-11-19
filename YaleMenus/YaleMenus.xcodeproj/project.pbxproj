@@ -109,6 +109,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03476DC52564E15F00E4587C /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		035DF3DC25291BCC004C95B0 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +147,7 @@
 				035DF41C25292338004C95B0 /* API.swift */,
 				030E653225322CB200B6032F /* NetworkManager.swift */,
 				035DF41E25293FA3004C95B0 /* Models.swift */,
+				03476DC52564E15F00E4587C /* fonts */,
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				035DF418252920EE004C95B0 /* LocationsView.swift */,
 				030E653425351E1B00B6032F /* LocationsViewModel.swift */,
