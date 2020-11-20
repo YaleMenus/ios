@@ -4,7 +4,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             //LocationsView()
-            LocationView(locationId: 1)
+            //LocationView(locationId: 1)
+            ItemView(itemId: 2519)
         }.padding()
     }
 }
