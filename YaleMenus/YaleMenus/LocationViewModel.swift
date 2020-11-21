@@ -6,11 +6,11 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     var locationId: Int? = nil
     @Published var location: Location? = nil
+    @Published var meals: [Meal]? = nil
+    @Published var items: [[Item]?]? = nil
     @Published var date: Date = Date()
     public let formatterInternal = DateFormatter()
     public let formatterExternal = DateFormatter()
-    @Published var meals: [Meal]? = nil
-    @Published var items: [[Item]?]? = nil
 
     init(locationId: Int) {
         nm.getLocation(id: locationId, completion: { location in
