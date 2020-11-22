@@ -51,13 +51,13 @@ struct LocationView : View {
                 HeaderView(text: self.model.location?.name ?? "")
             }
             if (self.model.location != nil && self.model.meals != nil) {
-                Text("Open for \(self.model.meals![self.mealIndex]!.name)")
                 // TODO: .onChange is native in iOS 14+, switch once we can ensure that most users will be on 14
                 Picker(selection: $mealIndex.onChange(onChange), label: Text("Choose a meal?")) {
                     ForEach(Array(zip(self.model.meals!.indices, self.model.meals!)), id: \.0) { index, meal in
                         Text(meal.name).tag(index)
                     }
                 }.pickerStyle(SegmentedPickerStyle())
+                Text("\(self.model.meals![self.mealIndex].name) hours: \(self.model.meals![self.mealIndex].startTime)-\(self.model.meals![self.mealIndex].endTime)")
                 if (self.model.items != nil && self.model.items![self.mealIndex] != nil) {
                     ScrollView {
                         VStack {
