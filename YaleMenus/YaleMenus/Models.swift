@@ -227,12 +227,12 @@ struct Nutrition {
 
     let totalFatPDV: Int
     let saturatedFatPDV: Int
-    let transFatPDV: Int
+    let transFatPDV: Int?
     let cholesterolPDV: Int
     let sodiumPDV: Int
     let totalCarbohydratePDV: Int
     let dietaryFiberPDV: Int
-    let totalSugarsPDV: Int
+    let totalSugarsPDV: Int?
     let proteinPDV: Int
     let vitaminDPDV: Int
     let vitaminAPDV: Int
@@ -310,12 +310,12 @@ extension Nutrition: Decodable {
 
         totalFatPDV = try container.decode(Int.self, forKey: .totalFatPDV)
         saturatedFatPDV = try container.decode(Int.self, forKey: .saturatedFatPDV)
-        transFatPDV = try container.decode(Int.self, forKey: .transFatPDV)
+        transFatPDV = try container.decode(Int?.self, forKey: .transFatPDV)
         cholesterolPDV = try container.decode(Int.self, forKey: .cholesterolPDV)
         sodiumPDV = try container.decode(Int.self, forKey: .sodiumPDV)
         totalCarbohydratePDV = try container.decode(Int.self, forKey: .totalCarbohydratePDV)
         dietaryFiberPDV = try container.decode(Int.self, forKey: .dietaryFiberPDV)
-        totalSugarsPDV = try container.decode(Int.self, forKey: .totalSugarsPDV)
+        totalSugarsPDV = try container.decode(Int?.self, forKey: .totalSugarsPDV)
         proteinPDV = try container.decode(Int.self, forKey: .proteinPDV)
         vitaminDPDV = try container.decode(Int.self, forKey: .vitaminDPDV)
         vitaminAPDV = try container.decode(Int.self, forKey: .vitaminAPDV)
