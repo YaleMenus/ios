@@ -8,15 +8,18 @@ struct AllergenView : View {
         self.allergen = allergen
     }
     
+    func capitalize(string: String) -> String {
+        return string.prefix(1).capitalized + string.dropFirst()
+    }
+
     var body: some View {
          HStack {
-           Image("entree")
+            Image(self.allergen)
                .resizable()
                .aspectRatio(contentMode: .fit)
                .frame(width: 60, alignment: .leading)
-           Spacer()
-           Text(self.allergen)
-           Spacer()
+            Text(self.capitalize(string: self.allergen))
+            Spacer()
        }
     }
 }
@@ -37,8 +40,20 @@ struct ItemView : View {
             }
             if (self.model.item != nil) {
                 VStack {
-                    
-                    Text(self.model.item!.ingredients)
+                    if (self.model.item!.alcohol) { AllergenView(allergen: "alcohol") }
+                    if (self.model.item!.nuts) { AllergenView(allergen: "nuts") }
+                    if (self.model.item!.shellfish) { AllergenView(allergen: "shellfish") }
+                    if (self.model.item!.peanuts) { AllergenView(allergen: "peanuts") }
+                    if (self.model.item!.dairy) { AllergenView(allergen: "dairy") }
+                    if (self.model.item!.egg) { AllergenView(allergen: "egg") }
+                    if (self.model.item!.pork) { AllergenView(allergen: "pork") }
+                    if (self.model.item!.fish) { AllergenView(allergen: "fish") }
+                    if (self.model.item!.soy) { AllergenView(allergen: "soy") }
+                    // TODO: why does uncommenting these break things??
+//                    if (self.model.item!.wheat) { AllergenView(allergen: "wheat") }
+//                    if (self.model.item!.gluten) { AllergenView(allergen: "gluten") }
+//                    if (self.model.item!.coconut) { AllergenView(allergen: "coconut") }
+                    Text("Ingredients: " + self.model.item!.ingredients)
                 }
             } else {
                 LoaderView()
