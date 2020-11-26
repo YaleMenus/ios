@@ -61,7 +61,7 @@ struct ItemView : View {
                 Spacer()
                 HeaderView(text: self.model.item?.name ?? "")
             }
-            if (self.model.item != nil) {
+            if (self.model.item != nil && self.model.nutrition != nil) {
                 VStack {
                     if (self.model.item!.alcohol) { AllergenView(allergen: "alcohol") }
                     if (self.model.item!.nuts) { AllergenView(allergen: "nuts") }
@@ -70,15 +70,17 @@ struct ItemView : View {
                     if (self.model.item!.dairy) { AllergenView(allergen: "dairy") }
                     if (self.model.item!.egg) { AllergenView(allergen: "egg") }
                     if (self.model.item!.pork) { AllergenView(allergen: "pork") }
+                }
+                VStack {
                     if (self.model.item!.fish) { AllergenView(allergen: "fish") }
                     if (self.model.item!.soy) { AllergenView(allergen: "soy") }
                     // TODO: why does uncommenting these break things??
-//                    if (self.model.item!.wheat) { AllergenView(allergen: "wheat") }
-//                    if (self.model.item!.gluten) { AllergenView(allergen: "gluten") }
-//                    if (self.model.item!.coconut) { AllergenView(allergen: "coconut") }
-                    Text("Ingredients: " + self.model.item!.ingredients)
+                    if (self.model.item!.wheat) { AllergenView(allergen: "wheat") }
+                    if (self.model.item!.gluten) { AllergenView(allergen: "gluten") }
+                    if (self.model.item!.coconut) { AllergenView(allergen: "coconut") }
+                    Text("Ingredients: \(self.model.item!.ingredients)")
                 }
-                if (self.model.nutrition != nil) {
+                VStack {
                     Text("Nutrition Facts")
                     HStack {
                         Text("Serving Size")
@@ -97,16 +99,16 @@ struct ItemView : View {
                     NutritionRowView(label: "Sodium", amount: self.model.nutrition!.sodium, pdv: self.model.nutrition!.sodiumPDV)
                     NutritionRowView(label: "Total Carbohydrate", amount: self.model.nutrition!.totalCarbohydrate, pdv: self.model.nutrition!.totalCarbohydratePDV)
                     NutritionRowView(label: "Dietary Fiber", amount: self.model.nutrition!.dietaryFiber, pdv: self.model.nutrition!.dietaryFiberPDV)
-//                    NutritionRowView(label: "Total Sugars", amount: self.model.nutrition!.totalSugars, pdv: self.model.nutrition!.totalSugarsPDV)
-//                    NutritionRowView(label: "Protein", amount: self.model.nutrition!.protein, pdv: self.model.nutrition!.proteinPDV)
-//                    NutritionRowView(label: "Vitamin D", amount: self.model.nutrition!.vitaminD, pdv: self.model.nutrition!.vitaminDPDV)
-//                    NutritionRowView(label: "Vitamin A", amount: self.model.nutrition!.vitamonA, pdv: self.model.nutrition!.vitamonAPDV)
-//                    NutritionRowView(label: "Vitamin C", amount: self.model.nutrition!.vitamonC, pdv: self.model.nutrition!.vitamonCPDV)
-//                    NutritionRowView(label: "Calcium", amount: self.model.nutrition!.calcium, pdv: self.model.nutrition!.calciumPDV)
-//                    NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV)
-//                    NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV)
-                } else {
-                    LoaderView()
+                }
+                VStack {
+                    NutritionRowView(label: "Total Sugars", amount: self.model.nutrition!.totalSugars, pdv: self.model.nutrition!.totalSugarsPDV)
+                    NutritionRowView(label: "Protein", amount: self.model.nutrition!.protein, pdv: self.model.nutrition!.proteinPDV)
+                    NutritionRowView(label: "Vitamin D", amount: self.model.nutrition!.vitaminD, pdv: self.model.nutrition!.vitaminDPDV)
+                    NutritionRowView(label: "Vitamin A", amount: self.model.nutrition!.vitaminA, pdv: self.model.nutrition!.vitaminAPDV)
+                    NutritionRowView(label: "Vitamin C", amount: self.model.nutrition!.vitaminC, pdv: self.model.nutrition!.vitaminCPDV)
+                    NutritionRowView(label: "Calcium", amount: self.model.nutrition!.calcium, pdv: self.model.nutrition!.calciumPDV)
+                    NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV)
+                    NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV)
                 }
             } else {
                 LoaderView()
