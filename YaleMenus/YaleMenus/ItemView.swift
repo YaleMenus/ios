@@ -24,22 +24,33 @@ struct AllergenView : View {
     }
 }
 
+enum NutritionRowStyle {
+    case main
+    case sub
+    case plain
+}
+
 struct NutritionRowView : View {
     let label: String
     let amount: String
     let pdv: Int?
-    let offset: Int
+    let style: NutritionRowStyle
 
-    init(label: String, amount: String, pdv: Int?, offset: Int = 0) {
+    init(label: String, amount: String, pdv: Int?, style: NutritionRowStyle = .main) {
         self.label = label
         self.amount = amount
         self.pdv = pdv
-        self.offset = offset
+        self.style = style
     }
 
     var body: some View {
         HStack {
-            Text(self.label)
+            if (self.style == .main) {
+                Text(self.label)
+                    .font(.system(size: 30, weight: .heavy, design: .default))
+            } else {
+                Text(self.label)
+            }
             Text(self.amount)
             Spacer()
             if (self.pdv != nil) { Text("\(self.pdv!)%") }
@@ -92,23 +103,23 @@ struct ItemView : View {
                         Spacer()
                         Text(self.model.nutrition!.calories)
                     }
-                    NutritionRowView(label: "Total Fat", amount: self.model.nutrition!.totalFat, pdv: self.model.nutrition!.totalFatPDV)
-                    NutritionRowView(label: "Saturated Fat", amount: self.model.nutrition!.saturatedFat, pdv: self.model.nutrition!.saturatedFatPDV)
-                    NutritionRowView(label: "Trans Fat", amount: self.model.nutrition!.transFat, pdv: self.model.nutrition!.transFatPDV)
-                    NutritionRowView(label: "Cholesterol", amount: self.model.nutrition!.cholesterol, pdv: self.model.nutrition!.cholesterolPDV)
-                    NutritionRowView(label: "Sodium", amount: self.model.nutrition!.sodium, pdv: self.model.nutrition!.sodiumPDV)
-                    NutritionRowView(label: "Total Carbohydrate", amount: self.model.nutrition!.totalCarbohydrate, pdv: self.model.nutrition!.totalCarbohydratePDV)
-                    NutritionRowView(label: "Dietary Fiber", amount: self.model.nutrition!.dietaryFiber, pdv: self.model.nutrition!.dietaryFiberPDV)
+                    NutritionRowView(label: "Total Fat", amount: self.model.nutrition!.totalFat, pdv: self.model.nutrition!.totalFatPDV, style: .main)
+                    NutritionRowView(label: "Saturated Fat", amount: self.model.nutrition!.saturatedFat, pdv: self.model.nutrition!.saturatedFatPDV, style: .sub)
+                    NutritionRowView(label: "Trans Fat", amount: self.model.nutrition!.transFat, pdv: self.model.nutrition!.transFatPDV, style: .sub)
+                    NutritionRowView(label: "Cholesterol", amount: self.model.nutrition!.cholesterol, pdv: self.model.nutrition!.cholesterolPDV, style: .main)
+                    NutritionRowView(label: "Sodium", amount: self.model.nutrition!.sodium, pdv: self.model.nutrition!.sodiumPDV, style: .main)
+                    NutritionRowView(label: "Total Carbohydrate", amount: self.model.nutrition!.totalCarbohydrate, pdv: self.model.nutrition!.totalCarbohydratePDV, style: .main)
+                    NutritionRowView(label: "Dietary Fiber", amount: self.model.nutrition!.dietaryFiber, pdv: self.model.nutrition!.dietaryFiberPDV, style: .sub)
                 }
                 VStack {
-                    NutritionRowView(label: "Total Sugars", amount: self.model.nutrition!.totalSugars, pdv: self.model.nutrition!.totalSugarsPDV)
-                    NutritionRowView(label: "Protein", amount: self.model.nutrition!.protein, pdv: self.model.nutrition!.proteinPDV)
-                    NutritionRowView(label: "Vitamin D", amount: self.model.nutrition!.vitaminD, pdv: self.model.nutrition!.vitaminDPDV)
-                    NutritionRowView(label: "Vitamin A", amount: self.model.nutrition!.vitaminA, pdv: self.model.nutrition!.vitaminAPDV)
-                    NutritionRowView(label: "Vitamin C", amount: self.model.nutrition!.vitaminC, pdv: self.model.nutrition!.vitaminCPDV)
-                    NutritionRowView(label: "Calcium", amount: self.model.nutrition!.calcium, pdv: self.model.nutrition!.calciumPDV)
-                    NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV)
-                    NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV)
+                    NutritionRowView(label: "Total Sugars", amount: self.model.nutrition!.totalSugars, pdv: self.model.nutrition!.totalSugarsPDV, style: .sub)
+                    NutritionRowView(label: "Protein", amount: self.model.nutrition!.protein, pdv: self.model.nutrition!.proteinPDV, style: .plain)
+                    NutritionRowView(label: "Vitamin D", amount: self.model.nutrition!.vitaminD, pdv: self.model.nutrition!.vitaminDPDV, style: .plain)
+                    NutritionRowView(label: "Vitamin A", amount: self.model.nutrition!.vitaminA, pdv: self.model.nutrition!.vitaminAPDV, style: .plain)
+                    NutritionRowView(label: "Vitamin C", amount: self.model.nutrition!.vitaminC, pdv: self.model.nutrition!.vitaminCPDV, style: .plain)
+                    NutritionRowView(label: "Calcium", amount: self.model.nutrition!.calcium, pdv: self.model.nutrition!.calciumPDV, style: .plain)
+                    NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV, style: .plain)
+                    NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
                 }
             } else {
                 LoaderView()
