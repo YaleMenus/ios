@@ -45,12 +45,9 @@ struct NutritionRowView : View {
 
     var body: some View {
         HStack {
-            if (self.style == .main) {
-                Text(self.label)
-                    .font(.system(size: 30, weight: .heavy, design: .default))
-            } else {
-                Text(self.label)
-            }
+            Text(self.label)
+                .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular, design: .default))
+                .padding(.leading, self.style == .sub ? 25 : 0)
             Text(self.amount)
             Spacer()
             if (self.pdv != nil) { Text("\(self.pdv!)%") }
