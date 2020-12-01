@@ -20,7 +20,9 @@ struct AllergenView : View {
                .frame(width: 60, alignment: .leading)
             Text(self.capitalize(string: self.allergen))
             Spacer()
-       }
+         }
+         .padding(.top, 10)
+         .padding(.bottom, 10)
     }
 }
 
@@ -44,13 +46,16 @@ struct NutritionRowView : View {
     }
 
     var body: some View {
-        HStack {
-            Text(self.label)
-                .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular, design: .default))
-                .padding(.leading, self.style == .sub ? 25 : 0)
-            Text(self.amount)
-            Spacer()
-            if (self.pdv != nil) { Text("\(self.pdv!)%") }
+        VStack {
+            Divider()
+            HStack {
+                Text(self.label)
+                    .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular, design: .default))
+                    .padding(.leading, self.style == .sub ? 25 : 0)
+                Text(self.amount)
+                Spacer()
+                if (self.pdv != nil) { Text("\(self.pdv!)%") }
+            }
         }
     }
 }
