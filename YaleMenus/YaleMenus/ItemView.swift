@@ -27,6 +27,8 @@ struct AllergenView : View {
 }
 
 enum NutritionRowStyle {
+    case serving
+    case calories
     case main
     case sub
     case plain
