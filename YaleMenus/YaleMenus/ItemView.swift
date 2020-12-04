@@ -56,7 +56,10 @@ struct NutritionRowView : View {
                     .padding(.leading, self.style == .sub ? 25 : 0)
                 Text(self.amount)
                 Spacer()
-                if (self.pdv != nil) { Text("\(self.pdv!)%") }
+                if (self.pdv != nil) {
+                    Text("\(self.pdv!)%")
+                        .font(.system(size: 16, weight: self.style != .plain ? .heavy : .regular, design: .default))
+                }
             }
         }
     }
