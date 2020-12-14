@@ -27,8 +27,7 @@ struct AllergenView : View {
 }
 
 enum NutritionRowStyle {
-    case serving
-    case calories
+    case heading
     case main
     case sub
     case plain
@@ -54,8 +53,14 @@ struct NutritionRowView : View {
                 Text(self.label)
                     .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular, design: .default))
                     .padding(.leading, self.style == .sub ? 25 : 0)
-                Text(self.amount)
-                Spacer()
+                if (self.style == .heading) {
+                    Spacer()
+                    Text(self.amount)
+                        .font(.system(size: 16, weight: .heavy))
+                } else {
+                    Text(self.amount)
+                    Spacer()
+                }
                 if (self.pdv != nil) {
                     Text("\(self.pdv!)%")
                         .font(.system(size: 16, weight: self.style != .plain ? .heavy : .regular, design: .default))
@@ -101,8 +106,9 @@ struct ItemView : View {
                         }
                         VStack {
                             Text("Nutrition Facts")
-                            NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.portionSize, pdv: nil, style: .serving)
-                            NutritionRowView(label: "Calories", amount: self.model.nutrition!.calories, pdv: nil, style: .calories)
+                                .font(.title)
+                            NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.portionSize, pdv: nil, style: .heading)
+                            NutritionRowView(label: "Calories", amount: self.model.nutrition!.calories, pdv: nil, style: .heading)
 
                             NutritionRowView(label: "Total Fat", amount: self.model.nutrition!.totalFat, pdv: self.model.nutrition!.totalFatPDV, style: .main)
                             NutritionRowView(label: "Saturated Fat", amount: self.model.nutrition!.saturatedFat, pdv: self.model.nutrition!.saturatedFatPDV, style: .sub)
@@ -127,8 +133,7 @@ struct ItemView : View {
                         LoaderView()
                     }
                 }
-            // TODO: this is a workaround for a bug in SwiftUI, explained here:
-            // https://stackoverflow.com/questions/56483948/make-scrollview-content-fill-its-parent-in-swiftui
+            // TODO: is this still needed?
             }.frame(maxWidth: .infinity)
         }
     }
