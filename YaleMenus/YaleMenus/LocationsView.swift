@@ -1,4 +1,5 @@
 import SwiftUI
+import NavigationStack
 
 struct LocationGrid<Content: View>: View {
     let items: [Location]
@@ -87,6 +88,7 @@ struct CapacityBar : View {
 
 struct LocationsView : View {
     @ObservedObject var model = LocationsViewModel()
+    @EnvironmentObject private var navigationStack: NavigationStack
     
     var body: some View {
         VStack {
@@ -105,7 +107,9 @@ struct LocationsView : View {
                                     .frame(width: geometry.size.height / 1.7)
                             }.frame(width: geometry.size.width)
                         }.onTapGesture {
-                            self.model.openLocation(location: location!)
+                            DispatchQueue.main.async {
+                                self.navigationStack.push(LocationView(locationId: location!.id))
+                            }
                         }
                     } else {
                         VStack {

@@ -1,11 +1,12 @@
 import SwiftUI
+import NavigationStack
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            //LocationsView()
-            //LocationView(locationId: 1)
-            ItemView(itemId: 2495)
+        NavigationStackView {
+            LocationsView()
+//            LocationView(locationId: 1)
+//            ItemView(itemId: 2495)
         }.padding()
     }
 }
