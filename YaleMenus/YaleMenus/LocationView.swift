@@ -21,25 +21,26 @@ struct ItemPreviewView : View {
     }
 
     var body: some View {
-        HStack {
-            Image("entree")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 60, alignment: .leading)
-            Spacer()
-            Text(self.item.name)
-            Spacer()
+        PushView(destination: ItemView(itemId: self.item.id)) {
+            HStack {
+                Image("entree")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 60, alignment: .leading)
+                Spacer()
+                Text(self.item.name)
+                Spacer()
+            }
+            .padding()
+            .background(Color.init(red: 241 / 255, green: 244 / 255, blue: 247 / 255))
+            // TODO: rounded border
         }
-        .padding()
-        .background(Color.init(red: 241 / 255, green: 244 / 255, blue: 247 / 255))
-        // TODO: rounded border
     }
 }
 
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
     @State private var mealIndex = 0
-    @EnvironmentObject private var navigationStack: NavigationStack
 
     init(locationId: Int) {
         self.model = LocationViewModel(locationId: locationId)
@@ -47,16 +48,7 @@ struct LocationView : View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "chevron.left")
-                .onTapGesture {
-                    DispatchQueue.main.async {
-                        self.navigationStack.pop()
-                    }
-                }
-                Spacer()
-                HeaderView(text: self.model.location?.name ?? "")
-            }
+            HeaderView(text: self.model.location?.name ?? "")
             if (self.model.location != nil && self.model.meals != nil) {
                 // TODO: .onChange is native in iOS 14+, switch once we can ensure that most users will be on 14
                 Picker(selection: $mealIndex.onChange(onChange), label: Text("Choose a meal?")) {

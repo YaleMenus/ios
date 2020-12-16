@@ -71,7 +71,6 @@ struct NutritionRowView : View {
 
 struct ItemView : View {
     @ObservedObject var model: ItemViewModel
-    @EnvironmentObject private var navigationStack: NavigationStack
 
     init(itemId: Int) {
         self.model = ItemViewModel(itemId: itemId)
@@ -79,16 +78,7 @@ struct ItemView : View {
 
     var body: some View {
         Group {
-            HStack {
-                Image(systemName: "chevron.left")
-                .onTapGesture {
-                    DispatchQueue.main.async {
-                        self.navigationStack.pop()
-                    }
-                }
-                Spacer()
-                HeaderView(text: self.model.item?.name ?? "")
-            }
+            HeaderView(text: self.model.item?.name ?? "")
             ScrollView {
                 VStack {
                     if (self.model.item != nil && self.model.nutrition != nil) {

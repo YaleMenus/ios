@@ -2,6 +2,7 @@ import SwiftUI
 import NavigationStack
 
 struct HeaderView : View {
+    @EnvironmentObject private var navigationStack: NavigationStack
     let text: String
 
     init(text: String) {
@@ -9,8 +10,17 @@ struct HeaderView : View {
     }
 
     var body: some View {
-        Text(self.text)
-            .font(.largeTitle)
-            .frame(alignment: .trailing)
+        HStack {
+            Image(systemName: "chevron.left")
+            .onTapGesture {
+                DispatchQueue.main.async {
+                    self.navigationStack.pop()
+                }
+            }
+            Spacer()
+            Text(self.text)
+                .font(.largeTitle)
+                .frame(alignment: .trailing)
+        }
     }
 }
