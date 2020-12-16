@@ -77,7 +77,7 @@ struct ItemView : View {
     }
 
     var body: some View {
-        Group {
+        VStack {
             HeaderView(text: self.model.item?.name ?? "")
             ScrollView {
                 VStack {
