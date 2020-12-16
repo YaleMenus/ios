@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import NavigationStack
 
 struct AllergenView : View {
     let allergen: String
@@ -72,6 +73,7 @@ struct NutritionRowView : View {
 
 struct ItemView : View {
     @ObservedObject var model: ItemViewModel
+    @EnvironmentObject private var navigationStack: NavigationStack
 
     init(itemId: Int) {
         self.model = ItemViewModel(itemId: itemId)
@@ -81,6 +83,11 @@ struct ItemView : View {
         Group {
             HStack {
                 Image(systemName: "chevron.left")
+                .onTapGesture {
+                    DispatchQueue.main.async {
+                        self.navigationStack.pop()
+                    }
+                }
                 Spacer()
                 HeaderView(text: self.model.item?.name ?? "")
             }

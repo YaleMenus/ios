@@ -1,4 +1,5 @@
 import SwiftUI
+import NavigationStack
 
 struct HeaderView : View {
     let text: String
