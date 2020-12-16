@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import NavigationStack
 
 extension Binding {
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
@@ -38,6 +39,7 @@ struct ItemPreviewView : View {
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
     @State private var mealIndex = 0
+    @EnvironmentObject private var navigationStack: NavigationStack
 
     init(locationId: Int) {
         self.model = LocationViewModel(locationId: locationId)
@@ -47,6 +49,11 @@ struct LocationView : View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "chevron.left")
+                .onTapGesture {
+                    DispatchQueue.main.async {
+                        self.navigationStack.pop()
+                    }
+                }
                 Spacer()
                 HeaderView(text: self.model.location?.name ?? "")
             }
