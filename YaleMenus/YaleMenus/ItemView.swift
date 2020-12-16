@@ -22,8 +22,6 @@ struct AllergenView : View {
             Text(self.capitalize(string: self.allergen))
             Spacer()
          }
-         .padding(.top, 10)
-         .padding(.bottom, 10)
     }
 }
 
