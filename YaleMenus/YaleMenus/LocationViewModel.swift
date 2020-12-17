@@ -47,7 +47,7 @@ class LocationViewModel: ObservableObject, Identifiable {
             }
         }
     }
-    
+
     func changeDay(by: Int) {
         self.date = Calendar.current.date(byAdding: .day, value: by, to: self.date)!
         self.meals = nil

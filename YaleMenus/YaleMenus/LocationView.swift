@@ -73,7 +73,7 @@ struct LocationView : View {
             }
             HStack {
                 Button(action: {
-                    self.model.changeDay(by: -1)
+                    self.changeDay(by: -1)
                 }) {
                     Image(systemName: "chevron.left")
                 }
@@ -84,7 +84,7 @@ struct LocationView : View {
                 }
                 Spacer()
                 Button(action: {
-                    self.model.changeDay(by: 1)
+                    self.changeDay(by: 1)
                 }) {
                     Image(systemName: "chevron.right")
                 }
@@ -94,5 +94,10 @@ struct LocationView : View {
     
     func onChange(mealIndex: Int) {
         self.model.getItems(mealIndex: mealIndex)
+    }
+
+    func changeDay(by: Int) {
+        self.mealIndex = 0
+        self.model.changeDay(by: by)
     }
 }
