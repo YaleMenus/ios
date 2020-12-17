@@ -99,7 +99,6 @@ struct ItemView : View {
                             if (self.model.item!.gluten) { AllergenView(allergen: "gluten") }
                             if (self.model.item!.coconut) { AllergenView(allergen: "coconut") }
                         }
-                        Text("Ingredients: \(self.model.item!.ingredients)")
                         VStack {
                             Text("Nutrition Facts")
                                 .font(.title)
@@ -123,6 +122,12 @@ struct ItemView : View {
                             NutritionRowView(label: "Calcium", amount: self.model.nutrition!.calcium, pdv: self.model.nutrition!.calciumPDV, style: .plain)
                             NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV, style: .plain)
                             NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
+                        }
+                        Divider()
+                        HStack {
+                            // TODO: find a better way of aligning left
+                            Text("Ingredients: \(self.model.item!.ingredients)")
+                            Spacer()
                         }
                     } else {
                         LoaderView()
