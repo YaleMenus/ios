@@ -13,16 +13,6 @@ struct Location: Identifiable {
     let phone: String
 }
 
-extension Location {
-    func shortName() -> String {
-        let custom = ["Jonathan Edwards": "JE",
-                      "Timothy Dwight": "TD",
-                      "Pauli Murray": "Murray",
-                      "Grace Hopper": "Hopper"]
-        return custom[self.name] ?? name
-    }
-}
-
 extension Location: Decodable {
     enum LocationCodingKeys: String, CodingKey {
         case id

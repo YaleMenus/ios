@@ -97,7 +97,7 @@ struct LocationsView : View {
                     if (location != nil) {
                         GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
-                                Text(location!.shortName())
+                                Text(location!.shortname)
                                     .font(.system(.body, design: .rounded))
                                 CapacityBar(capacity: location!.capacity)
                                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
