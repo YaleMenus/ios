@@ -206,7 +206,7 @@ extension Item: Decodable {
 
 struct Nutrition {
     let id: Int
-    let portionSize: String
+    let portionSize: String?
     let calories: String
 
     let totalFat: String
