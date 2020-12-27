@@ -34,11 +34,11 @@ enum NutritionRowStyle {
 
 struct NutritionRowView : View {
     let label: String
-    let amount: String
+    let amount: String?
     let pdv: Int?
     let style: NutritionRowStyle
 
-    init(label: String, amount: String, pdv: Int?, style: NutritionRowStyle = .main) {
+    init(label: String, amount: String?, pdv: Int?, style: NutritionRowStyle = .main) {
         self.label = label
         self.amount = amount
         self.pdv = pdv
@@ -47,22 +47,24 @@ struct NutritionRowView : View {
 
     var body: some View {
         VStack {
-            Divider()
-            HStack {
-                Text(self.label)
-                    .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular, design: .default))
-                    .padding(.leading, self.style == .sub ? 25 : 0)
-                if (self.style == .heading) {
-                    Spacer()
-                    Text(self.amount)
-                        .font(.system(size: 16, weight: .heavy))
-                } else {
-                    Text(self.amount)
-                    Spacer()
-                }
-                if (self.pdv != nil) {
-                    Text("\(self.pdv!)%")
-                        .font(.system(size: 16, weight: self.style != .plain ? .heavy : .regular, design: .default))
+            if (self.amount != nil) {
+                Divider()
+                HStack {
+                    Text(self.label)
+                        .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular))
+                        .padding(.leading, self.style == .sub ? 25 : 0)
+                    if (self.style == .heading) {
+                        Spacer()
+                        Text(self.amount!)
+                            .font(.system(size: 16, weight: .heavy))
+                    } else {
+                        Text(self.amount!)
+                        Spacer()
+                    }
+                    if (self.pdv != nil) {
+                        Text("\(self.pdv!)%")
+                            .font(.system(size: 16, weight: self.style != .plain ? .heavy : .regular))
+                    }
                 }
             }
         }
