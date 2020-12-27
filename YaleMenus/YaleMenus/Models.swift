@@ -3,6 +3,7 @@ import Foundation
 struct Location: Identifiable {
     let id: Int
     let name: String
+    let shortname: String
     let code: String
     let type: String
     let isOpen: Bool
@@ -27,6 +28,7 @@ extension Location: Decodable {
     enum LocationCodingKeys: String, CodingKey {
         case id
         case name
+        case shortname
         case code
         case type
         case isOpen = "is_open"
@@ -42,6 +44,7 @@ extension Location: Decodable {
         
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
+        shortname = try container.decode(String.self, forKey: .shortname)
         code = try container.decode(String.self, forKey: .code)
         type = try container.decode(String.self, forKey: .type)
         isOpen = try container.decode(Bool.self, forKey: .isOpen)
