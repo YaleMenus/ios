@@ -5,5 +5,6 @@ struct LoaderView : View {
     var body: some View {
         // TODO: add more interesting content
         Text("Loading...")
+            .frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }
