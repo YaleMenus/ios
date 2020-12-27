@@ -5,7 +5,6 @@ struct Location: Identifiable {
     let name: String
     let shortname: String
     let code: String
-    let type: String
     let isOpen: Bool
     let capacity: Int
     let latitude: Float
@@ -30,7 +29,6 @@ extension Location: Decodable {
         case name
         case shortname
         case code
-        case type
         case isOpen = "is_open"
         case capacity
         case latitude
@@ -46,7 +44,6 @@ extension Location: Decodable {
         name = try container.decode(String.self, forKey: .name)
         shortname = try container.decode(String.self, forKey: .shortname)
         code = try container.decode(String.self, forKey: .code)
-        type = try container.decode(String.self, forKey: .type)
         isOpen = try container.decode(Bool.self, forKey: .isOpen)
         capacity = try container.decode(Int.self, forKey: .capacity)
         latitude = try container.decode(Float.self, forKey: .latitude)
