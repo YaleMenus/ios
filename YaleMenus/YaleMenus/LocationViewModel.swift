@@ -22,6 +22,7 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     func getMeals() {
         // TODO: use self.location?.id
+        // TODO: may crash when spamming buttons
         nm.getMeals(locationId: self.location.id,
                     date: self.formatterInternal.string(from: self.date),
                     completion: { meals in

@@ -7,7 +7,6 @@ target 'YaleMenus' do
 
   # Pods for YaleMenus
   pod 'Moya'
-  pod 'FontBlaster'
   pod 'NavigationStack', '~> 0.1.0'
 
   target 'YaleMenusTests' do
