@@ -108,7 +108,7 @@ struct LocationsView : View {
                             }.frame(width: geometry.size.width)
                         }.onTapGesture {
                             DispatchQueue.main.async {
-                                self.navigationStack.push(LocationView(locationId: location!.id))
+                                self.navigationStack.push(LocationView(location: location!))
                             }
                         }
                     } else {

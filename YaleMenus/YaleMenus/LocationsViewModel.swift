@@ -19,8 +19,4 @@ class LocationsViewModel: ObservableObject, Identifiable {
             self.locations = locations;
         });
     }
-    
-    func openLocation(location: Location?) {
-        
-    }
 }

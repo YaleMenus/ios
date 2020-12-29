@@ -42,14 +42,14 @@ struct LocationView : View {
     @ObservedObject var model: LocationViewModel
     @State private var mealIndex = 0
 
-    init(locationId: Int) {
-        self.model = LocationViewModel(locationId: locationId)
+    init(location: Location) {
+        self.model = LocationViewModel(location: location)
     }
 
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderView(text: self.model.location?.name ?? "")
-            if (self.model.location != nil && self.model.meals != nil) {
+            HeaderView(text: self.model.location.name)
+            if (self.model.meals != nil) {
                 if (self.model.meals!.isEmpty) {
                     SplashView(iconName: "slash.circle", subtitle: "No meals")
                 } else {

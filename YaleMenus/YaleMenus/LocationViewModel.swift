@@ -4,30 +4,25 @@ class LocationViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
 
-    var locationId: Int? = nil
-    @Published var location: Location? = nil
+    @Published var location: Location
     @Published var meals: [Meal]? = nil
     @Published var items: [[Item]?]? = nil
     @Published var date: Date = Date()
     public let formatterInternal = DateFormatter()
     public let formatterExternal = DateFormatter()
 
-    init(locationId: Int) {
-        nm.getLocation(id: locationId, completion: { location in
-            self.location = location
-        })
-        // TODO: we shouldn't need to store this, it should be accessible through self.location.
-        self.locationId = locationId
+    init(location: Location) {
+        self.location = location
         self.formatterInternal.dateFormat = "yyyy-MM-dd"
         self.formatterExternal.dateFormat = "MMMM d"
-        // TODO: only for testing while we don't have updated data.
-        self.date = self.formatterInternal.date(from: "2020-09-24")!
+        // For testing while we don't have updated data.
+        //self.date = self.formatterInternal.date(from: "2020-09-24")!
         self.getMeals()
     }
 
     func getMeals() {
         // TODO: use self.location?.id
-        nm.getMeals(locationId: self.locationId!,
+        nm.getMeals(locationId: self.location.id,
                     date: self.formatterInternal.string(from: self.date),
                     completion: { meals in
             self.meals = meals
