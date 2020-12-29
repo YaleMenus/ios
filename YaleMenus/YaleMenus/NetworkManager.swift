@@ -94,36 +94,6 @@ struct NetworkManager {
             }
         }
     }
-    func getCourses(mealId: Int, completion: @escaping ([Course]) -> ()) {
-        provider.request(.courses(mealId: mealId)) { result in
-            switch result {
-            case let .success(response):
-                do {
-                    let results = try JSONDecoder().decode([Course].self, from: response.data)
-                    completion(results)
-                } catch let err {
-                    print(err)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
-    func getCourse(id: Int, completion: @escaping (Course) -> ()) {
-        provider.request(.course(id: id)) { result in
-            switch result {
-            case let .success(response):
-                do {
-                    let results = try JSONDecoder().decode(Course.self, from: response.data)
-                    completion(results)
-                } catch let err {
-                    print(err)
-                }
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
     func getItems(mealId: Int, completion: @escaping ([Item]) -> ()) {
         provider.request(.items(mealId: mealId)) { result in
             switch result {
