@@ -17,11 +17,11 @@ struct CheckboxView: View {
         Button(action: toggle) {
             HStack {
                 Image(systemName: self.checked.wrappedValue ? "xmark.circle": "circle")
+                    .foregroundColor(self.checked.wrappedValue ? .red : .foreground)
                 Text(self.label)
                     .font(.appBody)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding(.leading, 5)
         }.buttonStyle(PlainButtonStyle())
     }
 }
