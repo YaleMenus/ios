@@ -16,9 +16,12 @@ struct SplashView : View {
                 Image(systemName: self.iconName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: geometry.size.width / 2)
+                    .frame(height: geometry.size.width / 2)
+                    .foregroundColor(Color.medium)
             }
             Text(self.subtitle)
+                .foregroundColor(Color.medium)
+                .frame(maxHeight: .infinity, alignment: .topLeading)
         }.frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }
