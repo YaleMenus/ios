@@ -1,4 +1,5 @@
 import SwiftUI
+import NavigationStack
 
 enum CheckboxStyle {
     case x
@@ -94,12 +95,26 @@ struct SettingsView: View {
                     CheckboxView(label: "Gluten", checked: $model.gluten)
                     CheckboxView(label: "Coconut", checked: $model.coconut)
                 }
-                HStack {
-                    // TODO: left align more cleanly!
-                    Text("We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
-                        .font(.appBody)
-                        .foregroundColor(.foreground)
-                    Spacer()
+                ParagraphView(text: "We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
+                Button(action: {
+                    UIApplication.shared.open(URL(string: "mailto://yalemenus@gmail.com,erik.boesen@yale.edu?subject=Yale%20Menus%20Feedback")!)
+                }) {
+                    HStack {
+                        Text("Give Feedback")
+                            .font(.appBodyBold)
+                            .foregroundColor(.foreground)
+                        Spacer()
+                    }.padding(.vertical, 6)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .font(.appBodyBold)
+                PushView(destination: InformationView()) {
+                    HStack {
+                        Text("Information & License")
+                            .font(.appBodyBold)
+                            .foregroundColor(.foreground)
+                        Spacer()
+                    }.padding(.vertical, 6)
                 }
                 CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition, style: .check)
             // TODO: is this still needed?
