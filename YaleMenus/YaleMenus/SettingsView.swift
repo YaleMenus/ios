@@ -20,8 +20,11 @@ struct CheckboxView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(self.checked.wrappedValue ? .red : .foreground)
+                    .frame(width: 25)
+                    .padding(.trailing, 10)
                 Text(self.label)
                     .font(.appBody)
+                    .foregroundColor(.foreground)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
         }.buttonStyle(PlainButtonStyle())
@@ -39,6 +42,7 @@ struct SettingsView: View {
                     // TODO: left align more cleanly!
                     Text("Dietary Restrictions")
                         .font(.appTitle)
+                        .foregroundColor(.foreground)
                     Spacer()
                 }
                 Group {
@@ -63,6 +67,7 @@ struct SettingsView: View {
                     // TODO: left align more cleanly!
                     Text("We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
                         .font(.appBody)
+                        .foregroundColor(.foreground)
                     Spacer()
                 }
                 CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition)
