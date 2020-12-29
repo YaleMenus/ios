@@ -26,8 +26,27 @@ struct HeaderView : View {
                 .font(.appHeader)
                 .foregroundColor(.foreground)
                 // TODO: find a cleaner way to reduce padding
-                .padding(.vertical, -30)
+                .padding(.vertical, -20)
                 .frame(alignment: .trailing)
+        }
+    }
+}
+
+struct ParagraphView : View {
+    let text: String
+
+    init(text: String) {
+        self.text = text;
+    }
+
+    var body: some View {
+        HStack {
+            Text(self.text)
+                .font(.appBody)
+                .foregroundColor(.foreground)
+                .lineSpacing(14)
+                .padding(.vertical, 15)
+            Spacer()
         }
     }
 }
