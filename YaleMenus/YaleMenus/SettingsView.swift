@@ -17,6 +17,8 @@ struct CheckboxView: View {
         Button(action: toggle) {
             HStack {
                 Image(systemName: self.checked.wrappedValue ? "xmark.circle": "circle")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                     .foregroundColor(self.checked.wrappedValue ? .red : .foreground)
                 Text(self.label)
                     .font(.appBody)
