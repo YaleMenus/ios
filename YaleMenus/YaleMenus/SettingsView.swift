@@ -1,25 +1,56 @@
 import SwiftUI
 
+enum CheckboxStyle {
+    case x
+    case check
+}
+
 struct CheckboxView: View {
     var label: String
     var checked: Binding<Bool>
+    var style: CheckboxStyle
     
-    init(label: String, checked: Binding<Bool>) {
+    init(label: String, checked: Binding<Bool>, style: CheckboxStyle = .x) {
         self.label = label
         self.checked = checked
+        self.style = style
     }
     
     func toggle() {
         self.checked.wrappedValue = !self.checked.wrappedValue
     }
     
+    func getIcon() -> String {
+        if (self.checked.wrappedValue) {
+            switch (self.style) {
+            case .x:
+                return "xmark.circle"
+            case .check:
+                return "checkmark.circle"
+            }
+        }
+        return "circle"
+    }
+    
+    func getColor() -> Color {
+        if (self.checked.wrappedValue) {
+            switch (self.style) {
+            case .x:
+                return .red
+            case .check:
+                return .green
+            }
+        }
+        return .foreground
+    }
+    
     var body: some View {
         Button(action: toggle) {
             HStack {
-                Image(systemName: self.checked.wrappedValue ? "xmark.circle": "circle")
+                Image(systemName: self.getIcon())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundColor(self.checked.wrappedValue ? .red : .foreground)
+                    .foregroundColor(self.getColor())
                     .frame(width: 25)
                     .padding(.trailing, 10)
                 Text(self.label)
@@ -70,7 +101,7 @@ struct SettingsView: View {
                         .foregroundColor(.foreground)
                     Spacer()
                 }
-                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition)
+                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition, style: .check)
             // TODO: is this still needed?
             }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding()
