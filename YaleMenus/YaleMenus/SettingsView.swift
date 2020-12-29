@@ -2,26 +2,26 @@ import SwiftUI
 
 struct CheckboxView: View {
     var label: String
-    @State var checked: Bool = false
+    var checked: Binding<Bool>
     
-    init(label: String, checked: Bool = false) {
+    init(label: String, checked: Binding<Bool>) {
         self.label = label
         self.checked = checked
     }
     
     func toggle() {
-        self.checked = !self.checked
+        self.checked.wrappedValue = !self.checked.wrappedValue
     }
     
     var body: some View {
         Button(action: toggle) {
             HStack {
-                Image(systemName: self.checked ? "xmark.circle": "circle")
+                Image(systemName: self.checked.wrappedValue ? "xmark.circle": "circle")
                 Text(self.label)
                     .font(.appBody)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
-            .padding(.leading, 50)
+            .padding(.leading, 5)
         }.buttonStyle(PlainButtonStyle())
     }
 }
@@ -38,26 +38,26 @@ struct SettingsView: View {
                     .multilineTextAlignment(.leading)
                     .frame(alignment: .leading)
                 Group {
-                    CheckboxView(label: "Meat (I'm Vegetarian)")
-                    CheckboxView(label: "Animal Products (I'm Vegan)")
-                    CheckboxView(label: "Alcohol")
-                    CheckboxView(label: "Nuts")
-                    CheckboxView(label: "Shellfish")
-                    CheckboxView(label: "Peanuts")
-                    CheckboxView(label: "Dairy")
+                    CheckboxView(label: "Meat (I'm Vegetarian)", checked: $model.vegetarian)
+                    CheckboxView(label: "Animal Products (I'm Vegan)", checked: $model.vegan)
+                    CheckboxView(label: "Alcohol", checked: $model.alcohol)
+                    CheckboxView(label: "Nuts", checked: $model.nuts)
+                    CheckboxView(label: "Shellfish", checked: $model.shellfish)
+                    CheckboxView(label: "Peanuts", checked: $model.peanuts)
+                    CheckboxView(label: "Dairy", checked: $model.dairy)
                 }
                 Group {
-                    CheckboxView(label: "Egg")
-                    CheckboxView(label: "Pork")
-                    CheckboxView(label: "Fish")
-                    CheckboxView(label: "Soy")
-                    CheckboxView(label: "Wheat")
-                    CheckboxView(label: "Gluten")
-                    CheckboxView(label: "Coconut")
+                    CheckboxView(label: "Egg", checked: $model.egg)
+                    CheckboxView(label: "Pork", checked: $model.pork)
+                    CheckboxView(label: "Fish", checked: $model.fish)
+                    CheckboxView(label: "Soy", checked: $model.soy)
+                    CheckboxView(label: "Wheat", checked: $model.wheat)
+                    CheckboxView(label: "Gluten", checked: $model.gluten)
+                    CheckboxView(label: "Coconut", checked: $model.coconut)
                 }
                 Text("We will attempt (but cannot guarantee) to gray out any items on the menu screen containing the ingredients you select.")
                     .font(.appBody)
-                CheckboxView(label: "Show Nutrition Facts")
+                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition)
             // TODO: is this still needed?
             }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding()
