@@ -12,6 +12,10 @@ struct HeaderView : View {
     var body: some View {
         HStack {
             Image(systemName: "chevron.left")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .foregroundColor(.medium)
+            .frame(height: 25)
             .onTapGesture {
                 DispatchQueue.main.async {
                     self.navigationStack.pop()
