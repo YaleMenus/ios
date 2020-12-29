@@ -27,14 +27,13 @@ struct SettingsView: View {
     @ObservedObject var model = SettingsViewModel()
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HeaderView(text: "Settings")
             ScrollView {
                 Text("Dietary Restrictions")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                Text("I cannot eat:")
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .font(.appTitle)
+                    .multilineTextAlignment(.leading)
+                    .frame(alignment: .leading)
                 Group {
                     CheckboxView(label: "Meat (I'm Vegetarian)")
                     CheckboxView(label: "Animal Products (I'm Vegan)")
