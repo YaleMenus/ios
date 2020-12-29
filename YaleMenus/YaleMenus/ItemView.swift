@@ -74,32 +74,32 @@ struct NutritionRowView : View {
 struct ItemView : View {
     @ObservedObject var model: ItemViewModel
 
-    init(itemId: Int) {
-        self.model = ItemViewModel(itemId: itemId)
+    init(item: Item) {
+        self.model = ItemViewModel(item: item)
     }
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.item?.name ?? "")
+            HeaderView(text: self.model.item.name)
             ScrollView {
                 VStack {
-                    if (self.model.item != nil && self.model.nutrition != nil) {
+                    if (self.model.nutrition != nil) {
                         VStack {
-                            if (self.model.item!.alcohol) { AllergenView(allergen: "alcohol") }
-                            if (self.model.item!.nuts) { AllergenView(allergen: "nuts") }
-                            if (self.model.item!.shellfish) { AllergenView(allergen: "shellfish") }
-                            if (self.model.item!.peanuts) { AllergenView(allergen: "peanuts") }
-                            if (self.model.item!.dairy) { AllergenView(allergen: "dairy") }
-                            if (self.model.item!.egg) { AllergenView(allergen: "egg") }
-                            if (self.model.item!.pork) { AllergenView(allergen: "pork") }
+                            if (self.model.item.alcohol) { AllergenView(allergen: "alcohol") }
+                            if (self.model.item.nuts) { AllergenView(allergen: "nuts") }
+                            if (self.model.item.shellfish) { AllergenView(allergen: "shellfish") }
+                            if (self.model.item.peanuts) { AllergenView(allergen: "peanuts") }
+                            if (self.model.item.dairy) { AllergenView(allergen: "dairy") }
+                            if (self.model.item.egg) { AllergenView(allergen: "egg") }
+                            if (self.model.item.pork) { AllergenView(allergen: "pork") }
                         }
+                        // TODO: merge these VStacks
                         VStack {
-                            if (self.model.item!.fish) { AllergenView(allergen: "fish") }
-                            if (self.model.item!.soy) { AllergenView(allergen: "soy") }
-                            // TODO: why does uncommenting these break things??
-                            if (self.model.item!.wheat) { AllergenView(allergen: "wheat") }
-                            if (self.model.item!.gluten) { AllergenView(allergen: "gluten") }
-                            if (self.model.item!.coconut) { AllergenView(allergen: "coconut") }
+                            if (self.model.item.fish) { AllergenView(allergen: "fish") }
+                            if (self.model.item.soy) { AllergenView(allergen: "soy") }
+                            if (self.model.item.wheat) { AllergenView(allergen: "wheat") }
+                            if (self.model.item.gluten) { AllergenView(allergen: "gluten") }
+                            if (self.model.item.coconut) { AllergenView(allergen: "coconut") }
                         }
                         VStack {
                             Text("Nutrition Facts")
@@ -128,7 +128,7 @@ struct ItemView : View {
                         Divider()
                         HStack {
                             // TODO: find a better way of aligning left
-                            Text("Ingredients: \(self.model.item!.ingredients)")
+                            Text("Ingredients: \(self.model.item.ingredients)")
                             Spacer()
                         }
                     } else {

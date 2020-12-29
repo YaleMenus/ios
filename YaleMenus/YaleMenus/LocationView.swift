@@ -21,7 +21,7 @@ struct ItemPreviewView : View {
     }
 
     var body: some View {
-        PushView(destination: ItemView(itemId: self.item.id)) {
+        PushView(destination: ItemView(item: self.item)) {
             HStack {
                 Image("entree")
                     .resizable()
