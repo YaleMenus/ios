@@ -113,7 +113,7 @@ struct LocationsView : View {
                         }
                     } else {
                         VStack {
-                            Image("icon")
+                            Image("logo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity)
