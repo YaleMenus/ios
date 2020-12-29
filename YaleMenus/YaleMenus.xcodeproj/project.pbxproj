@@ -12,6 +12,7 @@
 		030E6537253659D600B6032F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E6536253659D600B6032F /* LoaderView.swift */; };
 		030E65392537FB5F00B6032F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E65382537FB5F00B6032F /* LocationView.swift */; };
 		030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653A2537FB6F00B6032F /* LocationViewModel.swift */; };
+		03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AD9259ADCD8002EB88D /* SplashView.swift */; };
 		03476DC7256770D300E4587C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC6256770D300E4587C /* ItemView.swift */; };
 		03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC8256770ED00E4587C /* ItemViewModel.swift */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		030E6536253659D600B6032F /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		030E65382537FB5F00B6032F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		030E653A2537FB6F00B6032F /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		03404AD9259ADCD8002EB88D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		03476DC6256770D300E4587C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		03476DC8256770ED00E4587C /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				03476DC52564E15F00E4587C /* fonts */,
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				030E6536253659D600B6032F /* LoaderView.swift */,
+				03404AD9259ADCD8002EB88D /* SplashView.swift */,
 				035DF418252920EE004C95B0 /* LocationsView.swift */,
 				030E653425351E1B00B6032F /* LocationsViewModel.swift */,
 				030E65382537FB5F00B6032F /* LocationView.swift */,
@@ -458,6 +461,7 @@
 			files = (
 				035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */,
 				035DF419252920EE004C95B0 /* LocationsView.swift in Sources */,
+				03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */,
 				035DF41B252922F4004C95B0 /* Components.swift in Sources */,
 				03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */,
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,

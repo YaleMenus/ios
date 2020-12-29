@@ -51,8 +51,10 @@ struct LocationView : View {
             HeaderView(text: self.model.location?.name ?? "")
             if (self.model.location != nil && self.model.meals != nil) {
                 if (self.model.meals!.isEmpty) {
-                    Text("Yale Dining has not published menus on this date.")
-                        .frame(maxHeight: .infinity, alignment: .leading)
+                    VStack {
+                        Image(systemName: "slash.circle")
+                        Text("Yale Dining has not published menus for this date.")
+                    }.frame(maxHeight: .infinity, alignment: .leading)
                 } else {
                     // TODO: .onChange is native in iOS 14+, switch once we can ensure that most users will be on 14
                     Picker(selection: $mealIndex.onChange(onChange), label: Text("Choose a meal?")) {
