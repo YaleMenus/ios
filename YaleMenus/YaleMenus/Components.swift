@@ -20,6 +20,9 @@ struct HeaderView : View {
             Spacer()
             Text(self.text)
                 .font(.appHeader)
+                .foregroundColor(.foreground)
+                // TODO: find a cleaner way to reduce padding
+                .padding(.vertical, -30)
                 .frame(alignment: .trailing)
         }
     }
