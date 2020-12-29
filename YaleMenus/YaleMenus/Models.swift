@@ -122,7 +122,6 @@ struct Item {
     let gluten: Bool
     let coconut: Bool
     let mealId: Int
-    let courseId: Int
 }
 
 extension Item: Decodable {
@@ -146,7 +145,6 @@ extension Item: Decodable {
         case gluten
         case coconut
         case mealId = "meal_id"
-        case courseId = "course_id"
     }
 
     init(from decoder: Decoder) throws {
@@ -171,7 +169,6 @@ extension Item: Decodable {
         gluten = try container.decode(Bool.self, forKey: .gluten)
         coconut = try container.decode(Bool.self, forKey: .coconut)
         mealId = try container.decode(Int.self, forKey: .mealId)
-        courseId = try container.decode(Int.self, forKey: .courseId)
     }
 }
 
