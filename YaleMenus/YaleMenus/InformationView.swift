@@ -1,9 +1,15 @@
-//
-//  InformationView.swift
-//  YaleMenus
-//
-//  Created by Erik Kieran Boesen on 12/29/20.
-//  Copyright © 2020 Erik Boesen. All rights reserved.
-//
-
 import Foundation
+import SwiftUI
+
+struct InformationView: View {
+    var body: some View {
+        VStack(alignment: .leading) {
+            HeaderView(text: "Settings")
+            ScrollView {
+                Text("Thanks for choosing Yale Menus! This app was created by Yalies who wanted a more user-friendly way to track menu items, allergens, and crowding in Yale's dining halls.")
+                Text("\"Yale\" and \"Yale University\" are registered trademarks of Yale University. This application is maintained, hosted, and operated independently of Yale University. The statements and informatino containd in this application are not reviewed, approved, or endorsed by Yale.")
+                Text("This app was built by Erik Boesen (Hopper '24) and Eric Foster (Hopper '20), with help from Jaco Malinowski (Hopper '20) and David Foster (Hopper '23).")
+            }
+        }
+    }
+}

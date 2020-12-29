@@ -26,6 +26,7 @@
 		03404AF2259BAD2A002EB88D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03404AEA259BAD2A002EB88D /* Montserrat-ExtraBold.ttf */; };
 		03404AF3259BAD2A002EB88D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03404AEB259BAD2A002EB88D /* Montserrat-SemiBold.ttf */; };
 		03404AF4259BAD2A002EB88D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03404AEC259BAD2A002EB88D /* Montserrat-Light.ttf */; };
+		03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF5259BE9F0002EB88D /* InformationView.swift */; };
 		03476DC7256770D300E4587C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC6256770D300E4587C /* ItemView.swift */; };
 		03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC8256770ED00E4587C /* ItemViewModel.swift */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
@@ -82,6 +83,7 @@
 		03404AEA259BAD2A002EB88D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "../../../../../Desktop/Montserrat/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		03404AEB259BAD2A002EB88D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../Desktop/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		03404AEC259BAD2A002EB88D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../../../../Desktop/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		03404AF5259BE9F0002EB88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 		03476DC6256770D300E4587C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		03476DC8256770ED00E4587C /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +202,7 @@
 				03476DC8256770ED00E4587C /* ItemViewModel.swift */,
 				03404ADF259AFCEB002EB88D /* SettingsView.swift */,
 				03404AE1259AFCFD002EB88D /* SettingsViewModel.swift */,
+				03404AF5259BE9F0002EB88D /* InformationView.swift */,
 				035DF3EE25291BCE004C95B0 /* Assets.xcassets */,
 				03404ADB259AE165002EB88D /* Colors.xcassets */,
 				03404ADD259AE493002EB88D /* Colors.swift */,
@@ -512,6 +515,7 @@
 				03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */,
 				035DF41B252922F4004C95B0 /* Components.swift in Sources */,
 				03404AE4259BACF2002EB88D /* Font.swift in Sources */,
+				03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */,
 				03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */,
 				03404AE0259AFCEB002EB88D /* SettingsView.swift in Sources */,
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,
