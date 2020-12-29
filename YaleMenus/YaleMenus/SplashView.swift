@@ -12,9 +12,13 @@ struct SplashView : View {
     
     var body: some View {
         VStack {
-            Image(systemName: self.iconName)
+            GeometryReader { geometry in
+                Image(systemName: self.iconName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: geometry.size.width / 2)
+            }
             Text(self.subtitle)
-                .frame(maxHeight: .infinity, alignment: .topLeading)
-        }
+        }.frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }
