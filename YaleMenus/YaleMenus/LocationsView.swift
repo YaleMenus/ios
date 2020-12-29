@@ -102,6 +102,7 @@ struct LocationsView : View {
                                     .frame(width: geometry.size.height / 1.7)
                                 Text(location!.shortname)
                                     .font(.system(.body, design: .rounded))
+                                    .padding(.top, 5)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
                             .frame(width: geometry.size.width)
@@ -112,11 +113,17 @@ struct LocationsView : View {
                         }
                     } else {
                         VStack {
-                            Image("logo")
+                            Image("logo_cropped")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity)
                                 .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
+                            Image(systemName: "gear")
+                                .onTapGesture {
+                                    DispatchQueue.main.async {
+                                        self.navigationStack.push(SettingsView())
+                                    }
+                                }
                         }
                     }
                 }
