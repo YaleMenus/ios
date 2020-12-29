@@ -33,10 +33,12 @@ struct SettingsView: View {
         VStack(alignment: .leading) {
             HeaderView(text: "Settings")
             ScrollView {
-                Text("Dietary Restrictions")
-                    .font(.appTitle)
-                    .multilineTextAlignment(.leading)
-                    .frame(alignment: .leading)
+                HStack {
+                    // TODO: left align more cleanly!
+                    Text("Dietary Restrictions")
+                        .font(.appTitle)
+                    Spacer()
+                }
                 Group {
                     CheckboxView(label: "Meat (I'm Vegetarian)", checked: $model.vegetarian)
                     CheckboxView(label: "Animal Products (I'm Vegan)", checked: $model.vegan)
@@ -55,8 +57,12 @@ struct SettingsView: View {
                     CheckboxView(label: "Gluten", checked: $model.gluten)
                     CheckboxView(label: "Coconut", checked: $model.coconut)
                 }
-                Text("We will attempt (but cannot guarantee) to gray out any items on the menu screen containing the ingredients you select.")
-                    .font(.appBody)
+                HStack {
+                    // TODO: left align more cleanly!
+                    Text("We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
+                        .font(.appBody)
+                    Spacer()
+                }
                 CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition)
             // TODO: is this still needed?
             }.frame(maxWidth: .infinity, alignment: .leading)
