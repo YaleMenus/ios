@@ -97,15 +97,17 @@ struct LocationsView : View {
                     if (location != nil) {
                         GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
-                                Text(location!.shortname)
-                                    .font(.system(.body, design: .rounded))
                                 CapacityBar(capacity: location!.capacity)
                                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
                                 Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: geometry.size.height / 1.7)
-                            }.frame(width: geometry.size.width)
+                                Text(location!.shortname)
+                                    .font(.system(.body, design: .rounded))
+                            }
+                            .opacity(location!.isOpen ? 1 : 0.5)
+                            .frame(width: geometry.size.width)
                         }.onTapGesture {
                             DispatchQueue.main.async {
                                 self.navigationStack.push(LocationView(location: location!))
