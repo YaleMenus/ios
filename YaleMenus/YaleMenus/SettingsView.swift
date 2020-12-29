@@ -18,7 +18,10 @@ struct CheckboxView: View {
             HStack {
                 Image(systemName: self.checked ? "xmark.circle": "circle")
                 Text(self.label)
-            }.frame(maxWidth: .infinity, alignment: .topLeading)
+                    .font(.appBody)
+            }
+            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .padding(.leading, 50)
         }.buttonStyle(PlainButtonStyle())
     }
 }
@@ -52,9 +55,11 @@ struct SettingsView: View {
                     CheckboxView(label: "Gluten")
                     CheckboxView(label: "Coconut")
                 }
+                Text("We will attempt (but cannot guarantee) to gray out any items on the menu screen containing the ingredients you select.")
+                    .font(.appBody)
                 CheckboxView(label: "Show Nutrition Facts")
             // TODO: is this still needed?
-            }.frame(maxWidth: .infinity, alignment: .topLeading)
+            }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding()
     }
 }
