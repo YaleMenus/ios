@@ -25,9 +25,9 @@ struct CheckboxView: View {
         if (self.checked.wrappedValue) {
             switch (self.style) {
             case .x:
-                return "xmark.circle"
+                return "xmark.circle.fill"
             case .check:
-                return "checkmark.circle"
+                return "checkmark.circle.fill"
             }
         }
         return "circle"
