@@ -23,7 +23,7 @@ struct ItemPreviewView : View {
     var body: some View {
         PushView(destination: ItemView(item: self.item)) {
             HStack {
-                Image("entree")
+                Image(self.item.course)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, alignment: .leading)
