@@ -14,14 +14,14 @@ struct AllergenView : View {
     }
 
     var body: some View {
-         HStack {
+        HStack {
             Image(self.allergen)
-               .resizable()
-               .aspectRatio(contentMode: .fit)
-               .frame(width: 60, alignment: .leading)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, alignment: .leading)
             Text(self.capitalize(string: self.allergen))
             Spacer()
-         }
+        }
     }
 }
 
