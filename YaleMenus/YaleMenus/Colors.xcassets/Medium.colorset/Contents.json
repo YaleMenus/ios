@@ -1,4 +1,7 @@
 {
+  "properties" : {
+    "localizable" : true
+  },
   "info" : {
     "version" : 1,
     "author" : "xcode"
@@ -9,10 +12,10 @@
       "color" : {
         "color-space" : "srgb",
         "components" : {
-          "red" : "0.380",
+          "red" : "0.807",
           "alpha" : "1.000",
-          "blue" : "0.380",
-          "green" : "0.380"
+          "blue" : "0.888",
+          "green" : "0.842"
         }
       }
     }
