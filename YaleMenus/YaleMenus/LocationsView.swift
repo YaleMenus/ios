@@ -17,11 +17,8 @@ struct LocationGrid<Content: View>: View {
     func item(n: Int) -> Location? {
         if n <= self.items.count {
             // Offset last element by one for logo
-            if (n == self.items.count - 1) {
-                return nil
-            }
             if (n == self.items.count) {
-                return self.items[n - 1]
+                return nil
             }
             return self.items[n]
         }
