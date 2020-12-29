@@ -102,6 +102,7 @@ struct LocationsView : View {
                                     .frame(width: geometry.size.height / 1.7)
                                 Text(location!.shortname)
                                     .font(.appBody)
+                                    .foregroundColor(.appBlack)
                                     .padding(.top, 5)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
