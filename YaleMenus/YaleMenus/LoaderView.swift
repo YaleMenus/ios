@@ -5,7 +5,7 @@ struct LoaderView : View {
     @State private var isAnimating = false
 
     var animation: Animation {
-        Animation.linear(duration: 1.5)
+        Animation.linear(duration: 1)
         .repeatForever(autoreverses: false)
     }
 
