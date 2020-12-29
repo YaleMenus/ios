@@ -101,7 +101,7 @@ struct LocationsView : View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: geometry.size.height / 1.7)
                                 Text(location!.shortname)
-                                    .font(.system(.body, design: .rounded))
+                                    .font(.appBody)
                                     .padding(.top, 5)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
