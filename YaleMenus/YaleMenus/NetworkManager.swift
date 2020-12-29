@@ -9,8 +9,6 @@ protocol Networkable {
     func getManagers(locationId: Int, completion: @escaping ([Manager]) -> ());
     func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> ());
     func getMeal(mealId: Int, completion: @escaping (Meal) -> ());
-    func getCourses(mealId: Int, completion: @escaping ([Course]) -> ());
-    func getCourse(courseId: Int, completion: @escaping (Course) -> ());
     func getItems(mealId: Int, completion: @escaping ([Item]) -> ());
     func getItem(itemId: Int, completion: @escaping (Item) -> ());
     func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> ());
