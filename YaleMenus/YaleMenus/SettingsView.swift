@@ -70,6 +70,7 @@ struct SettingsView: View {
         VStack(alignment: .leading) {
             HeaderView(text: "Settings")
             ScrollView {
+                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition, style: .check)
                 HStack {
                     // TODO: left align more cleanly!
                     Text("Dietary Restrictions")
@@ -116,7 +117,6 @@ struct SettingsView: View {
                         Spacer()
                     }.padding(.vertical, 6)
                 }
-                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition, style: .check)
             // TODO: is this still needed?
             }.frame(maxWidth: .infinity, alignment: .leading)
         }.padding()
