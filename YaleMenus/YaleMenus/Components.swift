@@ -19,7 +19,7 @@ struct HeaderView : View {
             }
             Spacer()
             Text(self.text)
-                .font(.largeTitle)
+                .font(.appHeader)
                 .frame(alignment: .trailing)
         }
     }
