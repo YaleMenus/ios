@@ -20,6 +20,8 @@ struct AllergenView : View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, alignment: .leading)
             Text(self.capitalize(string: self.allergen))
+                .font(.appTitle)
+                .foregroundColor(.foreground)
             Spacer()
         }
     }
@@ -51,14 +53,18 @@ struct NutritionRowView : View {
                 Divider()
                 HStack {
                     Text(self.label)
-                        .font(.system(size: 16, weight: self.style == .main ? .heavy : .regular))
+                        .font(self.style == .main ? .appBodyBold : .appBody)
+                        .foregroundColor(.foreground)
                         .padding(.leading, self.style == .sub ? 25 : 0)
                     if (self.style == .heading) {
                         Spacer()
                         Text(self.amount!)
-                            .font(.system(size: 16, weight: .heavy))
+                            .font(.appBodyBold)
+                            .foregroundColor(.foreground)
                     } else {
                         Text(self.amount!)
+                            .font(.appBody)
+                            .foregroundColor(.foreground)
                         Spacer()
                     }
                     if (self.pdv != nil) {
