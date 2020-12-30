@@ -15,10 +15,12 @@ extension Binding {
 
 struct ItemPreviewView : View {
     let item: Item
+    let allowed: Bool
     @EnvironmentObject private var navigationStack: NavigationStack
 
-    init(item: Item) {
+    init(item: Item, allowed: Bool) {
         self.item = item
+        self.allowed = allowed
     }
 
     var body: some View {
@@ -41,7 +43,9 @@ struct ItemPreviewView : View {
             .padding()
             .background(Color.extraLight)
             .cornerRadius(20)
-        }.buttonStyle(PlainButtonStyle())
+        }
+        .buttonStyle(PlainButtonStyle())
+        .opacity(self.allowed ? 1 : 0.4)
     }
 }
 
@@ -78,11 +82,21 @@ struct LocationView : View {
                     Text("\(self.model.meals[self.model.date]![self.mealIndex].name) hours: \(self.model.meals[self.model.date]![self.mealIndex].startTime)-\(self.model.meals[self.model.date]![self.mealIndex].endTime)")
                         .font(.appBody)
                         .foregroundColor(.foreground)
-                    if (self.model.items[self.model.date] != nil && self.model.items[self.model.date]![self.mealIndex] != nil) {
+                    if (
+                        self.model.items[self.model.date] != nil &&
+                        self.model.items[self.model.date]![self.mealIndex] != nil &&
+                        self.model.allowed[self.model.date]![self.mealIndex] != nil
+                    ) {
                         ScrollView {
                             VStack {
-                                ForEach(self.model.items[self.model.date]![self.mealIndex]!, id: \.id) { item in
-                                    ItemPreviewView(item: item)
+                                ForEach(
+                                    Array(zip(
+                                        self.model.items[self.model.date]![self.mealIndex]!,
+                                        self.model.allowed[self.model.date]![self.mealIndex]!
+                                    )),
+                                    id: \.0.id
+                                ) { item, allowed in
+                                    ItemPreviewView(item: item, allowed: allowed)
                                 }
                             }
                         }
