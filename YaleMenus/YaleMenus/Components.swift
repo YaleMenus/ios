@@ -14,7 +14,7 @@ struct HeaderView : View {
             Image(systemName: "chevron.left")
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .foregroundColor(.medium)
+            .foregroundColor(.light)
             .frame(height: 25)
             .onTapGesture {
                 DispatchQueue.main.async {

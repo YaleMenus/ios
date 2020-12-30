@@ -34,7 +34,7 @@ struct ItemPreviewView : View {
                 Spacer()
             }
             .padding()
-            .background(Color.init(red: 241 / 255, green: 244 / 255, blue: 247 / 255))
+            .background(Color.extraLight)
             .cornerRadius(20)
         }
     }
