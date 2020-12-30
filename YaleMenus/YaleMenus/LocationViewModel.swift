@@ -36,14 +36,15 @@ class LocationViewModel: ObservableObject, Identifiable {
     }
 
     func getItems(date: Date, mealIndex: Int) {
-        print(mealIndex)
-        // TODO: ensure this won't be called before nm.getMeals completes above
-        if (self.meals[date] != nil && self.items[date] != nil && mealIndex < self.items[date]!.count) {
-            if (self.items[date]![mealIndex] == nil) {
-                nm.getItems(mealId: self.meals[date]![mealIndex].id, completion: { items in
-                    self.items[date]![mealIndex] = items
-                })
-            }
+        if (
+            self.meals[date] != nil &&
+            self.items[date] != nil &&
+            mealIndex < self.items[date]!.count &&
+            self.items[date]![mealIndex] == nil
+        ) {
+            nm.getItems(mealId: self.meals[date]![mealIndex].id, completion: { items in
+                self.items[date]![mealIndex] = items
+            })
         }
     }
 
