@@ -88,9 +88,9 @@ struct ItemView : View {
     var body: some View {
         VStack {
             HeaderView(text: self.model.item.course)
-            ScrollView {
-                VStack {
-                    if (!self.model.showNutrition || self.model.nutrition != nil) {
+            if (!self.model.showNutrition || self.model.nutrition != nil) {
+                ScrollView {
+                    VStack {
                         // TODO: bold and cleanup
                         Text(self.model.item.name)
                             .font(.appTitle)
@@ -143,13 +143,13 @@ struct ItemView : View {
                                 NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
                             }
                         }
-                    } else {
-                        LoaderView()
                     }
                 }
+                // TODO: is this still needed?
+                .frame(maxWidth: .infinity)
+            } else {
+                LoaderView()
             }
-            // TODO: is this still needed?
-            .frame(maxWidth: .infinity)
         }.padding()
     }
 }
