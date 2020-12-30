@@ -89,7 +89,7 @@ struct LocationView : View {
                 HStack {
                     Image(systemName: "calendar")
                     Text(self.model.formatterExternal.string(from: self.model.date))
-                        .font(.appBody)
+                        .font(.appBodyMedium)
                         .foregroundColor(.foreground)
                 }
                 Spacer()
