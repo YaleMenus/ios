@@ -47,19 +47,16 @@ struct LocationView : View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack {
             HeaderView(text: self.model.location.shortname)
             if (self.model.meals != nil) {
                 if (self.model.meals!.isEmpty) {
                     SplashView(iconName: "slash.circle", subtitle: "No meals")
                 } else {
-                    // TODO: .onChange is native in iOS 14+, switch once we can ensure that most users will be on 14
-                    Picker(selection: $mealIndex.onChange(onChange), label: Text("Choose a meal?")) {
-                        ForEach(Array(zip(self.model.meals!.indices, self.model.meals!)), id: \.0) { index, meal in
-                            Text(meal.name).tag(index)
-                        }
-                    }.pickerStyle(SegmentedPickerStyle())
+                    SegmentedPicker(items: self.model.mealNames!, selection: $mealIndex.onChange(onChange))
                     Text("\(self.model.meals![self.mealIndex].name) hours: \(self.model.meals![self.mealIndex].startTime)-\(self.model.meals![self.mealIndex].endTime)")
+                        .font(.appBody)
+                        .foregroundColor(.foreground)
                     if (self.model.items != nil && self.model.items![self.mealIndex] != nil) {
                         ScrollView {
                             VStack {
@@ -93,7 +90,9 @@ struct LocationView : View {
                     Image(systemName: "chevron.right")
                 }
             }
-        }.padding()
+        }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .padding()
     }
     
     func onChange(mealIndex: Int) {

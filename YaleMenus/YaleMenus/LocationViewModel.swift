@@ -6,6 +6,7 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     @Published var location: Location
     @Published var meals: [Meal]? = nil
+    @Published var mealNames: [String]? = nil
     @Published var items: [[Item]?]? = nil
     @Published var date: Date = Date()
     public let formatterInternal = DateFormatter()
@@ -27,6 +28,7 @@ class LocationViewModel: ObservableObject, Identifiable {
                     date: self.formatterInternal.string(from: self.date),
                     completion: { meals in
             self.meals = meals
+            self.mealNames = self.meals!.map { $0.name }
             self.items = [[Item]?](repeating: nil, count: meals.count)
             // TODO: switch to whatever current/soonest meal is
             self.getItems(mealIndex: 0)
