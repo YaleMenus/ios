@@ -64,13 +64,13 @@ struct CheckboxView: View {
 }
 
 struct SettingsView: View {
-    @ObservedObject var model = SettingsViewModel()
+    @ObservedObject var settings = Settings()
     
     var body: some View {
         VStack(alignment: .leading) {
             HeaderView(text: "Settings")
             ScrollView {
-                CheckboxView(label: "Show Nutrition Facts", checked: $model.showNutrition, style: .check)
+                CheckboxView(label: "Show Nutrition Facts", checked: $settings.showNutrition, style: .check)
                 HStack {
                     // TODO: left align more cleanly!
                     Text("Dietary Restrictions")
@@ -79,22 +79,22 @@ struct SettingsView: View {
                     Spacer()
                 }
                 Group {
-                    CheckboxView(label: "Meat (I'm Vegetarian)", checked: $model.vegetarian)
-                    CheckboxView(label: "Animal Products (I'm Vegan)", checked: $model.vegan)
-                    CheckboxView(label: "Alcohol", checked: $model.alcohol)
-                    CheckboxView(label: "Nuts", checked: $model.nuts)
-                    CheckboxView(label: "Shellfish", checked: $model.shellfish)
-                    CheckboxView(label: "Peanuts", checked: $model.peanuts)
-                    CheckboxView(label: "Dairy", checked: $model.dairy)
+                    CheckboxView(label: "Meat (I'm Vegetarian)", checked: $settings.vegetarian)
+                    CheckboxView(label: "Animal Products (I'm Vegan)", checked: $settings.vegan)
+                    CheckboxView(label: "Alcohol", checked: $settings.alcohol)
+                    CheckboxView(label: "Nuts", checked: $settings.nuts)
+                    CheckboxView(label: "Shellfish", checked: $settings.shellfish)
+                    CheckboxView(label: "Peanuts", checked: $settings.peanuts)
+                    CheckboxView(label: "Dairy", checked: $settings.dairy)
                 }
                 Group {
-                    CheckboxView(label: "Egg", checked: $model.egg)
-                    CheckboxView(label: "Pork", checked: $model.pork)
-                    CheckboxView(label: "Fish", checked: $model.fish)
-                    CheckboxView(label: "Soy", checked: $model.soy)
-                    CheckboxView(label: "Wheat", checked: $model.wheat)
-                    CheckboxView(label: "Gluten", checked: $model.gluten)
-                    CheckboxView(label: "Coconut", checked: $model.coconut)
+                    CheckboxView(label: "Egg", checked: $settings.egg)
+                    CheckboxView(label: "Pork", checked: $settings.pork)
+                    CheckboxView(label: "Fish", checked: $settings.fish)
+                    CheckboxView(label: "Soy", checked: $settings.soy)
+                    CheckboxView(label: "Wheat", checked: $settings.wheat)
+                    CheckboxView(label: "Gluten", checked: $settings.gluten)
+                    CheckboxView(label: "Coconut", checked: $settings.coconut)
                 }
                 ParagraphView(text: "We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
                 Button(action: {

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final class SettingsViewModel: ObservableObject, Identifiable {
+final class Settings: ObservableObject, Identifiable {
     private enum Keys {
         static let showNutrition = "show_nutrition"
 
