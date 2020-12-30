@@ -87,12 +87,14 @@ struct ItemView : View {
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.item.name)
+            HeaderView(text: self.model.item.course)
             ScrollView {
                 VStack {
                     if (!self.model.showNutrition || self.model.nutrition != nil) {
                         // TODO: bold and cleanup
-                        ParagraphView(text: "Course: \(self.model.item.course)")
+                        Text(self.model.item.name)
+                            .font(.appTitle)
+                            .foregroundColor(.foreground)
                         ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
                         VStack {
                             Group {
