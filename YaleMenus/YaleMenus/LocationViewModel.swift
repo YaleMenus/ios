@@ -27,16 +27,17 @@ class LocationViewModel: ObservableObject, Identifiable {
         // TODO: use self.location?.id
         // TODO: may crash when spamming buttons
         let date = self.date
-        
-        nm.getMeals(locationId: self.location.id,
-                    date: self.formatterInternal.string(from: date),
-                    completion: { meals in
-            self.meals[date] = meals
-            self.items[date] = [[Item]?](repeating: nil, count: meals.count)
-            self.allowed[date] = [[Bool]?](repeating: nil, count: meals.count)
-            // TODO: switch to whatever current/soonest meal is
-            self.getItems(date: date, mealIndex: 0)
-        })
+        if (self.meals[date] == nil) {
+            nm.getMeals(locationId: self.location.id,
+                        date: self.formatterInternal.string(from: date),
+                        completion: { meals in
+                self.meals[date] = meals
+                self.items[date] = [[Item]?](repeating: nil, count: meals.count)
+                self.allowed[date] = [[Bool]?](repeating: nil, count: meals.count)
+                // TODO: switch to whatever current/soonest meal is
+                self.getItems(date: date, mealIndex: 0)
+            })
+        }
     }
 
     func getItems(date: Date, mealIndex: Int) {
