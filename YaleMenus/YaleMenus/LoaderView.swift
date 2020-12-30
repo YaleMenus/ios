@@ -5,8 +5,8 @@ struct LoaderView : View {
     @State private var isAnimating = false
 
     var animation: Animation {
-        Animation.linear(duration: 1)
-        .repeatForever(autoreverses: false)
+        Animation.linear(duration: 0.5)
+        .repeatForever()
     }
 
     var body: some View {
@@ -16,7 +16,7 @@ struct LoaderView : View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: geometry.size.width / 2)
-                    .rotation3DEffect(Angle.degrees(self.isAnimating ? 360 : 0), axis: (x: 0, y: 1, z: 0))
+                    .opacity(self.isAnimating ? 1 : 0)
                     .animation(self.animation)
                     .onAppear {
                         self.isAnimating = true
