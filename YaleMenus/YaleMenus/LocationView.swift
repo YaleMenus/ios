@@ -128,11 +128,13 @@ struct LocationView : View {
                 }.buttonStyle(PlainButtonStyle())
             }
             if (self.choosingDate) {
+                // TODO: use foreground color
                 DatePicker(
                     "",
                     selection: $chosenDate,
-                    displayedComponents: [.date]
+                    displayedComponents: .date
                 )
+                .labelsHidden()
                 // TODO: use this once iOS 14 is more widespread!
                 //.datePickerStyle(GraphicalDatePickerStyle())
             }
