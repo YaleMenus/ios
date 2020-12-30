@@ -54,6 +54,7 @@ struct LocationView : View {
                     SplashView(iconName: "slash.circle", subtitle: "No meals")
                 } else {
                     SegmentedPicker(items: self.model.mealNames!, selection: $mealIndex.onChange(onChange))
+                        .padding(.bottom, 14)
                     Text("\(self.model.meals![self.mealIndex].name) hours: \(self.model.meals![self.mealIndex].startTime)-\(self.model.meals![self.mealIndex].endTime)")
                         .font(.appBody)
                         .foregroundColor(.foreground)
