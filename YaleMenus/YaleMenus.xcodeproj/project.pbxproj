@@ -14,7 +14,7 @@
 		030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653A2537FB6F00B6032F /* LocationViewModel.swift */; };
 		03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AD9259ADCD8002EB88D /* SplashView.swift */; };
 		03404ADC259AE165002EB88D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03404ADB259AE165002EB88D /* Colors.xcassets */; };
-		03404ADE259AE493002EB88D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404ADD259AE493002EB88D /* Colors.swift */; };
+		03404ADE259AE493002EB88D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404ADD259AE493002EB88D /* Color.swift */; };
 		03404AE0259AFCEB002EB88D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404ADF259AFCEB002EB88D /* SettingsView.swift */; };
 		03404AE2259AFCFD002EB88D /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AE1259AFCFD002EB88D /* SettingsViewModel.swift */; };
 		03404AE4259BACF2002EB88D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AE3259BACF2002EB88D /* Font.swift */; };
@@ -71,7 +71,7 @@
 		030E653A2537FB6F00B6032F /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		03404AD9259ADCD8002EB88D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		03404ADB259AE165002EB88D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		03404ADD259AE493002EB88D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		03404ADD259AE493002EB88D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03404ADF259AFCEB002EB88D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		03404AE1259AFCFD002EB88D /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		03404AE3259BACF2002EB88D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -191,6 +191,8 @@
 				035DF41E25293FA3004C95B0 /* Models.swift */,
 				03476DC52564E15F00E4587C /* fonts */,
 				03404AE3259BACF2002EB88D /* Font.swift */,
+				03404ADB259AE165002EB88D /* Colors.xcassets */,
+				03404ADD259AE493002EB88D /* Color.swift */,
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				030E6536253659D600B6032F /* LoaderView.swift */,
 				03404AD9259ADCD8002EB88D /* SplashView.swift */,
@@ -204,8 +206,6 @@
 				03404AE1259AFCFD002EB88D /* SettingsViewModel.swift */,
 				03404AF5259BE9F0002EB88D /* InformationView.swift */,
 				035DF3EE25291BCE004C95B0 /* Assets.xcassets */,
-				03404ADB259AE165002EB88D /* Colors.xcassets */,
-				03404ADD259AE493002EB88D /* Colors.swift */,
 				035DF3F325291BCE004C95B0 /* LaunchScreen.storyboard */,
 				035DF3F625291BCE004C95B0 /* Info.plist */,
 				035DF3F025291BCE004C95B0 /* Preview Content */,
@@ -520,7 +520,7 @@
 				03404AE0259AFCEB002EB88D /* SettingsView.swift in Sources */,
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,
 				030E653525351E1B00B6032F /* LocationsViewModel.swift in Sources */,
-				03404ADE259AE493002EB88D /* Colors.swift in Sources */,
+				03404ADE259AE493002EB88D /* Color.swift in Sources */,
 				030E653325322CB200B6032F /* NetworkManager.swift in Sources */,
 				030E65392537FB5F00B6032F /* LocationView.swift in Sources */,
 				030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */,
