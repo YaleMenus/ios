@@ -148,7 +148,7 @@ struct SegmentedPicker: View {
 
     // Helper method to compute the offset based on the selected index
     private func computeActiveSegmentHorizontalOffset() -> CGFloat {
-        CGFloat(self.selection) * (self.segmentSize.width + SegmentedPicker.SegmentXPadding / 2)
+        CGFloat(self.selection) * (self.segmentSize.width + SegmentedPicker.SegmentXPadding * 2)
     }
 
     // Get text view for the segment
