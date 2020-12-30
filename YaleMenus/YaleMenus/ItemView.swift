@@ -69,7 +69,8 @@ struct NutritionRowView : View {
                     }
                     if (self.pdv != nil) {
                         Text("\(self.pdv!)%")
-                            .font(.system(size: 16, weight: self.style != .plain ? .heavy : .regular))
+                            .font(self.style != .plain ? .appBodyBold : .appBody)
+                            .foregroundColor(.foreground)
                     }
                 }
             }
@@ -90,26 +91,32 @@ struct ItemView : View {
             ScrollView {
                 VStack {
                     if (self.model.nutrition != nil) {
+                        ParagraphView(text: "Course: \(self.model.item.course)")
+                        ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
                         VStack {
-                            if (self.model.item.alcohol) { AllergenView(allergen: "alcohol") }
-                            if (self.model.item.nuts) { AllergenView(allergen: "nuts") }
-                            if (self.model.item.shellfish) { AllergenView(allergen: "shellfish") }
-                            if (self.model.item.peanuts) { AllergenView(allergen: "peanuts") }
-                            if (self.model.item.dairy) { AllergenView(allergen: "dairy") }
-                            if (self.model.item.egg) { AllergenView(allergen: "egg") }
-                            if (self.model.item.pork) { AllergenView(allergen: "pork") }
-                        }
-                        // TODO: merge these VStacks
-                        VStack {
-                            if (self.model.item.fish) { AllergenView(allergen: "fish") }
-                            if (self.model.item.soy) { AllergenView(allergen: "soy") }
-                            if (self.model.item.wheat) { AllergenView(allergen: "wheat") }
-                            if (self.model.item.gluten) { AllergenView(allergen: "gluten") }
-                            if (self.model.item.coconut) { AllergenView(allergen: "coconut") }
-                        }
+                            Group {
+                                if (self.model.item.vegan) { AllergenView(allergen: "vegan") }
+                                if (self.model.item.vegetarian) { AllergenView(allergen: "vegetarian") }
+                                if (self.model.item.alcohol) { AllergenView(allergen: "alcohol") }
+                                if (self.model.item.nuts) { AllergenView(allergen: "nuts") }
+                                if (self.model.item.shellfish) { AllergenView(allergen: "shellfish") }
+                                if (self.model.item.peanuts) { AllergenView(allergen: "peanuts") }
+                                if (self.model.item.dairy) { AllergenView(allergen: "dairy") }
+                            }
+                            Group {
+                                if (self.model.item.egg) { AllergenView(allergen: "egg") }
+                                if (self.model.item.pork) { AllergenView(allergen: "pork") }
+                                if (self.model.item.fish) { AllergenView(allergen: "fish") }
+                                if (self.model.item.soy) { AllergenView(allergen: "soy") }
+                                if (self.model.item.wheat) { AllergenView(allergen: "wheat") }
+                                if (self.model.item.gluten) { AllergenView(allergen: "gluten") }
+                                if (self.model.item.coconut) { AllergenView(allergen: "coconut") }
+                            }
+                        }.padding(.bottom)
                         VStack {
                             Text("Nutrition Facts")
-                                .font(.title)
+                                .font(.appTitle)
+                                .foregroundColor(.foreground)
                             NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.portionSize, pdv: nil, style: .heading)
                             NutritionRowView(label: "Calories", amount: self.model.nutrition!.calories, pdv: nil, style: .heading)
 
@@ -131,18 +138,13 @@ struct ItemView : View {
                             NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV, style: .plain)
                             NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
                         }
-                        Divider()
-                        HStack {
-                            // TODO: find a better way of aligning left
-                            Text("Ingredients: \(self.model.item.ingredients)")
-                            Spacer()
-                        }
                     } else {
                         LoaderView()
                     }
                 }
+            }
             // TODO: is this still needed?
-            }.frame(maxWidth: .infinity)
-        }
+            .frame(maxWidth: .infinity)
+        }.padding()
     }
 }
