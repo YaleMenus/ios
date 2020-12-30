@@ -66,7 +66,7 @@ struct LocationView : View {
             HeaderView(text: self.model.location.shortname)
             if (self.model.meals[self.model.date] != nil) {
                 if (self.model.meals[self.model.date]!.isEmpty) {
-                    SplashView(iconName: "slash.circle", subtitle: "No meals")
+                    SplashView(iconName: "slash.circle", subtitle: "No meals on this date")
                 } else {
                     SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $mealIndex.onChange(onChange))
                         .padding(.bottom, 14)
