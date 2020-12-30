@@ -13,14 +13,14 @@ struct SplashView : View {
     var body: some View {
         VStack {
             Spacer()
-            Image(systemName: self.iconName)
+            Image(self.iconName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxHeight: 220)
-                .foregroundColor(.light)
+                
             Text(self.subtitle)
                 .font(.appTitle)
-                .foregroundColor(.light)
+                .foregroundColor(.medium)
                 .multilineTextAlignment(.center)
             Spacer()
         }
