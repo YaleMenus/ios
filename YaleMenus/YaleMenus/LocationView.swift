@@ -15,13 +15,18 @@ extension Binding {
 
 struct ItemPreviewView : View {
     let item: Item
+    @EnvironmentObject private var navigationStack: NavigationStack
 
     init(item: Item) {
         self.item = item
     }
 
     var body: some View {
-        PushView(destination: ItemView(item: self.item)) {
+        Button(action: {
+            DispatchQueue.main.async {
+                self.navigationStack.push(ItemView(item: self.item))
+            }
+        }) {
             HStack {
                 Image(self.item.course)
                     .resizable()
