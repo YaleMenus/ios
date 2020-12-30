@@ -29,11 +29,13 @@ struct ItemPreviewView : View {
                     .frame(width: 60, alignment: .leading)
                 Spacer()
                 Text(self.item.name)
+                    .font(.appBody)
+                    .foregroundColor(.foreground)
                 Spacer()
             }
             .padding()
             .background(Color.init(red: 241 / 255, green: 244 / 255, blue: 247 / 255))
-            // TODO: rounded border
+            .cornerRadius(20)
         }
     }
 }
