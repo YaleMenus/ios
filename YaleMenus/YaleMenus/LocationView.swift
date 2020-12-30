@@ -43,9 +43,22 @@ struct ItemPreviewView : View {
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
     @State private var mealIndex = 0
+    @State private var choosingDate = false
+    @State private var chosenDate = Date()
 
     init(location: Location) {
         self.model = LocationViewModel(location: location)
+    }
+
+    func openDatePicker() {
+        self.chosenDate = self.model.date
+        self.choosingDate = true
+    }
+
+    func closeDatePicker() {
+        self.model.date = self.chosenDate
+        self.model.getMeals()
+        self.choosingDate = false
     }
 
     var body: some View {
@@ -82,15 +95,26 @@ struct LocationView : View {
                     Image(systemName: "chevron.left")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 25)
-                        .foregroundColor(.foreground)
+                        .frame(height: 20)
+                        .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
-                HStack {
-                    Image(systemName: "calendar")
-                    Text(self.model.formatterExternal.string(from: self.model.date))
-                        .font(.appBodyMedium)
-                        .foregroundColor(.foreground)
+                if (self.choosingDate) {
+                    Button(action: { self.closeDatePicker() }) {
+                        Text("Done")
+                            .font(.appBodyMedium)
+                            .foregroundColor(.foreground)
+                    }.buttonStyle(PlainButtonStyle())
+                } else {
+                    Button(action: { self.openDatePicker() }) {
+                        HStack {
+                            Image(systemName: "calendar")
+                                .foregroundColor(.foreground)
+                            Text(self.model.formatterExternal.string(from: self.model.date))
+                                .font(.appBodyMedium)
+                                .foregroundColor(.foreground)
+                        }
+                    }
                 }
                 Spacer()
                 Button(action: {
@@ -99,9 +123,18 @@ struct LocationView : View {
                     Image(systemName: "chevron.right")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 25)
-                        .foregroundColor(.foreground)
+                        .frame(height: 20)
+                        .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
+            }
+            if (self.choosingDate) {
+                DatePicker(
+                    "",
+                    selection: $chosenDate,
+                    displayedComponents: [.date]
+                )
+                // TODO: use this once iOS 14 is more widespread!
+                //.datePickerStyle(GraphicalDatePickerStyle())
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
