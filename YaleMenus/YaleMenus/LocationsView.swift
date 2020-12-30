@@ -106,7 +106,6 @@ struct LocationsView : View {
                                     .padding(.top, 5)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
-                            .saturation(location!.isOpen ? 1 : 0)
                             .frame(width: geometry.size.width)
                         }.onTapGesture {
                             DispatchQueue.main.async {

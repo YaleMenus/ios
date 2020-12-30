@@ -3,10 +3,16 @@ import NavigationStack
 
 struct HeaderView : View {
     @EnvironmentObject private var navigationStack: NavigationStack
-    let text: String
+    var text: String
+    var location: Location? = nil
 
     init(text: String) {
         self.text = text
+    }
+    
+    init(location: Location) {
+        self.location = location
+        self.text = location.shortname
     }
 
     var body: some View {
@@ -27,7 +33,15 @@ struct HeaderView : View {
                 .foregroundColor(.foreground)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -20)
-                .frame(alignment: .trailing)
+            if (self.location != nil) {
+                Spacer()
+                Image(self.location!.code)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 50)
+                    .padding(.leading, -10)
+                    .padding(.bottom, -5)
+            }
         }
     }
 }

@@ -72,7 +72,7 @@ struct LocationView : View {
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.location.shortname)
+            HeaderView(location: self.model.location)
             if (self.model.meals[self.model.date] != nil) {
                 if (self.model.meals[self.model.date]!.isEmpty) {
                     SplashView(iconName: "slash.circle", subtitle: "No meals posted today.")
