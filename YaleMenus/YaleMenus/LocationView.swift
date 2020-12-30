@@ -31,7 +31,7 @@ struct ItemPreviewView : View {
                 Image(self.item.course)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, alignment: .leading)
+                    .frame(maxWidth: 60, maxHeight: 60, alignment: .leading)
                 Spacer()
                 Text(self.item.name)
                     .font(.appBody)
@@ -41,7 +41,7 @@ struct ItemPreviewView : View {
             .padding()
             .background(Color.extraLight)
             .cornerRadius(20)
-        }
+        }.buttonStyle(PlainButtonStyle())
     }
 }
 
