@@ -84,12 +84,12 @@ struct LocationView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 25)
                         .foregroundColor(.foreground)
-                }.buttonStyle(PlainButtonStyle)
+                }.buttonStyle(PlainButtonStyle())
                 Spacer()
                 HStack {
                     Image(systemName: "calendar")
                     Text(self.model.formatterExternal.string(from: self.model.date))
-                        .font(.appBodyBold)
+                        .font(.appBody)
                         .foregroundColor(.foreground)
                 }
                 Spacer()
@@ -101,7 +101,7 @@ struct LocationView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 25)
                         .foregroundColor(.foreground)
-                }.buttonStyle(PlainButtonStyle)
+                }.buttonStyle(PlainButtonStyle())
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
