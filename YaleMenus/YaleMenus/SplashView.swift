@@ -13,22 +13,17 @@ struct SplashView : View {
     var body: some View {
         VStack {
             Spacer()
-            VStack {
-                GeometryReader { geometry in
-                    Image(systemName: self.iconName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: geometry.size.width / 2)
-                        .foregroundColor(.light)
-                        .padding(.top, 260)
-                }
-                Text(self.subtitle)
-                    .font(.appTitle)
-                    .foregroundColor(.light)
-                    .frame(maxHeight: .infinity, alignment: .topLeading)
-                    .padding(.top, 60)
-            }
+            Image(systemName: self.iconName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 220)
+                .foregroundColor(.light)
+            Text(self.subtitle)
+                .font(.appTitle)
+                .foregroundColor(.light)
+                .multilineTextAlignment(.center)
             Spacer()
-        }.frame(maxHeight: .infinity, alignment: .topLeading)
+        }
+        .frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }
