@@ -51,19 +51,19 @@ struct LocationView : View {
     var body: some View {
         VStack {
             HeaderView(text: self.model.location.shortname)
-            if (self.model.meals != nil) {
-                if (self.model.meals!.isEmpty) {
+            if (self.model.meals[self.model.date] != nil) {
+                if (self.model.meals[self.model.date]!.isEmpty) {
                     SplashView(iconName: "slash.circle", subtitle: "No meals")
                 } else {
-                    SegmentedPicker(items: self.model.mealNames!, selection: $mealIndex.onChange(onChange))
+                    SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $mealIndex.onChange(onChange))
                         .padding(.bottom, 14)
-                    Text("\(self.model.meals![self.mealIndex].name) hours: \(self.model.meals![self.mealIndex].startTime)-\(self.model.meals![self.mealIndex].endTime)")
+                    Text("\(self.model.meals[self.model.date]![self.mealIndex].name) hours: \(self.model.meals[self.model.date]![self.mealIndex].startTime)-\(self.model.meals[self.model.date]![self.mealIndex].endTime)")
                         .font(.appBody)
                         .foregroundColor(.foreground)
-                    if (self.model.items != nil && self.model.items![self.mealIndex] != nil) {
+                    if (self.model.items[self.model.date] != nil && self.model.items[self.model.date]![self.mealIndex] != nil) {
                         ScrollView {
                             VStack {
-                                ForEach(self.model.items![self.mealIndex]!, id: \.id) { item in
+                                ForEach(self.model.items[self.model.date]![self.mealIndex]!, id: \.id) { item in
                                     ItemPreviewView(item: item)
                                 }
                             }
@@ -109,7 +109,8 @@ struct LocationView : View {
     }
     
     func onChange(mealIndex: Int) {
-        self.model.getItems(mealIndex: mealIndex)
+        self.mealIndex = mealIndex
+        self.model.getItems(date: self.model.date, mealIndex: mealIndex)
     }
 
     func changeDay(by: Int) {
