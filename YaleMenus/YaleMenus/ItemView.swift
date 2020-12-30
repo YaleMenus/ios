@@ -88,7 +88,7 @@ struct ItemView : View {
     var body: some View {
         VStack {
             HeaderView(text: self.model.item.course)
-            if (!self.model.showNutrition || self.model.nutrition != nil) {
+            if (!self.model.settings.showNutrition || self.model.nutrition != nil) {
                 ScrollView {
                     VStack {
                         // TODO: bold and cleanup
@@ -116,7 +116,7 @@ struct ItemView : View {
                                 if (self.model.item.coconut) { AllergenView(allergen: "coconut") }
                             }
                         }.padding(.bottom)
-                        if (self.model.showNutrition) {
+                        if (self.model.settings.showNutrition) {
                             VStack {
                                 Text("Nutrition Facts")
                                     .font(.appTitle)
