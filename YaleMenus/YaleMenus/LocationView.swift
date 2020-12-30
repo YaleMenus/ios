@@ -80,18 +80,28 @@ struct LocationView : View {
                     self.changeDay(by: -1)
                 }) {
                     Image(systemName: "chevron.left")
-                }
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 25)
+                        .foregroundColor(.foreground)
+                }.buttonStyle(PlainButtonStyle)
                 Spacer()
                 HStack {
                     Image(systemName: "calendar")
                     Text(self.model.formatterExternal.string(from: self.model.date))
+                        .font(.appBodyBold)
+                        .foregroundColor(.foreground)
                 }
                 Spacer()
                 Button(action: {
                     self.changeDay(by: 1)
                 }) {
                     Image(systemName: "chevron.right")
-                }
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 25)
+                        .foregroundColor(.foreground)
+                }.buttonStyle(PlainButtonStyle)
             }
         }
         .frame(maxWidth: .infinity, alignment: .topLeading)
