@@ -118,6 +118,3 @@ final class SettingsViewModel: ObservableObject, Identifiable {
         get { defaults.bool(forKey: Keys.coconut)}
     }
 }
-
-extension SettingsViewModel {
-}
