@@ -16,6 +16,7 @@ struct InfoRowView : View {
         HStack {
             Image(systemName: self.icon)
                 .foregroundColor(.foreground)
+                .frame(width: 25)
             if (self.link != nil) {
                 Button(action: {
                     let url = URL(string: self.link!)!
@@ -32,6 +33,26 @@ struct InfoRowView : View {
             }
             Spacer()
         }
+    }
+}
+
+struct ManagerView : View {
+    var manager: Manager
+    
+    init(manager: Manager) {
+        self.manager = manager
+    }
+    
+    var body: some View {
+        VStack {
+            InfoRowView(icon: "person.fill", text: self.manager.name)
+            if self.manager.email != nil {
+                InfoRowView(icon: "envelope.fill", text: self.manager.email!)
+            }
+            if self.manager.position != nil {
+                InfoRowView(icon: "briefcase.fill", text: self.manager.position!)
+            }
+        }.padding()
     }
 }
 
@@ -76,6 +97,12 @@ struct LocationInfoView : View {
                         text: self.model.location.phone,
                         link: self.getPhoneLink()
                     )
+                    Text("Managers")
+                        .font(.appTitle)
+                        .foregroundColor(.foreground)
+                    ForEach(self.model.managers!, id: \.id) { manager in
+                        ManagerView(manager: manager)
+                    }
                 }
                 .multilineTextAlignment(.leading)
                 .foregroundColor(.foreground)
