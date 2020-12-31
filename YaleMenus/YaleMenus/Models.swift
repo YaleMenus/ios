@@ -46,8 +46,8 @@ extension Location: Decodable {
 struct Manager {
     let id: Int
     let name: String
-    let email: String
-    let position: String
+    let email: String?
+    let position: String?
 }
 
 extension Manager: Decodable {
@@ -63,8 +63,8 @@ extension Manager: Decodable {
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        email = try container.decode(String.self, forKey: .email)
-        position = try container.decode(String.self, forKey: .position)
+        email = try container.decode(String?.self, forKey: .email)
+        position = try container.decode(String?.self, forKey: .position)
     }
 }
 
@@ -254,7 +254,7 @@ extension Nutrition: Decodable {
         let container = try decoder.container(keyedBy: NutritionCodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
-        portionSize = try container.decode(String.self, forKey: .portionSize)
+        portionSize = try container.decode(String?.self, forKey: .portionSize)
         calories = try container.decode(String.self, forKey: .calories)
 
         totalFat = try container.decode(String.self, forKey: .totalFat)
