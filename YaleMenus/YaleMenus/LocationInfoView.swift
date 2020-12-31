@@ -53,6 +53,10 @@ struct LocationInfoView : View {
         return nil
     }
 
+    func getPhoneLink() -> String? {
+        return "tel://" + self.model.location.phone.filter { "() -".range(of: String($0)) == nil }
+    }
+
     var body: some View {
         VStack {
             HeaderView(text: "")
@@ -61,12 +65,16 @@ struct LocationInfoView : View {
                     Text(self.model.location.name)
                         .font(.appTitle)
                         .foregroundColor(.foreground)
-                    InfoRowView(icon: "house", text: self.model.location.address, link: self.getMapLink())
+                    InfoRowView(
+                        icon: "house",
+                        text: self.model.location.address,
+                        link: self.getMapLink()
+                    )
                     InfoRowView(icon: "location.fill", text: "(\(self.model.location.latitude), \(self.model.location.longitude))")
                     InfoRowView(
                         icon: "phone.fill",
                         text: self.model.location.phone,
-                        link: "tel://" + self.model.location.phone.filter { "() -".range(of: String($0)) == nil }
+                        link: self.getPhoneLink()
                     )
                 }
                 .multilineTextAlignment(.leading)
