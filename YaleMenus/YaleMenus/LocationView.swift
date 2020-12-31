@@ -38,6 +38,7 @@ struct ItemPreviewView : View {
                 Text(self.item.name)
                     .font(.appBody)
                     .foregroundColor(.foreground)
+                    .multilineTextAlignment(.center)
                 Spacer()
             }
             .padding()
@@ -128,6 +129,7 @@ struct LocationView : View {
                     Button(action: { self.openDatePicker() }) {
                         HStack {
                             Image(systemName: "calendar")
+                                .frame(width: 25)
                                 .foregroundColor(.foreground)
                             Text(self.model.formatterExternal.string(from: self.model.date))
                                 .font(.appBodyMedium)
@@ -145,7 +147,7 @@ struct LocationView : View {
                         .frame(height: 20)
                         .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
-            }
+            }.padding(.top, 5)
             if (self.choosingDate) {
                 // TODO: use foreground color
                 DatePicker(

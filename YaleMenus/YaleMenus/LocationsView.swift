@@ -121,7 +121,7 @@ struct LocationsView : View {
                             Image(systemName: "gear")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth:540)
+                                .frame(maxWidth: 50)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
