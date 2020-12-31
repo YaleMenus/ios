@@ -17,5 +17,8 @@ class LocationInfoViewModel: ObservableObject, Identifiable {
     
     init(location: Location) {
         self.location = location
+        nm.getManagers(locationId: self.location.id, completion: { managers in
+            self.managers = managers
+        })
     }
 }
