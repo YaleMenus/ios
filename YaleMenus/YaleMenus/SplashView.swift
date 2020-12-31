@@ -20,7 +20,7 @@ struct SplashView : View {
             Image(self.iconName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 220)
+                .frame(maxWidth: 215)
             Spacer()
         }
         .frame(maxHeight: .infinity, alignment: .topLeading)

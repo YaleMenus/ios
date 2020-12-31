@@ -12,21 +12,27 @@ struct HeaderView : View {
     var body: some View {
         HStack {
             Image(systemName: "chevron.left")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .foregroundColor(.light)
-            .frame(height: 25)
-            .onTapGesture {
-                DispatchQueue.main.async {
-                    self.navigationStack.pop()
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.light)
+                .frame(height: 25)
+                .onTapGesture {
+                    DispatchQueue.main.async {
+                        self.navigationStack.pop()
+                    }
                 }
-            }
             Spacer()
             Text(self.text)
                 .font(.appHeader)
                 .foregroundColor(.foreground)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -20)
+            Spacer()
+            Image(systemName: "info.circle.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.light)
+                .frame(height: 25)
         }
     }
 }
