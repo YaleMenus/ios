@@ -48,7 +48,6 @@ struct Manager {
     let name: String
     let email: String
     let position: String
-    let locationId: Int
 }
 
 extension Manager: Decodable {
@@ -57,7 +56,6 @@ extension Manager: Decodable {
         case name
         case email
         case position
-        case locationId = "location_id"
     }
 
     init(from decoder: Decoder) throws {
@@ -67,7 +65,6 @@ extension Manager: Decodable {
         name = try container.decode(String.self, forKey: .name)
         email = try container.decode(String.self, forKey: .email)
         position = try container.decode(String.self, forKey: .position)
-        locationId = try container.decode(Int.self, forKey: .locationId)
     }
 }
 
