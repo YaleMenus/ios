@@ -30,18 +30,18 @@ struct HeaderView : View {
                 .multilineTextAlignment(.center)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -20)
-            if (self.location != nil) {
-                Spacer()
-                Button(action: {
-                    self.navigationStack.push(LocationInfoView(location: self.location!))
-                }) {
-                    Image(systemName: "info.circle.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.light)
-                        .frame(height: 25)
-                }.buttonStyle(PlainButtonStyle())
-            }
+//            if (self.location != nil) {
+//                Spacer()
+//                Button(action: {
+//                    self.navigationStack.push(LocationInfoView(location: self.location!))
+//                }) {
+//                    Image(systemName: "info.circle.fill")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .foregroundColor(.light)
+//                        .frame(height: 25)
+//                }.buttonStyle(PlainButtonStyle())
+//            }
         }
     }
 }
