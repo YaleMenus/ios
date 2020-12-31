@@ -129,7 +129,7 @@ struct LocationView : View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 25)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
                 if (self.choosingDate) {
@@ -158,7 +158,7 @@ struct LocationView : View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 25)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
             }
             .padding(.top, 5)
