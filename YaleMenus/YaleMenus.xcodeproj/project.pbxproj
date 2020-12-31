@@ -27,6 +27,8 @@
 		03404AF3259BAD2A002EB88D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03404AEB259BAD2A002EB88D /* Montserrat-SemiBold.ttf */; };
 		03404AF4259BAD2A002EB88D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03404AEC259BAD2A002EB88D /* Montserrat-Light.ttf */; };
 		03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF5259BE9F0002EB88D /* InformationView.swift */; };
+		03404AF8259D780B002EB88D /* LocationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF7259D780B002EB88D /* LocationInfoView.swift */; };
+		03404AFA259D795B002EB88D /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */; };
 		03476DC7256770D300E4587C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC6256770D300E4587C /* ItemView.swift */; };
 		03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC8256770ED00E4587C /* ItemViewModel.swift */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
@@ -84,6 +86,8 @@
 		03404AEB259BAD2A002EB88D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../../../../Desktop/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		03404AEC259BAD2A002EB88D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../../../../Desktop/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		03404AF5259BE9F0002EB88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		03404AF7259D780B002EB88D /* LocationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoView.swift; sourceTree = "<group>"; };
+		03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
 		03476DC6256770D300E4587C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		03476DC8256770ED00E4587C /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +204,8 @@
 				030E653425351E1B00B6032F /* LocationsViewModel.swift */,
 				030E65382537FB5F00B6032F /* LocationView.swift */,
 				030E653A2537FB6F00B6032F /* LocationViewModel.swift */,
+				03404AF7259D780B002EB88D /* LocationInfoView.swift */,
+				03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */,
 				03476DC6256770D300E4587C /* ItemView.swift */,
 				03476DC8256770ED00E4587C /* ItemViewModel.swift */,
 				03404ADF259AFCEB002EB88D /* SettingsView.swift */,
@@ -513,6 +519,7 @@
 				035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */,
 				035DF419252920EE004C95B0 /* LocationsView.swift in Sources */,
 				03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */,
+				03404AF8259D780B002EB88D /* LocationInfoView.swift in Sources */,
 				035DF41B252922F4004C95B0 /* Components.swift in Sources */,
 				03404AE4259BACF2002EB88D /* Font.swift in Sources */,
 				03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */,
@@ -526,6 +533,7 @@
 				030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */,
 				035DF41D25292338004C95B0 /* API.swift in Sources */,
 				030E6537253659D600B6032F /* LoaderView.swift in Sources */,
+				03404AFA259D795B002EB88D /* LocationInfoViewModel.swift in Sources */,
 				03476DC7256770D300E4587C /* ItemView.swift in Sources */,
 				035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */,
 				035DF41F25293FA3004C95B0 /* Models.swift in Sources */,

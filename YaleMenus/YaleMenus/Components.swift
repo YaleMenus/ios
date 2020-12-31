@@ -4,9 +4,11 @@ import NavigationStack
 struct HeaderView : View {
     @EnvironmentObject private var navigationStack: NavigationStack
     var text: String
+    var location: Location?
 
-    init(text: String) {
+    init(text: String, location: Location? = nil) {
         self.text = text
+        self.location = location
     }
 
     var body: some View {
@@ -25,14 +27,21 @@ struct HeaderView : View {
             Text(self.text)
                 .font(.appHeader)
                 .foregroundColor(.foreground)
+                .multilineTextAlignment(.center)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -20)
-            Spacer()
-            Image(systemName: "info.circle.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(.light)
-                .frame(height: 25)
+            if (self.location != nil) {
+                Spacer()
+                Button(action: {
+                    self.navigationStack.push(LocationInfoView(location: self.location!))
+                }) {
+                    Image(systemName: "info.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.light)
+                        .frame(height: 25)
+                }.buttonStyle(PlainButtonStyle())
+            }
         }
     }
 }
