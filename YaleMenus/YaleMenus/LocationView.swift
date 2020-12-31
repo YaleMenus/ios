@@ -125,11 +125,11 @@ struct LocationView : View {
                 Button(action: {
                     self.changeDay(by: -1)
                 }) {
-                    Image(systemName: "chevron.left")
+                    Image(systemName: "chevron.left.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 20)
-                        .foregroundColor(.medium)
+                        .frame(height: 25)
+                        .foregroundColor(.foreground)
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
                 if (self.choosingDate) {
@@ -148,19 +148,21 @@ struct LocationView : View {
                                 .font(.appBodyMedium)
                                 .foregroundColor(.foreground)
                         }
-                    }
+                    }.frame(maxWidth: .infinity)
                 }
                 Spacer()
                 Button(action: {
                     self.changeDay(by: 1)
                 }) {
-                    Image(systemName: "chevron.right")
+                    Image(systemName: "chevron.right.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 20)
-                        .foregroundColor(.medium)
+                        .frame(height: 25)
+                        .foregroundColor(.foreground)
                 }.buttonStyle(PlainButtonStyle())
-            }.padding(.top, 5)
+            }
+            .padding(.top, 5)
+            .frame(maxWidth: .infinity)
             if (self.choosingDate) {
                 // TODO: use foreground color
                 DatePicker(
