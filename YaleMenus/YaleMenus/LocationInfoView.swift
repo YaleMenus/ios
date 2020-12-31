@@ -17,6 +17,7 @@ struct InfoRowView : View {
             Text(self.text)
                 .font(.appBodyMedium)
                 .foregroundColor(.foreground)
+            Spacer()
         }
     }
 }
@@ -30,11 +31,19 @@ struct LocationInfoView : View {
     
     var body: some View {
         VStack {
-            HeaderView(text: self.model.location.shortname)
+            HeaderView(text: "")
             if (self.model.managers != nil) {
                 VStack {
-                    Text("Name: ").font(.appBodyMedium) + Text(self.model.location.name)
+                    Text(self.model.location.name)
+                        .font(.appTitle)
+                        .foregroundColor(.foreground)
+                    InfoRowView(icon: "house", text: self.model.location.address)
+                    InfoRowView(icon: "location.fill", text: "(\(self.model.location.latitude), \(self.model.location.longitude))")
+                    InfoRowView(icon: "phone.fill", text: self.model.location.phone)
                 }
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.foreground)
+                .frame(maxHeight: .infinity, alignment: .top)
             } else {
                 LoaderView()
             }
