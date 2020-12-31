@@ -11,13 +11,18 @@ class LocationViewModel: ObservableObject, Identifiable {
     @Published var items: [Date: [[Item]?]] = [:]
     @Published var allowed: [Date: [[Bool]?]] = [:]
     @Published var date: Date = Date()
-    public let formatterInternal = DateFormatter()
-    public let formatterExternal = DateFormatter()
-
+    public let dateFormatterInternal = DateFormatter()
+    public let dateFormatterExternal = DateFormatter()
+    public let timeFormatterInternal = DateFormatter()
+    public let timeFormatterExternal = DateFormatter()
+    
+    
     init(location: Location) {
         self.location = location
-        self.formatterInternal.dateFormat = "yyyy-MM-dd"
-        self.formatterExternal.dateFormat = "MMMM d"
+        self.dateFormatterInternal.dateFormat = "yyyy-MM-dd"
+        self.dateFormatterExternal.dateFormat = "MMMM d"
+        self.timeFormatterInternal.dateFormat = "HH:mm"
+        self.timeFormatterExternal.dateFormat = DateFormatter.dateFormat(fromTemplate: "j:mm",options:0, locale: Locale.current)?.replacingOccurrences(of: " ", with: "")
         // For testing while we don't have updated data.
         //self.date = self.formatterInternal.date(from: "2020-09-24")!
         self.getMeals()
@@ -29,7 +34,7 @@ class LocationViewModel: ObservableObject, Identifiable {
         let date = self.date
         if (self.meals[date] == nil) {
             nm.getMeals(locationId: self.location.id,
-                        date: self.formatterInternal.string(from: date),
+                        date: self.dateFormatterInternal.string(from: date),
                         completion: { meals in
                 self.meals[date] = meals
                 self.items[date] = [[Item]?](repeating: nil, count: meals.count)
@@ -75,5 +80,11 @@ class LocationViewModel: ObservableObject, Identifiable {
     func changeDay(by: Int) {
         self.date = Calendar.current.date(byAdding: .day, value: by, to: self.date)!
         self.getMeals()
+    }
+    
+    func reformatTime(_ time: String) -> String {
+        let read = self.timeFormatterInternal.date(from: time)!
+        // TODO: can we lowercase am/pm within the format string?
+        return self.timeFormatterExternal.string(from: read).lowercased()
     }
 }

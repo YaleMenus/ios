@@ -79,10 +79,11 @@ struct LocationView : View {
                     SplashView(iconName: self.model.location.code, subtitle: "No menu posted.")
                 } else {
                     SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $mealIndex.onChange(onChange))
-                        .padding(.bottom, 14)
-                    Text("\(self.model.meals[self.model.date]![self.mealIndex].name) hours: \(self.model.meals[self.model.date]![self.mealIndex].startTime)-\(self.model.meals[self.model.date]![self.mealIndex].endTime)")
+                        .padding(.bottom, 10)
+                    Text("\(self.model.meals[self.model.date]![self.mealIndex].name) hours: \(self.model.reformatTime(self.model.meals[self.model.date]![self.mealIndex].startTime))-\(self.model.reformatTime(self.model.meals[self.model.date]![self.mealIndex].endTime))")
                         .font(.appBody)
                         .foregroundColor(.foreground)
+                        .padding(.bottom, 4)
                     if (
                         self.model.items[self.model.date] != nil &&
                         self.model.items[self.model.date]![self.mealIndex] != nil &&
@@ -131,7 +132,7 @@ struct LocationView : View {
                             Image(systemName: "calendar")
                                 .frame(width: 25)
                                 .foregroundColor(.foreground)
-                            Text(self.model.formatterExternal.string(from: self.model.date))
+                            Text(self.model.dateFormatterExternal.string(from: self.model.date))
                                 .font(.appBodyMedium)
                                 .foregroundColor(.foreground)
                         }
