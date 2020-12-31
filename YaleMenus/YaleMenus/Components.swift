@@ -27,7 +27,7 @@ struct HeaderView : View {
             Text(self.text)
                 .font(.appHeader)
                 .foregroundColor(.foreground)
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(.trailing)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -20)
 //            if (self.location != nil) {
