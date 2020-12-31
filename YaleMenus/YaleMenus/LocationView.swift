@@ -23,6 +23,18 @@ struct ItemPreviewView : View {
         self.allowed = allowed
     }
 
+    func getCourseImage() -> String {
+        if self.item.course == "Soup and Salad" {
+            if self.item.name.contains("Soup") {
+                return "custom_soup"
+            }
+            if self.item.name.contains("Salad") {
+                return "custom_salad"
+            }
+        }
+        return self.item.course
+    }
+
     var body: some View {
         Button(action: {
             DispatchQueue.main.async {
@@ -30,7 +42,7 @@ struct ItemPreviewView : View {
             }
         }) {
             HStack {
-                Image(self.item.course)
+                Image(self.getCourseImage())
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 60, maxHeight: 60, alignment: .leading)
