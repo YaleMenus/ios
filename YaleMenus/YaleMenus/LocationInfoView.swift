@@ -18,7 +18,6 @@ struct InfoRowView : View {
                 .foregroundColor(.foreground)
             if (self.link != nil) {
                 Button(action: {
-                    print(self.link)
                     let url = URL(string: self.link!)!
                     UIApplication.shared.open(url)
                 }) {
@@ -43,6 +42,17 @@ struct LocationInfoView : View {
         self.model = LocationInfoViewModel(location: location)
     }
     
+    func getMapLink() -> String? {
+        let app = UIApplication.shared
+        let query = self.model.location.address.replacingOccurrences(of: " ", with: "+")
+        if (app.canOpenURL(URL(string: "comgooglemaps://")!)) {
+            return "comgooglemaps://?q=\(query)"
+        } else if (app.canOpenURL(URL(string: "http://maps.apple.com")!)) {
+            return "http://maps.apple.com/?q=\(query)"
+        }
+        return nil
+    }
+
     var body: some View {
         VStack {
             HeaderView(text: "")
@@ -51,7 +61,7 @@ struct LocationInfoView : View {
                     Text(self.model.location.name)
                         .font(.appTitle)
                         .foregroundColor(.foreground)
-                    InfoRowView(icon: "house", text: self.model.location.address)
+                    InfoRowView(icon: "house", text: self.model.location.address, link: self.getMapLink())
                     InfoRowView(icon: "location.fill", text: "(\(self.model.location.latitude), \(self.model.location.longitude))")
                     InfoRowView(
                         icon: "phone.fill",
