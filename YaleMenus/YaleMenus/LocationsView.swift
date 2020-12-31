@@ -114,18 +114,20 @@ struct LocationsView : View {
                         }
                     } else {
                         VStack {
-                            Image("logo")
+//                            Image("logo")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(maxWidth: .infinity)
+                            Image(systemName: "gear")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity)
-                                .padding(EdgeInsets(top: 35, leading: 0, bottom: 0, trailing: 0))
-                            Image(systemName: "gear")
+                                .frame(maxWidth:540)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
                                     }
                                 }
-                        }
+                        }.frame(maxWidth: .infinity)
                     }
                 }
             } else {
