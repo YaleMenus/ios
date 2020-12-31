@@ -2,18 +2,22 @@ import Foundation
 import SwiftUI
 
 struct LocationInfoView : View {
-    @ObservedObject var model: LocationViewModel
+    @ObservedObject var model: LocationInfoViewModel
 
     init(location: Location) {
-        self.model = LocationViewModel(location: location)
+        self.model = LocationInfoViewModel(location: location)
     }
     
     var body: some View {
         VStack {
             HeaderView(text: self.model.location.shortname)
-            VStack {
-                Text("Name: ").font(.appBodyMedium) + Text(self.model.location.name)
+            if (self.model.managers != nil) {
+                VStack {
+                    Text("Name: ").font(.appBodyMedium) + Text(self.model.location.name)
+                }
+            } else {
+                LoaderView()
             }
-        }
+        }.padding()
     }
 }

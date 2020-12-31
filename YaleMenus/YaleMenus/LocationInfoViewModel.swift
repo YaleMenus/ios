@@ -12,13 +12,14 @@ class LocationInfoViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
     
-    var location: Location
-    var managers: [Manager]? = nil
+    @Published var location: Location
+    @Published var managers: [Manager]? = nil
     
     init(location: Location) {
         self.location = location
         nm.getManagers(locationId: self.location.id, completion: { managers in
             self.managers = managers
+            print(self.managers)
         })
     }
 }
