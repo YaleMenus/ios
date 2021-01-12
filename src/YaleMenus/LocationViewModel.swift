@@ -28,6 +28,19 @@ class LocationViewModel: ObservableObject, Identifiable {
         self.getMeals()
     }
 
+    func getCurrentOrNextMeal() -> Int {
+        let today = Date()
+        if !Calendar.current.isDate(self.date, inSameDayAs: today) {
+            return 0
+        }
+        let now = self.timeFormatterInternal.string(from: today)
+        for (index, meal) in self.meals[self.date].enumerated() {
+            if now < meal.end_time {
+                return index
+            }
+        }
+    }
+
     func getMeals() {
         // TODO: use self.location?.id
         // TODO: may crash when spamming buttons
