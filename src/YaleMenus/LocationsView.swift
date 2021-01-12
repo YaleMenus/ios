@@ -101,8 +101,8 @@ struct LocationsView : View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: geometry.size.height / 1.6)
                                 Text(location!.shortname)
-                                    .font(.appBodyMedium)
-                                    .foregroundColor(.appBlack)
+                                    .font(.appBody)
+                                    .foregroundColor(.foreground)
                                     .padding(.top, 5)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
@@ -127,10 +127,9 @@ struct LocationsView : View {
 //                                .aspectRatio(contentMode: .fit)
 //                                .frame(maxWidth: 50)
                             Text("Settings")
-                                .font(.appBodyMedium)
-                                .foregroundColor(.appBlack)
-                                .padding(.top, 0)
-                                .padding(.bottom, 5)
+                                .font(.appBody)
+                                .foregroundColor(.foreground)
+                                .padding(.bottom, 4)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
