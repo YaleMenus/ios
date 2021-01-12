@@ -41,7 +41,7 @@ struct LocationGrid<Content: View>: View {
 }
 
 struct CapacityBar : View {
-    let INCREMENT = 8
+    let INCREMENT = 7
     let RED_LIMIT = 10
     let ORANGE_LIMIT = 7
     let YELLOW_LIMIT = 5
@@ -99,9 +99,9 @@ struct LocationsView : View {
                                 Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(width: geometry.size.height / 1.7)
+                                    .frame(height: geometry.size.height / 1.6)
                                 Text(location!.shortname)
-                                    .font(.appBody)
+                                    .font(.appBodyMedium)
                                     .foregroundColor(.appBlack)
                                     .padding(.top, 5)
                             }
@@ -114,14 +114,23 @@ struct LocationsView : View {
                         }
                     } else {
                         VStack {
-//                            Image("logo")
+                            CapacityBar(capacity: 0)
+                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+                            GeometryReader { geometry in
+                                Image("logo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: geometry.size.height)
+                            }
+//                            Image("gear")
 //                                .resizable()
 //                                .aspectRatio(contentMode: .fit)
-//                                .frame(maxWidth: .infinity)
-                            Image("gear")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 50)
+//                                .frame(maxWidth: 50)
+                            Text("Settings")
+                                .font(.appBodyMedium)
+                                .foregroundColor(.appBlack)
+                                .padding(.top, 0)
+                                .padding(.bottom, 5)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
