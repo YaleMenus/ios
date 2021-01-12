@@ -118,7 +118,7 @@ struct LocationsView : View {
 //                                .resizable()
 //                                .aspectRatio(contentMode: .fit)
 //                                .frame(maxWidth: .infinity)
-                            Image(systemName: "gear")
+                            Image("gear")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 50)
