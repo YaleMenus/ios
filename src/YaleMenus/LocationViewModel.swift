@@ -8,6 +8,7 @@ class LocationViewModel: ObservableObject, Identifiable {
     @Published var location: Location
     @Published var meals: [Date: [Meal]] = [:]
     @Published var mealNames: [String]? = nil
+    @Published var mealIndex: Int = 0
     @Published var items: [Date: [[Item]?]] = [:]
     @Published var allowed: [Date: [[Bool]?]] = [:]
     @Published var date: Date = Date()
@@ -28,7 +29,7 @@ class LocationViewModel: ObservableObject, Identifiable {
         self.getMeals()
     }
 
-    func getCurrentOrNextMeal() -> Int {
+    func getPresentMeal() -> Int {
         let today = Date()
         if Calendar.current.isDate(self.date, inSameDayAs: today) {
             let now = self.timeFormatterInternal.string(from: today)
@@ -51,8 +52,9 @@ class LocationViewModel: ObservableObject, Identifiable {
                 if self.items[date] == nil {
                     self.items[date] = [[Item]?](repeating: nil, count: meals.count)
                     self.allowed[date] = [[Bool]?](repeating: nil, count: meals.count)
+                    self.mealIndex = self.getPresentMeal()
                     // TODO: switch to whatever current/soonest meal is
-                    self.getItems(date: date, mealIndex: 0)
+                    self.getItems(date: date, mealIndex: self.mealIndex)
                 }
             })
         }

@@ -64,7 +64,6 @@ struct ItemPreviewView : View {
 
 struct LocationView : View {
     @ObservedObject var model: LocationViewModel
-    @State private var mealIndex = 0
     @State private var choosingDate = false
     @State private var chosenDate = Date()
 
@@ -90,23 +89,23 @@ struct LocationView : View {
                 if (self.model.meals[self.model.date]!.isEmpty) {
                     SplashView(iconName: self.model.location.code, subtitle: "No menu posted.")
                 } else {
-                    SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $mealIndex.onChange(onChange))
+                    SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $model.mealIndex.onChange(onChange))
                         .padding(.bottom, 10)
-                    Text("\(self.model.meals[self.model.date]![self.mealIndex].name) hours: \(self.model.reformatTime(self.model.meals[self.model.date]![self.mealIndex].startTime))-\(self.model.reformatTime(self.model.meals[self.model.date]![self.mealIndex].endTime))")
+                    Text("\(self.model.meals[self.model.date]![self.model.mealIndex].name) hours: \(self.model.reformatTime(self.model.meals[self.model.date]![self.model.mealIndex].startTime))-\(self.model.reformatTime(self.model.meals[self.model.date]![self.model.mealIndex].endTime))")
                         .font(.appBody)
                         .foregroundColor(.foreground)
                         .padding(.bottom, 4)
                     if (
                         self.model.items[self.model.date] != nil &&
-                        self.model.items[self.model.date]![self.mealIndex] != nil &&
-                        self.model.allowed[self.model.date]![self.mealIndex] != nil
+                        self.model.items[self.model.date]![self.model.mealIndex] != nil &&
+                        self.model.allowed[self.model.date]![self.model.mealIndex] != nil
                     ) {
                         ScrollView {
                             VStack {
                                 ForEach(
                                     Array(zip(
-                                        self.model.items[self.model.date]![self.mealIndex]!,
-                                        self.model.allowed[self.model.date]![self.mealIndex]!
+                                        self.model.items[self.model.date]![self.model.mealIndex]!,
+                                        self.model.allowed[self.model.date]![self.model.mealIndex]!
                                     )),
                                     id: \.0.id
                                 ) { item, allowed in
@@ -123,7 +122,7 @@ struct LocationView : View {
             }
             HStack {
                 Button(action: {
-                    self.changeDay(by: -1)
+                    self.model.changeDay(by: -1)
                 }) {
                     Image(systemName: "chevron.left.circle.fill")
                         .resizable()
@@ -152,7 +151,7 @@ struct LocationView : View {
                 }
                 Spacer()
                 Button(action: {
-                    self.changeDay(by: 1)
+                    self.model.changeDay(by: 1)
                 }) {
                     Image(systemName: "chevron.right.circle.fill")
                         .resizable()
@@ -180,12 +179,7 @@ struct LocationView : View {
     }
     
     func onChange(mealIndex: Int) {
-        self.mealIndex = mealIndex
+        self.model.mealIndex = mealIndex
         self.model.getItems(date: self.model.date, mealIndex: mealIndex)
-    }
-
-    func changeDay(by: Int) {
-        self.mealIndex = 0
-        self.model.changeDay(by: by)
     }
 }
