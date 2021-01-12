@@ -94,7 +94,7 @@
 		0348CB9125AD381D0089A94B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		0348CB9225AD381D0089A94B /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "../../../fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		0348CB9C25AE5D880089A94B /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loader.gif; path = ../../logo/loader.gif; sourceTree = "<group>"; };
-		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		035DF3E525291BCC004C95B0 /* Yale Menus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yale Menus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		035DF3E825291BCC004C95B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		035DF3EC25291BCC004C95B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		035DF3E625291BCC004C95B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				035DF3E525291BCC004C95B0 /* YaleMenus.app */,
+				035DF3E525291BCC004C95B0 /* Yale Menus.app */,
 				035DF3FB25291BCE004C95B0 /* YaleMenusTests.xctest */,
 				035DF40625291BCE004C95B0 /* YaleMenusUITests.xctest */,
 			);
@@ -293,7 +293,7 @@
 			);
 			name = YaleMenus;
 			productName = YaleMenus;
-			productReference = 035DF3E525291BCC004C95B0 /* YaleMenus.app */;
+			productReference = 035DF3E525291BCC004C95B0 /* Yale Menus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		035DF3FA25291BCE004C95B0 /* YaleMenusTests */ = {
@@ -721,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.erikboesen.YaleMenus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Yale Menus";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -742,7 +742,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.erikboesen.YaleMenus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Yale Menus";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -90,7 +90,7 @@ struct LocationsView : View {
     
     var body: some View {
         VStack {
-            if self.model.locations != nil && false {
+            if self.model.locations != nil {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     if (location != nil) {
                         GeometryReader { geometry in
