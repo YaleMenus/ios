@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - FLAnimatedImage (1.0.12)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -7,6 +8,7 @@ PODS:
   - NavigationStack (0.1.0)
 
 DEPENDENCIES:
+  - FLAnimatedImage
   - Moya
   - NavigationStack (~> 0.1.0)
 
@@ -14,14 +16,16 @@ SPEC REPOS:
   https://cdn.cocoapods.org/:
     - Alamofire
   https://github.com/cocoapods/specs.git:
+    - FLAnimatedImage
     - Moya
     - NavigationStack
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NavigationStack: 336d0335e171d82c66e9942b80d91d7f207c6ba9
 
-PODFILE CHECKSUM: a8138045b79eefa37ee729e12fbee51379f8151d
+PODFILE CHECKSUM: 3692c25948e35dc2c161a933d7f12d78592f4811
 
 COCOAPODS: 1.7.5

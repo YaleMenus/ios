@@ -32,6 +32,7 @@
 		0348CB9925AD381D0089A94B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0348CB9025AD381D0089A94B /* Montserrat-Bold.ttf */; };
 		0348CB9A25AD381D0089A94B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0348CB9125AD381D0089A94B /* Montserrat-Regular.ttf */; };
 		0348CB9B25AD381D0089A94B /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0348CB9225AD381D0089A94B /* Montserrat-ExtraBold.ttf */; };
+		0348CB9D25AE5D880089A94B /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0348CB9C25AE5D880089A94B /* loader.gif */; };
 		035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3E825291BCC004C95B0 /* AppDelegate.swift */; };
 		035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */; };
 		035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3EC25291BCC004C95B0 /* ContentView.swift */; };
@@ -92,6 +93,7 @@
 		0348CB9025AD381D0089A94B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../../fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		0348CB9125AD381D0089A94B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		0348CB9225AD381D0089A94B /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "../../../fonts/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0348CB9C25AE5D880089A94B /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = loader.gif; path = ../../logo/loader.gif; sourceTree = "<group>"; };
 		035DF3E525291BCC004C95B0 /* YaleMenus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YaleMenus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		035DF3E825291BCC004C95B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				035DF41C25292338004C95B0 /* API.swift */,
 				030E653225322CB200B6032F /* NetworkManager.swift */,
 				035DF41E25293FA3004C95B0 /* Models.swift */,
+				0348CB9C25AE5D880089A94B /* loader.gif */,
 				03476DC52564E15F00E4587C /* fonts */,
 				03404AE3259BACF2002EB88D /* Font.swift */,
 				03404ADB259AE165002EB88D /* Colors.xcassets */,
@@ -391,6 +394,7 @@
 				0348CB9B25AD381D0089A94B /* Montserrat-ExtraBold.ttf in Resources */,
 				0348CB9725AD381D0089A94B /* Montserrat-SemiBold.ttf in Resources */,
 				0348CB9625AD381D0089A94B /* Montserrat-Medium.ttf in Resources */,
+				0348CB9D25AE5D880089A94B /* loader.gif in Resources */,
 				0348CB9925AD381D0089A94B /* Montserrat-Bold.ttf in Resources */,
 				035DF3EF25291BCE004C95B0 /* Assets.xcassets in Resources */,
 			);

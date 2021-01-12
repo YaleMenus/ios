@@ -86,10 +86,11 @@ struct CapacityBar : View {
 struct LocationsView : View {
     @ObservedObject var model = LocationsViewModel()
     @EnvironmentObject private var navigationStack: NavigationStack
+    @State private var isReloading = false
     
     var body: some View {
         VStack {
-            if self.model.locations != nil {
+            if self.model.locations != nil && false {
                 LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
                     if (location != nil) {
                         GeometryReader { geometry in
@@ -143,5 +144,10 @@ struct LocationsView : View {
                 LoaderView()
             }
         }
+//        .pullToRefresh(isShowing: $isReloading) {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                self.model.load()
+//            }
+//        }
     }
 }

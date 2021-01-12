@@ -13,10 +13,14 @@ class LocationsViewModel: ObservableObject, Identifiable {
     let nm = NetworkManager()
     
     @Published var locations: [Location]? = nil
-    
-    init() {
+
+    func load() {
         nm.getLocations(completion: { locations in
             self.locations = locations;
         });
+    }
+
+    init() {
+        load()
     }
 }
