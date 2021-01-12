@@ -99,11 +99,11 @@ struct LocationsView : View {
                                 Image(location!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(height: geometry.size.height / 1.6)
+                                    .frame(height: geometry.size.height / 1.7)
                                 Text(location!.shortname)
                                     .font(.appBody)
-                                    .foregroundColor(.foreground)
-                                    .padding(.top, 5)
+                                    .foregroundColor(.appBlack)
+                                    .padding(.top, 4)
                             }
                             .opacity(location!.isOpen ? 1 : 0.5)
                             .frame(width: geometry.size.width)
@@ -114,22 +114,23 @@ struct LocationsView : View {
                         }
                     } else {
                         VStack {
-                            CapacityBar(capacity: 0)
-                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-                            GeometryReader { geometry in
-                                Image("logo")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(height: geometry.size.height)
-                            }
-//                            Image("gear")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(maxWidth: 50)
-                            Text("Settings")
-                                .font(.appBody)
-                                .foregroundColor(.foreground)
-                                .padding(.bottom, 4)
+//                            CapacityBar(capacity: 0)
+//                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+//                            GeometryReader { geometry in
+//                                Image("logo")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(height: geometry.size.height)
+//                            }
+                            Text("Yale Menus")
+                                .font(.appTitle)
+                                .foregroundColor(.appBlack)
+                                .padding(.bottom, -6)
+                                .multilineTextAlignment(.center)
+                            Image("gear")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 30)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
