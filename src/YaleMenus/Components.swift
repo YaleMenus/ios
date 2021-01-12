@@ -25,7 +25,7 @@ struct HeaderView : View {
                 }
             Spacer()
             Text(self.text)
-                .font(.appHeader)
+                .font(self.text.count <= 10 ? .appHeader : .appHeaderSmall)
                 .foregroundColor(.foreground)
                 .multilineTextAlignment(.trailing)
                 // TODO: find a cleaner way to reduce padding
