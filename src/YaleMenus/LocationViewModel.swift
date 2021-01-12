@@ -30,30 +30,30 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     func getCurrentOrNextMeal() -> Int {
         let today = Date()
-        if !Calendar.current.isDate(self.date, inSameDayAs: today) {
-            return 0
-        }
-        let now = self.timeFormatterInternal.string(from: today)
-        for (index, meal) in self.meals[self.date].enumerated() {
-            if now < meal.end_time {
-                return index
+        if Calendar.current.isDate(self.date, inSameDayAs: today) {
+            let now = self.timeFormatterInternal.string(from: today)
+            for (index, meal) in self.meals[self.date]!.enumerated() {
+                if now < meal.endTime {
+                    return index
+                }
             }
         }
+        return 0
     }
 
     func getMeals() {
-        // TODO: use self.location?.id
-        // TODO: may crash when spamming buttons
         let date = self.date
         if (self.meals[date] == nil) {
             nm.getMeals(locationId: self.location.id,
                         date: self.dateFormatterInternal.string(from: date),
                         completion: { meals in
                 self.meals[date] = meals
-                self.items[date] = [[Item]?](repeating: nil, count: meals.count)
-                self.allowed[date] = [[Bool]?](repeating: nil, count: meals.count)
-                // TODO: switch to whatever current/soonest meal is
-                self.getItems(date: date, mealIndex: 0)
+                if self.items[date] == nil {
+                    self.items[date] = [[Item]?](repeating: nil, count: meals.count)
+                    self.allowed[date] = [[Bool]?](repeating: nil, count: meals.count)
+                    // TODO: switch to whatever current/soonest meal is
+                    self.getItems(date: date, mealIndex: 0)
+                }
             })
         }
     }
