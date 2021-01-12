@@ -5,7 +5,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStackView {
             LocationsView()
-        }.padding()
+        }.padding(.horizontal)
     }
 }
 
