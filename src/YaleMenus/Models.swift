@@ -5,8 +5,8 @@ struct Location: Identifiable {
     let name: String
     let shortname: String
     let code: String
-    let isOpen: Bool
-    let capacity: Int
+    let open: Bool
+    let occupancy: Int
     let latitude: Float
     let longitude: Float
     let address: String
@@ -19,8 +19,8 @@ extension Location: Decodable {
         case name
         case shortname
         case code
-        case isOpen = "is_open"
-        case capacity
+        case open
+        case occupancy
         case latitude
         case longitude
         case address
@@ -34,8 +34,8 @@ extension Location: Decodable {
         name = try container.decode(String.self, forKey: .name)
         shortname = try container.decode(String.self, forKey: .shortname)
         code = try container.decode(String.self, forKey: .code)
-        isOpen = try container.decode(Bool.self, forKey: .isOpen)
-        capacity = try container.decode(Int.self, forKey: .capacity)
+        open = try container.decode(Bool.self, forKey: .open)
+        occupancy = try container.decode(Int.self, forKey: .occupancy)
         latitude = try container.decode(Float.self, forKey: .latitude)
         longitude = try container.decode(Float.self, forKey: .longitude)
         address = try container.decode(String.self, forKey: .address)
@@ -170,7 +170,6 @@ extension Item: Decodable {
 }
 
 struct Nutrition {
-    let id: Int
     let portionSize: String?
     let calories: String
 
@@ -211,7 +210,6 @@ struct Nutrition {
 
 extension Nutrition: Decodable {
     enum NutritionCodingKeys: String, CodingKey {
-        case id
         case portionSize = "portion_size"
         case calories
 
@@ -253,7 +251,6 @@ extension Nutrition: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: NutritionCodingKeys.self)
 
-        id = try container.decode(Int.self, forKey: .id)
         portionSize = try container.decode(String?.self, forKey: .portionSize)
         calories = try container.decode(String.self, forKey: .calories)
 

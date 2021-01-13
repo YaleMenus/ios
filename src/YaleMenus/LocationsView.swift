@@ -40,44 +40,44 @@ struct LocationGrid<Content: View>: View {
     }
 }
 
-struct CapacityBar: View {
+struct OccupancyBar: View {
     private static let Increment = 7
     private static let RedLimit = 10
     private static let OrangeLimit = 7
     private static let YellowLimit = 5
     private static let GreenLimit = 3
-    let capacity: Int
+    let occupancy: Int
 
-    init(capacity: Int) {
-        self.capacity = capacity
+    init(occupancy: Int) {
+        self.occupancy = occupancy
     }
 
     var body: some View {
         Capsule()
             .fill(Color.white)
-            .frame(width: CGFloat(CapacityBar.Increment * CapacityBar.RedLimit), height: 10)
+            .frame(width: CGFloat(OccupancyBar.Increment * OccupancyBar.RedLimit), height: 10)
         .overlay(
             Capsule()
                 .fill(Color.red)
-                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.RedLimit, self.capacity))),
+                .frame(width: CGFloat(OccupancyBar.Increment * min(OccupancyBar.RedLimit, self.occupancy))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.orange)
-                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.OrangeLimit, self.capacity))),
+                .frame(width: CGFloat(OccupancyBar.Increment * min(OccupancyBar.OrangeLimit, self.occupancy))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.yellow)
-                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.YellowLimit, self.capacity))),
+                .frame(width: CGFloat(OccupancyBar.Increment * min(OccupancyBar.YellowLimit, self.occupancy))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.green)
-                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.GreenLimit, self.capacity))),
+                .frame(width: CGFloat(OccupancyBar.Increment * min(OccupancyBar.GreenLimit, self.occupancy))),
             alignment: .leading
         )
     }
@@ -95,7 +95,7 @@ struct LocationsView: View {
                     if location != nil {
                         GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
-                                CapacityBar(capacity: location!.capacity)
+                                OccupancyBar(occupancy: location!.occupancy)
                                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
                                 Image(location!.code)
                                     .resizable()
@@ -106,7 +106,7 @@ struct LocationsView: View {
                                     .foregroundColor(.appBlack)
                                     .padding(.top, 4)
                             }
-                            .opacity(location!.isOpen ? 1 : 0.5)
+                            .opacity(location!.open ? 1 : 0.5)
                             .frame(width: geometry.size.width)
                         }.onTapGesture {
                             DispatchQueue.main.async {
@@ -115,7 +115,7 @@ struct LocationsView: View {
                         }
                     } else {
                         VStack {
-//                            CapacityBar(capacity: 0)
+//                            OccupancyBar(occupancy: 0)
 //                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
 //                            GeometryReader { geometry in
 //                                Image("logo")
