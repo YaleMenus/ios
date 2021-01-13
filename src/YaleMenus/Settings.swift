@@ -58,63 +58,63 @@ final class Settings: ObservableObject, Identifiable {
     }
 
     var showNutrition: Bool {
-        set { defaults.set(newValue, forKey: Keys.showNutrition) }
         get { defaults.bool(forKey: Keys.showNutrition) }
+        set { defaults.set(newValue, forKey: Keys.showNutrition) }
     }
     var vegetarian: Bool {
-        set { defaults.set(newValue, forKey: Keys.vegetarian) }
         get { defaults.bool(forKey: Keys.vegetarian)}
+        set { defaults.set(newValue, forKey: Keys.vegetarian) }
     }
     var vegan: Bool {
-        set { defaults.set(newValue, forKey: Keys.vegan) }
         get { defaults.bool(forKey: Keys.vegan)}
+        set { defaults.set(newValue, forKey: Keys.vegan) }
     }
     var alcohol: Bool {
-        set { defaults.set(newValue, forKey: Keys.alcohol) }
         get { defaults.bool(forKey: Keys.alcohol)}
+        set { defaults.set(newValue, forKey: Keys.alcohol) }
     }
     var nuts: Bool {
-        set { defaults.set(newValue, forKey: Keys.nuts) }
         get { defaults.bool(forKey: Keys.nuts)}
+        set { defaults.set(newValue, forKey: Keys.nuts) }
     }
     var shellfish: Bool {
-        set { defaults.set(newValue, forKey: Keys.shellfish) }
         get { defaults.bool(forKey: Keys.shellfish)}
+        set { defaults.set(newValue, forKey: Keys.shellfish) }
     }
     var peanuts: Bool {
-        set { defaults.set(newValue, forKey: Keys.peanuts) }
         get { defaults.bool(forKey: Keys.peanuts)}
+        set { defaults.set(newValue, forKey: Keys.peanuts) }
     }
     var dairy: Bool {
-        set { defaults.set(newValue, forKey: Keys.dairy) }
         get { defaults.bool(forKey: Keys.dairy)}
+        set { defaults.set(newValue, forKey: Keys.dairy) }
     }
     var egg: Bool {
-        set { defaults.set(newValue, forKey: Keys.egg) }
         get { defaults.bool(forKey: Keys.egg)}
+        set { defaults.set(newValue, forKey: Keys.egg) }
     }
     var pork: Bool {
-        set { defaults.set(newValue, forKey: Keys.pork) }
         get { defaults.bool(forKey: Keys.pork)}
+        set { defaults.set(newValue, forKey: Keys.egg) }
     }
     var fish: Bool {
-        set { defaults.set(newValue, forKey: Keys.fish) }
         get { defaults.bool(forKey: Keys.fish)}
+        set { defaults.set(newValue, forKey: Keys.fish) }
     }
     var soy: Bool {
-        set { defaults.set(newValue, forKey: Keys.soy) }
         get { defaults.bool(forKey: Keys.soy)}
+        set { defaults.set(newValue, forKey: Keys.soy) }
     }
     var wheat: Bool {
-        set { defaults.set(newValue, forKey: Keys.wheat) }
         get { defaults.bool(forKey: Keys.wheat)}
+        set { defaults.set(newValue, forKey: Keys.wheat) }
     }
     var gluten: Bool {
-        set { defaults.set(newValue, forKey: Keys.gluten) }
         get { defaults.bool(forKey: Keys.gluten)}
+        set { defaults.set(newValue, forKey: Keys.gluten) }
     }
     var coconut: Bool {
-        set { defaults.set(newValue, forKey: Keys.coconut) }
         get { defaults.bool(forKey: Keys.coconut)}
+        set { defaults.set(newValue, forKey: Keys.coconut) }
     }
 }

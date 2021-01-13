@@ -41,11 +41,11 @@ struct LocationGrid<Content: View>: View {
 }
 
 struct CapacityBar: View {
-    let INCREMENT = 7
-    let RED_LIMIT = 10
-    let ORANGE_LIMIT = 7
-    let YELLOW_LIMIT = 5
-    let GREEN_LIMIT = 3
+    private static let Increment = 7
+    private static let RedLimit = 10
+    private static let OrangeLimit = 7
+    private static let YellowLimit = 5
+    private static let GreenLimit = 3
     let capacity: Int
 
     init(capacity: Int) {
@@ -55,29 +55,29 @@ struct CapacityBar: View {
     var body: some View {
         Capsule()
             .fill(Color.white)
-            .frame(width: CGFloat(INCREMENT * RED_LIMIT), height: 10)
+            .frame(width: CGFloat(CapacityBar.Increment * CapacityBar.RedLimit), height: 10)
         .overlay(
             Capsule()
                 .fill(Color.red)
-                .frame(width: CGFloat(INCREMENT * min(RED_LIMIT, self.capacity))),
+                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.RedLimit, self.capacity))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.orange)
-                .frame(width: CGFloat(INCREMENT * min(ORANGE_LIMIT, self.capacity))),
+                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.OrangeLimit, self.capacity))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.yellow)
-                .frame(width: CGFloat(INCREMENT * min(YELLOW_LIMIT, self.capacity))),
+                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.YellowLimit, self.capacity))),
             alignment: .leading
         )
         .overlay(
             Capsule()
                 .fill(Color.green)
-                .frame(width: CGFloat(INCREMENT * min(GREEN_LIMIT, self.capacity))),
+                .frame(width: CGFloat(CapacityBar.Increment * min(CapacityBar.GreenLimit, self.capacity))),
             alignment: .leading
         )
     }
