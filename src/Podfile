@@ -10,6 +10,9 @@ target 'YaleMenus' do
   pod 'NavigationStack', '~> 0.1.0'
   pod 'FLAnimatedImage'
 
+  # Tooling
+  pod 'SwiftLint'
+
   target 'YaleMenusTests' do
     inherit! :search_paths
     # Pods for testing

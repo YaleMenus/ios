@@ -282,6 +282,7 @@
 			buildConfigurationList = 035DF40F25291BCE004C95B0 /* Build configuration list for PBXNativeTarget "YaleMenus" */;
 			buildPhases = (
 				D1F00B61113DC3C360EA7365 /* [CP] Check Pods Manifest.lock */,
+				0348CB9E25AE67CA0089A94B /* ShellScript */,
 				035DF3E125291BCC004C95B0 /* Sources */,
 				035DF3E225291BCC004C95B0 /* Frameworks */,
 				035DF3E325291BCC004C95B0 /* Resources */,
@@ -417,6 +418,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0348CB9E25AE67CA0089A94B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		33E9595187B36758B6D43ECD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

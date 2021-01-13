@@ -6,11 +6,13 @@ PODS:
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - NavigationStack (0.1.0)
+  - SwiftLint (0.42.0)
 
 DEPENDENCIES:
   - FLAnimatedImage
   - Moya
   - NavigationStack (~> 0.1.0)
+  - SwiftLint
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
@@ -19,13 +21,15 @@ SPEC REPOS:
     - FLAnimatedImage
     - Moya
     - NavigationStack
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NavigationStack: 336d0335e171d82c66e9942b80d91d7f207c6ba9
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 3692c25948e35dc2c161a933d7f12d78592f4811
+PODFILE CHECKSUM: 8fa3c9a2adc6f2dec883ef1bea8cee23b2e17a2e
 
 COCOAPODS: 1.7.5
