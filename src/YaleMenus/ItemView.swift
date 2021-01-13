@@ -2,13 +2,13 @@ import Foundation
 import SwiftUI
 import NavigationStack
 
-struct AllergenView : View {
+struct AllergenView: View {
     let allergen: String
 
     init(allergen: String) {
         self.allergen = allergen
     }
-    
+
     func capitalize(string: String) -> String {
         return string.prefix(1).capitalized + string.dropFirst()
     }
@@ -34,7 +34,7 @@ enum NutritionRowStyle {
     case plain
 }
 
-struct NutritionRowView : View {
+struct NutritionRowView: View {
     let label: String
     let amount: String?
     let pdv: Int?
@@ -49,14 +49,14 @@ struct NutritionRowView : View {
 
     var body: some View {
         VStack {
-            if (self.amount != nil) {
+            if self.amount != nil {
                 Divider()
                 HStack {
                     Text(self.label)
                         .font(self.style == .main ? .appBodyBold : .appBody)
                         .foregroundColor(.foreground)
                         .padding(.leading, self.style == .sub ? 25 : 0)
-                    if (self.style == .heading) {
+                    if self.style == .heading {
                         Spacer()
                         Text(self.amount!)
                             .font(.appBodyBold)
@@ -67,7 +67,7 @@ struct NutritionRowView : View {
                             .foregroundColor(.foreground)
                         Spacer()
                     }
-                    if (self.pdv != nil) {
+                    if self.pdv != nil {
                         Text("\(self.pdv!)%")
                             .font(self.style != .plain ? .appBodyBold : .appBody)
                             .foregroundColor(.foreground)
@@ -78,7 +78,7 @@ struct NutritionRowView : View {
     }
 }
 
-struct ItemView : View {
+struct ItemView: View {
     @ObservedObject var model: ItemViewModel
 
     init(item: Item) {
@@ -88,7 +88,7 @@ struct ItemView : View {
     var body: some View {
         VStack {
             HeaderView(text: self.model.item.course)
-            if (!self.model.settings.showNutrition || self.model.nutrition != nil) {
+            if !self.model.settings.showNutrition || self.model.nutrition != nil {
                 ScrollView {
                     VStack {
                         // TODO: bold and cleanup
@@ -98,25 +98,25 @@ struct ItemView : View {
                         ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
                         VStack {
                             Group {
-                                if (self.model.item.vegan) { AllergenView(allergen: "vegan") }
-                                if (self.model.item.vegetarian) { AllergenView(allergen: "vegetarian") }
-                                if (self.model.item.alcohol) { AllergenView(allergen: "alcohol") }
-                                if (self.model.item.nuts) { AllergenView(allergen: "nuts") }
-                                if (self.model.item.shellfish) { AllergenView(allergen: "shellfish") }
-                                if (self.model.item.peanuts) { AllergenView(allergen: "peanuts") }
-                                if (self.model.item.dairy) { AllergenView(allergen: "dairy") }
+                                if self.model.item.vegan { AllergenView(allergen: "vegan") }
+                                if self.model.item.vegetarian { AllergenView(allergen: "vegetarian") }
+                                if self.model.item.alcohol { AllergenView(allergen: "alcohol") }
+                                if self.model.item.nuts { AllergenView(allergen: "nuts") }
+                                if self.model.item.shellfish { AllergenView(allergen: "shellfish") }
+                                if self.model.item.peanuts { AllergenView(allergen: "peanuts") }
+                                if self.model.item.dairy { AllergenView(allergen: "dairy") }
                             }
                             Group {
-                                if (self.model.item.egg) { AllergenView(allergen: "egg") }
-                                if (self.model.item.pork) { AllergenView(allergen: "pork") }
-                                if (self.model.item.fish) { AllergenView(allergen: "fish") }
-                                if (self.model.item.soy) { AllergenView(allergen: "soy") }
-                                if (self.model.item.wheat) { AllergenView(allergen: "wheat") }
-                                if (self.model.item.gluten) { AllergenView(allergen: "gluten") }
-                                if (self.model.item.coconut) { AllergenView(allergen: "coconut") }
+                                if self.model.item.egg { AllergenView(allergen: "egg") }
+                                if self.model.item.pork { AllergenView(allergen: "pork") }
+                                if self.model.item.fish { AllergenView(allergen: "fish") }
+                                if self.model.item.soy { AllergenView(allergen: "soy") }
+                                if self.model.item.wheat { AllergenView(allergen: "wheat") }
+                                if self.model.item.gluten { AllergenView(allergen: "gluten") }
+                                if self.model.item.coconut { AllergenView(allergen: "coconut") }
                             }
                         }.padding(.bottom)
-                        if (self.model.settings.showNutrition) {
+                        if self.model.settings.showNutrition {
                             VStack {
                                 Text("Nutrition Facts")
                                     .font(.appTitle)

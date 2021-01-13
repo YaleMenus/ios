@@ -4,20 +4,20 @@ import Moya
 protocol Networkable {
     var provider: MoyaProvider<API> { get }
 
-    func getLocations(completion: @escaping ([Location]) -> ());
-    func getLocation(id: Int, completion: @escaping (Location) -> ());
-    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> ());
-    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> ());
-    func getMeal(mealId: Int, completion: @escaping (Meal) -> ());
-    func getItems(mealId: Int, completion: @escaping ([Item]) -> ());
-    func getItem(itemId: Int, completion: @escaping (Item) -> ());
-    func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> ());
+    func getLocations(completion: @escaping ([Location]) -> Void)
+    func getLocation(id: Int, completion: @escaping (Location) -> Void)
+    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> Void)
+    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> Void)
+    func getMeal(mealId: Int, completion: @escaping (Meal) -> Void)
+    func getItems(mealId: Int, completion: @escaping ([Item]) -> Void)
+    func getItem(itemId: Int, completion: @escaping (Item) -> Void)
+    func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> Void)
 }
 
 struct NetworkManager {
     fileprivate let provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
-    
-    func getLocations(completion: @escaping ([Location]) -> ()) {
+
+    func getLocations(completion: @escaping ([Location]) -> Void) {
         provider.request(.locations) { result in
             switch result {
             case let .success(response):
@@ -32,7 +32,7 @@ struct NetworkManager {
             }
         }
     }
-    func getLocation(id: Int, completion: @escaping (Location) -> ()) {
+    func getLocation(id: Int, completion: @escaping (Location) -> Void) {
         provider.request(.location(id: id)) { result in
             switch result {
             case let .success(response):
@@ -47,7 +47,7 @@ struct NetworkManager {
             }
         }
     }
-    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> ()) {
+    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> Void) {
         provider.request(.managers(locationId: locationId)) { result in
             switch result {
             case let .success(response):
@@ -62,7 +62,7 @@ struct NetworkManager {
             }
         }
     }
-    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> ()) {
+    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> Void) {
         provider.request(.meals(locationId: locationId, date: date)) { result in
             switch result {
             case let .success(response):
@@ -77,7 +77,7 @@ struct NetworkManager {
             }
         }
     }
-    func getMeal(id: Int, completion: @escaping (Meal) -> ()) {
+    func getMeal(id: Int, completion: @escaping (Meal) -> Void) {
         provider.request(.meal(id: id)) { result in
             switch result {
             case let .success(response):
@@ -92,7 +92,7 @@ struct NetworkManager {
             }
         }
     }
-    func getItems(mealId: Int, completion: @escaping ([Item]) -> ()) {
+    func getItems(mealId: Int, completion: @escaping ([Item]) -> Void) {
         provider.request(.items(mealId: mealId)) { result in
             switch result {
             case let .success(response):
@@ -107,7 +107,7 @@ struct NetworkManager {
             }
         }
     }
-    func getItem(id: Int, completion: @escaping (Item) -> ()) {
+    func getItem(id: Int, completion: @escaping (Item) -> Void) {
         provider.request(.item(id: id)) { result in
             switch result {
             case let .success(response):
@@ -122,7 +122,7 @@ struct NetworkManager {
             }
         }
     }
-    func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> ()) {
+    func getNutrition(itemId: Int, completion: @escaping (Nutrition) -> Void) {
         provider.request(.nutrition(itemId: itemId)) { result in
             switch result {
             case let .success(response):

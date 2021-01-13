@@ -6,11 +6,11 @@ class ItemViewModel: ObservableObject, Identifiable {
     let settings = Settings()
 
     @Published var item: Item
-    @Published var nutrition: Nutrition? = nil
+    @Published var nutrition: Nutrition?
 
     init(item: Item, defaults: UserDefaults = .standard) {
         self.item = item
-        if (self.settings.showNutrition) {
+        if self.settings.showNutrition {
             nm.getNutrition(itemId: self.item.id, completion: { nutrition in
                 self.nutrition = nutrition
             })

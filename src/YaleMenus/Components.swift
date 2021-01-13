@@ -1,7 +1,7 @@
 import SwiftUI
 import NavigationStack
 
-struct HeaderView : View {
+struct HeaderView: View {
     @EnvironmentObject private var navigationStack: NavigationStack
     var text: String
     var location: Location?
@@ -46,11 +46,11 @@ struct HeaderView : View {
     }
 }
 
-struct ParagraphView : View {
+struct ParagraphView: View {
     let text: String
 
     init(text: String) {
-        self.text = text;
+        self.text = text
     }
 
     var body: some View {
@@ -111,14 +111,14 @@ struct SegmentedPicker: View {
     private static let SelectedTextColor: Color = .white
 
     private static let TextFont: Font = .appBodyMedium
-    
+
     private static let SegmentCornerRadius: CGFloat = 10
     private static let SegmentXPadding: CGFloat = 8
     private static let SegmentYPadding: CGFloat = 6
     private static let PickerPadding: CGFloat = 0
-    
+
     private static let AnimationDuration: Double = 0.2
-    
+
     // Stores the size of a segment, used to create the active segment rect
     @State private var segmentSize: CGSize = .zero
     // Rounded rectangle to denote active segment
@@ -135,15 +135,15 @@ struct SegmentedPicker: View {
                 .animation(Animation.easeOut(duration: SegmentedPicker.AnimationDuration))
                 .eraseToAnyView()
     }
-    
+
     @Binding private var selection: Int
     private let items: [String]
-    
+
     init(items: [String], selection: Binding<Int>) {
         self._selection = selection
         self.items = items
     }
-    
+
     var body: some View {
         // Align the ZStack to the leading edge to make calculating offset on activeSegmentView easier
         ZStack(alignment: .leading) {

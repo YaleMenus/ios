@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct InfoRowView : View {
+struct InfoRowView: View {
     var icon: String
     var text: String
     var link: String?
@@ -17,7 +17,7 @@ struct InfoRowView : View {
             Image(systemName: self.icon)
                 .foregroundColor(.foreground)
                 .frame(width: 25)
-            if (self.link != nil) {
+            if self.link != nil {
                 Button(action: {
                     let url = URL(string: self.link!)!
                     UIApplication.shared.open(url)
@@ -36,13 +36,13 @@ struct InfoRowView : View {
     }
 }
 
-struct ManagerView : View {
+struct ManagerView: View {
     var manager: Manager
-    
+
     init(manager: Manager) {
         self.manager = manager
     }
-    
+
     var body: some View {
         VStack {
             InfoRowView(icon: "person.fill", text: self.manager.name)
@@ -56,19 +56,19 @@ struct ManagerView : View {
     }
 }
 
-struct LocationInfoView : View {
+struct LocationInfoView: View {
     @ObservedObject var model: LocationInfoViewModel
 
     init(location: Location) {
         self.model = LocationInfoViewModel(location: location)
     }
-    
+
     func getMapLink() -> String? {
         let app = UIApplication.shared
         let query = self.model.location.address.replacingOccurrences(of: " ", with: "+")
-        if (app.canOpenURL(URL(string: "comgooglemaps://")!)) {
+        if app.canOpenURL(URL(string: "comgooglemaps://")!) {
             return "comgooglemaps://?q=\(query)"
-        } else if (app.canOpenURL(URL(string: "http://maps.apple.com")!)) {
+        } else if app.canOpenURL(URL(string: "http://maps.apple.com")!) {
             return "http://maps.apple.com/?q=\(query)"
         }
         return nil
@@ -81,7 +81,7 @@ struct LocationInfoView : View {
     var body: some View {
         VStack {
             HeaderView(text: "")
-            if (self.model.managers != nil) {
+            if self.model.managers != nil {
                 VStack {
                     Text(self.model.location.name)
                         .font(.appTitle)

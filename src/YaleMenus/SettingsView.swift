@@ -10,20 +10,20 @@ struct CheckboxView: View {
     var label: String
     var checked: Binding<Bool>
     var style: CheckboxStyle
-    
+
     init(label: String, checked: Binding<Bool>, style: CheckboxStyle = .x) {
         self.label = label
         self.checked = checked
         self.style = style
     }
-    
+
     func toggle() {
         self.checked.wrappedValue = !self.checked.wrappedValue
     }
-    
+
     func getIcon() -> String {
-        if (self.checked.wrappedValue) {
-            switch (self.style) {
+        if self.checked.wrappedValue {
+            switch self.style {
             case .x:
                 return "xmark.circle.fill"
             case .check:
@@ -32,10 +32,10 @@ struct CheckboxView: View {
         }
         return "circle"
     }
-    
+
     func getColor() -> Color {
-        if (self.checked.wrappedValue) {
-            switch (self.style) {
+        if self.checked.wrappedValue {
+            switch self.style {
             case .x:
                 return .red
             case .check:
@@ -44,7 +44,7 @@ struct CheckboxView: View {
         }
         return .foreground
     }
-    
+
     var body: some View {
         Button(action: toggle) {
             HStack {
@@ -65,7 +65,7 @@ struct CheckboxView: View {
 
 struct SettingsView: View {
     @ObservedObject var settings = Settings()
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HeaderView(text: "Settings")

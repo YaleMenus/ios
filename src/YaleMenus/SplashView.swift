@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct SplashView : View {
+struct SplashView: View {
     let iconName: String
     let subtitle: String
 
@@ -9,7 +9,7 @@ struct SplashView : View {
         self.iconName = iconName
         self.subtitle = subtitle
     }
-    
+
     var body: some View {
         VStack {
             Spacer()

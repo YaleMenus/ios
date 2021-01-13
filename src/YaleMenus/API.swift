@@ -14,7 +14,7 @@ enum API {
 
 extension API: TargetType {
     var baseURL: URL { return URL(string: "https://yaledine.com/api/")! }
-    
+
     var path: String {
         switch self {
         case .locations:
@@ -35,25 +35,25 @@ extension API: TargetType {
             return "items/\(itemId)/nutrition"
         }
     }
-    
+
     var method: Moya.Method {
         return .get
     }
-    
+
     var sampleData: Data {
         return Data()
     }
-    
+
     var task: Task {
         switch self {
         case .meals(_, let date):
             return .requestParameters(parameters: ["date": date], encoding: URLEncoding.queryString)
         default:
-            return .requestParameters(parameters: [:], encoding: URLEncoding.queryString);
+            return .requestParameters(parameters: [:], encoding: URLEncoding.queryString)
         }
     }
-    
-    var headers: [String : String]? {
-        return nil;
+
+    var headers: [String: String]? {
+        return nil
     }
 }

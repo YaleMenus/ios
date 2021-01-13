@@ -2,7 +2,7 @@ import SwiftUI
 import Foundation
 import FLAnimatedImage
 
-struct GifView : UIViewRepresentable {
+struct GifView: UIViewRepresentable {
     let animatedView = FLAnimatedImageView()
     var fileName: String
 
@@ -12,7 +12,7 @@ struct GifView : UIViewRepresentable {
         let path: String = Bundle.main.path(forResource: fileName, ofType: "gif")!
         let url = URL(fileURLWithPath: path)
         let gifData = try! Data(contentsOf: url)
-        
+
         let gif = FLAnimatedImage(animatedGIFData: gifData)
         animatedView.animatedImage = gif
 
@@ -21,7 +21,7 @@ struct GifView : UIViewRepresentable {
 
         NSLayoutConstraint.activate([
             animatedView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            animatedView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animatedView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
 
         return view
@@ -30,7 +30,7 @@ struct GifView : UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<GifView>) {}
 }
 
-struct LoaderView : View {
+struct LoaderView: View {
     var body: some View {
         VStack {
             GeometryReader { geometry in

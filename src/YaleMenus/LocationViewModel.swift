@@ -7,7 +7,7 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     @Published var location: Location
     @Published var meals: [Date: [Meal]] = [:]
-    @Published var mealNames: [String]? = nil
+    @Published var mealNames: [String]?
     @Published var mealIndex: Int = 0
     @Published var items: [Date: [[Item]?]] = [:]
     @Published var allowed: [Date: [[Bool]?]] = [:]
@@ -16,14 +16,13 @@ class LocationViewModel: ObservableObject, Identifiable {
     public let dateFormatterExternal = DateFormatter()
     public let timeFormatterInternal = DateFormatter()
     public let timeFormatterExternal = DateFormatter()
-    
-    
+
     init(location: Location) {
         self.location = location
         self.dateFormatterInternal.dateFormat = "yyyy-MM-dd"
         self.dateFormatterExternal.dateFormat = "MMMM d"
         self.timeFormatterInternal.dateFormat = "HH:mm"
-        self.timeFormatterExternal.dateFormat = DateFormatter.dateFormat(fromTemplate: "j:mm",options:0, locale: Locale.current)?.replacingOccurrences(of: " ", with: "")
+        self.timeFormatterExternal.dateFormat = DateFormatter.dateFormat(fromTemplate: "j:mm", options: 0, locale: Locale.current)?.replacingOccurrences(of: " ", with: "")
         // For testing while we don't have updated data.
         //self.date = self.formatterInternal.date(from: "2020-09-24")!
         self.getMeals()
@@ -44,7 +43,7 @@ class LocationViewModel: ObservableObject, Identifiable {
 
     func getMeals() {
         let date = self.date
-        if (self.meals[date] == nil) {
+        if self.meals[date] == nil {
             nm.getMeals(locationId: self.location.id,
                         date: self.dateFormatterInternal.string(from: date),
                         completion: { meals in
@@ -61,12 +60,11 @@ class LocationViewModel: ObservableObject, Identifiable {
     }
 
     func getItems(date: Date, mealIndex: Int) {
-        if (
+        if
             self.meals[date] != nil &&
             self.items[date] != nil &&
             mealIndex < self.items[date]!.count &&
-            self.items[date]![mealIndex] == nil
-        ) {
+            self.items[date]![mealIndex] == nil {
             nm.getItems(mealId: self.meals[date]![mealIndex].id, completion: { items in
                 self.allowed[date]![mealIndex] = items.map { item in
                     !(
@@ -96,7 +94,7 @@ class LocationViewModel: ObservableObject, Identifiable {
         self.date = Calendar.current.date(byAdding: .day, value: by, to: self.date)!
         self.getMeals()
     }
-    
+
     func reformatTime(_ time: String) -> String {
         let read = self.timeFormatterInternal.date(from: time)!
         // TODO: can we lowercase am/pm within the format string?

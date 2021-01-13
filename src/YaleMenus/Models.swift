@@ -26,10 +26,10 @@ extension Location: Decodable {
         case address
         case phone
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: LocationCodingKeys.self)
-        
+
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         shortname = try container.decode(String.self, forKey: .shortname)

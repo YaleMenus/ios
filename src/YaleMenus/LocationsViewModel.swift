@@ -11,13 +11,13 @@ import Foundation
 class LocationsViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
-    
-    @Published var locations: [Location]? = nil
+
+    @Published var locations: [Location]?
 
     func load() {
         nm.getLocations(completion: { locations in
-            self.locations = locations;
-        });
+            self.locations = locations
+        })
     }
 
     init() {

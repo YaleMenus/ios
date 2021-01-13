@@ -48,7 +48,7 @@ final class Settings: ObservableObject, Identifiable {
             Keys.soy: false,
             Keys.wheat: false,
             Keys.gluten: false,
-            Keys.coconut: false,
+            Keys.coconut: false
         ])
 
         cancellable = NotificationCenter.default

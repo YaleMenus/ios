@@ -6,18 +6,18 @@ struct LocationGrid<Content: View>: View {
     let rows: Int
     let columns: Int
     let content: (Location?, Int, Int) -> Content
-    
+
     init(items: [Location], rows: Int, columns: Int, @ViewBuilder content: @escaping (Location?, Int, Int) -> Content) {
         self.items = items
         self.rows = rows
         self.columns = columns
         self.content = content
     }
-    
+
     func item(n: Int) -> Location? {
         if n <= self.items.count {
             // Offset last element by one for logo
-            if (n == self.items.count) {
+            if n == self.items.count {
                 return nil
             }
             return self.items[n]
@@ -40,7 +40,7 @@ struct LocationGrid<Content: View>: View {
     }
 }
 
-struct CapacityBar : View {
+struct CapacityBar: View {
     let INCREMENT = 7
     let RED_LIMIT = 10
     let ORANGE_LIMIT = 7
@@ -83,16 +83,16 @@ struct CapacityBar : View {
     }
 }
 
-struct LocationsView : View {
+struct LocationsView: View {
     @ObservedObject var model = LocationsViewModel()
     @EnvironmentObject private var navigationStack: NavigationStack
     @State private var isReloading = false
-    
+
     var body: some View {
         VStack {
             if self.model.locations != nil {
-                LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, row, col in
-                    if (location != nil) {
+                LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, _, _ in
+                    if location != nil {
                         GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
                                 CapacityBar(capacity: location!.capacity)

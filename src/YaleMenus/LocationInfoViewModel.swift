@@ -11,10 +11,10 @@ import Foundation
 class LocationInfoViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
-    
+
     @Published var location: Location
-    @Published var managers: [Manager]? = nil
-    
+    @Published var managers: [Manager]?
+
     init(location: Location) {
         self.location = location
         nm.getManagers(locationId: self.location.id, completion: { managers in

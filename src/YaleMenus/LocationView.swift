@@ -13,7 +13,7 @@ extension Binding {
     }
 }
 
-struct ItemPreviewView : View {
+struct ItemPreviewView: View {
     let item: Item
     let allowed: Bool
     @EnvironmentObject private var navigationStack: NavigationStack
@@ -63,7 +63,7 @@ struct ItemPreviewView : View {
     }
 }
 
-struct LocationView : View {
+struct LocationView: View {
     @ObservedObject var model: LocationViewModel
     @State private var choosingDate = false
     @State private var chosenDate = Date()
@@ -86,8 +86,8 @@ struct LocationView : View {
     var body: some View {
         VStack {
             HeaderView(text: self.model.location.shortname, location: self.model.location)
-            if (self.model.meals[self.model.date] != nil) {
-                if (self.model.meals[self.model.date]!.isEmpty) {
+            if self.model.meals[self.model.date] != nil {
+                if self.model.meals[self.model.date]!.isEmpty {
                     SplashView(iconName: self.model.location.code, subtitle: "No menu posted.")
                 } else {
                     SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $model.mealIndex.onChange(onChange))
@@ -96,11 +96,9 @@ struct LocationView : View {
                         .font(.appBody)
                         .foregroundColor(.foreground)
                         .padding(.bottom, 4)
-                    if (
-                        self.model.items[self.model.date] != nil &&
-                        self.model.items[self.model.date]![self.model.mealIndex] != nil &&
-                        self.model.allowed[self.model.date]![self.model.mealIndex] != nil
-                    ) {
+                    if self.model.items[self.model.date] != nil &&
+                       self.model.items[self.model.date]![self.model.mealIndex] != nil &&
+                       self.model.allowed[self.model.date]![self.model.mealIndex] != nil {
                         ScrollView {
                             VStack {
                                 ForEach(
@@ -132,7 +130,7 @@ struct LocationView : View {
                         .foregroundColor(.medium)
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
-                if (self.choosingDate) {
+                if self.choosingDate {
                     Button(action: { self.closeDatePicker() }) {
                         Text("Done")
                             .font(.appBodyMedium)
@@ -163,7 +161,7 @@ struct LocationView : View {
             }
             .padding(.top, 5)
             .frame(maxWidth: .infinity)
-            if (self.choosingDate) {
+            if self.choosingDate {
                 // TODO: use foreground color
                 DatePicker(
                     "",
@@ -178,7 +176,7 @@ struct LocationView : View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
         .padding()
     }
-    
+
     func onChange(mealIndex: Int) {
         self.model.mealIndex = mealIndex
         self.model.getItems(date: self.model.date, mealIndex: mealIndex)
