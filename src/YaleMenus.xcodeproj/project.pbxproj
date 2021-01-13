@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		030E653325322CB200B6032F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653225322CB200B6032F /* NetworkManager.swift */; };
-		030E653525351E1B00B6032F /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653425351E1B00B6032F /* LocationsViewModel.swift */; };
+		030E653525351E1B00B6032F /* HallsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653425351E1B00B6032F /* HallsViewModel.swift */; };
 		030E6537253659D600B6032F /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E6536253659D600B6032F /* LoaderView.swift */; };
-		030E65392537FB5F00B6032F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E65382537FB5F00B6032F /* LocationView.swift */; };
-		030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653A2537FB6F00B6032F /* LocationViewModel.swift */; };
+		030E65392537FB5F00B6032F /* HallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E65382537FB5F00B6032F /* HallView.swift */; };
+		030E653B2537FB6F00B6032F /* HallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030E653A2537FB6F00B6032F /* HallViewModel.swift */; };
 		03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AD9259ADCD8002EB88D /* SplashView.swift */; };
 		03404ADC259AE165002EB88D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03404ADB259AE165002EB88D /* Colors.xcassets */; };
 		03404ADE259AE493002EB88D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404ADD259AE493002EB88D /* Colors.swift */; };
@@ -19,8 +19,8 @@
 		03404AE2259AFCFD002EB88D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AE1259AFCFD002EB88D /* Settings.swift */; };
 		03404AE4259BACF2002EB88D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AE3259BACF2002EB88D /* Font.swift */; };
 		03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF5259BE9F0002EB88D /* InformationView.swift */; };
-		03404AF8259D780B002EB88D /* LocationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF7259D780B002EB88D /* LocationInfoView.swift */; };
-		03404AFA259D795B002EB88D /* LocationInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */; };
+		03404AF8259D780B002EB88D /* HallInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF7259D780B002EB88D /* HallInfoView.swift */; };
+		03404AFA259D795B002EB88D /* HallInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404AF9259D795B002EB88D /* HallInfoViewModel.swift */; };
 		03476DC7256770D300E4587C /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC6256770D300E4587C /* ItemView.swift */; };
 		03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03476DC8256770ED00E4587C /* ItemViewModel.swift */; };
 		0348CB9325AD381D0089A94B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0348CB8A25AD381D0089A94B /* Montserrat-Light.ttf */; };
@@ -41,7 +41,7 @@
 		035DF3F525291BCE004C95B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035DF3F325291BCE004C95B0 /* LaunchScreen.storyboard */; };
 		035DF40025291BCE004C95B0 /* YaleMenusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF3FF25291BCE004C95B0 /* YaleMenusTests.swift */; };
 		035DF40B25291BCE004C95B0 /* YaleMenusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF40A25291BCE004C95B0 /* YaleMenusUITests.swift */; };
-		035DF419252920EE004C95B0 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF418252920EE004C95B0 /* LocationsView.swift */; };
+		035DF419252920EE004C95B0 /* HallsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF418252920EE004C95B0 /* HallsView.swift */; };
 		035DF41B252922F4004C95B0 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41A252922F4004C95B0 /* Components.swift */; };
 		035DF41D25292338004C95B0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41C25292338004C95B0 /* API.swift */; };
 		035DF41F25293FA3004C95B0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41E25293FA3004C95B0 /* Models.swift */; };
@@ -69,10 +69,10 @@
 
 /* Begin PBXFileReference section */
 		030E653225322CB200B6032F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		030E653425351E1B00B6032F /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		030E653425351E1B00B6032F /* HallsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsViewModel.swift; sourceTree = "<group>"; };
 		030E6536253659D600B6032F /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
-		030E65382537FB5F00B6032F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
-		030E653A2537FB6F00B6032F /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		030E65382537FB5F00B6032F /* HallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallView.swift; sourceTree = "<group>"; };
+		030E653A2537FB6F00B6032F /* HallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallViewModel.swift; sourceTree = "<group>"; };
 		03404AD9259ADCD8002EB88D /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		03404ADB259AE165002EB88D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		03404ADD259AE493002EB88D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		03404AE1259AFCFD002EB88D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		03404AE3259BACF2002EB88D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		03404AF5259BE9F0002EB88D /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
-		03404AF7259D780B002EB88D /* LocationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoView.swift; sourceTree = "<group>"; };
-		03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoViewModel.swift; sourceTree = "<group>"; };
+		03404AF7259D780B002EB88D /* HallInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallInfoView.swift; sourceTree = "<group>"; };
+		03404AF9259D795B002EB88D /* HallInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallInfoViewModel.swift; sourceTree = "<group>"; };
 		03476DC6256770D300E4587C /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		03476DC8256770ED00E4587C /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		0348CB8A25AD381D0089A94B /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../../fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		035DF40625291BCE004C95B0 /* YaleMenusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YaleMenusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		035DF40A25291BCE004C95B0 /* YaleMenusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YaleMenusUITests.swift; sourceTree = "<group>"; };
 		035DF40C25291BCE004C95B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		035DF418252920EE004C95B0 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		035DF418252920EE004C95B0 /* HallsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HallsView.swift; sourceTree = "<group>"; };
 		035DF41A252922F4004C95B0 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		035DF41C25292338004C95B0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		035DF41E25293FA3004C95B0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -206,12 +206,12 @@
 				035DF41A252922F4004C95B0 /* Components.swift */,
 				030E6536253659D600B6032F /* LoaderView.swift */,
 				03404AD9259ADCD8002EB88D /* SplashView.swift */,
-				035DF418252920EE004C95B0 /* LocationsView.swift */,
-				030E653425351E1B00B6032F /* LocationsViewModel.swift */,
-				030E65382537FB5F00B6032F /* LocationView.swift */,
-				030E653A2537FB6F00B6032F /* LocationViewModel.swift */,
-				03404AF7259D780B002EB88D /* LocationInfoView.swift */,
-				03404AF9259D795B002EB88D /* LocationInfoViewModel.swift */,
+				035DF418252920EE004C95B0 /* HallsView.swift */,
+				030E653425351E1B00B6032F /* HallsViewModel.swift */,
+				030E65382537FB5F00B6032F /* HallView.swift */,
+				030E653A2537FB6F00B6032F /* HallViewModel.swift */,
+				03404AF7259D780B002EB88D /* HallInfoView.swift */,
+				03404AF9259D795B002EB88D /* HallInfoViewModel.swift */,
 				03476DC6256770D300E4587C /* ItemView.swift */,
 				03476DC8256770ED00E4587C /* ItemViewModel.swift */,
 				03404ADF259AFCEB002EB88D /* SettingsView.swift */,
@@ -543,23 +543,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */,
-				035DF419252920EE004C95B0 /* LocationsView.swift in Sources */,
+				035DF419252920EE004C95B0 /* HallsView.swift in Sources */,
 				03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */,
-				03404AF8259D780B002EB88D /* LocationInfoView.swift in Sources */,
+				03404AF8259D780B002EB88D /* HallInfoView.swift in Sources */,
 				035DF41B252922F4004C95B0 /* Components.swift in Sources */,
 				03404AE4259BACF2002EB88D /* Font.swift in Sources */,
 				03404AF6259BE9F0002EB88D /* InformationView.swift in Sources */,
 				03476DC9256770ED00E4587C /* ItemViewModel.swift in Sources */,
 				03404AE0259AFCEB002EB88D /* SettingsView.swift in Sources */,
 				035DF3EB25291BCC004C95B0 /* SceneDelegate.swift in Sources */,
-				030E653525351E1B00B6032F /* LocationsViewModel.swift in Sources */,
+				030E653525351E1B00B6032F /* HallsViewModel.swift in Sources */,
 				03404ADE259AE493002EB88D /* Colors.swift in Sources */,
 				030E653325322CB200B6032F /* NetworkManager.swift in Sources */,
-				030E65392537FB5F00B6032F /* LocationView.swift in Sources */,
-				030E653B2537FB6F00B6032F /* LocationViewModel.swift in Sources */,
+				030E65392537FB5F00B6032F /* HallView.swift in Sources */,
+				030E653B2537FB6F00B6032F /* HallViewModel.swift in Sources */,
 				035DF41D25292338004C95B0 /* API.swift in Sources */,
 				030E6537253659D600B6032F /* LoaderView.swift in Sources */,
-				03404AFA259D795B002EB88D /* LocationInfoViewModel.swift in Sources */,
+				03404AFA259D795B002EB88D /* HallInfoViewModel.swift in Sources */,
 				03476DC7256770D300E4587C /* ItemView.swift in Sources */,
 				035DF3ED25291BCC004C95B0 /* ContentView.swift in Sources */,
 				035DF41F25293FA3004C95B0 /* Models.swift in Sources */,

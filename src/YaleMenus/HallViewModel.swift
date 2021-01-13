@@ -1,11 +1,11 @@
 import Foundation
 
-class LocationViewModel: ObservableObject, Identifiable {
+class HallViewModel: ObservableObject, Identifiable {
     let id = UUID()
     let nm = NetworkManager()
     let settings = Settings()
 
-    @Published var location: Location
+    @Published var hall: Hall
     @Published var meals: [Date: [Meal]] = [:]
     @Published var mealNames: [String]?
     @Published var mealIndex: Int = 0
@@ -17,8 +17,8 @@ class LocationViewModel: ObservableObject, Identifiable {
     public let timeFormatterInternal = DateFormatter()
     public let timeFormatterExternal = DateFormatter()
 
-    init(location: Location) {
-        self.location = location
+    init(hall: Hall) {
+        self.hall = hall
         self.dateFormatterInternal.dateFormat = "yyyy-MM-dd"
         self.dateFormatterExternal.dateFormat = "MMMM d"
         self.timeFormatterInternal.dateFormat = "HH:mm"
@@ -44,7 +44,7 @@ class LocationViewModel: ObservableObject, Identifiable {
     func getMeals() {
         let date = self.date
         if self.meals[date] == nil {
-            nm.getMeals(locationId: self.location.id,
+            nm.getMeals(hallId: self.hall.id,
                         date: self.dateFormatterInternal.string(from: date),
                         completion: { meals in
                 self.meals[date] = meals

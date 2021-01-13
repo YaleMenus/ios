@@ -4,10 +4,10 @@ import Moya
 protocol Networkable {
     var provider: MoyaProvider<API> { get }
 
-    func getLocations(completion: @escaping ([Location]) -> Void)
-    func getLocation(id: Int, completion: @escaping (Location) -> Void)
-    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> Void)
-    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> Void)
+    func getHalls(completion: @escaping ([Hall]) -> Void)
+    func getHall(id: Int, completion: @escaping (Hall) -> Void)
+    func getManagers(hallId: Int, completion: @escaping ([Manager]) -> Void)
+    func getMeals(hallId: Int, date: String, completion: @escaping ([Meal]) -> Void)
     func getMeal(mealId: Int, completion: @escaping (Meal) -> Void)
     func getItems(mealId: Int, completion: @escaping ([Item]) -> Void)
     func getItem(itemId: Int, completion: @escaping (Item) -> Void)
@@ -17,12 +17,12 @@ protocol Networkable {
 struct NetworkManager {
     fileprivate let provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
 
-    func getLocations(completion: @escaping ([Location]) -> Void) {
-        provider.request(.locations) { result in
+    func getHalls(completion: @escaping ([Hall]) -> Void) {
+        provider.request(.halls) { result in
             switch result {
             case let .success(response):
                 do {
-                    let results = try JSONDecoder().decode([Location].self, from: response.data)
+                    let results = try JSONDecoder().decode([Hall].self, from: response.data)
                     completion(results)
                 } catch let err {
                     print(err)
@@ -32,12 +32,12 @@ struct NetworkManager {
             }
         }
     }
-    func getLocation(id: Int, completion: @escaping (Location) -> Void) {
-        provider.request(.location(id: id)) { result in
+    func getHall(id: Int, completion: @escaping (Hall) -> Void) {
+        provider.request(.hall(id: id)) { result in
             switch result {
             case let .success(response):
                 do {
-                    let results = try JSONDecoder().decode(Location.self, from: response.data)
+                    let results = try JSONDecoder().decode(Hall.self, from: response.data)
                     completion(results)
                 } catch let err {
                     print(err)
@@ -47,8 +47,8 @@ struct NetworkManager {
             }
         }
     }
-    func getManagers(locationId: Int, completion: @escaping ([Manager]) -> Void) {
-        provider.request(.managers(locationId: locationId)) { result in
+    func getManagers(hallId: Int, completion: @escaping ([Manager]) -> Void) {
+        provider.request(.managers(hallId: hallId)) { result in
             switch result {
             case let .success(response):
                 do {
@@ -62,8 +62,8 @@ struct NetworkManager {
             }
         }
     }
-    func getMeals(locationId: Int, date: String, completion: @escaping ([Meal]) -> Void) {
-        provider.request(.meals(locationId: locationId, date: date)) { result in
+    func getMeals(hallId: Int, date: String, completion: @escaping ([Meal]) -> Void) {
+        provider.request(.meals(hallId: hallId, date: date)) { result in
             switch result {
             case let .success(response):
                 do {

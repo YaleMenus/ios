@@ -1,6 +1,6 @@
 import Foundation
 
-struct Location: Identifiable {
+struct Hall: Identifiable {
     let id: Int
     let name: String
     let shortname: String
@@ -13,8 +13,8 @@ struct Location: Identifiable {
     let phone: String
 }
 
-extension Location: Decodable {
-    enum LocationCodingKeys: String, CodingKey {
+extension Hall: Decodable {
+    enum HallCodingKeys: String, CodingKey {
         case id
         case name
         case shortname
@@ -28,7 +28,7 @@ extension Location: Decodable {
     }
 
     init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: LocationCodingKeys.self)
+        let container = try decoder.container(keyedBy: HallCodingKeys.self)
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
@@ -74,7 +74,7 @@ struct Meal {
     let date: String
     let startTime: String
     let endTime: String
-    let locationId: Int
+    let hallId: Int
 }
 
 extension Meal: Decodable {
@@ -84,7 +84,7 @@ extension Meal: Decodable {
         case date
         case startTime = "start_time"
         case endTime = "end_time"
-        case locationId = "location_id"
+        case hallId = "hall_id"
     }
 
     init(from decoder: Decoder) throws {
@@ -95,7 +95,7 @@ extension Meal: Decodable {
         date = try container.decode(String.self, forKey: .date)
         startTime = try container.decode(String.self, forKey: .startTime)
         endTime = try container.decode(String.self, forKey: .endTime)
-        locationId = try container.decode(Int.self, forKey: .locationId)
+        hallId = try container.decode(Int.self, forKey: .hallId)
     }
 }
 

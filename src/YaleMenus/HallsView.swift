@@ -1,20 +1,20 @@
 import SwiftUI
 import NavigationStack
 
-struct LocationGrid<Content: View>: View {
-    let items: [Location]
+struct HallGrid<Content: View>: View {
+    let items: [Hall]
     let rows: Int
     let columns: Int
-    let content: (Location?, Int, Int) -> Content
+    let content: (Hall?, Int, Int) -> Content
 
-    init(items: [Location], rows: Int, columns: Int, @ViewBuilder content: @escaping (Location?, Int, Int) -> Content) {
+    init(items: [Hall], rows: Int, columns: Int, @ViewBuilder content: @escaping (Hall?, Int, Int) -> Content) {
         self.items = items
         self.rows = rows
         self.columns = columns
         self.content = content
     }
 
-    func item(n: Int) -> Location? {
+    func item(n: Int) -> Hall? {
         if n <= self.items.count {
             // Offset last element by one for logo
             if n == self.items.count {
@@ -83,34 +83,34 @@ struct OccupancyBar: View {
     }
 }
 
-struct LocationsView: View {
-    @ObservedObject var model = LocationsViewModel()
+struct HallsView: View {
+    @ObservedObject var model = HallsViewModel()
     @EnvironmentObject private var navigationStack: NavigationStack
     @State private var isReloading = false
 
     var body: some View {
         VStack {
-            if self.model.locations != nil {
-                LocationGrid(items: self.model.locations!, rows: 5, columns: 3) { location, _, _ in
-                    if location != nil {
+            if self.model.halls != nil {
+                HallGrid(items: self.model.halls!, rows: 5, columns: 3) { hall, _, _ in
+                    if hall != nil {
                         GeometryReader { geometry in
                             VStack(alignment: .center, spacing: 0) {
-                                OccupancyBar(occupancy: location!.occupancy)
+                                OccupancyBar(occupancy: hall!.occupancy)
                                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
-                                Image(location!.code)
+                                Image(hall!.code)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: geometry.size.height / 1.7)
-                                Text(location!.shortname)
+                                Text(hall!.shortname)
                                     .font(.appBody)
                                     .foregroundColor(.appBlack)
                                     .padding(.top, 4)
                             }
-                            .opacity(location!.open ? 1 : 0.5)
+                            .opacity(hall!.open ? 1 : 0.5)
                             .frame(width: geometry.size.width)
                         }.onTapGesture {
                             DispatchQueue.main.async {
-                                self.navigationStack.push(LocationView(location: location!))
+                                self.navigationStack.push(HallView(hall: hall!))
                             }
                         }
                     } else {

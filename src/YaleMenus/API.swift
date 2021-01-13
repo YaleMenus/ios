@@ -2,10 +2,10 @@ import Foundation
 import Moya
 
 enum API {
-    case locations
-    case location(id: Int)
-    case managers(locationId: Int)
-    case meals(locationId: Int, date: String)
+    case halls
+    case hall(id: Int)
+    case managers(hallId: Int)
+    case meals(hallId: Int, date: String)
     case meal(id: Int)
     case items(mealId: Int)
     case item(id: Int)
@@ -17,14 +17,14 @@ extension API: TargetType {
 
     var path: String {
         switch self {
-        case .locations:
-            return "locations"
-        case .location(let id):
-            return "locations/\(id)"
-        case .managers(let locationId):
-            return "locations/\(locationId)/managers"
-        case .meals(let locationId, _):
-            return "locations/\(locationId)/meals"
+        case .halls:
+            return "halls"
+        case .hall(let id):
+            return "halls/\(id)"
+        case .managers(let hallId):
+            return "halls/\(hallId)/managers"
+        case .meals(let hallId, _):
+            return "halls/\(hallId)/meals"
         case .meal(let id):
             return "meals/\(id)"
         case .items(let mealId):

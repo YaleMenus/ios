@@ -56,16 +56,16 @@ struct ManagerView: View {
     }
 }
 
-struct LocationInfoView: View {
-    @ObservedObject var model: LocationInfoViewModel
+struct HallInfoView: View {
+    @ObservedObject var model: HallInfoViewModel
 
-    init(location: Location) {
-        self.model = LocationInfoViewModel(location: location)
+    init(hall: Hall) {
+        self.model = HallInfoViewModel(hall: hall)
     }
 
     func getMapLink() -> String? {
         let app = UIApplication.shared
-        let query = self.model.location.address.replacingOccurrences(of: " ", with: "+")
+        let query = self.model.hall.address.replacingOccurrences(of: " ", with: "+")
         if app.canOpenURL(URL(string: "comgooglemaps://")!) {
             return "comgooglemaps://?q=\(query)"
         } else if app.canOpenURL(URL(string: "http://maps.apple.com")!) {
@@ -75,7 +75,7 @@ struct LocationInfoView: View {
     }
 
     func getPhoneLink() -> String? {
-        return "tel://" + self.model.location.phone.filter { "() -".range(of: String($0)) == nil }
+        return "tel://" + self.model.hall.phone.filter { "() -".range(of: String($0)) == nil }
     }
 
     var body: some View {
@@ -83,18 +83,18 @@ struct LocationInfoView: View {
             HeaderView(text: "")
             if self.model.managers != nil {
                 VStack {
-                    Text(self.model.location.name)
+                    Text(self.model.hall.name)
                         .font(.appTitle)
                         .foregroundColor(.foreground)
                     InfoRowView(
                         icon: "house",
-                        text: self.model.location.address,
+                        text: self.model.hall.address,
                         link: self.getMapLink()
                     )
-                    InfoRowView(icon: "location.fill", text: "(\(self.model.location.latitude), \(self.model.location.longitude))")
+                    InfoRowView(icon: "location.fill", text: "(\(self.model.hall.latitude), \(self.model.hall.longitude))")
                     InfoRowView(
                         icon: "phone.fill",
-                        text: self.model.location.phone,
+                        text: self.model.hall.phone,
                         link: self.getPhoneLink()
                     )
                     Text("Managers")

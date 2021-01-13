@@ -63,13 +63,13 @@ struct ItemPreviewView: View {
     }
 }
 
-struct LocationView: View {
-    @ObservedObject var model: LocationViewModel
+struct HallView: View {
+    @ObservedObject var model: HallViewModel
     @State private var choosingDate = false
     @State private var chosenDate = Date()
 
-    init(location: Location) {
-        self.model = LocationViewModel(location: location)
+    init(hall: Hall) {
+        self.model = HallViewModel(hall: hall)
     }
 
     func openDatePicker() {
@@ -85,10 +85,10 @@ struct LocationView: View {
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.location.shortname, location: self.model.location)
+            HeaderView(text: self.model.hall.shortname, hall: self.model.hall)
             if self.model.meals[self.model.date] != nil {
                 if self.model.meals[self.model.date]!.isEmpty {
-                    SplashView(iconName: self.model.location.code, subtitle: "No menu posted.")
+                    SplashView(iconName: self.model.hall.code, subtitle: "No menu posted.")
                 } else {
                     SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $model.mealIndex.onChange(onChange))
                         .padding(.bottom, 10)

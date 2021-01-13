@@ -4,7 +4,7 @@ import NavigationStack
 struct ContentView: View {
     var body: some View {
         NavigationStackView {
-            LocationsView()
+            HallsView()
         }.padding(.horizontal)
     }
 }
