@@ -85,7 +85,7 @@ struct HallView: View {
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.hall.shortname, hall: self.model.hall)
+            HeaderView(text: self.model.hall.nickname, hall: self.model.hall)
             if self.model.meals[self.model.date] != nil {
                 if self.model.meals[self.model.date]!.isEmpty {
                     SplashView(iconName: self.model.hall.code, subtitle: "No menu posted.")

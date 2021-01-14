@@ -3,7 +3,7 @@ import Foundation
 struct Hall: Identifiable {
     let id: Int
     let name: String
-    let shortname: String
+    let nickname: String
     let code: String
     let open: Bool
     let occupancy: Int
@@ -17,7 +17,7 @@ extension Hall: Decodable {
     enum HallCodingKeys: String, CodingKey {
         case id
         case name
-        case shortname
+        case nickname
         case code
         case open
         case occupancy
@@ -32,7 +32,7 @@ extension Hall: Decodable {
 
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        shortname = try container.decode(String.self, forKey: .shortname)
+        nickname = try container.decode(String.self, forKey: .nickname)
         code = try container.decode(String.self, forKey: .code)
         open = try container.decode(Bool.self, forKey: .open)
         occupancy = try container.decode(Int.self, forKey: .occupancy)

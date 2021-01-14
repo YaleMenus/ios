@@ -101,7 +101,7 @@ struct HallsView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: geometry.size.height / 1.7)
-                                Text(hall!.shortname)
+                                Text(hall!.nickname)
                                     .font(.appBody)
                                     .foregroundColor(.appBlack)
                                     .padding(.top, 4)
