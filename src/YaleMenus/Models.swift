@@ -1,10 +1,9 @@
 import Foundation
 
 struct Hall: Identifiable {
-    let id: Int
+    let id: String
     let name: String
     let nickname: String
-    let code: String
     let open: Bool
     let occupancy: Int
     let latitude: Float
@@ -18,7 +17,6 @@ extension Hall: Decodable {
         case id
         case name
         case nickname
-        case code
         case open
         case occupancy
         case latitude
@@ -30,10 +28,9 @@ extension Hall: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: HallCodingKeys.self)
 
-        id = try container.decode(Int.self, forKey: .id)
+        id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         nickname = try container.decode(String.self, forKey: .nickname)
-        code = try container.decode(String.self, forKey: .code)
         open = try container.decode(Bool.self, forKey: .open)
         occupancy = try container.decode(Int.self, forKey: .occupancy)
         latitude = try container.decode(Float.self, forKey: .latitude)
@@ -74,7 +71,7 @@ struct Meal {
     let date: String
     let startTime: String
     let endTime: String
-    let hallId: Int
+    let hallId: String
 }
 
 extension Meal: Decodable {
@@ -95,7 +92,7 @@ extension Meal: Decodable {
         date = try container.decode(String.self, forKey: .date)
         startTime = try container.decode(String.self, forKey: .startTime)
         endTime = try container.decode(String.self, forKey: .endTime)
-        hallId = try container.decode(Int.self, forKey: .hallId)
+        hallId = try container.decode(String.self, forKey: .hallId)
     }
 }
 
