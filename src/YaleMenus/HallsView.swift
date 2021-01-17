@@ -97,7 +97,7 @@ struct HallsView: View {
                             VStack(alignment: .center, spacing: 0) {
                                 OccupancyBar(occupancy: hall!.occupancy)
                                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 8, trailing: 0))
-                                Image(hall!.code)
+                                Image(hall!.id)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: geometry.size.height / 1.7)

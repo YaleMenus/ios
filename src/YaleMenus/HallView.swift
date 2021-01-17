@@ -88,7 +88,7 @@ struct HallView: View {
             HeaderView(text: self.model.hall.nickname, hall: self.model.hall)
             if self.model.meals[self.model.date] != nil {
                 if self.model.meals[self.model.date]!.isEmpty {
-                    SplashView(iconName: self.model.hall.code, subtitle: "No menu posted.")
+                    SplashView(iconName: self.model.hall.id, subtitle: "No menu posted.")
                 } else {
                     SegmentedPicker(items: self.model.meals[self.model.date]!.map { $0.name }, selection: $model.mealIndex.onChange(onChange))
                         .padding(.bottom, 10)
