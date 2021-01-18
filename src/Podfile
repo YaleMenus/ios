@@ -11,7 +11,7 @@ target 'YaleMenus' do
   pod 'FLAnimatedImage'
 
   # Tooling
-  pod 'SwiftLint'
+  #pod 'SwiftLint'
 
   target 'YaleMenusTests' do
     inherit! :search_paths
