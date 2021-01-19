@@ -5,9 +5,9 @@ protocol Networkable {
     var provider: MoyaProvider<API> { get }
 
     func getHalls(completion: @escaping ([Hall]) -> Void)
-    func getHall(id: Int, completion: @escaping (Hall) -> Void)
-    func getManagers(hallId: Int, completion: @escaping ([Manager]) -> Void)
-    func getMeals(hallId: Int, date: String, completion: @escaping ([Meal]) -> Void)
+    func getHall(id: String, completion: @escaping (Hall) -> Void)
+    func getManagers(hallId: String, completion: @escaping ([Manager]) -> Void)
+    func getMeals(hallId: String, date: String, completion: @escaping ([Meal]) -> Void)
     func getMeal(mealId: Int, completion: @escaping (Meal) -> Void)
     func getItems(mealId: Int, completion: @escaping ([Item]) -> Void)
     func getItem(itemId: Int, completion: @escaping (Item) -> Void)
@@ -32,7 +32,7 @@ struct NetworkManager {
             }
         }
     }
-    func getHall(id: Int, completion: @escaping (Hall) -> Void) {
+    func getHall(id: String, completion: @escaping (Hall) -> Void) {
         provider.request(.hall(id: id)) { result in
             switch result {
             case let .success(response):
@@ -47,7 +47,7 @@ struct NetworkManager {
             }
         }
     }
-    func getManagers(hallId: Int, completion: @escaping ([Manager]) -> Void) {
+    func getManagers(hallId: String, completion: @escaping ([Manager]) -> Void) {
         provider.request(.managers(hallId: hallId)) { result in
             switch result {
             case let .success(response):
@@ -62,7 +62,7 @@ struct NetworkManager {
             }
         }
     }
-    func getMeals(hallId: Int, date: String, completion: @escaping ([Meal]) -> Void) {
+    func getMeals(hallId: String, date: String, completion: @escaping ([Meal]) -> Void) {
         provider.request(.meals(hallId: hallId, date: date)) { result in
             switch result {
             case let .success(response):

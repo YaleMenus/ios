@@ -3,9 +3,9 @@ import Moya
 
 enum API {
     case halls
-    case hall(id: Int)
-    case managers(hallId: Int)
-    case meals(hallId: Int, date: String)
+    case hall(id: String)
+    case managers(hallId: String)
+    case meals(hallId: String, date: String)
     case meal(id: Int)
     case items(mealId: Int)
     case item(id: Int)
