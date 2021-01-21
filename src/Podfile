@@ -8,7 +8,6 @@ target 'YaleMenus' do
   # Pods for YaleMenus
   pod 'Moya'
   pod 'NavigationStack', '~> 0.1.0'
-  pod 'FLAnimatedImage'
 
   # Tooling
   #pod 'SwiftLint'
