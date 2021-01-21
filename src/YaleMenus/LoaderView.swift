@@ -1,40 +1,46 @@
 import SwiftUI
 import Foundation
-import FLAnimatedImage
+import AVKit
+import AVFoundation
 
-struct GifView: UIViewRepresentable {
-    let animatedView = FLAnimatedImageView()
-    var fileName: String
-
-    func makeUIView(context: UIViewRepresentableContext<GifView>) -> UIView {
-        let view = UIView()
-
-        let path: String = Bundle.main.path(forResource: fileName, ofType: "gif")!
-        let url = URL(fileURLWithPath: path)
-        let gifData = try! Data(contentsOf: url)
-
-        let gif = FLAnimatedImage(animatedGIFData: gifData)
-        animatedView.animatedImage = gif
-
-        animatedView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(animatedView)
-
-        NSLayoutConstraint.activate([
-            animatedView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            animatedView.widthAnchor.constraint(equalTo: view.widthAnchor)
-        ])
-
-        return view
+struct PlayerView: UIViewRepresentable {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<PlayerView>) {
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<GifView>) {}
+    func makeUIView(context: Context) -> UIView {
+        return PlayerUIView(frame: .zero)
+    }
+}
+
+class PlayerUIView: UIView {
+    private let playerLayer = AVPlayerLayer()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        let url = Bundle.main.url(forResource: "loader", withExtension: "m4v")!
+        let player = AVPlayer(url: url)
+        player.play()
+
+        playerLayer.player = player
+        layer.addSublayer(playerLayer)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        playerLayer.frame = bounds
+    }
 }
 
 struct LoaderView: View {
     var body: some View {
         VStack {
             GeometryReader { geometry in
-                GifView(fileName: "loader")
+                PlayerView()
                     .frame(width: geometry.size.width, height: geometry.size.width)
             }
         }.frame(maxHeight: .infinity, alignment: .topLeading)
