@@ -20,6 +20,10 @@ class PlayerUIView: UIView {
 
         let url = Bundle.main.url(forResource: "loader", withExtension: "m4v")!
         let player = AVPlayer(url: url)
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil) { (_) in
+            player.seek(to: CMTime.zero)
+            player.play()
+        }
         player.play()
 
         playerLayer.player = player
