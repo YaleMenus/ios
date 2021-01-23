@@ -60,16 +60,16 @@ class HallViewModel: ObservableObject, Identifiable {
     }
 
     func getItems(date: Date, mealIndex: Int) {
-        if
-            self.meals[date] != nil &&
+        if (self.meals[date] != nil &&
             self.items[date] != nil &&
             mealIndex < self.items[date]!.count &&
-            self.items[date]![mealIndex] == nil {
+            self.items[date]![mealIndex] == nil) {
+
             nm.getItems(mealId: self.meals[date]![mealIndex].id, completion: { items in
                 self.allowed[date]![mealIndex] = items.map { item in
                     !(
-                        (self.settings.vegetarian && !item.vegetarian) ||
-                        (self.settings.vegan && !item.vegan) ||
+                        (self.settings.meat && item.meat) ||
+                        (self.settings.animalProducts && item.animalProducts) ||
                         (self.settings.alcohol && item.alcohol) ||
                         (self.settings.nuts && item.nuts) ||
                         (self.settings.shellfish && item.shellfish) ||

@@ -79,8 +79,8 @@ struct SettingsView: View {
                     Spacer()
                 }
                 Group {
-                    CheckboxView(label: "Meat (I'm Vegetarian)", checked: $settings.vegetarian)
-                    CheckboxView(label: "Animal Products (I'm Vegan)", checked: $settings.vegan)
+                    CheckboxView(label: "Meat (I'm Vegetarian)", checked: $settings.meat)
+                    CheckboxView(label: "Animal Products (I'm Vegan)", checked: $settings.animalProducts)
                     CheckboxView(label: "Alcohol", checked: $settings.alcohol)
                     CheckboxView(label: "Nuts", checked: $settings.nuts)
                     CheckboxView(label: "Shellfish", checked: $settings.shellfish)

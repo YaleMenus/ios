@@ -101,8 +101,8 @@ struct Item {
     let name: String
     let ingredients: String
     let course: String
-    let vegetarian: Bool
-    let vegan: Bool
+    let meat: Bool
+    let animalProducts: Bool
     let alcohol: Bool
     let nuts: Bool
     let shellfish: Bool
@@ -124,8 +124,8 @@ extension Item: Decodable {
         case name
         case ingredients
         case course
-        case vegetarian
-        case vegan
+        case meat
+        case animalProducts = "animal_products"
         case alcohol
         case nuts
         case shellfish
@@ -148,8 +148,8 @@ extension Item: Decodable {
         name = try container.decode(String.self, forKey: .name)
         ingredients = try container.decode(String.self, forKey: .ingredients)
         course = try container.decode(String.self, forKey: .course)
-        vegetarian = try container.decode(Bool.self, forKey: .vegetarian)
-        vegan = try container.decode(Bool.self, forKey: .vegan)
+        meat = try container.decode(Bool.self, forKey: .meat)
+        animalProducts = try container.decode(Bool.self, forKey: .animalProducts)
         alcohol = try container.decode(Bool.self, forKey: .alcohol)
         nuts = try container.decode(Bool.self, forKey: .nuts)
         shellfish = try container.decode(Bool.self, forKey: .shellfish)

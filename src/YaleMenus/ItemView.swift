@@ -98,8 +98,9 @@ struct ItemView: View {
                         ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
                         VStack {
                             Group {
-                                if self.model.item.vegan { AllergenView(allergen: "vegan") }
-                                if self.model.item.vegetarian { AllergenView(allergen: "vegetarian") }
+                                // TODO: use images for meat and animal products
+                                if !self.model.item.meat { AllergenView(allergen: "vegetarian") }
+                                if !self.model.item.animalProducts { AllergenView(allergen: "vegan") }
                                 if self.model.item.alcohol { AllergenView(allergen: "alcohol") }
                                 if self.model.item.nuts { AllergenView(allergen: "nuts") }
                                 if self.model.item.shellfish { AllergenView(allergen: "shellfish") }

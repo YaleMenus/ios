@@ -6,8 +6,8 @@ final class Settings: ObservableObject, Identifiable {
     private enum Keys {
         static let showNutrition = "show_nutrition"
 
-        static let vegetarian = "vegetarian"
-        static let vegan = "vegan"
+        static let meat = "meat"
+        static let animalProducts = "animal_products"
 
         static let alcohol = "alcohol"
         static let nuts = "nuts"
@@ -35,8 +35,8 @@ final class Settings: ObservableObject, Identifiable {
 
         defaults.register(defaults: [
             Keys.showNutrition: true,
-            Keys.vegetarian: false,
-            Keys.vegan: false,
+            Keys.meat: false,
+            Keys.animalProducts: false,
             Keys.alcohol: false,
             Keys.nuts: false,
             Keys.shellfish: false,
@@ -61,13 +61,13 @@ final class Settings: ObservableObject, Identifiable {
         get { defaults.bool(forKey: Keys.showNutrition) }
         set { defaults.set(newValue, forKey: Keys.showNutrition) }
     }
-    var vegetarian: Bool {
-        get { defaults.bool(forKey: Keys.vegetarian)}
-        set { defaults.set(newValue, forKey: Keys.vegetarian) }
+    var meat: Bool {
+        get { defaults.bool(forKey: Keys.meat)}
+        set { defaults.set(newValue, forKey: Keys.meat) }
     }
-    var vegan: Bool {
-        get { defaults.bool(forKey: Keys.vegan)}
-        set { defaults.set(newValue, forKey: Keys.vegan) }
+    var animalProducts: Bool {
+        get { defaults.bool(forKey: Keys.animalProducts) }
+        set { defaults.set(newValue, forKey: Keys.animalProducts) }
     }
     var alcohol: Bool {
         get { defaults.bool(forKey: Keys.alcohol)}
