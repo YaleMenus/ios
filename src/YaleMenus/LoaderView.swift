@@ -45,7 +45,7 @@ struct LoaderView: View {
         VStack {
             GeometryReader { geometry in
                 PlayerView()
-                    .frame(width: geometry.size.width, height: geometry.size.width)
+                    .frame(width: geometry.size.width / 1.5)
             }
         }.frame(maxHeight: .infinity, alignment: .topLeading)
     }
