@@ -95,7 +95,7 @@ struct ItemView: View {
                         Text(self.model.item.name)
                             .font(.appTitle)
                             .foregroundColor(.foreground)
-                        ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
+                            .multilineTextAlignment(.center)
                         VStack {
                             Group {
                                 // TODO: use images for meat and animal products
@@ -143,6 +143,7 @@ struct ItemView: View {
                                 NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV, style: .plain)
                                 NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
                             }
+                            ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
                         }
                     }
                 }
