@@ -143,7 +143,9 @@ struct ItemView: View {
                                 NutritionRowView(label: "Iron", amount: self.model.nutrition!.iron, pdv: self.model.nutrition!.ironPDV, style: .plain)
                                 NutritionRowView(label: "Potassium", amount: self.model.nutrition!.potassium, pdv: self.model.nutrition!.potassiumPDV, style: .plain)
                             }
+                            Divider()
                             ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
+                                .padding(.top, -10)
                         }
                     }
                 }
