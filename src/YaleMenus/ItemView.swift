@@ -18,12 +18,18 @@ struct AllergenView: View {
             Image(self.allergen)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 60, alignment: .leading)
+                .frame(maxWidth: 45, maxHeight: 45, alignment: .leading)
+                .padding(.trailing, 10)
+            Spacer()
             Text(self.capitalize(string: self.allergen))
                 .font(.appTitle)
                 .foregroundColor(.foreground)
+                .multilineTextAlignment(.center)
             Spacer()
         }
+        .padding()
+        .background(Color.extraLight)
+        .cornerRadius(20)
     }
 }
 
@@ -98,9 +104,8 @@ struct ItemView: View {
                             .multilineTextAlignment(.center)
                         VStack {
                             Group {
-                                // TODO: use images for meat and animal products
-                                if !self.model.item.meat { AllergenView(allergen: "vegetarian") }
-                                if !self.model.item.animalProducts { AllergenView(allergen: "vegan") }
+                                if self.model.item.meat { AllergenView(allergen: "meat") }
+                                if self.model.item.animalProducts { AllergenView(allergen: "animal_products") }
                                 if self.model.item.alcohol { AllergenView(allergen: "alcohol") }
                                 if self.model.item.nuts { AllergenView(allergen: "nuts") }
                                 if self.model.item.shellfish { AllergenView(allergen: "shellfish") }
