@@ -22,7 +22,7 @@ struct AllergenView: View {
                 .padding(.trailing, 10)
             Spacer()
             Text(self.capitalize(string: self.allergen))
-                .font(.appTitle)
+                .font(.appBodyMedium)
                 .foregroundColor(.foreground)
                 .multilineTextAlignment(.center)
             Spacer()
@@ -127,7 +127,7 @@ struct ItemView: View {
                                 Text("Nutrition Facts")
                                     .font(.appTitle)
                                     .foregroundColor(.foreground)
-                                NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.portionSize, pdv: nil, style: .heading)
+                                NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.servingSize, pdv: nil, style: .heading)
                                 NutritionRowView(label: "Calories", amount: self.model.nutrition!.calories, pdv: nil, style: .heading)
 
                                 NutritionRowView(label: "Total Fat", amount: self.model.nutrition!.totalFat, pdv: self.model.nutrition!.totalFatPDV, style: .main)

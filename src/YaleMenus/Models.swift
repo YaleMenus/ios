@@ -167,7 +167,7 @@ extension Item: Decodable {
 }
 
 struct Nutrition {
-    let portionSize: String?
+    let servingSize: String?
     let calories: String
 
     let totalFat: String
@@ -207,7 +207,7 @@ struct Nutrition {
 
 extension Nutrition: Decodable {
     enum NutritionCodingKeys: String, CodingKey {
-        case portionSize = "portion_size"
+        case servingSize = "serving_size"
         case calories
 
         case totalFat = "total_fat"
@@ -248,7 +248,7 @@ extension Nutrition: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: NutritionCodingKeys.self)
 
-        portionSize = try container.decode(String?.self, forKey: .portionSize)
+        servingSize = try container.decode(String?.self, forKey: .servingSize)
         calories = try container.decode(String.self, forKey: .calories)
 
         totalFat = try container.decode(String.self, forKey: .totalFat)
