@@ -17,6 +17,21 @@ protocol Networkable {
 struct NetworkManager {
     fileprivate let provider = MoyaProvider<API>(plugins: [NetworkLoggerPlugin()])
 
+    func getStatus(completion: @escaping (Status) -> Void) {
+        provider.request(.status) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(Status.self, from: response.data)
+                    completion(results)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
     func getHalls(completion: @escaping ([Hall]) -> Void) {
         provider.request(.halls) { result in
             switch result {

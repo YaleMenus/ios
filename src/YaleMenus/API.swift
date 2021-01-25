@@ -2,6 +2,7 @@ import Foundation
 import Moya
 
 enum API {
+    case status
     case halls
     case hall(id: String)
     case managers(hallId: String)
@@ -17,6 +18,8 @@ extension API: TargetType {
 
     var path: String {
         switch self {
+        case .status:
+            return "status"
         case .halls:
             return "halls"
         case .hall(let id):

@@ -1,5 +1,24 @@
 import Foundation
 
+struct Status {
+    let message: String?
+    let minVersion: Int?
+}
+
+extension Status: Decodable {
+    enum StatusCodingKeys: String, CodingKey {
+        case message
+        case minVersion = "min_version"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: StatusCodingKeys.self)
+
+        message = try container.decode(String?.self, forKey: .message)
+        minVersion = try container.decode(Int?.self, forKey: .minVersion)
+    }
+}
+
 struct Hall: Identifiable {
     let id: String
     let name: String
