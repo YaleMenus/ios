@@ -144,6 +144,9 @@ struct HallsView: View {
                 LoaderView()
             }
         }
+        .alert(isPresented: $model.showAlert) {
+            Alert(title: Text(self.model.alertMessage!))
+        }
 //        .pullToRefresh(isShowing: $isReloading) {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 //                self.model.load()
