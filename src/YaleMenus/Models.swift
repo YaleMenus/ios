@@ -168,7 +168,7 @@ extension Item: Decodable {
 
 struct Nutrition {
     let servingSize: String?
-    let calories: String
+    let calories: Double
 
     let totalFat: String
     let saturatedFat: String
@@ -249,7 +249,7 @@ extension Nutrition: Decodable {
         let container = try decoder.container(keyedBy: NutritionCodingKeys.self)
 
         servingSize = try container.decode(String?.self, forKey: .servingSize)
-        calories = try container.decode(String.self, forKey: .calories)
+        calories = try container.decode(Double.self, forKey: .calories)
 
         totalFat = try container.decode(String.self, forKey: .totalFat)
         saturatedFat = try container.decode(String.self, forKey: .saturatedFat)

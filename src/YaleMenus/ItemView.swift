@@ -128,7 +128,7 @@ struct ItemView: View {
                                     .font(.appTitle)
                                     .foregroundColor(.foreground)
                                 NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.servingSize, pdv: nil, style: .heading)
-                                NutritionRowView(label: "Calories", amount: self.model.nutrition!.calories, pdv: nil, style: .heading)
+                                NutritionRowView(label: "Calories", amount: String(self.model.nutrition!.calories), pdv: nil, style: .heading)
 
                                 NutritionRowView(label: "Total Fat", amount: self.model.nutrition!.totalFat, pdv: self.model.nutrition!.totalFatPDV, style: .main)
                                 NutritionRowView(label: "Saturated Fat", amount: self.model.nutrition!.saturatedFat, pdv: self.model.nutrition!.saturatedFatPDV, style: .sub)
