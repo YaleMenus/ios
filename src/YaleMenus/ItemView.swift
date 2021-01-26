@@ -22,7 +22,7 @@ struct AllergenView: View {
                 .padding(.trailing, 10)
             Spacer()
             Text(self.capitalize(string: self.allergen))
-                .font(.appBodyMedium)
+                .font(.appTitle)
                 .foregroundColor(.foreground)
                 .multilineTextAlignment(.center)
             Spacer()

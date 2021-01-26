@@ -729,17 +729,20 @@
 			baseConfigurationReference = 29F5D62F8996096995CBBAF4 /* Pods-YaleMenus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"YaleMenus/Preview Content\"";
-				DEVELOPMENT_TEAM = LFYMCXWJJW;
+				DEVELOPMENT_TEAM = 9UK7273933;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YaleMenus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.erikboesen.YaleMenus;
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericfoster.YaleMenus;
 				PRODUCT_NAME = "Yale Menus";
+				PROVISIONING_PROFILE_SPECIFIER = "Yale Menus 2021";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -750,17 +753,20 @@
 			baseConfigurationReference = 3A0F48841214899CF8FD2C33 /* Pods-YaleMenus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"YaleMenus/Preview Content\"";
-				DEVELOPMENT_TEAM = LFYMCXWJJW;
+				DEVELOPMENT_TEAM = 9UK7273933;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YaleMenus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.erikboesen.YaleMenus;
+				MARKETING_VERSION = 3.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ericfoster.YaleMenus;
 				PRODUCT_NAME = "Yale Menus";
+				PROVISIONING_PROFILE_SPECIFIER = "Yale Menus 2021";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
