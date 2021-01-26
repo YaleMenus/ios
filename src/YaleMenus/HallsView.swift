@@ -114,30 +114,32 @@ struct HallsView: View {
                             }
                         }
                     } else {
-                        VStack {
-//                            OccupancyBar(occupancy: 0)
-//                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-//                            GeometryReader { geometry in
-//                                Image("logo")
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fit)
-//                                    .frame(height: geometry.size.height)
-//                            }
-                            Text("Yale Menus")
-                                .font(.appTitle)
-                                .foregroundColor(.appBlack)
-                                .padding(.bottom, -6)
-                                .multilineTextAlignment(.center)
-                            Image("gear")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 30)
-                                .onTapGesture {
-                                    DispatchQueue.main.async {
-                                        self.navigationStack.push(SettingsView())
+                        GeometryReader { geometry in
+                            VStack {
+    //                            OccupancyBar(occupancy: 0)
+    //                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+    //                            GeometryReader { geometry in
+    //                                Image("logo")
+    //                                    .resizable()
+    //                                    .aspectRatio(contentMode: .fit)
+    //                                    .frame(height: geometry.size.height)
+    //                            }
+                                Text(geometry.size.width > 300 ? "Yale Menus" : "YM")
+                                    .font(.appTitle)
+                                    .foregroundColor(.appBlack)
+                                    .padding(.bottom, -6)
+                                    .multilineTextAlignment(.center)
+                                Image("gear")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(maxWidth: 30)
+                                    .onTapGesture {
+                                        DispatchQueue.main.async {
+                                            self.navigationStack.push(SettingsView())
+                                        }
                                     }
-                                }
-                        }.frame(maxWidth: .infinity)
+                            }.frame(maxWidth: .infinity)
+                        }
                     }
                 }
             } else {
