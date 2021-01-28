@@ -9,7 +9,7 @@ struct AllergenView: View {
         self.allergen = allergen
     }
 
-    func capitalize(string: String) -> String {
+    func formatName(string: String) -> String {
         return string.replacingOccurrences(of: "_", with: " ").capitalized
     }
 
@@ -21,7 +21,7 @@ struct AllergenView: View {
                 .frame(maxWidth: 45, maxHeight: 45, alignment: .leading)
                 .padding(.trailing, 10)
             Spacer()
-            Text(self.capitalize(string: self.allergen))
+            Text(self.formatName(string: self.allergen))
                 .font(.appTitle)
                 .foregroundColor(.foreground)
                 .multilineTextAlignment(.center)
