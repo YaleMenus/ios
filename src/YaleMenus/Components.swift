@@ -29,7 +29,7 @@ struct HeaderView: View {
                 .foregroundColor(.foreground)
                 .multilineTextAlignment(.trailing)
                 // TODO: find a cleaner way to reduce padding
-                .padding(.vertical, -20)
+                .padding(.vertical, -5)
 //            if (self.hall != nil) {
 //                Spacer()
 //                Button(action: {
