@@ -43,9 +43,13 @@ class PlayerUIView: UIView {
 struct LoaderView: View {
     var body: some View {
         VStack {
-            GeometryReader { geometry in
-                PlayerView()
-                    .frame(width: geometry.size.width / 1.5)
+            HStack {
+                Spacer()
+                GeometryReader { geometry in
+                    PlayerView()
+                        .frame(width: geometry.size.width / 1.5)
+                }
+                Spacer()
             }
         }.frame(maxHeight: .infinity, alignment: .topLeading)
     }
