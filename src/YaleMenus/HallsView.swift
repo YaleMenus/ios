@@ -147,6 +147,7 @@ struct HallsView: View {
                 LoaderView()
             }
         }
+        .padding(.bottom)
         .alert(isPresented: $model.showAlert) {
             Alert(title: Text(self.model.alertMessage!))
         }
