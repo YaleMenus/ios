@@ -99,7 +99,7 @@ struct SettingsView: View {
                 ParagraphView(text: "We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
                 Button(action: {
                     // TODO: does this work?
-                    UIApplication.shared.open(URL(string: "mailto://yalemenus@gmail.com,erik.boesen@yale.edu?subject=Yale%20Menus%20Feedback")!)
+                    UIApplication.shared.open(URL(string: "mailto:yalemenus@gmail.com,erik.boesen@yale.edu?subject=Yale%20Menus%20Feedback")!)
                 }) {
                     HStack {
                         Text("Give Feedback")
