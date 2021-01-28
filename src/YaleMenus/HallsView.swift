@@ -114,32 +114,33 @@ struct HallsView: View {
                             }
                         }
                     } else {
-                        GeometryReader { geometry in
-                            VStack {
-    //                            OccupancyBar(occupancy: 0)
-    //                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-    //                            GeometryReader { geometry in
-    //                                Image("logo")
-    //                                    .resizable()
-    //                                    .aspectRatio(contentMode: .fit)
-    //                                    .frame(height: geometry.size.height)
-    //                            }
-                                Text(geometry.size.width > 300 ? "Yale Menus" : "YM")
-                                    .font(.appTitle)
-                                    .foregroundColor(.appBlack)
-                                    .padding(.bottom, -6)
-                                    .multilineTextAlignment(.center)
-                                Image("gear")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 30)
-                                    .onTapGesture {
-                                        DispatchQueue.main.async {
-                                            self.navigationStack.push(SettingsView())
-                                        }
+                        VStack {
+//                            OccupancyBar(occupancy: 0)
+//                                .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+//                            GeometryReader { geometry in
+//                                Image("logo")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(height: geometry.size.height)
+//                            }
+                            Spacer()
+                            Image("gear")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 30)
+                                .onTapGesture {
+                                    DispatchQueue.main.async {
+                                        self.navigationStack.push(SettingsView())
                                     }
-                            }.frame(maxWidth: .infinity)
-                        }
+                                }
+                            Text("Yale Menus")
+                                .font(.appTitle)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .foregroundColor(.appBlack)
+                                .padding(.bottom, -6)
+                                .multilineTextAlignment(.center)
+                            Spacer()
+                        }.frame(maxWidth: .infinity)
                     }
                 }
             } else {
