@@ -10,7 +10,7 @@ struct AllergenView: View {
     }
 
     func capitalize(string: String) -> String {
-        return string.prefix(1).capitalized + string.dropFirst()
+        return string.replacingOccurrences(of: "_", with: " ").capitalized
     }
 
     var body: some View {
