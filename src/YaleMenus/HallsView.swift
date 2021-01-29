@@ -124,22 +124,21 @@ struct HallsView: View {
 //                                    .frame(height: geometry.size.height)
 //                            }
                             Spacer()
-                            Image("gear")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: 30)
-                                .padding(.top, 20)
-                                .onTapGesture {
-                                    DispatchQueue.main.async {
-                                        self.navigationStack.push(SettingsView())
-                                    }
-                                }
                             Text("Yale Menus")
                                 .font(.appTitle)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .foregroundColor(.appBlack)
                                 .padding(.bottom, -6)
                                 .multilineTextAlignment(.center)
+                            Image("gear")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: 30)
+                                .onTapGesture {
+                                    DispatchQueue.main.async {
+                                        self.navigationStack.push(SettingsView())
+                                    }
+                                }
                             Spacer()
                         }.frame(maxWidth: .infinity)
                     }
