@@ -1,5 +1,6 @@
 import SwiftUI
 
+// Code originally sourced from https://medium.com/better-programming/custom-ios-segmented-control-with-swiftui-473b386d0b51
 
 extension View {
     func eraseToAnyView() -> AnyView {
@@ -37,8 +38,6 @@ struct SizeAwareViewModifier: ViewModifier {
             .onPreferenceChange(SizePreferenceKey.self, perform: { if self.viewSize != $0 { self.viewSize = $0 }})
     }
 }
-
-// Code originally sourced from https://medium.com/better-programming/custom-ios-segmented-control-with-swiftui-473b386d0b51
 
 struct SegmentedPicker: View {
     private static let ActiveSegmentColor: Color = .medium
