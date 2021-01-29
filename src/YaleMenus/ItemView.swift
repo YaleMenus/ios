@@ -156,7 +156,7 @@ struct ItemView: View {
                 // TODO: is this still needed?
                 .frame(maxWidth: .infinity)
             } else {
-                LoaderView()
+                Loader()
             }
         }.padding()
     }

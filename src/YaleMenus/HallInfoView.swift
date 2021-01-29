@@ -108,7 +108,7 @@ struct HallInfoView: View {
                 .foregroundColor(.main)
                 .frame(maxHeight: .infinity, alignment: .top)
             } else {
-                LoaderView()
+                Loader()
             }
         }.padding()
     }

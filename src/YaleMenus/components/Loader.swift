@@ -40,7 +40,7 @@ class PlayerUIView: UIView {
     }
 }
 
-struct LoaderView: View {
+struct Loader: View {
     var body: some View {
         VStack {
             HStack {

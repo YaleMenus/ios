@@ -113,11 +113,11 @@ struct HallView: View {
                             }
                         }
                     } else {
-                        LoaderView()
+                        Loader()
                     }
                 }
             } else {
-                LoaderView()
+                Loader()
             }
             HStack {
                 Button(action: {

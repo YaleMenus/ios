@@ -144,7 +144,7 @@ struct HallsView: View {
                     }
                 }
             } else {
-                LoaderView()
+                Loader()
             }
         }
         .padding(.bottom)
