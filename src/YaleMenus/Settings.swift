@@ -95,7 +95,7 @@ final class Settings: ObservableObject, Identifiable {
     }
     var pork: Bool {
         get { defaults.bool(forKey: Keys.pork)}
-        set { defaults.set(newValue, forKey: Keys.egg) }
+        set { defaults.set(newValue, forKey: Keys.pork) }
     }
     var fish: Bool {
         get { defaults.bool(forKey: Keys.fish)}
