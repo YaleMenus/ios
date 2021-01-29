@@ -2,11 +2,11 @@ import Foundation
 import SwiftUI
 
 struct SplashView: View {
-    let iconName: String
+    let image: String
     let subtitle: String
 
-    init(iconName: String, subtitle: String) {
-        self.iconName = iconName
+    init(image: String, subtitle: String) {
+        self.image = image
         self.subtitle = subtitle
     }
 
@@ -17,7 +17,7 @@ struct SplashView: View {
                 .font(.appTitleLight)
                 .foregroundColor(.main)
                 .multilineTextAlignment(.center)
-            Image(self.iconName)
+            Image(self.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 215)
