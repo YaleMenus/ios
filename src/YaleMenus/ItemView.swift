@@ -150,7 +150,7 @@ struct ItemView: View {
                             }
                         }
                         Divider()
-                        ParagraphView(text: "Ingredients: \(self.model.item.ingredients)")
+                        Paragraph(text: "Ingredients: \(self.model.item.ingredients)")
                     }
                 }
                 // TODO: is this still needed?

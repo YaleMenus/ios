@@ -96,7 +96,7 @@ struct SettingsView: View {
                     CheckboxView(label: "Gluten", checked: $settings.gluten)
                     CheckboxView(label: "Coconut", checked: $settings.coconut)
                 }
-                ParagraphView(text: "We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
+                Paragraph(text: "We will gray out any items on the menu screen that Yale Dining has labeled with allergens you select.")
                 Button(action: {
                     // TODO: does this work?
                     UIApplication.shared.open(URL(string: "mailto:yalemenus@gmail.com,erik.boesen@yale.edu?subject=Yale%20Menus%20Feedback")!)

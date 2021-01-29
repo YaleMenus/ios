@@ -46,6 +46,7 @@
 		035DF41D25292338004C95B0 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41C25292338004C95B0 /* API.swift */; };
 		035DF41F25293FA3004C95B0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035DF41E25293FA3004C95B0 /* Models.swift */; };
 		03CF1FEE25C4CA680014C923 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1FED25C4CA680014C923 /* Header.swift */; };
+		03CF1FF025C4CB880014C923 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF1FEF25C4CB880014C923 /* Paragraph.swift */; };
 		16204226E060C8344C8D4541 /* Pods_YaleMenusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4606F837D9C494C28DE03A4 /* Pods_YaleMenusTests.framework */; };
 		57B8C153ECEBE5E4D7A1B932 /* Pods_YaleMenus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C24075877B1B8B21C71999B /* Pods_YaleMenus.framework */; };
 		CCE251042BA233CE6A7BEAB8 /* Pods_YaleMenus_YaleMenusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C907895DFEA1FBDF6213A3 /* Pods_YaleMenus_YaleMenusUITests.framework */; };
@@ -114,6 +115,7 @@
 		035DF41C25292338004C95B0 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		035DF41E25293FA3004C95B0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		03CF1FED25C4CA680014C923 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		03CF1FEF25C4CB880014C923 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
 		1C24075877B1B8B21C71999B /* Pods_YaleMenus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaleMenus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29F5D62F8996096995CBBAF4 /* Pods-YaleMenus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenus.debug.xcconfig"; path = "Target Support Files/Pods-YaleMenus/Pods-YaleMenus.debug.xcconfig"; sourceTree = "<group>"; };
 		33D04DFDBC18D883A7B4D314 /* Pods-YaleMenusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaleMenusTests.release.xcconfig"; path = "Target Support Files/Pods-YaleMenusTests/Pods-YaleMenusTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				035DF41A252922F4004C95B0 /* Components.swift */,
+				03CF1FEF25C4CB880014C923 /* Paragraph.swift */,
 				03CF1FED25C4CA680014C923 /* Header.swift */,
 			);
 			path = components;
@@ -553,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03CF1FF025C4CB880014C923 /* Paragraph.swift in Sources */,
 				035DF3E925291BCC004C95B0 /* AppDelegate.swift in Sources */,
 				035DF419252920EE004C95B0 /* HallsView.swift in Sources */,
 				03404ADA259ADCD8002EB88D /* SplashView.swift in Sources */,
