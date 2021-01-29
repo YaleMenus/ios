@@ -80,7 +80,7 @@ struct HallInfoView: View {
 
     var body: some View {
         VStack {
-            HeaderView(text: "")
+            Header(text: "")
             if self.model.managers != nil {
                 VStack {
                     Text(self.model.hall.name)

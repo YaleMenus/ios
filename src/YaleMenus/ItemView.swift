@@ -93,7 +93,7 @@ struct ItemView: View {
 
     var body: some View {
         VStack {
-            HeaderView(text: self.model.item.course)
+            Header(text: self.model.item.course)
             if !self.model.settings.showNutrition || self.model.nutrition != nil {
                 ScrollView {
                     VStack {

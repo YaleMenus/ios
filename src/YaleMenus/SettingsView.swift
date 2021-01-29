@@ -68,7 +68,7 @@ struct SettingsView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HeaderView(text: "Settings")
+            Header(text: "Settings")
             ScrollView {
                 CheckboxView(label: "Show Nutrition Facts", checked: $settings.showNutrition, style: .check)
                 HStack {
