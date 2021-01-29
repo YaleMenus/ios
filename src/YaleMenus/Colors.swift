@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    static let transparent = Color("Transparent")
     static let mainDesaturated = Color("MainDesaturated")
     static let main = Color("Main")
     static let medium = Color("Medium")

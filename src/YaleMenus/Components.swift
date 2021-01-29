@@ -106,7 +106,7 @@ struct SizeAwareViewModifier: ViewModifier {
 
 struct SegmentedPicker: View {
     private static let ActiveSegmentColor: Color = .medium
-    private static let BackgroundColor: Color = .white
+    private static let BackgroundColor: Color = .transparent
     private static let TextColor: Color = .main
     private static let SelectedTextColor: Color = .white
 
