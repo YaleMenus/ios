@@ -15,7 +15,7 @@ struct SplashView: View {
             Spacer()
             Text(self.subtitle)
                 .font(.appTitleLight)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .multilineTextAlignment(.center)
             Image(self.iconName)
                 .resizable()

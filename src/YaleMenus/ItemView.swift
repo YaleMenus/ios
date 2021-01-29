@@ -18,17 +18,17 @@ struct AllergenView: View {
             Image(self.allergen)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 45, maxHeight: 45, alignment: .leading)
+                .frame(maxWidth: 60, maxHeight: 60, alignment: .leading)
                 .padding(.trailing, 10)
             Spacer()
             Text(self.formatName(string: self.allergen))
                 .font(.appBodyMedium)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .multilineTextAlignment(.center)
             Spacer()
         }
         .padding()
-        .background(Color.extraLight)
+        .background(Color.extraFaint)
         .cornerRadius(20)
     }
 }
@@ -60,23 +60,23 @@ struct NutritionRowView: View {
                 HStack {
                     Text(self.label)
                         .font(self.style == .main ? .appBodyBold : .appBody)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                         .padding(.leading, self.style == .sub ? 25 : 0)
                     if self.style == .heading {
                         Spacer()
                         Text(self.amount!)
                             .font(.appBodyBold)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                     } else {
                         Text(self.amount!)
                             .font(.appBody)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                         Spacer()
                     }
                     if self.pdv != nil {
                         Text("\(self.pdv!)%")
                             .font(self.style != .plain ? .appBodyBold : .appBody)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                     }
                 }
             }
@@ -100,7 +100,7 @@ struct ItemView: View {
                         // TODO: bold and cleanup
                         Text(self.model.item.name)
                             .font(.appTitle)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                             .multilineTextAlignment(.center)
                         VStack {
                             Group {
@@ -126,7 +126,7 @@ struct ItemView: View {
                             VStack {
                                 Text("Nutrition Facts")
                                     .font(.appTitle)
-                                    .foregroundColor(.foreground)
+                                    .foregroundColor(.main)
                                 NutritionRowView(label: "Serving Size", amount: self.model.nutrition!.servingSize, pdv: nil, style: .heading)
                                 NutritionRowView(label: "Calories", amount: String(self.model.nutrition!.calories), pdv: nil, style: .heading)
 

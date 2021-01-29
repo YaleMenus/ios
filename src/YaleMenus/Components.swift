@@ -16,7 +16,7 @@ struct HeaderView: View {
             Image(systemName: "chevron.left")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(.light)
+                .foregroundColor(.faint)
                 .frame(height: 25)
                 .onTapGesture {
                     DispatchQueue.main.async {
@@ -26,7 +26,7 @@ struct HeaderView: View {
             Spacer()
             Text(self.text)
                 .font(self.text.count <= 10 ? .appHeader : .appHeaderSmall)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .multilineTextAlignment(.trailing)
                 // TODO: find a cleaner way to reduce padding
                 .padding(.vertical, -5)
@@ -57,7 +57,7 @@ struct ParagraphView: View {
         HStack {
             Text(self.text)
                 .font(.appBody)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .lineSpacing(14)
                 .padding(.vertical, 15)
             Spacer()
@@ -107,7 +107,7 @@ struct SizeAwareViewModifier: ViewModifier {
 struct SegmentedPicker: View {
     private static let ActiveSegmentColor: Color = .medium
     private static let BackgroundColor: Color = .white
-    private static let TextColor: Color = .foreground
+    private static let TextColor: Color = .main
     private static let SelectedTextColor: Color = .white
 
     private static let TextFont: Font = .appBodyMedium

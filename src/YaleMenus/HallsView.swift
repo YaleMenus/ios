@@ -103,7 +103,7 @@ struct HallsView: View {
                                     .frame(height: geometry.size.height / 1.7)
                                 Text(hall!.nickname)
                                     .font(.appBody)
-                                    .foregroundColor(.appBlack)
+                                    .foregroundColor(.mainDesaturated)
                                     .padding(.top, 4)
                             }
                             .opacity(hall!.open ? 1 : 0.5)
@@ -127,7 +127,7 @@ struct HallsView: View {
                             Text("Yale Menus")
                                 .font(.appTitle)
                                 .fixedSize(horizontal: false, vertical: true)
-                                .foregroundColor(.appBlack)
+                                .foregroundColor(.mainDesaturated)
                                 .padding(.bottom, -6)
                                 .multilineTextAlignment(.center)
                             Image("gear")

@@ -42,7 +42,7 @@ struct CheckboxView: View {
                 return .green
             }
         }
-        return .foreground
+        return .main
     }
 
     var body: some View {
@@ -56,7 +56,7 @@ struct CheckboxView: View {
                     .padding(.trailing, 10)
                 Text(self.label)
                     .font(.appBody)
-                    .foregroundColor(.foreground)
+                    .foregroundColor(.main)
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
         }.buttonStyle(PlainButtonStyle())
@@ -75,7 +75,7 @@ struct SettingsView: View {
                     // TODO: left align more cleanly!
                     Text("Dietary Restrictions")
                         .font(.appTitle)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                     Spacer()
                 }
                 Group {
@@ -104,7 +104,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Give Feedback")
                             .font(.appBodyBold)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                         Spacer()
                     }.padding(.vertical, 8)
                 }
@@ -114,7 +114,7 @@ struct SettingsView: View {
                     HStack {
                         Text("Information & License")
                             .font(.appBodyBold)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                         Spacer()
                     }.padding(.vertical, 8)
                 }

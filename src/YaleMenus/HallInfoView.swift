@@ -15,7 +15,7 @@ struct InfoRowView: View {
     var body: some View {
         HStack {
             Image(systemName: self.icon)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .frame(width: 25)
             if self.link != nil {
                 Button(action: {
@@ -24,12 +24,12 @@ struct InfoRowView: View {
                 }) {
                     Text(self.text)
                         .font(.appBodyBold)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                 }
             } else {
                 Text(self.text)
                     .font(.appBodyMedium)
-                    .foregroundColor(.foreground)
+                    .foregroundColor(.main)
             }
             Spacer()
         }
@@ -85,7 +85,7 @@ struct HallInfoView: View {
                 VStack {
                     Text(self.model.hall.name)
                         .font(.appTitle)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                     InfoRowView(
                         icon: "house",
                         text: self.model.hall.address,
@@ -99,13 +99,13 @@ struct HallInfoView: View {
                     )
                     Text("Managers")
                         .font(.appTitle)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                     ForEach(self.model.managers!, id: \.id) { manager in
                         ManagerView(manager: manager)
                     }
                 }
                 .multilineTextAlignment(.leading)
-                .foregroundColor(.foreground)
+                .foregroundColor(.main)
                 .frame(maxHeight: .infinity, alignment: .top)
             } else {
                 LoaderView()

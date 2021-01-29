@@ -50,12 +50,12 @@ struct ItemPreviewView: View {
                 Spacer()
                 Text(self.item.name)
                     .font(.appBody)
-                    .foregroundColor(.foreground)
+                    .foregroundColor(.main)
                     .multilineTextAlignment(.center)
                 Spacer()
             }
             .padding()
-            .background(Color.extraLight)
+            .background(Color.extraFaint)
             .cornerRadius(20)
         }
         .buttonStyle(PlainButtonStyle())
@@ -94,7 +94,7 @@ struct HallView: View {
                         .padding(.bottom, 10)
                     Text("\(self.model.meals[self.model.date]![self.model.mealIndex].name) hours: \(self.model.reformatTime(self.model.meals[self.model.date]![self.model.mealIndex].startTime))-\(self.model.reformatTime(self.model.meals[self.model.date]![self.model.mealIndex].endTime))")
                         .font(.appBody)
-                        .foregroundColor(.foreground)
+                        .foregroundColor(.main)
                         .padding(.bottom, 4)
                     if self.model.items[self.model.date] != nil &&
                        self.model.items[self.model.date]![self.model.mealIndex] != nil &&
@@ -134,17 +134,17 @@ struct HallView: View {
                     Button(action: { self.closeDatePicker() }) {
                         Text("Done")
                             .font(.appBodyMedium)
-                            .foregroundColor(.foreground)
+                            .foregroundColor(.main)
                     }.buttonStyle(PlainButtonStyle())
                 } else {
                     Button(action: { self.openDatePicker() }) {
                         HStack {
                             Image(systemName: "calendar")
                                 .frame(width: 25)
-                                .foregroundColor(.foreground)
+                                .foregroundColor(.main)
                             Text(self.model.dateFormatterExternal.string(from: self.model.date))
                                 .font(.appBodyMedium)
-                                .foregroundColor(.foreground)
+                                .foregroundColor(.main)
                         }
                     }.frame(maxWidth: .infinity)
                 }
