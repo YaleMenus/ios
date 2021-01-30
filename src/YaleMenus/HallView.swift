@@ -25,12 +25,16 @@ struct ItemPreviewView: View {
 
     func getCourseImage() -> String {
         if self.item.course == "Soup and Salad" {
-            if self.item.name.contains("Soup") {
-                return "custom_soup"
-            }
             if self.item.name.contains("Salad") {
                 return "custom_salad"
             }
+            return "custom_soup"
+        }
+        if self.item.course == "Fruit and Yogurt" {
+            if self.item.name.contains("Yogurt") {
+                return "custom_yogurt"
+            }
+            return "custom_fruit"
         }
         return self.item.course
     }
