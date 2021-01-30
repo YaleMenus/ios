@@ -17,8 +17,11 @@ struct HallGrid<Content: View>: View {
     func item(n: Int) -> Hall? {
         if n <= self.items.count {
             // Offset last element by one for logo
-            if n == self.items.count {
+            if n == self.items.count - 1 {
                 return nil
+            }
+            if n > self.items.count - 1 {
+                return self.items[n - 1]
             }
             return self.items[n]
         }
@@ -124,21 +127,22 @@ struct HallsView: View {
 //                                    .frame(height: geometry.size.height)
 //                            }
                             Spacer()
-                            Text("Yale Menus")
-                                .font(.appTitle)
-                                .fixedSize(horizontal: false, vertical: true)
-                                .foregroundColor(.mainDesaturated)
-                                .padding(.bottom, -6)
-                                .multilineTextAlignment(.center)
                             Image("gear")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: 30)
+                                .padding(.top, 10)
+                                .padding(.bottom, -3)
                                 .onTapGesture {
                                     DispatchQueue.main.async {
                                         self.navigationStack.push(SettingsView())
                                     }
                                 }
+                            Text("Yale Menus")
+                                .font(.appTitle)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .foregroundColor(.mainDesaturated)
+                                .multilineTextAlignment(.center)
                             Spacer()
                         }.frame(maxWidth: .infinity)
                     }
