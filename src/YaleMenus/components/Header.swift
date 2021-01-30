@@ -29,7 +29,7 @@ struct Header: View {
                 .foregroundColor(.main)
                 .multilineTextAlignment(.trailing)
                 // TODO: find a cleaner way to reduce padding
-                .padding(.vertical, -5)
+                .padding(.vertical, 5)
 //            if (self.hall != nil) {
 //                Spacer()
 //                Button(action: {
