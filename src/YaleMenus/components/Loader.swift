@@ -25,10 +25,20 @@ class PlayerUIView: UIView {
         // TODO: this should be passed as a parameter
         let url = Bundle.main.url(forResource: self.getLoaderImage(), withExtension: "m4v")!
         let player = AVPlayer(url: url)
+
+        // Loop video
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil) { (_) in
             player.seek(to: CMTime.zero)
             player.play()
         }
+
+        // Formally mute and prevent from interrupting other audio
+        player.isMuted = true
+        do {
+          try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, options: [AVAudioSession.CategoryOptions.mixWithOthers])
+          try AVAudioSession.sharedInstance().setActive(true)
+        } catch {}
+
         player.play()
 
         playerLayer.player = player
