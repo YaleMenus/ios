@@ -42,6 +42,8 @@ class PlayerUIView: UIView {
         player.play()
 
         playerLayer.player = player
+        playerLayer.shouldRasterize = true
+        playerLayer.rasterizationScale = UIScreen.main.scale
         layer.addSublayer(playerLayer)
     }
 
