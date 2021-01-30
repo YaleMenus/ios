@@ -3,9 +3,12 @@ import NavigationStack
 
 struct ContentView: View {
     var body: some View {
-        NavigationStackView {
-            HallsView()
-        }.padding(.horizontal)
+        ZStack {
+            Color.background.edgesIgnoringSafeArea(.all)
+            NavigationStackView {
+                HallsView()
+            }.padding(.horizontal)
+        }
     }
 }
 
