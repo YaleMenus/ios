@@ -15,10 +15,15 @@ struct PlayerView: UIViewRepresentable {
 class PlayerUIView: UIView {
     private let playerLayer = AVPlayerLayer()
 
+    private func getLoaderImage() -> String {
+        return (traitCollection.userInterfaceStyle == .dark ? "loader_dark" : "loader_light")
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        let url = Bundle.main.url(forResource: "loader", withExtension: "m4v")!
+        // TODO: this should be passed as a parameter
+        let url = Bundle.main.url(forResource: self.getLoaderImage(), withExtension: "m4v")!
         let player = AVPlayer(url: url)
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil) { (_) in
             player.seek(to: CMTime.zero)
