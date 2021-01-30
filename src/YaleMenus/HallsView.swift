@@ -54,7 +54,7 @@ struct OccupancyBar: View {
 
     var body: some View {
         Capsule()
-            .fill(Color.white)
+            .fill(Color.transparent)
             .frame(width: CGFloat(OccupancyBar.Increment * OccupancyBar.RedLimit), height: 10)
         .overlay(
             Capsule()
