@@ -102,7 +102,7 @@ struct HallsView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(height: geometry.size.height / 1.7)
                                 Text(hall!.nickname)
-                                    .font(.appBody)
+                                    .font(.appBodyMedium)
                                     .foregroundColor(.mainDesaturated)
                                     .padding(.top, 4)
                             }
