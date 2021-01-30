@@ -18,7 +18,7 @@ struct AllergenView: View {
             Image(self.allergen)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 60, maxHeight: 60, alignment: .leading)
+                .frame(width: 45, height: 45, alignment: .leading)
                 .padding(.trailing, 10)
             Spacer()
             Text(self.formatName(string: self.allergen))
