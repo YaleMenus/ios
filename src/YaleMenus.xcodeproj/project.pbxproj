@@ -201,9 +201,7 @@
 				035DF3E825291BCC004C95B0 /* AppDelegate.swift */,
 				035DF3EA25291BCC004C95B0 /* SceneDelegate.swift */,
 				035DF3EC25291BCC004C95B0 /* ContentView.swift */,
-				035DF41C25292338004C95B0 /* API.swift */,
-				030E653225322CB200B6032F /* NetworkManager.swift */,
-				035DF41E25293FA3004C95B0 /* Models.swift */,
+				03CF1FF325C60B810014C923 /* api */,
 				0345691425BCA79C00B5B406 /* loader_light.m4v */,
 				03CF1FF125C5166B0014C923 /* loader_dark.m4v */,
 				03476DC52564E15F00E4587C /* fonts */,
@@ -266,6 +264,16 @@
 				03CF1FED25C4CA680014C923 /* Header.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		03CF1FF325C60B810014C923 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				035DF41C25292338004C95B0 /* API.swift */,
+				030E653225322CB200B6032F /* NetworkManager.swift */,
+				035DF41E25293FA3004C95B0 /* Models.swift */,
+			);
+			path = api;
 			sourceTree = "<group>";
 		};
 		19D04278AF32BFF3D31B3BF1 /* Frameworks */ = {
