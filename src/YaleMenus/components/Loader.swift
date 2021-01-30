@@ -60,10 +60,8 @@ struct Loader: View {
         VStack {
             HStack {
                 Spacer()
-                GeometryReader { geometry in
-                    PlayerView()
-                        .frame(width: geometry.size.width / 1.5)
-                }
+                PlayerView()
+                    .frame(maxWidth: 215)
                 Spacer()
             }
         }.frame(maxHeight: .infinity, alignment: .topLeading)
