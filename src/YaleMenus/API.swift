@@ -14,7 +14,9 @@ enum API {
 }
 
 extension API: TargetType {
-    var baseURL: URL { return URL(string: "https://yaledine.com/api/")! }
+    var baseURL: URL {
+        return URL(string: "https://yaledine.com/api/")!
+    }
 
     var path: String {
         switch self {
