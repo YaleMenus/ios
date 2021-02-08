@@ -82,7 +82,7 @@ struct SettingsView: View {
                     CheckboxView(label: "Meat (I'm Vegetarian)", checked: $settings.meat)
                     CheckboxView(label: "Animal Products (I'm Vegan)", checked: $settings.animalProducts)
                     CheckboxView(label: "Alcohol", checked: $settings.alcohol)
-                    CheckboxView(label: "Nuts", checked: $settings.nuts)
+                    CheckboxView(label: "Tree Nut", checked: $settings.treeNut)
                     CheckboxView(label: "Shellfish", checked: $settings.shellfish)
                     CheckboxView(label: "Peanuts", checked: $settings.peanuts)
                     CheckboxView(label: "Dairy", checked: $settings.dairy)

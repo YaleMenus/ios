@@ -71,7 +71,7 @@ class HallViewModel: ObservableObject, Identifiable {
                         (self.settings.meat && item.meat) ||
                         (self.settings.animalProducts && item.animalProducts) ||
                         (self.settings.alcohol && item.alcohol) ||
-                        (self.settings.nuts && item.nuts) ||
+                        (self.settings.treeNut && item.treeNut) ||
                         (self.settings.shellfish && item.shellfish) ||
                         (self.settings.peanuts && item.peanuts) ||
                         (self.settings.dairy && item.dairy) ||

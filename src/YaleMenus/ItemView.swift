@@ -107,7 +107,7 @@ struct ItemView: View {
                                 if self.model.item.meat { AllergenView(allergen: "meat") }
                                 if self.model.item.animalProducts { AllergenView(allergen: "animal_products") }
                                 if self.model.item.alcohol { AllergenView(allergen: "alcohol") }
-                                if self.model.item.nuts { AllergenView(allergen: "nuts") }
+                                if self.model.item.treeNut { AllergenView(allergen: "tree_nut") }
                                 if self.model.item.shellfish { AllergenView(allergen: "shellfish") }
                                 if self.model.item.peanuts { AllergenView(allergen: "peanuts") }
                                 if self.model.item.dairy { AllergenView(allergen: "dairy") }

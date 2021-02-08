@@ -123,7 +123,7 @@ struct Item {
     let meat: Bool
     let animalProducts: Bool
     let alcohol: Bool
-    let nuts: Bool
+    let treeNut: Bool
     let shellfish: Bool
     let peanuts: Bool
     let dairy: Bool
@@ -145,7 +145,7 @@ extension Item: Decodable {
         case meat
         case animalProducts = "animal_products"
         case alcohol
-        case nuts
+        case treeNut = "tree_nut"
         case shellfish
         case peanuts
         case dairy
@@ -168,7 +168,7 @@ extension Item: Decodable {
         meat = try container.decode(Bool.self, forKey: .meat)
         animalProducts = try container.decode(Bool.self, forKey: .animalProducts)
         alcohol = try container.decode(Bool.self, forKey: .alcohol)
-        nuts = try container.decode(Bool.self, forKey: .nuts)
+        treeNut = try container.decode(Bool.self, forKey: .treeNut)
         shellfish = try container.decode(Bool.self, forKey: .shellfish)
         peanuts = try container.decode(Bool.self, forKey: .peanuts)
         dairy = try container.decode(Bool.self, forKey: .dairy)
